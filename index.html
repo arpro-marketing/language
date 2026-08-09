@@ -131,6 +131,10 @@
     border:1px solid var(--line);border-radius:7px;width:30px;height:30px;display:grid;place-items:center;
     text-decoration:none;transition:all .15s;margin-left:2px;}
   .todaylist .open:hover{color:var(--gold);border-color:var(--gold);background:rgba(216,169,59,.08);}
+  .todaylist .addmore{flex:0 0 auto;width:30px;height:30px;border-radius:7px;border:1px solid rgba(31,166,156,.4);
+    background:rgba(31,166,156,.1);color:var(--turq-text);font-size:1.2rem;line-height:1;cursor:pointer;
+    display:grid;place-items:center;transition:all .15s;}
+  .todaylist .addmore:hover{background:rgba(31,166,156,.22);border-color:var(--turq);}
 
   /* ---- language ladder / locks ---- */
   .ladder-wrap{margin-top:26px;}
@@ -957,9 +961,9 @@
        Those are stored in this browser and SURVIVE file updates (recommended).
    (B) Or hard-code them here — the in-app settings override these if present. */
 const CONFIG = {
-  SUPABASE_URL:      "https://uupxjlyqowvblorreyox.supabase.co",            // e.g. "https://abcdxyz.supabase.co"
-  SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV1cHhqbHlxb3d2YmxvcnJleW94Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODYyNjA1OTEsImV4cCI6MjEwMTgzNjU5MX0.K_NP8IpTYIco-tjxI3IUNPi9pFXEisB054cV5MFGq9o",            // your project's anon public key
-  SYNC_SLUG:         "andrew-persian-7f3q" // any private string; every device must match
+  SUPABASE_URL:      "https://uupxjlyqowvblorreyox.supabase.co",
+  SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV1cHhqbHlxb3d2YmxvcnJleW94Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODYyNjA1OTEsImV4cCI6MjEwMTgzNjU5MX0.K_NP8IpTYIco-tjxI3IUNPi9pFXEisB054cV5MFGq9o",
+  SYNC_SLUG:         "andrew-persian-7f3q"
 };
 const TABLE = "persian_progress";
 const CFG_KEY = "persian_sync_cfg";
@@ -1161,6 +1165,20 @@ function logActivity(id, dateKey){
   save(); render();
   const when = (k===todayKey()) ? "" : (" · "+shortDate(k));
   toast('+'+a.drops+' drops · '+a.label+when);
+}
+function unlogActivity(id, dateKey){
+  const a=ACT[id]; if(!a) return;
+  const k=dateKey||logDate||todayKey();
+  const rec=dayRec(k);
+  const c=rec.acts[id]||0;
+  if(c<=0) return;
+  rec.acts[id]=c-1;
+  if(rec.acts[id]<=0) delete rec.acts[id];
+  rec.drops=Math.max(0, rec.drops-a.drops);
+  state.drops=Math.max(0, state.drops-a.drops);
+  if(id==="pimsleur" && k===todayKey()) advancePim(-1,true);
+  save(); render();
+  toast("−"+a.drops+" drops · undid "+a.label);
 }
 function advancePim(delta,silent){
   let {level,lesson}=state.pim;
@@ -1365,13 +1383,21 @@ function renderToday(p){
     if(it.dyn && it.act==="pimsleur") label="Pimsleur L"+state.pim.level+" · Lesson "+state.pim.lesson;
     const dropTxt=it.weekly?("+"+a.drops+" · weekly"):("+"+a.drops);
     const url=RESOURCE_URLS[it.act]||"#";
+    const tnExtra = doneCount>0 ? (" · logged ×"+doneCount+" · tap to undo") : "";
+    const addBtn = doneCount>0 ? '<button class="addmore" title="Log another (if you did it more than once)" aria-label="Log another">+</button>' : '';
     li.innerHTML=
       '<span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1a31" stroke-width="3.5"><path d="M4 12l6 6L20 6"/></svg></span>'+
-      '<span class="ti"><span class="ta">'+label+'</span><span class="tn">'+a.note+(doneCount>0?(" · logged ×"+doneCount):"")+'</span></span>'+
+      '<span class="ti"><span class="ta">'+label+'</span><span class="tn">'+a.note+tnExtra+'</span></span>'+
       '<span class="dp">'+dropTxt+'</span>'+
+      addBtn+
       '<a class="open" href="'+url+'" target="_blank" rel="noopener" title="Open '+a.label+' (opens the app — does not log)" aria-label="Open '+a.label+'">↗</a>';
-    li.addEventListener("click",()=>logActivity(it.act,logDate));
+    li.addEventListener("click",()=>{
+      const c=(dayRec(logDate).acts[it.act]||0);
+      if(c>0) unlogActivity(it.act,logDate); else logActivity(it.act,logDate);
+    });
     li.querySelector(".open").addEventListener("click",(e)=>e.stopPropagation());
+    const am=li.querySelector(".addmore");
+    if(am) am.addEventListener("click",(e)=>{ e.stopPropagation(); logActivity(it.act,logDate); });
     host.appendChild(li);
   });
 }
