@@ -1,0 +1,1753 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Persian — The Speaking-First Path</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --lapis:#122240;      /* deep manuscript blue (page) */
+    --lapis-2:#0d1a31;    /* deeper */
+    --lapis-panel:#182e52; /* raised chrome */
+    --lapis-3:#1c3560;
+    --parch:#F4ECDA;      /* manuscript paper */
+    --parch-2:#EBE0C8;
+    --ink:#241F17;        /* text on parchment */
+    --ink-soft:#5c5343;
+    --gold:#D8A93B;       /* illumination */
+    --gold-deep:#b98a24;
+    --gold-lite:#F1D486;
+    --turq:#1FA69C;       /* firuze — fills/borders */
+    --turq-text:#48CFC1;  /* firuze — small text labels (AAA on dark) */
+    --azure:#5E96D4;
+    --madder:#B44A30;     /* terracotta, sparing */
+    --ivory:#EAE0C8;      /* text on lapis */
+    --ivory-mute:#C4CEDE; /* secondary body text — 8.5:1+ on panels */
+    --line:rgba(216,169,59,.28);
+    --radius:14px;
+    --maxw:1080px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;background:var(--lapis);color:var(--ivory);
+    font-family:"Inter",system-ui,sans-serif;line-height:1.6;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  .fa{font-family:"Vazirmatn",sans-serif;direction:rtl;unicode-bidi:isolate;}
+  ::selection{background:var(--gold);color:var(--lapis-2);}
+  a{color:var(--azure);text-decoration:none;}
+  a:hover{color:var(--gold);}
+
+  /* ---- girih tile motif (signature) ---- */
+  .girih{width:100%;height:100%;display:block;}
+  .girih .star{fill:none;stroke:var(--gold);stroke-width:1.1;opacity:.5;}
+  .girih .star.t{stroke:var(--turq);opacity:.4;}
+
+  /* ---- layout ---- */
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+  section{padding:64px 0;position:relative;}
+  .eyebrow{
+    font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;
+    color:var(--gold);font-weight:600;margin:0 0 14px;
+    display:flex;align-items:center;gap:12px;
+  }
+  .eyebrow::after{content:"";height:1px;flex:1;background:var(--line);}
+  h1,h2,h3{font-family:"Fraunces",serif;font-weight:600;line-height:1.12;}
+  h2{font-size:clamp(1.8rem,4vw,2.7rem);margin:0 0 18px;color:var(--parch);}
+  h3{font-size:1.28rem;margin:0 0 8px;color:var(--parch);}
+  p{color:var(--ivory-mute);}
+  .lead{font-size:1.12rem;color:var(--ivory);max-width:64ch;}
+  .muted{color:var(--ivory-mute);}
+
+  /* ---- top bar ---- */
+  .topbar{
+    position:sticky;top:0;z-index:50;background:rgba(13,26,49,.9);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
+  }
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:58px;gap:16px;}
+  .brand{font-family:"Fraunces",serif;font-weight:600;color:var(--parch);font-size:1.05rem;letter-spacing:.01em;white-space:nowrap;}
+  .brand .fa{color:var(--gold);font-size:1.15rem;margin-right:8px;}
+  /* live mini-stats in the bar */
+  .barstats{display:flex;gap:16px;align-items:center;margin-left:auto;}
+  .bstat{display:flex;flex-direction:column;align-items:flex-end;line-height:1.05;}
+  .bstat .v{font-family:"Fraunces",serif;font-weight:700;color:var(--gold);font-size:1.02rem;}
+  .bstat .l{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ivory-mute);}
+  .bstat.rank .v{color:var(--turq-text);font-size:.92rem;}
+  .navlinks{display:flex;gap:20px;}
+  .navlinks a{color:var(--ivory-mute);font-size:.82rem;font-weight:500;letter-spacing:.02em;}
+  .navlinks a:hover{color:var(--gold);}
+  @media(max-width:940px){.navlinks{display:none;}}
+  @media(max-width:560px){.barstats .bstat.days,.barstats .bstat.rank{display:none;}}
+
+  /* ---- console hero ---- */
+  .console{padding:44px 0 24px;position:relative;overflow:hidden;}
+  .console-motif{position:absolute;inset:0;opacity:.42;pointer-events:none;
+    -webkit-mask-image:radial-gradient(circle at 50% 34%,#000 0%,transparent 66%);
+    mask-image:radial-gradient(circle at 50% 34%,#000 0%,transparent 66%);}
+  .console-inner{position:relative;z-index:2;}
+  .kicker{font-size:.74rem;letter-spacing:.28em;text-transform:uppercase;color:var(--turq-text);font-weight:600;margin-bottom:14px;text-align:center;}
+  .rankbadge{text-align:center;margin-bottom:6px;}
+  .rankbadge .rk{font-family:"Fraunces",serif;font-size:clamp(2rem,5vw,3rem);color:var(--parch);font-weight:600;}
+  .rankbadge .rk em{font-style:italic;color:var(--gold);}
+  .rankbadge .sub{font-size:.9rem;color:var(--ivory-mute);margin-top:2px;}
+  .proverb{margin:16px auto 8px;max-width:560px;text-align:center;}
+  .proverb .fa{font-size:1.5rem;color:var(--gold);display:block;margin-bottom:6px;}
+  .proverb .tl{font-size:.8rem;letter-spacing:.12em;color:var(--ivory-mute);text-transform:uppercase;}
+  .proverb .mn{font-family:"Fraunces",serif;font-style:italic;font-size:.98rem;color:var(--ivory);}
+
+  /* stat cluster */
+  .statrow{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:30px 0 8px;}
+  @media(max-width:640px){.statrow{grid-template-columns:repeat(2,1fr);}}
+  .statcard{
+    background:var(--lapis-panel);border:1px solid var(--line);border-radius:12px;
+    padding:16px 18px;text-align:center;position:relative;overflow:hidden;
+  }
+  .statcard .big{font-family:"Fraunces",serif;font-size:2rem;font-weight:700;color:var(--gold);line-height:1;}
+  .statcard .lbl{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ivory-mute);margin-top:7px;}
+  .statcard .sub2{font-size:.72rem;color:var(--turq-text);margin-top:5px;min-height:1em;}
+  .statcard.streak .big{color:var(--madder);}
+  .statcard.drops .big{color:var(--gold);}
+  .statcard.streak .freezebadge{font-size:.66rem;margin-top:6px;font-weight:600;letter-spacing:.02em;}
+  .statcard.streak .freezebadge.avail{color:var(--turq-text);}
+  .statcard.streak .freezebadge.used{color:var(--ivory-mute);}
+
+  /* log-for (back-dating) control */
+  .logfor{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:18px;position:relative;
+    font-size:.8rem;color:var(--ivory-mute);}
+  .logfor label{display:inline-flex;align-items:center;gap:8px;}
+  .logfor input[type=date]{background:var(--lapis-2);border:1px solid var(--line);color:var(--ivory);
+    border-radius:8px;padding:5px 9px;font-family:inherit;font-size:.8rem;color-scheme:dark;cursor:pointer;}
+  .logfor-reset{background:var(--madder);border:none;color:#fff;font-size:.72rem;font-weight:600;
+    border-radius:7px;padding:6px 11px;cursor:pointer;letter-spacing:.02em;}
+  .logfor-reset:hover{filter:brightness(1.1);}
+  .logfor-banner{color:var(--gold);font-weight:600;}
+
+  /* launch link on today items */
+  .todaylist .open{flex:0 0 auto;color:var(--ivory-mute);font-size:.9rem;font-weight:600;
+    border:1px solid var(--line);border-radius:7px;width:30px;height:30px;display:grid;place-items:center;
+    text-decoration:none;transition:all .15s;margin-left:2px;}
+  .todaylist .open:hover{color:var(--gold);border-color:var(--gold);background:rgba(216,169,59,.08);}
+
+  /* ---- language ladder / locks ---- */
+  .ladder-wrap{margin-top:26px;}
+  .ladder{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+  @media(max-width:720px){.ladder{grid-template-columns:repeat(2,1fr);}}
+  .lang{
+    background:var(--lapis-panel);border:1px solid var(--line);border-radius:12px;
+    padding:16px 16px 14px;position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s;
+  }
+  .lang .idx{font-family:"Fraunces",serif;font-size:.72rem;color:var(--ivory-mute);letter-spacing:.1em;}
+  .lang .nm{font-family:"Fraunces",serif;font-size:1.24rem;color:var(--parch);font-weight:600;margin:2px 0 2px;}
+  .lang .st{font-size:.72rem;color:var(--ivory-mute);}
+  .lang.active{border-color:var(--gold);box-shadow:0 8px 30px rgba(216,169,59,.16);}
+  .lang.active .nm{color:var(--gold-lite);}
+  .lang.active::after{content:"IN PROGRESS";position:absolute;top:12px;right:12px;font-size:.56rem;letter-spacing:.14em;color:var(--turq-text);font-weight:700;}
+  .lang.locked{opacity:.72;}
+  .lang.locked .lockrow{display:flex;align-items:center;gap:7px;margin-top:8px;color:var(--ivory-mute);font-size:.72rem;}
+  .lang.locked svg.lk{width:13px;height:13px;stroke:var(--gold);fill:none;stroke-width:1.6;flex:0 0 auto;}
+  .lang.just-unlocked{border-color:var(--turq);box-shadow:0 0 0 2px rgba(31,166,156,.35),0 10px 34px rgba(31,166,156,.28);}
+  .lang .prog{height:6px;background:var(--lapis-2);border-radius:100px;overflow:hidden;margin-top:12px;}
+  .lang .prog i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--turq),var(--gold));transition:width .6s;}
+  .lang .unlockat{font-size:.64rem;color:var(--ivory-mute);margin-top:6px;letter-spacing:.02em;}
+
+  /* ---- TODAY panel ---- */
+  .today{
+    background:linear-gradient(180deg,var(--lapis-3),var(--lapis-panel));
+    border:1px solid var(--gold-deep);border-radius:16px;padding:26px 28px;margin-top:8px;
+    box-shadow:0 24px 60px rgba(0,0,0,.34);position:relative;overflow:hidden;
+  }
+  .today::before{content:"";position:absolute;inset:0;background:
+    radial-gradient(circle at 90% -10%,rgba(216,169,59,.14),transparent 55%);pointer-events:none;}
+  .today-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;position:relative;}
+  .today-head .th-l .tl-eye{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700;}
+  .today-head .th-l h3{margin:6px 0 2px;font-size:1.5rem;color:var(--parch);}
+  .today-head .th-l .foc{font-size:.9rem;color:var(--ivory-mute);max-width:52ch;}
+  .today-head .th-r{text-align:right;flex:0 0 auto;}
+  .today-head .th-r .dd{font-family:"Fraunces",serif;font-size:1.8rem;color:var(--gold);font-weight:700;line-height:1;}
+  .today-head .th-r .ddl{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ivory-mute);}
+  .todaylist{list-style:none;padding:0;margin:20px 0 0;position:relative;}
+  .todaylist li{
+    display:flex;align-items:center;gap:14px;padding:13px 14px;border-radius:10px;
+    border:1px solid rgba(216,169,59,.14);margin-bottom:10px;background:rgba(13,26,49,.4);
+    cursor:pointer;transition:background .18s,border-color .18s,transform .1s;
+  }
+  .todaylist li:hover{background:rgba(13,26,49,.7);border-color:var(--line);}
+  .todaylist li:active{transform:scale(.995);}
+  .todaylist li.logged{border-color:rgba(31,166,156,.5);background:rgba(31,166,156,.09);}
+  .todaylist .tick{
+    flex:0 0 auto;width:26px;height:26px;border:2px solid var(--line);border-radius:8px;
+    display:grid;place-items:center;transition:all .2s;
+  }
+  .todaylist .tick svg{width:15px;height:15px;opacity:0;transform:scale(.5);transition:all .2s;}
+  .todaylist li.logged .tick{background:var(--turq);border-color:var(--turq);}
+  .todaylist li.logged .tick svg{opacity:1;transform:scale(1);}
+  .todaylist .ti{flex:1;min-width:0;}
+  .todaylist .ti .ta{display:block;font-weight:600;color:var(--parch);font-size:.97rem;}
+  .todaylist li.logged .ti .ta{color:var(--ivory-mute);}
+  .todaylist .ti .tn{display:block;font-size:.76rem;color:var(--ivory-mute);margin-top:2px;}
+  .todaylist .dp{flex:0 0 auto;font-family:"Fraunces",serif;font-size:.82rem;font-weight:600;color:var(--gold);
+    border:1px solid var(--line);border-radius:7px;padding:3px 9px;white-space:nowrap;}
+  .todaylist li.logged .dp{color:var(--turq-text);border-color:rgba(31,166,156,.4);}
+  .today-foot{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin-top:8px;position:relative;}
+  .keystone-note{font-size:.78rem;color:var(--ivory-mute);}
+  .keystone-note b{color:var(--gold);}
+  .pim-step{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;color:var(--ivory-mute);}
+  .pim-step button{background:var(--lapis-2);border:1px solid var(--line);color:var(--gold);
+    width:24px;height:24px;border-radius:6px;cursor:pointer;font-size:1rem;line-height:1;display:grid;place-items:center;}
+  .pim-step button:hover{background:var(--lapis-3);}
+
+  /* in-tool listen / auto-log */
+  .listen{background:var(--lapis-panel);border:1px solid var(--line);border-radius:var(--radius);
+    padding:18px 22px;margin-top:16px;}
+  .listen-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:12px;}
+  .listen-head .lh-eye{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--turq-text);font-weight:700;}
+  .listen-head .lh-note{font-size:.78rem;color:var(--ivory-mute);}
+  .listen-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px;}
+  .listen-row input[type=url]{flex:1;min-width:180px;background:var(--lapis-2);border:1px solid var(--line);
+    color:var(--ivory);border-radius:8px;padding:9px 12px;font-family:inherit;font-size:.86rem;}
+  .listen-row input[type=url]::placeholder{color:var(--ivory-mute);opacity:.7;}
+  .listen audio{width:100%;height:38px;margin-top:2px;display:block;}
+  .listen-status{font-size:.76rem;color:var(--ivory-mute);margin-top:8px;min-height:1em;}
+  .listen-status.done{color:var(--turq-text);font-weight:600;}
+
+  /* ---- calendar heatmap ---- */
+  .calpanel{background:var(--lapis-panel);border:1px solid var(--line);border-radius:var(--radius);padding:24px 26px;margin-top:22px;}
+  .calpanel .cap{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:10px;margin-bottom:16px;}
+  .calpanel .cap .t{font-family:"Fraunces",serif;color:var(--parch);font-size:1.1rem;font-weight:600;}
+  .calpanel .cap .sub{font-size:.78rem;color:var(--ivory-mute);}
+  .heat{display:flex;gap:4px;overflow-x:auto;padding-bottom:6px;}
+  .heat .wkcol{display:flex;flex-direction:column;gap:4px;}
+  .heat .cell{width:15px;height:15px;border-radius:4px;background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.05);position:relative;transition:transform .12s;}
+  .heat .cell:hover{transform:scale(1.25);z-index:3;outline:1px solid var(--gold);}
+  .heat .cell.today{outline:1.5px solid var(--turq);}
+  .heat .cell.l1{background:rgba(31,166,156,.35);border-color:rgba(31,166,156,.3);}
+  .heat .cell.l2{background:rgba(72,207,193,.55);}
+  .heat .cell.l3{background:rgba(216,169,59,.6);}
+  .heat .cell.l4{background:var(--gold);border-color:var(--gold-lite);box-shadow:0 0 8px rgba(216,169,59,.5);}
+  .heat-legend{display:flex;align-items:center;gap:6px;font-size:.68rem;color:var(--ivory-mute);margin-top:12px;justify-content:flex-end;}
+  .heat-legend .cell{width:13px;height:13px;border-radius:3px;}
+  .cal-tip{position:fixed;z-index:99;pointer-events:none;background:var(--parch);color:var(--ink);
+    font-size:.74rem;padding:7px 10px;border-radius:8px;box-shadow:0 10px 30px rgba(0,0,0,.4);
+    opacity:0;transition:opacity .12s;max-width:220px;font-weight:500;}
+  .cal-tip b{color:var(--madder);}
+
+  /* sync + backup pill row */
+  .utilrow{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin-top:18px;}
+  .syncpill{display:inline-flex;align-items:center;gap:8px;font-size:.74rem;color:var(--ivory-mute);
+    background:var(--lapis-panel);border:1px solid var(--line);border-radius:100px;padding:6px 13px;}
+  .syncpill .dot{width:8px;height:8px;border-radius:50%;background:var(--ivory-mute);flex:0 0 auto;}
+  .syncpill.ok .dot{background:var(--turq);box-shadow:0 0 8px var(--turq);}
+  .syncpill.local .dot{background:var(--gold);}
+  .syncpill.err .dot{background:var(--madder);}
+  .syncpill.syncing .dot{background:var(--azure);animation:pulse 1s infinite;}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.35;}}
+  .utilbtns{display:flex;gap:8px;}
+  .ubtn{background:var(--lapis-panel);border:1px solid var(--line);color:var(--ivory);
+    font-size:.74rem;font-weight:600;border-radius:8px;padding:7px 13px;cursor:pointer;letter-spacing:.02em;}
+  .ubtn:hover{border-color:var(--gold);color:var(--gold);}
+
+  /* toast */
+  #toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(30px);
+    background:var(--parch);color:var(--ink);font-weight:600;font-size:.9rem;padding:12px 20px;
+    border-radius:100px;box-shadow:0 16px 44px rgba(0,0,0,.4);opacity:0;pointer-events:none;
+    transition:opacity .3s,transform .3s;z-index:120;border-left:4px solid var(--gold);max-width:88vw;}
+  #toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+  #toast .fa{color:var(--madder);font-weight:700;}
+
+  /* sync setup modal */
+  .modal{position:fixed;inset:0;z-index:130;background:rgba(9,16,30,.72);backdrop-filter:blur(4px);
+    display:none;align-items:center;justify-content:center;padding:24px;}
+  .modal.open{display:flex;}
+  .modal-card{background:var(--lapis-panel);border:1px solid var(--gold-deep);border-radius:16px;
+    padding:28px 30px;max-width:480px;width:100%;box-shadow:0 30px 80px rgba(0,0,0,.5);}
+  .modal-card h3{font-size:1.4rem;margin:0 0 6px;color:var(--parch);}
+  .modal-sub{font-size:.86rem;color:var(--ivory-mute);margin:0 0 18px;}
+  .su-lbl{display:block;font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);
+    font-weight:600;margin-bottom:14px;}
+  .su-lbl .su-hint{text-transform:none;letter-spacing:0;color:var(--ivory-mute);font-weight:400;font-size:.72rem;}
+  .su-lbl input{display:block;width:100%;margin-top:6px;background:var(--lapis-2);border:1px solid var(--line);
+    color:var(--ivory);border-radius:8px;padding:10px 12px;font-family:inherit;font-size:.9rem;}
+  .su-result{min-height:1.2em;font-size:.82rem;margin:4px 0 14px;color:var(--ivory-mute);}
+  .su-result.ok{color:var(--turq-text);font-weight:600;}
+  .su-result.err{color:#f0a58e;font-weight:600;}
+  .modal-actions{display:flex;gap:8px;align-items:center;}
+  .modal-actions .spacer{flex:1;}
+  .ubtn.primary{background:var(--gold);border-color:var(--gold);color:var(--lapis-2);}
+  .ubtn.primary:hover{background:var(--gold-lite);color:var(--lapis-2);}
+
+  /* ---- generic card grid ---- */
+  .grid{display:grid;gap:18px;}
+  .g2{grid-template-columns:repeat(2,1fr);}
+  .g3{grid-template-columns:repeat(3,1fr);}
+  @media(max-width:820px){.g2,.g3{grid-template-columns:1fr;}}
+  .card{
+    background:var(--lapis-panel);border:1px solid rgba(216,169,59,.16);
+    border-radius:var(--radius);padding:26px;position:relative;
+  }
+  .card h3{color:var(--parch);}
+  .card p{margin:.5em 0 0;font-size:.95rem;}
+  .card .num{font-family:"Fraunces",serif;font-size:.9rem;color:var(--gold);font-weight:600;letter-spacing:.1em;}
+
+  /* engine list */
+  .engine{list-style:none;padding:0;margin:0;counter-reset:e;}
+  .engine li{
+    counter-increment:e;padding:18px 0 18px 62px;border-bottom:1px solid rgba(216,169,59,.12);position:relative;
+  }
+  .engine li:last-child{border-bottom:0;}
+  .engine li::before{
+    content:counter(e,decimal-leading-zero);position:absolute;left:0;top:16px;
+    font-family:"Fraunces",serif;color:var(--gold);font-size:1.05rem;font-weight:600;
+    border:1px solid var(--line);width:40px;height:40px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .engine b{color:var(--parch);font-weight:600;}
+  .engine span{color:var(--ivory-mute);}
+
+  /* ---- critical calls (parchment callouts) ---- */
+  .calls{display:grid;gap:20px;}
+  .call{
+    background:var(--parch);color:var(--ink);border-radius:var(--radius);
+    padding:28px 30px;border-left:5px solid var(--madder);position:relative;
+    box-shadow:0 20px 50px rgba(0,0,0,.28);
+  }
+  .call .tag{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--madder);font-weight:700;}
+  .call h3{color:var(--ink);margin:8px 0 10px;font-size:1.32rem;}
+  .call p{color:#4a4234;font-size:.98rem;margin:0 0 10px;}
+  .call p:last-child{margin-bottom:0;}
+  .call b{color:var(--ink);}
+  .call .fa{color:var(--lapis);font-weight:700;}
+  .call .verdict{
+    display:inline-block;margin-top:6px;background:var(--lapis);color:var(--gold);
+    font-size:.82rem;font-weight:600;padding:7px 14px;border-radius:8px;
+  }
+  .call.turq{border-left-color:var(--turq);}
+  .call.turq .tag{color:#0a544e;}
+  .call.gold{border-left-color:var(--gold-deep);}
+  .call.gold .tag{color:#7d5e14;}
+
+  /* ---- phases (accordion) ---- */
+  .phase{
+    border:1px solid var(--line);border-radius:var(--radius);margin-bottom:16px;
+    overflow:hidden;background:var(--lapis-panel);
+  }
+  .phase-head{
+    display:flex;align-items:center;gap:22px;padding:22px 26px;cursor:pointer;
+    user-select:none;transition:background .2s;
+  }
+  .phase-head:hover{background:#1c3560;}
+  .illum{
+    flex:0 0 auto;width:58px;height:58px;position:relative;display:grid;place-items:center;
+  }
+  .illum svg{position:absolute;inset:0;width:100%;height:100%;}
+  .illum .rn{font-family:"Fraunces",serif;font-size:1.5rem;color:var(--gold);font-weight:700;position:relative;}
+  .phase-head .ph-t{flex:1;}
+  .phase-head .ph-t .cefr{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--turq-text);font-weight:600;}
+  .phase-head .ph-t h3{margin:3px 0 2px;font-size:1.3rem;}
+  .phase-head .ph-t .wk{font-size:.85rem;color:var(--ivory-mute);}
+  .phase-head .ph-state{font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;
+    padding:4px 10px;border-radius:100px;border:1px solid var(--line);color:var(--ivory-mute);flex:0 0 auto;}
+  .phase-head .ph-state.cur{background:var(--gold);color:var(--lapis-2);border-color:var(--gold);}
+  .phase-head .ph-state.done{background:rgba(31,166,156,.2);color:var(--turq-text);border-color:rgba(31,166,156,.4);}
+  .phase-head .tog{color:var(--gold);font-size:1.5rem;transition:transform .3s;flex:0 0 auto;}
+  .phase.open .tog{transform:rotate(45deg);}
+  .phase-body{max-height:0;overflow:hidden;transition:max-height .45s ease;}
+  .phase.open .phase-body{max-height:2600px;}
+  .phase-inner{padding:6px 26px 30px;border-top:1px solid rgba(216,169,59,.12);}
+  .pb-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:20px;}
+  @media(max-width:720px){.pb-grid{grid-template-columns:1fr;}}
+  .pb-block h4{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin:0 0 10px;font-weight:600;}
+  .pb-block ul{margin:0;padding-left:18px;}
+  .pb-block li{color:var(--ivory-mute);font-size:.93rem;margin-bottom:7px;}
+  .pb-block li b{color:var(--parch);font-weight:600;}
+  .pb-block li .fa{color:var(--gold-lite);}
+  .gate{
+    margin-top:22px;background:rgba(31,166,156,.1);border:1px solid rgba(31,166,156,.35);
+    border-radius:10px;padding:16px 20px;
+  }
+  .gate .g-l{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--turq-text);font-weight:700;margin-bottom:6px;}
+  .gate p{margin:0;color:var(--ivory);font-size:.94rem;}
+
+  /* ---- weekly OS ---- */
+  .os-note{background:var(--lapis-panel);border:1px solid var(--line);border-radius:var(--radius);padding:24px 28px;margin-bottom:24px;}
+  .os-note b{color:var(--gold);}
+  .os-table{width:100%;border-collapse:collapse;background:var(--parch);border-radius:var(--radius);overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.25);}
+  .os-table th,.os-table td{text-align:left;padding:13px 18px;font-size:.92rem;border-bottom:1px solid rgba(36,31,23,.1);}
+  .os-table th{background:var(--lapis);color:var(--gold);font-family:"Inter";font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;}
+  .os-table td{color:var(--ink);}
+  .os-table td:first-child{font-weight:600;color:var(--ink);width:34%;}
+  .os-table .mode{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:6px;}
+  .mode.dead{background:rgba(31,166,156,.18);color:#0a544e;}
+  .mode.focus{background:rgba(180,74,48,.16);color:var(--madder);}
+  .os-table tr:last-child td{border-bottom:0;}
+
+  /* ---- tool stack ---- */
+  .tool{background:var(--lapis-panel);border:1px solid rgba(216,169,59,.16);border-radius:12px;padding:22px 24px;}
+  .tool .job{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--turq-text);font-weight:600;margin-bottom:8px;}
+  .tool h3{font-size:1.12rem;margin-bottom:6px;}
+  .tool p{font-size:.9rem;margin:0;}
+  .tool .free{display:inline-block;margin-top:12px;font-size:.72rem;font-weight:600;color:var(--gold);border:1px solid var(--line);border-radius:6px;padding:3px 9px;}
+
+  /* ---- vocab chips ---- */
+  .vocab-intro{margin-bottom:26px;}
+  .vgroup{margin-bottom:26px;}
+  .vgroup .vg-t{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:12px;}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;}
+  .vchip{
+    background:var(--parch);color:var(--ink);border:1px solid var(--gold-deep);
+    border-radius:10px;padding:10px 15px;min-width:118px;cursor:pointer;
+    transition:transform .18s, box-shadow .18s;text-align:center;position:relative;
+  }
+  .vchip:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,.28);}
+  .vchip .face{display:block;}
+  .vchip .fa{font-size:1.5rem;line-height:1.3;color:var(--lapis);font-weight:700;}
+  .vchip .tl{font-size:.92rem;color:var(--madder);font-weight:600;font-style:italic;}
+  .vchip .mn{font-size:.9rem;color:var(--ink);font-weight:500;}
+  .vchip .hint{position:absolute;top:5px;right:7px;font-size:.6rem;color:var(--ink-soft);opacity:.85;font-weight:600;}
+  .vchip .col{font-size:.62rem;color:#0a544e;font-weight:700;letter-spacing:.05em;margin-top:3px;text-transform:uppercase;}
+
+  /* ---- gates tracker ---- */
+  .track{background:var(--lapis-panel);border:1px solid var(--line);border-radius:var(--radius);padding:28px 30px;}
+  .track .bar-wrap{height:10px;background:var(--lapis-2);border-radius:100px;overflow:hidden;margin:6px 0 22px;}
+  .track .bar{height:100%;width:0;background:linear-gradient(90deg,var(--turq),var(--gold));transition:width .5s;}
+  .track .pct{font-family:"Fraunces",serif;color:var(--gold);font-weight:600;}
+  .milestones{list-style:none;padding:0;margin:0;}
+  .milestones li{display:flex;gap:14px;align-items:flex-start;padding:12px 0;border-bottom:1px solid rgba(216,169,59,.1);cursor:pointer;}
+  .milestones li:last-child{border-bottom:0;}
+  .ck{flex:0 0 auto;width:24px;height:24px;border:2px solid var(--line);border-radius:6px;display:grid;place-items:center;margin-top:2px;transition:all .2s;}
+  .ck svg{width:14px;height:14px;opacity:0;transform:scale(.5);transition:all .2s;}
+  .milestones li.done .ck{background:var(--turq);border-color:var(--turq);}
+  .milestones li.done .ck svg{opacity:1;transform:scale(1);}
+  .milestones li.done .ms-t{color:var(--ivory-mute);text-decoration:line-through;}
+  .ms-t{color:var(--ivory);font-size:.95rem;}
+  .ms-t small{display:block;color:var(--ivory-mute);font-size:.8rem;text-decoration:none;}
+  .ms-t .dropbadge{color:var(--gold);font-size:.72rem;font-weight:600;margin-left:6px;}
+
+  /* ---- footer ---- */
+  footer{border-top:1px solid var(--line);padding:40px 0 56px;text-align:center;}
+  footer p{color:var(--ivory-mute);font-size:.85rem;}
+  footer .fa{color:var(--gold);font-size:1.1rem;}
+
+  /* reveal */
+  .rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease;}
+  .rv.in{opacity:1;transform:none;}
+  @media(prefers-reduced-motion:reduce){
+    .rv{opacity:1;transform:none;transition:none;}
+    html{scroll-behavior:auto;}
+    .phase-body{transition:none;}
+  }
+</style>
+</head>
+<body>
+
+<!-- girih star reusable symbol -->
+<svg width="0" height="0" style="position:absolute"><defs>
+  <g id="star8">
+    <polygon class="star" points="50,4 61,39 96,39 68,61 79,96 50,74 21,96 32,61 4,39 39,39"/>
+    <polygon class="star t" points="50,18 58,42 84,42 63,58 71,82 50,67 29,82 37,58 16,42 42,42"/>
+  </g>
+</defs></svg>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="brand"><span class="fa">فارسی</span>The Speaking-First Path</div>
+    <div class="barstats">
+      <div class="bstat rank"><span class="v" id="barRank">Pre-A1</span><span class="l">Rank</span></div>
+      <div class="bstat"><span class="v" id="barStreak">0</span><span class="l">Day streak</span></div>
+      <div class="bstat"><span class="v" id="barDrops">0</span><span class="l">Drops</span></div>
+      <div class="bstat days"><span class="v" id="barUnlock">0%</span><span class="l">To French</span></div>
+    </div>
+    <nav class="navlinks">
+      <a href="#today">Today</a>
+      <a href="#calendar">Calendar</a>
+      <a href="#calls">Key Calls</a>
+      <a href="#phases">Phases</a>
+      <a href="#stack">Stack</a>
+    </nav>
+  </div>
+</div>
+
+<!-- ============ CONSOLE (daily driver) ============ -->
+<header class="console">
+  <div class="console-motif" id="consoleMotif"></div>
+  <div class="wrap console-inner">
+    <div class="kicker">Language 1 of 4 · Persian (Iranian / Tehrani)</div>
+    <div class="rankbadge">
+      <div class="rk" id="rankTitle">Pre-A1 · <em>Foundations</em></div>
+      <div class="sub" id="rankSub">Every day is a drop. Drop by drop, it becomes a sea.</div>
+    </div>
+    <div class="proverb">
+      <span class="fa">قطره قطره، دریا می‌شود</span>
+      <span class="tl">qatre qatre, daryâ mishavad</span> ·
+      <span class="mn">drop by drop, it becomes a sea</span>
+    </div>
+
+    <!-- live stats -->
+    <div class="statrow">
+      <div class="statcard streak">
+        <div class="big" id="sStreak">0</div>
+        <div class="lbl">Day streak</div>
+        <div class="sub2" id="sStreakSub">start today</div>
+        <div class="freezebadge" id="freezeBadge"></div>
+      </div>
+      <div class="statcard drops">
+        <div class="big" id="sDrops">0</div>
+        <div class="lbl">Drops earned</div>
+        <div class="sub2" id="sDropsSub">&nbsp;</div>
+      </div>
+      <div class="statcard">
+        <div class="big" id="sDays">0</div>
+        <div class="lbl">Days studied</div>
+        <div class="sub2" id="sDaysSub">&nbsp;</div>
+      </div>
+      <div class="statcard">
+        <div class="big" id="sPhase">0</div>
+        <div class="lbl">Current phase</div>
+        <div class="sub2" id="sPhaseSub">Sound &amp; Script</div>
+      </div>
+    </div>
+
+    <!-- TODAY panel -->
+    <div class="today" id="today">
+      <div class="today-head">
+        <div class="th-l">
+          <div class="tl-eye">Today · <span id="todayDate"></span></div>
+          <h3 id="todayPhaseTitle">Phase 0 · Sound &amp; Script</h3>
+          <div class="foc" id="todayFocus"></div>
+        </div>
+        <div class="th-r">
+          <div class="dd" id="todayDrops">0</div>
+          <div class="ddl">Drops today</div>
+        </div>
+      </div>
+      <div class="logfor" id="logfor">
+        <label>Logging for <input type="date" id="logDateInput"></label>
+        <button class="logfor-reset" id="logTodayBtn" hidden>← back to today</button>
+        <span class="logfor-banner" id="logBanner" hidden></span>
+      </div>
+      <ul class="todaylist" id="todayList"></ul>
+      <div class="today-foot">
+        <div class="keystone-note"><b>Keystone:</b> if a day collapses, the <b>audio</b> is the one thing that still happens — it protects your streak.</div>
+        <div class="pim-step">
+          <span id="pimLabel">Pimsleur L1 · Lesson 1</span>
+          <button id="pimMinus" title="Correct down" aria-label="Pimsleur lesson down">−</button>
+          <button id="pimPlus" title="Correct up" aria-label="Pimsleur lesson up">+</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- LISTEN / AUTO-LOG -->
+    <div class="listen" id="listen">
+      <div class="listen-head">
+        <span class="lh-eye">Listen · auto-logs (+6)</span>
+        <span class="lh-note">Finish an episode played here and it logs itself. Try a <a href="https://www.chaiandconversation.com/" target="_blank" rel="noopener">Chai &amp; Conversation ↗</a> episode MP3.</span>
+      </div>
+      <div class="listen-row">
+        <input type="url" id="audioUrl" placeholder="Paste an episode MP3 URL…" />
+        <button class="ubtn" id="audioLoad">Load</button>
+        <button class="ubtn" id="audioFile">File…</button>
+      </div>
+      <audio id="audioEl" controls preload="none"></audio>
+      <div class="listen-status" id="audioStatus">Paste a URL or load a file — I'll log it when it finishes.</div>
+    </div>
+
+    <!-- LANGUAGE LADDER / LOCKS -->
+    <div class="ladder-wrap">
+      <div class="ladder" id="ladder"></div>
+    </div>
+
+    <!-- util row: sync + backup -->
+    <div class="utilrow">
+      <span class="syncpill local" id="syncPill"><span class="dot"></span><span id="syncTxt">Local only — add Supabase keys to sync</span></span>
+      <div class="utilbtns">
+        <button class="ubtn" id="btnSetup">⚙ Sync setup</button>
+        <button class="ubtn" id="btnExport">Export backup</button>
+        <button class="ubtn" id="btnImport">Import</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ CALENDAR ============ -->
+<section id="calendar" style="padding-top:20px;">
+  <div class="wrap rv">
+    <div class="calpanel">
+      <div class="cap">
+        <span class="t">Your sea, filling drop by drop</span>
+        <span class="sub" id="calSub">Every studied day illuminates a tile. Brighter = more drops.</span>
+      </div>
+      <div class="heat" id="heat"></div>
+      <div class="heat-legend">
+        Less
+        <span class="cell"></span>
+        <span class="cell l1"></span>
+        <span class="cell l2"></span>
+        <span class="cell l3"></span>
+        <span class="cell l4"></span>
+        More
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ENGINE ============ -->
+<section id="engine">
+  <div class="wrap rv">
+    <p class="eyebrow">The engine</p>
+    <h2>One proven spine, tuned for Persian</h2>
+    <p class="lead">The same eight mechanics drive every language on your ladder. What changes per language is the tuning — and Persian's tuning is the three decisions below. Everything here is calibrated for a speaking goal on a small, audio-heavy budget.</p>
+    <ol class="engine" style="margin-top:34px;">
+      <li><b>Frequency-first vocabulary.</b> <span>The top ~1,000 words cover ~80% of everyday speech. Your SRS deck is built from a frequency list, not a textbook's chapter order.</span></li>
+      <li><b>Comprehensible input at volume.</b> <span>Audio and video pitched just above your level (Krashen's <em>i+1</em>), scaled up hard as you climb. Persian has excellent learner-graded input.</span></li>
+      <li><b>Active recall over passive review.</b> <span>You retrieve and produce — never re-read. Every SRS rep and every tutor sentence is retrieval under mild pressure.</span></li>
+      <li><b>Output from week one.</b> <span>You speak before you feel "ready." A live tutor enters in Phase 1, not Phase 3. This is the step most self-learners skip and most need.</span></li>
+      <li><b>Task-based sequencing.</b> <span>Organized around what you can <em>do</em> — greet, order, ask directions, tell a story — not around grammar tables.</span></li>
+      <li><b>Sound + script front-loaded.</b> <span>The Perso-Arabic alphabet and the handful of new sounds get their own dedicated phase before vocabulary scales.</span></li>
+      <li><b>Daily contact beats weekly blocks.</b> <span>A 30-minute Pimsleur lesson in the car every day outperforms one long Sunday session. Consistency is the whole game at this budget.</span></li>
+      <li><b>CEFR checkpoints.</b> <span>A1 → A2 → B1 as hard, observable gates. You don't advance a phase on vibes; you advance on a demonstrated exit criterion.</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ CRITICAL CALLS ============ -->
+<section id="calls">
+  <div class="wrap">
+    <div class="rv">
+      <p class="eyebrow">The three calls that make or break Persian</p>
+      <h2>Where a generic plan fails you</h2>
+      <p class="lead">Most "learn Persian" plans quietly optimize for reading and formal grammar. For a speaking goal that's the wrong target, and it costs learners months. These three decisions are the difference.</p>
+    </div>
+    <div class="calls" style="margin-top:34px;">
+      <div class="call rv">
+        <span class="tag">Call 1 · Register</span>
+        <h3>Learn colloquial (spoken) Persian — not the written form</h3>
+        <p>Persian has a real split: <b>written/formal</b> (<span class="fa">کتابی</span> ketâbi) and <b>colloquial/spoken</b> (<span class="fa">محاوره</span> mohâvere, the Tehrani street standard). They differ in verb forms, pronouns, and even whole words. "I go" is <span class="fa">می‌روم</span> <em>miravam</em> in writing but <span class="fa">می‌رم</span> <em>miram</em> in speech. "Home" is <span class="fa">خانه</span> <em>khâne</em> written, <span class="fa">خونه</span> <em>khune</em> spoken.</p>
+        <p>Textbooks teach formal first. If you follow them, you'll build sentences no one actually says out loud, then struggle to understand a normal conversation. Your primary sources (Pimsleur, Chai &amp; Conversation) teach the <b>spoken</b> form by design — that's exactly why they anchor your stack.</p>
+        <span class="verdict">Verdict: spoken Persian is the target. Formal is a later add-on, not the foundation.</span>
+      </div>
+      <div class="call turq rv">
+        <span class="tag">Call 2 · Script</span>
+        <h3>Learn the script in parallel — never let it gate speaking</h3>
+        <p>The Perso-Arabic script is right-to-left and, like Arabic, normally omits short vowels — so early reading is slow. That's fine: reading is not your goal, speaking is. The trap is letting a hard script stall your conversation progress for months.</p>
+        <p>So you run two tracks at once. Use a consistent <b>transliteration</b> ("Finglish") as a pronunciation crutch so your mouth keeps moving from day one — while you learn the alphabet on the side in Phase 0. By late Phase 1 the crutch falls away and the script unlocks native input.</p>
+        <span class="verdict">Verdict: script is a 2–3 week Phase 0 project, run beside speaking — not a prerequisite for it.</span>
+      </div>
+      <div class="call gold rv">
+        <span class="tag">Call 3 · Leverage the easy grammar</span>
+        <h3>Persian's grammar is your unfair advantage — lean on it</h3>
+        <p>Category III scares people, but that rating is weighted toward reading and script. The <b>grammar itself is unusually kind</b> to an English speaker: no grammatical gender, no noun cases, no adjective agreement, and strikingly regular verbs. Once you have the script and a few hundred words, you build real sentences fast.</p>
+        <p>The two features to actually learn early are the <b>ezâfe</b> (an unstressed <em>-e</em> that links words: <span class="fa">کتابِ من</span> <em>ketâb-e man</em>, "book of mine") and the <b>subjunctive</b>, which Persian uses constantly ("I want to go" = <em>mikhâm beram</em>). Master those two and the language opens up.</p>
+        <span class="verdict">Verdict: front-load ezâfe + subjunctive; let the absence of gender/cases accelerate you.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PHASES ============ -->
+<section id="phases">
+  <div class="wrap">
+    <div class="rv">
+      <p class="eyebrow">The path</p>
+      <h2>Four phases, each with an exit gate</h2>
+      <p class="lead">Week ranges assume ~5 focused hrs/wk plus daily audio. They flex with adherence — the audio-first multiplier is what compresses them. You advance only when you can demonstrate the gate. Your current phase is marked live.</p>
+    </div>
+
+    <div style="margin-top:32px;" id="phaseStack">
+      <!-- Phase 0 -->
+      <div class="phase rv" data-phase="0">
+        <div class="phase-head">
+          <span class="illum"><svg viewBox="0 0 100 100"><use href="#star8"/></svg><span class="rn">۰</span></span>
+          <div class="ph-t">
+            <div class="cefr">Pre-A1 · Foundations</div>
+            <h3>Sound &amp; Script</h3>
+            <div class="wk">Weeks 1–3</div>
+          </div>
+          <span class="ph-state" data-state="0"></span>
+          <span class="tog">+</span>
+        </div>
+        <div class="phase-body"><div class="phase-inner">
+          <p>Build the two things everything else sits on: the sound system and the alphabet. This is the one phase where you deliberately slow down before speeding up.</p>
+          <div class="pb-grid">
+            <div class="pb-block">
+              <h4>Objectives</h4>
+              <ul>
+                <li>Produce every Persian sound, including the ones new to English: <b>خ</b> (kh), <b>ق/غ</b> (gh), the glottal <b>ع/ء</b>, and the tapped/rolled <b>ر</b> (r).</li>
+                <li>Recognize and write all <b>32 letters</b> in their initial / medial / final / isolated forms.</li>
+                <li>Read short vowel-marked words slowly; lock a consistent transliteration system.</li>
+                <li>Hold your first scripted exchange: greet, give your name, say where you're from.</li>
+              </ul>
+            </div>
+            <div class="pb-block">
+              <h4>What to run</h4>
+              <ul>
+                <li><b>Dead-time:</b> Pimsleur Farsi L1, lessons 1–6 (one/day, in the car or gym).</li>
+                <li><b>Focused:</b> alphabet via a dedicated script resource — Easy Persian's alphabet series (free) or a "Read &amp; Write Persian" workbook. 20 min/day.</li>
+                <li><b>Chai &amp; Conversation:</b> lessons 1–3, following the free lesson guides.</li>
+                <li>Start a tiny Anki deck: greetings, pronouns, the ~30 starter words below.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="gate">
+            <div class="g-l">Exit gate → Phase 1</div>
+            <p>You can sound out a written word unaided (slowly), reproduce all four "hard" sounds, recognize the full alphabet, and run a 4-line self-introduction from memory. ~50 words active.</p>
+          </div>
+        </div></div>
+      </div>
+
+      <!-- Phase 1 -->
+      <div class="phase rv" data-phase="1">
+        <div class="phase-head">
+          <span class="illum"><svg viewBox="0 0 100 100"><use href="#star8"/></svg><span class="rn">۱</span></span>
+          <div class="ph-t">
+            <div class="cefr">A1 · Survival speaking</div>
+            <h3>Predictable Everyday</h3>
+            <div class="wk">Weeks 4–20</div>
+          </div>
+          <span class="ph-state" data-state="1"></span>
+          <span class="tog">+</span>
+        </div>
+        <div class="phase-body"><div class="phase-inner">
+          <p>Get functional in the predictable situations: greetings and small talk, introducing yourself, ordering, shopping, simple directions, numbers and prices. Present tense does most of the work. <b>This is where you start speaking with a human</b> — a tutor enters around week 6, not "someday."</p>
+          <div class="pb-grid">
+            <div class="pb-block">
+              <h4>Language targets</h4>
+              <ul>
+                <li>~300–500 active words (frequency-ordered).</li>
+                <li>Present tense of the high-use verbs: <em>budan</em> (be), <em>dâshtan</em> (have), <em>khâstan</em> (want), <em>raftan</em> (go), <em>khordan</em> (eat), <em>kardan</em> (do).</li>
+                <li>The <b>ezâfe</b> link; plurals with <b>‑hâ</b>; negation (<em>ne-/na-</em>); possessive suffixes (<em>-am, -et, -esh</em>).</li>
+                <li>Question words: <em>chi, kojâ, key, ki, cherâ, chetor, chand</em>.</li>
+              </ul>
+            </div>
+            <div class="pb-block">
+              <h4>What to run</h4>
+              <ul>
+                <li><b>Dead-time:</b> finish Pimsleur L1 (7–30), begin L2.</li>
+                <li><b>Input:</b> Chai &amp; Conversation, working sequentially with lesson guides.</li>
+                <li><b>SRS:</b> Anki, 10 new cards/day + reviews (~15 min).</li>
+                <li><b>Output:</b> iTalki/Preply tutor — start weekly ~week 6. Bring the week's phrases and force yourself to use them live.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="gate">
+            <div class="g-l">Exit gate → Phase 2</div>
+            <p>You can introduce yourself, ask and answer basic questions, order/shop, and survive a slow scripted exchange with a patient speaker. ~500 words active. At least 4 live tutor sessions completed.</p>
+          </div>
+        </div></div>
+      </div>
+
+      <!-- Phase 2 -->
+      <div class="phase rv" data-phase="2">
+        <div class="phase-head">
+          <span class="illum"><svg viewBox="0 0 100 100"><use href="#star8"/></svg><span class="rn">۲</span></span>
+          <div class="ph-t">
+            <div class="cefr">A2 · Functional conversation</div>
+            <h3>Off the Script</h3>
+            <div class="wk">Weeks 20–52</div>
+          </div>
+          <span class="ph-state" data-state="2"></span>
+          <span class="tog">+</span>
+        </div>
+        <div class="phase-body"><div class="phase-inner">
+          <p>Move from scripted lines to flexible everyday conversation: talk about your day, your past, your plans; express preferences and opinions; handle the unexpected turn. You also meet <b>târof</b> — the Persian ritual of polite offering and refusal — which you cannot skip and stay socially fluent.</p>
+          <div class="pb-grid">
+            <div class="pb-block">
+              <h4>Language targets</h4>
+              <ul>
+                <li>~1,000–1,500 active words.</li>
+                <li><b>Past tense</b> and <b>future</b>; the <b>subjunctive</b> in earnest (<em>mikhâm beram</em>, <em>bâyad beram</em>).</li>
+                <li><b>Compound verbs</b> — Persian's core verb machinery (<em>kâr kardan</em> = to work, <em>dust dâshtan</em> = to like).</li>
+                <li>Connectors and discourse glue: <span class="fa">چون</span> <em>chun</em> (because), <span class="fa">واسه‌ی اینکه</span> <em>vâse-ye inke</em> (because / so that), <span class="fa">ولی</span> <em>vali</em> (but), <span class="fa">بعدش</span> <em>ba'desh</em> (then / after that).</li>
+                <li>Working grasp of <b>târof</b> phrases.</li>
+              </ul>
+            </div>
+            <div class="pb-block">
+              <h4>What to run</h4>
+              <ul>
+                <li><b>Dead-time:</b> finish Pimsleur L2; re-listen to older lessons at speed.</li>
+                <li><b>Input:</b> Chai &amp; Conversation intermediate; Easy Persian video; slow-Persian YouTube with subtitles.</li>
+                <li><b>SRS:</b> shift toward <em>sentence</em> cards mined from your lessons, not just single words.</li>
+                <li><b>Output:</b> weekly tutor + a HelloTalk/Tandem exchange partner for free extra reps.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="gate">
+            <div class="g-l">Exit gate → Phase 3</div>
+            <p>You can navigate most everyday interactions, narrate past events and future plans, and hold a ~15-minute tutor chat that mostly stays in Persian. ~1,500 words active.</p>
+          </div>
+        </div></div>
+      </div>
+
+      <!-- Phase 3 -->
+      <div class="phase rv" data-phase="3">
+        <div class="phase-head">
+          <span class="illum"><svg viewBox="0 0 100 100"><use href="#star8"/></svg><span class="rn">۳</span></span>
+          <div class="ph-t">
+            <div class="cefr">B1 · Conversational — the goal</div>
+            <h3>Real, Unscripted Talk</h3>
+            <div class="wk">Year 2</div>
+          </div>
+          <span class="ph-state" data-state="3"></span>
+          <span class="tog">+</span>
+        </div>
+        <div class="phase-body"><div class="phase-inner">
+          <p>The target state: sustain a genuine, unscripted conversation on familiar topics, follow a native speaking at normal colloquial speed, and express and defend an opinion. Hitting this gate is the trigger to drop Persian to maintenance and open French.</p>
+          <div class="pb-grid">
+            <div class="pb-block">
+              <h4>Language targets</h4>
+              <ul>
+                <li>~2,500+ active words; comfort with idiom and colloquial contractions.</li>
+                <li>Understand fast native speech on familiar topics without a transcript.</li>
+                <li>Speak in connected paragraphs, not just sentences — tell a story, give reasons.</li>
+              </ul>
+            </div>
+            <div class="pb-block">
+              <h4>What to run</h4>
+              <ul>
+                <li><b>Input-heavy:</b> Persian podcasts, YouTube, and shows/films with subtitles; use Language Reactor to mine sentences.</li>
+                <li><b>Output:</b> 2× weekly tutor; keep a short spoken/written journal in Persian.</li>
+                <li><b>SRS:</b> cards built entirely from your own mined sentences.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="gate">
+            <div class="g-l">Exit gate → maintenance + unlock French</div>
+            <p>You sustain a 30-minute conversation, understand a native talking normally on familiar topics, and can state and back up an opinion. Persian drops to ~30 min/week upkeep; <b>French unseals.</b></p>
+          </div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WEEKLY OS ============ -->
+<section id="os">
+  <div class="wrap">
+    <div class="rv">
+      <p class="eyebrow">The weekly operating system</p>
+      <h2>How the &lt;5 hours actually get spent</h2>
+    </div>
+    <div class="os-note rv">
+      <p style="margin:0;">The move that defeats your time budget: <b>audio-first reclaims dead time.</b> Pimsleur runs while you drive, train, or do chores — hours that cost you nothing. That's why only ~5 hours are "sit-down," but your <b>effective volume runs 8–10 hours a week.</b> Protect the daily audio lesson above everything else; if a day collapses, the audio is the thing that still happens.</p>
+    </div>
+    <table class="os-table rv">
+      <thead><tr><th>Block</th><th>When / how</th><th>Weekly load</th></tr></thead>
+      <tbody>
+        <tr><td>Pimsleur lesson <span class="mode dead">Dead-time</span></td><td>One 30-min lesson daily — car, gym, walking, chores</td><td>~3.5 hrs (free time)</td></tr>
+        <tr><td>Anki SRS <span class="mode focus">Focused</span></td><td>15 min/day, phone, first thing or in a queue</td><td>~1.5 hrs</td></tr>
+        <tr><td>Chai &amp; Conversation <span class="mode focus">Focused</span></td><td>2 lessons/week with the lesson guide + notes</td><td>~1 hr</td></tr>
+        <tr><td>Live tutor (iTalki) <span class="mode focus">Focused</span></td><td>1 session/week, 30–45 min — the non-negotiable</td><td>~0.75 hr</td></tr>
+        <tr><td>Script / input <span class="mode focus">Focused</span></td><td>Alphabet drills early; comprehensible input later</td><td>~0.75 hr</td></tr>
+      </tbody>
+    </table>
+    <p class="rv" style="margin-top:18px;font-size:.9rem;color:var(--ivory-mute);">Focused total ≈ 4 hrs of sit-down work + ~3.5 hrs of reclaimed audio = ~7.5–10 effective hrs. If you can only protect one focused block, keep the tutor — speaking is the goal and it's the rep you can't fake.</p>
+  </div>
+</section>
+
+<!-- ============ TOOL STACK ============ -->
+<section id="stack">
+  <div class="wrap">
+    <div class="rv">
+      <p class="eyebrow">The orchestrated stack</p>
+      <h2>Six tools, each with one job</h2>
+      <p class="lead">No single app is the moat — the sequencing is. Each tool below does one thing well; the leverage is running them together in the right order. <b>Verified current — Aug 2026.</b></p>
+    </div>
+    <div class="grid g2" style="margin-top:32px;">
+      <div class="tool rv"><div class="job">Speaking spine · dead-time</div><h3>Pimsleur Farsi (L1 + L2)</h3><p>60 audio lessons of Iranian Persian (two levels, 30 each), 30 min per lesson, spoken-first with no drills. Your daily reclaimed-time engine. Level 1 also introduces the alphabet at the end.</p></div>
+      <div class="tool rv"><div class="job">Colloquial backbone · input + lessons</div><h3>Chai &amp; Conversation</h3><p>Structured lessons in <em>spoken</em> conversational Persian with free lesson guides, plus culture and târof. Podcast is free; the paid platform adds workbooks and review.</p><span class="free">Podcast free</span></div>
+      <div class="tool rv"><div class="job">Vocabulary engine · SRS</div><h3>Anki + a Persian frequency deck</h3><p>Spaced repetition on a frequency-ordered deck (search AnkiWeb for a Persian/Farsi top-1000 deck, or build from a frequency list). Later, cards from your own mined sentences.</p><span class="free">Free (desktop)</span></div>
+      <div class="tool rv"><div class="job">Output layer · the one people skip</div><h3>iTalki / Preply</h3><p>Live Persian tutors, cheap, on demand. This is the rep that turns passive knowledge into speech. Weekly from Phase 1, twice-weekly by Phase 3.</p></div>
+      <div class="tool rv"><div class="job">Free reps · exchange</div><h3>HelloTalk / Tandem</h3><p>Text and voice exchange with native speakers. Free volume between tutor sessions; good for low-stakes daily output.</p><span class="free">Free</span></div>
+      <div class="tool rv"><div class="job">Free input · script + listening</div><h3>Easy Persian</h3><p>easypersian.com and its videos — strong for the alphabet in Phase 0 and for graded spoken-Persian listening as you climb.</p><span class="free">Free</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STARTER KIT ============ -->
+<section id="starter">
+  <div class="wrap">
+    <div class="rv">
+      <p class="eyebrow">Starter kit</p>
+      <h2>Your first 30 words — tap to flip</h2>
+      <p class="lead vocab-intro">Tap any card: script → transliteration → meaning. Where the spoken form differs from the written, the card shows the <em>spoken</em> one and flags it — that's Call 1 in practice. These are the highest-leverage words on day one; drop them straight into Anki.</p>
+    </div>
+
+    <div class="vgroup rv">
+      <div class="vg-t">Pronouns &amp; the essentials</div>
+      <div class="chips" id="g-pron"></div>
+    </div>
+    <div class="vgroup rv">
+      <div class="vg-t">Greetings &amp; social</div>
+      <div class="chips" id="g-greet"></div>
+    </div>
+    <div class="vgroup rv">
+      <div class="vg-t">Power verbs (spoken "I ___" form)</div>
+      <div class="chips" id="g-verb"></div>
+    </div>
+    <div class="vgroup rv">
+      <div class="vg-t">Question words &amp; survival phrases</div>
+      <div class="chips" id="g-q"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GATES TRACKER ============ -->
+<section id="track">
+  <div class="wrap rv">
+    <p class="eyebrow">The gates</p>
+    <h2>Advance on demonstrated criteria — not vibes</h2>
+    <div class="track" style="margin-top:26px;">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;">
+        <span style="color:var(--ivory);font-weight:600;">Gates cleared toward French</span>
+        <span class="pct" id="pct">0%</span>
+      </div>
+      <div class="bar-wrap"><div class="bar" id="bar"></div></div>
+      <ul class="milestones" id="ms"></ul>
+    </div>
+    <p style="margin-top:16px;font-size:.85rem;color:var(--ivory-mute);">Tap a gate the moment you can demonstrate it — clearing one awards a burst of drops and moves your rank. This is your gate tracker, not a streak counter.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><span class="fa">موفق باشی</span> — <em>movaffagh bâshi</em>, "may you succeed." Persian first. French sealed until B1.</p>
+  </div>
+</footer>
+
+<!-- SYNC SETUP MODAL -->
+<div class="modal" id="setupModal">
+  <div class="modal-card">
+    <h3>Cloud sync setup</h3>
+    <p class="modal-sub">Paste your Supabase details to sync across phone &amp; desktop. Saved in this browser — so it survives future file updates. Leave blank / “Go local” to stay offline-only.</p>
+    <label class="su-lbl">Project URL
+      <input type="url" id="suUrl" placeholder="https://xxxx.supabase.co" autocomplete="off" spellcheck="false" />
+    </label>
+    <label class="su-lbl">Anon public key
+      <input type="text" id="suKey" placeholder="eyJ…" autocomplete="off" spellcheck="false" />
+    </label>
+    <label class="su-lbl">Sync slug <span class="su-hint">private — must match on every device</span>
+      <input type="text" id="suSlug" placeholder="andrew-persian" autocomplete="off" spellcheck="false" />
+    </label>
+    <div class="su-result" id="suResult"></div>
+    <div class="modal-actions">
+      <button class="ubtn" id="suTest">Test connection</button>
+      <span class="spacer"></span>
+      <button class="ubtn" id="suClear">Go local</button>
+      <button class="ubtn primary" id="suSave">Save</button>
+      <button class="ubtn" id="suClose">Close</button>
+    </div>
+  </div>
+</div>
+
+<div class="cal-tip" id="calTip"></div>
+<div id="toast"></div>
+
+<script>
+/* ============================================================
+   PERSIAN — SPEAKING-FIRST STUDY CONSOLE
+   Offline-first (localStorage) + optional Supabase cloud sync.
+   ============================================================ */
+
+/* ---------- 1. CONFIG — enable cross-device sync ----------
+   TWO ways to set this up:
+   (A) Easiest: open the app, click "⚙ Sync setup", paste your keys, hit Test → Save.
+       Those are stored in this browser and SURVIVE file updates (recommended).
+   (B) Or hard-code them here — the in-app settings override these if present. */
+const CONFIG = {
+  SUPABASE_URL:      "https://uupxjlyqowvblorreyox.supabase.co",            // e.g. "https://abcdxyz.supabase.co"
+  SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV1cHhqbHlxb3d2YmxvcnJleW94Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODYyNjA1OTEsImV4cCI6MjEwMTgzNjU5MX0.K_NP8IpTYIco-tjxI3IUNPi9pFXEisB054cV5MFGq9o",            // your project's anon public key
+  SYNC_SLUG:         "andrew-persian-7f3q" // any private string; every device must match
+};
+const TABLE = "persian_progress";
+const CFG_KEY = "persian_sync_cfg";
+function loadSyncCfg(){
+  try{ const o=JSON.parse(localStorage.getItem(CFG_KEY)||"null");
+    if(o && o.SUPABASE_URL && o.SUPABASE_ANON_KEY) return o; }catch(e){}
+  return null;
+}
+let SYNC = loadSyncCfg() || CONFIG;               // in-app settings override the file
+function syncOn(){ return !!(SYNC.SUPABASE_URL && SYNC.SUPABASE_ANON_KEY); }
+
+/* ---------- 2. DATA MODEL ---------- */
+const ACTIVITIES = [
+  {id:"pimsleur", label:"Pimsleur lesson",        note:"daily audio · the keystone",     drops:10, keystone:true},
+  {id:"anki",     label:"Anki reviews",           note:"SRS · ~15 min",                  drops:8},
+  {id:"chai",     label:"Chai & Conversation",    note:"lesson + free guide",            drops:8},
+  {id:"script",   label:"Script / input drill",   note:"alphabet early, input later",    drops:6},
+  {id:"exchange", label:"HelloTalk / Tandem",     note:"free reps between tutor days",   drops:5},
+  {id:"tutor",    label:"Live tutor session",     note:"the rep you can't fake",         drops:30, weekly:true},
+  {id:"listen",   label:"Listening (auto-logged)",note:"finished an episode in-tool",    drops:6}
+];
+const ACT = Object.fromEntries(ACTIVITIES.map(a=>[a.id,a]));
+
+/* Where each activity lives — the console launches your stack. Opening ≠ logging. */
+const RESOURCE_URLS = {
+  pimsleur:"https://www.pimsleur.com/learn-farsi-persian",
+  anki:"https://apps.ankiweb.net/",
+  chai:"https://www.chaiandconversation.com/",
+  script:"https://www.easypersian.com/",
+  exchange:"https://www.hellotalk.com/",
+  tutor:"https://www.italki.com/"
+};
+
+/* Date the Today panel logs to (defaults to today; back-dating changes it). Not persisted. */
+let logDate = null; // set in boot()
+
+/* Per-phase daily plan — which activities surface in TODAY, with phase-specific wording. */
+const PHASE_PLAN = {
+  0:{name:"Sound & Script", cefr:"Pre-A1", focus:"Lock the alphabet and the four hard sounds. Slow down here so everything after speeds up.",
+     items:[
+       {act:"pimsleur", txt:"Pimsleur L1 — next lesson", dyn:true},
+       {act:"script",   txt:"Alphabet drill — 20 min (Easy Persian)"},
+       {act:"chai",     txt:"Chai & Conversation — lessons 1–3"},
+       {act:"anki",     txt:"Anki — starter deck (greetings, pronouns)"}
+     ]},
+  1:{name:"Predictable Everyday", cefr:"A1", focus:"Get functional in predictable situations — and start speaking with a tutor around week 6.",
+     items:[
+       {act:"pimsleur", txt:"Pimsleur — next lesson", dyn:true},
+       {act:"anki",     txt:"Anki — 10 new + reviews"},
+       {act:"chai",     txt:"Chai & Conversation — next lesson"},
+       {act:"tutor",    txt:"iTalki tutor — weekly session", weekly:true}
+     ]},
+  2:{name:"Off the Script", cefr:"A2", focus:"Move from scripted lines to flexible talk — past, future, opinions, and târof.",
+     items:[
+       {act:"pimsleur", txt:"Pimsleur L2 — next lesson", dyn:true},
+       {act:"anki",     txt:"Anki — sentence cards from your lessons"},
+       {act:"chai",     txt:"Chai intermediate / slow-Persian video"},
+       {act:"tutor",    txt:"Tutor — weekly", weekly:true},
+       {act:"exchange", txt:"HelloTalk / Tandem — a few reps"}
+     ]},
+  3:{name:"Real, Unscripted Talk", cefr:"B1", focus:"Input-heavy: podcasts, shows, mined sentences — and twice-weekly output. This gate unseals French.",
+     items:[
+       {act:"script",   txt:"Input — podcast / show w/ subtitles (mine sentences)"},
+       {act:"anki",     txt:"Anki — your own mined sentences"},
+       {act:"tutor",    txt:"Tutor — 2× weekly", weekly:true},
+       {act:"exchange", txt:"Short spoken/written journal in Persian"}
+     ]},
+  4:{name:"Persian — Achieved", cefr:"B1+", focus:"You cleared B1. Persian drops to ~30 min/week maintenance. French is open.",
+     items:[
+       {act:"script",   txt:"Maintenance — a podcast or show"},
+       {act:"tutor",    txt:"Occasional tutor check-in"}
+     ]}
+};
+
+/* Gates → drive rank, phase, French unlock. Clearing awards a burst of drops. */
+const MILES=[
+  {k:"p0",    t:"Phase 0 cleared",              s:"Full alphabet + all sounds + 4-line intro", drops:100},
+  {k:"tutor1",t:"First live tutor session",     s:"You spoke Persian to a human",              drops:60},
+  {k:"a1",    t:"A1 gate cleared",              s:"~500 words · survive a slow exchange",      drops:150},
+  {k:"pim1",  t:"Pimsleur Level 1 finished",    s:"30 lessons",                                 drops:120},
+  {k:"a2",    t:"A2 gate cleared",              s:"~1,500 words · past & future · 15-min chat", drops:250},
+  {k:"pim2",  t:"Pimsleur Level 2 finished",    s:"60 lessons total",                           drops:120},
+  {k:"b1",    t:"B1 gate cleared → unlock French", s:"30-min conversation",                     drops:400}
+];
+
+const LANGS=[
+  {nm:"Persian",  idx:"Language 1", note:"Iranian / Tehrani"},
+  {nm:"French",   idx:"Language 2", note:"unlocks at Persian B1"},
+  {nm:"Italian",  idx:"Language 3", note:"after French"},
+  {nm:"Russian",  idx:"Language 4", note:"after Italian"}
+];
+
+/* ---------- 3. STATE ---------- */
+const LS_KEY="persian_console_v1";
+let state=null;
+function freshState(){
+  return {
+    version:1,
+    startDate:todayKey(),
+    drops:0,
+    streak:{count:0,lastDate:null,freezeLastUsed:null},
+    days:{},                 // "YYYY-MM-DD": {drops, acts:{id:count}}
+    miles:{},                // gate key -> true
+    pim:{level:1,lesson:1},  // Pimsleur position
+    audioUrl:"",             // last pasted listen URL (remembered across devices)
+    lastBackup:null,
+    updatedAt:new Date().toISOString()
+  };
+}
+
+/* ---------- 4. DATE HELPERS (local time) ---------- */
+function pad(n){return n<10?"0"+n:""+n;}
+function keyOf(d){return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate());}
+function todayKey(){return keyOf(new Date());}
+function parseKey(k){const[y,m,d]=k.split("-").map(Number);return new Date(y,m-1,d);}
+function daysBetween(a,b){ // whole days from key a -> key b
+  return Math.round((parseKey(b)-parseKey(a))/86400000);
+}
+
+/* ---------- 5. DERIVED ---------- */
+function currentPhase(){
+  const m=state.miles;
+  if(!m.p0) return 0;
+  if(!m.a1) return 1;
+  if(!m.a2) return 2;
+  if(!m.b1) return 3;
+  return 4;
+}
+function rankInfo(){
+  const p=currentPhase();
+  const map=[
+    {r:"Pre-A1", e:"Foundations",           sub:"Building the sound system and the script."},
+    {r:"A1",     e:"Survival Speaking",     sub:"Functional in predictable, everyday situations."},
+    {r:"A2",     e:"Functional Conversation",sub:"Off the script — past, future, opinions, târof."},
+    {r:"B1",     e:"Conversational",         sub:"Reaching for real, unscripted talk. The goal."},
+    {r:"B1+",    e:"Persian Achieved",       sub:"Cleared. Maintenance mode — French is open."}
+  ];
+  return map[p];
+}
+function gatesCleared(){return MILES.filter(m=>state.miles[m.k]).length;}
+function unlockPct(){return Math.round(gatesCleared()/MILES.length*100);}
+function frenchUnlocked(){return !!state.miles.b1;}
+
+/* ---------- 6. LOGGING ACTIONS ---------- */
+function dayRec(k){
+  if(!state.days[k]) state.days[k]={drops:0,acts:{}};
+  return state.days[k];
+}
+function todayRec(){ return dayRec(todayKey()); }
+function studiedKey(k){ const r=state.days[k]; return !!(r && r.drops>0); }
+function studiedDate(d){ return studiedKey(keyOf(d)); }
+
+/* Streak is DERIVED from the day history, so back-dating repairs it automatically.
+   Rule: consecutive studied days counting back from today (or yesterday if today
+   isn't logged yet). A single missed day is forgiven ("rest day") — but only one
+   forgiven gap per rolling 7 days, which also closes the every-other-day loophole.
+   Two missed days in a row breaks the run. */
+function computeStreak(){
+  const t=new Date(); t.setHours(0,0,0,0);
+  let anchor;
+  if(studiedDate(t)) anchor=new Date(t);
+  else { const y=new Date(t); y.setDate(t.getDate()-1);
+    if(studiedDate(y)) anchor=new Date(y); else return {count:0,alive:false}; }
+  let count=0, lastGrace=null, d=new Date(anchor), guard=0;
+  while(guard++<4000){
+    if(studiedDate(d)){ count++; }
+    else {
+      const prev=new Date(d); prev.setDate(d.getDate()-1);
+      if(!studiedDate(prev)) break;                              // two in a row → break
+      if(lastGrace && daysBetween(keyOf(d),keyOf(lastGrace))<7) break; // rest day already spent this week
+      lastGrace=new Date(d);                                     // forgive this single gap
+    }
+    d.setDate(d.getDate()-1);
+    if(state.startDate && d<parseKey(state.startDate)) break;
+  }
+  return {count,alive:true};
+}
+/* Is a "rest day" currently available, and if not, in how many days does it renew? */
+function graceStatus(){
+  const t=new Date(); t.setHours(0,0,0,0);
+  for(let i=1;i<=7;i++){
+    const d=new Date(t); d.setDate(t.getDate()-i);
+    if(!studiedDate(d)){
+      const before=new Date(d); before.setDate(d.getDate()-1);
+      const after=new Date(d);  after.setDate(d.getDate()+1);
+      if(studiedDate(before)&&studiedDate(after)) return {available:false,renews:(7-i+1)};
+    }
+  }
+  return {available:true,renews:0};
+}
+function logActivity(id, dateKey){
+  const a=ACT[id]; if(!a) return;
+  const k=dateKey||logDate||todayKey();
+  const rec=dayRec(k);
+  rec.acts[id]=(rec.acts[id]||0)+1;
+  rec.drops+=a.drops;
+  state.drops+=a.drops;
+  if(id==="pimsleur" && k===todayKey()) advancePim(1,true);
+  save(); render();
+  const when = (k===todayKey()) ? "" : (" · "+shortDate(k));
+  toast('+'+a.drops+' drops · '+a.label+when);
+}
+function advancePim(delta,silent){
+  let {level,lesson}=state.pim;
+  lesson+=delta;
+  if(lesson>30 && level===1){level=2;lesson=lesson-30;}
+  if(level===2 && lesson>30){level=2;lesson=30;}
+  if(lesson<1){ if(level===2){level=1;lesson=30+lesson;} else {lesson=1;} }
+  state.pim={level,lesson};
+  if(!silent){ save(); render(); }
+}
+function toggleMile(k){
+  const was=!!state.miles[k];
+  state.miles[k]=!was;
+  const m=MILES.find(x=>x.k===k);
+  const frBefore=frenchUnlocked();
+  if(!was){ state.drops+=m.drops; }
+  else { state.drops=Math.max(0,state.drops-m.drops); }
+  save(); render();
+  if(!was){
+    if(k==="b1" && !frBefore) celebrateFrench();
+    else toast('Gate cleared · +'+m.drops+' drops');
+  }
+}
+
+/* ---------- 7. PERSISTENCE ---------- */
+let pushTimer=null;
+function save(){
+  state.updatedAt=new Date().toISOString();
+  try{ localStorage.setItem(LS_KEY, JSON.stringify(state)); }catch(e){}
+  if(syncOn()){
+    clearTimeout(pushTimer);
+    pushTimer=setTimeout(pushRemote, 900);
+  }
+}
+function loadLocal(){
+  try{
+    const raw=localStorage.getItem(LS_KEY);
+    if(raw) return JSON.parse(raw);
+  }catch(e){}
+  return null;
+}
+async function pushRemote(){
+  if(!syncOn()) return;
+  setSync("syncing","Syncing…");
+  try{
+    const res=await fetch(SYNC.SUPABASE_URL+"/rest/v1/"+TABLE,{
+      method:"POST",
+      headers:{
+        "apikey":SYNC.SUPABASE_ANON_KEY,
+        "Authorization":"Bearer "+SYNC.SUPABASE_ANON_KEY,
+        "Content-Type":"application/json",
+        "Prefer":"resolution=merge-duplicates,return=minimal"
+      },
+      body:JSON.stringify([{slug:SYNC.SYNC_SLUG,data:state,updated_at:state.updatedAt}])
+    });
+    if(!res.ok) throw new Error("HTTP "+res.status);
+    setSync("ok","Synced");
+  }catch(e){
+    setSync("err","Sync failed — saved locally");
+  }
+}
+async function pullRemote(){
+  if(!syncOn()) return null;
+  try{
+    const url=SYNC.SUPABASE_URL+"/rest/v1/"+TABLE+"?slug=eq."+encodeURIComponent(SYNC.SYNC_SLUG)+"&select=data,updated_at";
+    const res=await fetch(url,{headers:{
+      "apikey":SYNC.SUPABASE_ANON_KEY,
+      "Authorization":"Bearer "+SYNC.SUPABASE_ANON_KEY
+    }});
+    if(!res.ok) throw new Error("HTTP "+res.status);
+    const rows=await res.json();
+    return rows && rows[0] ? rows[0] : null;
+  }catch(e){ return null; }
+}
+function setSync(cls,txt){
+  const pill=document.getElementById("syncPill");
+  const t=document.getElementById("syncTxt");
+  pill.className="syncpill "+cls;
+  t.textContent=txt;
+}
+
+/* ---------- 7b. SYNC SETUP MODAL (config in-browser + connection tester) ---------- */
+function openSetup(){
+  document.getElementById("suUrl").value=SYNC.SUPABASE_URL||"";
+  document.getElementById("suKey").value=SYNC.SUPABASE_ANON_KEY||"";
+  document.getElementById("suSlug").value=SYNC.SYNC_SLUG||"andrew-persian";
+  const out=document.getElementById("suResult"); out.textContent=""; out.className="su-result";
+  document.getElementById("setupModal").classList.add("open");
+}
+function closeSetup(){ document.getElementById("setupModal").classList.remove("open"); }
+function readForm(){
+  return {
+    SUPABASE_URL:(document.getElementById("suUrl").value||"").trim().replace(/\/+$/,""),
+    SUPABASE_ANON_KEY:(document.getElementById("suKey").value||"").trim(),
+    SYNC_SLUG:(document.getElementById("suSlug").value||"").trim()||"andrew-persian"
+  };
+}
+function suSay(msg,cls){ const o=document.getElementById("suResult"); o.textContent=msg; o.className="su-result"+(cls?(" "+cls):""); }
+async function testSetup(){
+  const cfg=readForm();
+  if(!cfg.SUPABASE_URL||!cfg.SUPABASE_ANON_KEY){ suSay("Enter both a Project URL and an anon key first.","err"); return; }
+  if(!/^https:\/\/[a-z0-9-]+\.supabase\.co$/i.test(cfg.SUPABASE_URL)){ suSay("That URL looks off — it should be https://<project-id>.supabase.co","err"); return; }
+  suSay("Testing…");
+  const ctrl=new AbortController();
+  const timer=setTimeout(()=>ctrl.abort(),8000);
+  try{
+    const url=cfg.SUPABASE_URL+"/rest/v1/"+TABLE+"?select=slug&limit=1";
+    const res=await fetch(url,{headers:{apikey:cfg.SUPABASE_ANON_KEY,Authorization:"Bearer "+cfg.SUPABASE_ANON_KEY},signal:ctrl.signal});
+    clearTimeout(timer);
+    if(res.ok){ suSay("✓ Connected — table found. Hit Save to start syncing.","ok"); return; }
+    if(res.status===401||res.status===403) suSay("✗ Key rejected ("+res.status+"). Recheck the anon key, or the RLS policy from the SQL step.","err");
+    else if(res.status===404) suSay("✗ Table not found (404). Run the CREATE TABLE SQL from the setup guide (or the URL is wrong).","err");
+    else suSay("✗ Error "+res.status+". Double-check the URL and key.","err");
+  }catch(e){
+    clearTimeout(timer);
+    if(e.name==="AbortError") suSay("✗ Timed out reaching the server. Check the Project URL and your connection.","err");
+    else suSay("✗ Couldn't reach the server. Check the Project URL (https://<id>.supabase.co).","err");
+  }
+}
+function saveSetup(){
+  const cfg=readForm();
+  if(!cfg.SUPABASE_URL||!cfg.SUPABASE_ANON_KEY){ suSay("Enter a URL and anon key — or hit “Go local” to stay offline.","err"); return; }
+  try{ localStorage.setItem(CFG_KEY, JSON.stringify(cfg)); }catch(e){}
+  SYNC=cfg; closeSetup(); toast("Sync settings saved"); reinitSync();
+}
+function clearSetup(){
+  try{ localStorage.removeItem(CFG_KEY); }catch(e){}
+  SYNC=CONFIG; closeSetup(); toast("Reverted to local-only");
+  render(); setSync("local","Local only — add Supabase keys to sync across devices");
+}
+
+/* ---------- 8. RENDER ---------- */
+function render(){
+  const p=currentPhase(), rk=rankInfo();
+  const st=computeStreak();
+  // bar
+  document.getElementById("barRank").textContent=rk.r;
+  document.getElementById("barStreak").textContent=st.count;
+  document.getElementById("barDrops").textContent=fmt(state.drops);
+  document.getElementById("barUnlock").textContent=unlockPct()+"%";
+  // rank badge
+  document.getElementById("rankTitle").innerHTML=rk.r+" · <em>"+rk.e+"</em>";
+  document.getElementById("rankSub").textContent=rk.sub;
+  // stat cards
+  document.getElementById("sStreak").textContent=st.count;
+  document.getElementById("sStreakSub").textContent=streakSub(st);
+  renderFreezeBadge();
+  document.getElementById("sDrops").textContent=fmt(state.drops);
+  document.getElementById("sDropsSub").innerHTML=todayRec().drops>0?("+"+todayRec().drops+" today"):"&nbsp;";
+  document.getElementById("sDays").textContent=Object.values(state.days).filter(d=>d.drops>0).length;
+  const startTxt=state.startDate?("since "+shortDate(state.startDate)):"";
+  document.getElementById("sDaysSub").textContent=startTxt;
+  document.getElementById("sPhase").textContent=p<4?p:"✓";
+  document.getElementById("sPhaseSub").textContent=PHASE_PLAN[p].name;
+  renderToday(p);
+  renderLadder();
+  renderCalendar();
+  renderMiles();
+  renderPhaseStates(p);
+  // pim label
+  document.getElementById("pimLabel").textContent="Pimsleur L"+state.pim.level+" · Lesson "+state.pim.lesson;
+}
+function fmt(n){return n>=1000?(n).toLocaleString("en-US"):(""+n);}
+function shortDate(k){const d=parseKey(k);return d.toLocaleDateString("en-US",{month:"short",day:"numeric"});}
+function streakSub(st){
+  st=st||computeStreak();
+  if(st.count===0) return studiedKey(todayKey())?"logged today ✓":"start today";
+  if(studiedKey(todayKey())) return "logged today ✓";
+  return "study today to keep it";
+}
+function renderFreezeBadge(){
+  const el=document.getElementById("freezeBadge"); if(!el) return;
+  const g=graceStatus();
+  if(g.available){ el.className="freezebadge avail"; el.textContent="🛡 rest day available"; }
+  else { el.className="freezebadge used"; el.textContent="🛡 rest day used · renews "+g.renews+"d"; }
+}
+function renderToday(p){
+  const isToday=(logDate===todayKey());
+  document.getElementById("todayDate").textContent=parseKey(logDate).toLocaleDateString("en-US",{weekday:"long",month:"short",day:"numeric"});
+  const plan=PHASE_PLAN[p];
+  document.getElementById("todayPhaseTitle").textContent="Phase "+(p<4?p:"✓")+" · "+plan.name;
+  document.getElementById("todayFocus").textContent=plan.focus;
+  document.getElementById("todayDrops").textContent=dayRec(logDate).drops;
+  // log-for (back-dating) control
+  const inp=document.getElementById("logDateInput");
+  if(inp){ inp.value=logDate; inp.max=todayKey(); if(state.startDate) inp.min=state.startDate; }
+  const banner=document.getElementById("logBanner"), back=document.getElementById("logTodayBtn");
+  if(banner&&back){
+    if(!isToday){ banner.hidden=false; back.hidden=false;
+      banner.textContent="back-logging "+parseKey(logDate).toLocaleDateString("en-US",{weekday:"short",month:"short",day:"numeric"});
+    } else { banner.hidden=true; back.hidden=true; }
+  }
+  const host=document.getElementById("todayList"); host.innerHTML="";
+  const rec=dayRec(logDate);
+  plan.items.forEach(it=>{
+    const a=ACT[it.act];
+    const li=document.createElement("li");
+    const doneCount=rec.acts[it.act]||0;
+    const weeklyDone=isToday && it.weekly && weeklyDoneThisWeek(it.act,weekKey());
+    if(doneCount>0 || weeklyDone) li.classList.add("logged");
+    let label=it.txt;
+    if(it.dyn && it.act==="pimsleur") label="Pimsleur L"+state.pim.level+" · Lesson "+state.pim.lesson;
+    const dropTxt=it.weekly?("+"+a.drops+" · weekly"):("+"+a.drops);
+    const url=RESOURCE_URLS[it.act]||"#";
+    li.innerHTML=
+      '<span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1a31" stroke-width="3.5"><path d="M4 12l6 6L20 6"/></svg></span>'+
+      '<span class="ti"><span class="ta">'+label+'</span><span class="tn">'+a.note+(doneCount>0?(" · logged ×"+doneCount):"")+'</span></span>'+
+      '<span class="dp">'+dropTxt+'</span>'+
+      '<a class="open" href="'+url+'" target="_blank" rel="noopener" title="Open '+a.label+' (opens the app — does not log)" aria-label="Open '+a.label+'">↗</a>';
+    li.addEventListener("click",()=>logActivity(it.act,logDate));
+    li.querySelector(".open").addEventListener("click",(e)=>e.stopPropagation());
+    host.appendChild(li);
+  });
+}
+function weekKey(){ // ISO-ish week bucket: year + week number
+  const d=new Date(); const onejan=new Date(d.getFullYear(),0,1);
+  const wk=Math.ceil((((d-onejan)/86400000)+onejan.getDay()+1)/7);
+  return d.getFullYear()+"-W"+wk;
+}
+function weeklyDoneThisWeek(actId,wk){
+  // scan days in current calendar week for this activity
+  const now=new Date(); const day=now.getDay(); // 0 Sun
+  for(let i=0;i<=day;i++){
+    const d=new Date(now); d.setDate(now.getDate()-i);
+    const rec=state.days[keyOf(d)];
+    if(rec && rec.acts[actId]) return true;
+  }
+  return false;
+}
+function renderLadder(){
+  const host=document.getElementById("ladder"); host.innerHTML="";
+  const p=currentPhase();
+  LANGS.forEach((L,i)=>{
+    const el=document.createElement("div"); el.className="lang";
+    if(i===0){
+      el.classList.add("active");
+      const pct=unlockPct();
+      el.innerHTML='<div class="idx">'+L.idx+'</div><div class="nm">'+L.nm+'</div>'+
+        '<div class="st">'+rankInfo().r+' · '+rankInfo().e+'</div>'+
+        '<div class="prog"><i style="width:'+pct+'%"></i></div>'+
+        '<div class="unlockat">'+gatesCleared()+' / '+MILES.length+' gates → French</div>';
+    } else if(i===1){
+      const open=frenchUnlocked();
+      if(open){ el.classList.add("just-unlocked");
+        el.innerHTML='<div class="idx">'+L.idx+'</div><div class="nm">'+L.nm+'</div>'+
+          '<div class="st" style="color:var(--turq-text)">Unlocked — ready to begin</div>';
+      } else {
+        el.classList.add("locked");
+        el.innerHTML='<div class="idx">'+L.idx+'</div><div class="nm">'+L.nm+'</div>'+
+          '<div class="lockrow">'+lockSvg()+'Unlocks at Persian B1</div>';
+      }
+    } else {
+      el.classList.add("locked");
+      el.innerHTML='<div class="idx">'+L.idx+'</div><div class="nm">'+L.nm+'</div>'+
+        '<div class="lockrow">'+lockSvg()+L.note+'</div>';
+    }
+    host.appendChild(el);
+  });
+}
+function lockSvg(){return '<svg class="lk" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>';}
+
+/* calendar heatmap */
+function renderCalendar(){
+  const host=document.getElementById("heat"); host.innerHTML="";
+  const today=new Date();
+  let start=state.startDate?parseKey(state.startDate):new Date();
+  // include at least ~18 weeks of context, but not before startDate
+  const minStart=new Date(today); minStart.setDate(today.getDate()-7*17);
+  if(start>minStart) start=start; // keep from real start (short history is fine)
+  // back up to Sunday
+  const gridStart=new Date(start); gridStart.setDate(start.getDate()-start.getDay());
+  const weeks=[];
+  let cur=new Date(gridStart);
+  while(cur<=today){
+    const col=[];
+    for(let d=0;d<7;d++){
+      const k=keyOf(cur);
+      const inRange=(cur>=parseKey(state.startDate)) && (cur<=today);
+      const rec=state.days[k];
+      col.push({k,drops:rec?rec.drops:0,inRange,isToday:k===todayKey()});
+      cur.setDate(cur.getDate()+1);
+    }
+    weeks.push(col);
+  }
+  weeks.forEach(col=>{
+    const wc=document.createElement("div"); wc.className="wkcol";
+    col.forEach(cell=>{
+      const c=document.createElement("div"); c.className="cell";
+      if(cell.isToday) c.classList.add("today");
+      if(cell.inRange){
+        const lvl=dropLevel(cell.drops);
+        if(lvl) c.classList.add("l"+lvl);
+        c.dataset.k=cell.k; c.dataset.d=cell.drops;
+        c.addEventListener("mousemove",showTip);
+        c.addEventListener("mouseleave",hideTip);
+      } else { c.style.visibility="hidden"; }
+      wc.appendChild(c);
+    });
+    host.appendChild(wc);
+  });
+  host.scrollLeft=host.scrollWidth;
+}
+function dropLevel(d){ if(d<=0)return 0; if(d<12)return 1; if(d<24)return 2; if(d<40)return 3; return 4; }
+function showTip(e){
+  const t=document.getElementById("calTip");
+  const k=e.currentTarget.dataset.k, d=e.currentTarget.dataset.d;
+  t.innerHTML="<b>"+d+" drops</b> · "+parseKey(k).toLocaleDateString("en-US",{weekday:"short",month:"short",day:"numeric"});
+  t.style.opacity="1";
+  t.style.left=Math.min(e.clientX+12,window.innerWidth-230)+"px";
+  t.style.top=(e.clientY+14)+"px";
+}
+function hideTip(){document.getElementById("calTip").style.opacity="0";}
+
+function renderMiles(){
+  const host=document.getElementById("ms"); host.innerHTML="";
+  MILES.forEach(m=>{
+    const li=document.createElement("li");
+    if(state.miles[m.k]) li.classList.add("done");
+    li.innerHTML='<span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#0d1a31" stroke-width="3.5"><path d="M4 12l6 6L20 6"/></svg></span>'+
+      '<span class="ms-t">'+m.t+'<span class="dropbadge">+'+m.drops+'</span><small>'+m.s+'</small></span>';
+    li.addEventListener("click",()=>toggleMile(m.k));
+    host.appendChild(li);
+  });
+  document.getElementById("bar").style.width=unlockPct()+"%";
+  document.getElementById("pct").textContent=unlockPct()+"%";
+}
+function renderPhaseStates(p){
+  document.querySelectorAll(".phase[data-phase]").forEach(ph=>{
+    const idx=+ph.getAttribute("data-phase");
+    const badge=ph.querySelector(".ph-state");
+    badge.className="ph-state";
+    if(idx<p){ badge.classList.add("done"); badge.textContent="Cleared"; }
+    else if(idx===p){ badge.classList.add("cur"); badge.textContent="You are here"; ph.classList.add("open"); }
+    else { badge.textContent="Locked"; }
+  });
+}
+
+/* ---------- 9. CELEBRATION (peak-end) ---------- */
+function celebrateFrench(){
+  toast('<span class="fa">🎉</span> B1 cleared — <b>French is unsealed.</b> Persian → maintenance.');
+  // brief golden burst on the ladder
+  setTimeout(()=>{ const fr=document.querySelectorAll(".lang")[1]; if(fr){fr.scrollIntoView({behavior:"smooth",block:"center"});} },400);
+}
+
+/* ---------- 10. TOAST ---------- */
+let toastTimer=null;
+function toast(html){
+  const t=document.getElementById("toast");
+  t.innerHTML=html; t.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>t.classList.remove("show"),2600);
+}
+
+/* ---------- 11. EXPORT / IMPORT (backup + no-config sync) ---------- */
+function exportBackup(){
+  state.lastBackup=todayKey(); save();
+  const blob=new Blob([JSON.stringify(state,null,2)],{type:"application/json"});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement("a");
+  a.href=url; a.download="persian-progress-"+todayKey()+".json"; a.click();
+  URL.revokeObjectURL(url);
+  toast("Backup downloaded");
+}
+function importBackup(){
+  const inp=document.createElement("input"); inp.type="file"; inp.accept="application/json,.json";
+  inp.onchange=()=>{
+    const f=inp.files[0]; if(!f) return;
+    const r=new FileReader();
+    r.onload=()=>{
+      try{
+        const obj=JSON.parse(r.result);
+        if(!obj || typeof obj!=="object") throw new Error("bad file");
+        state=migrate(obj); save(); render();
+        toast("Progress imported");
+      }catch(e){ toast("Couldn't read that file"); }
+    };
+    r.readAsText(f);
+  };
+  inp.click();
+}
+function migrate(obj){
+  const base=freshState();
+  const s=Object.assign(base,obj);
+  s.streak=Object.assign(base.streak,obj.streak||{});
+  s.pim=Object.assign(base.pim,obj.pim||{});
+  s.days=obj.days||{};
+  s.miles=obj.miles||{};
+  return s;
+}
+
+/* ---------- 12. BOOT ---------- */
+async function boot(){
+  state=loadLocal()||freshState();
+  state=migrate(state);
+  logDate=todayKey();
+  render();
+  buildChips();
+  wireStatic();
+  wireAudio();
+  scatterMotif();
+  observeReveal();
+
+  await reinitSync();
+}
+
+/* Pull-then-reconcile; used on boot and after saving sync settings. */
+async function reinitSync(){
+  if(syncOn()){
+    setSync("syncing","Checking cloud…");
+    const remote=await pullRemote();
+    if(remote && remote.data){
+      const rt=remote.updated_at||remote.data.updatedAt;
+      if(!state.updatedAt || (rt && Date.parse(rt)>Date.parse(state.updatedAt))){
+        state=migrate(remote.data);
+        try{localStorage.setItem(LS_KEY,JSON.stringify(state));}catch(e){}
+        render();
+      } else {
+        pushRemote(); // local is newer — push it up
+      }
+      setSync("ok","Synced");
+    } else {
+      pushRemote();
+      setSync("ok","Synced");
+    }
+  } else {
+    setSync("local","Local only — add Supabase keys to sync across devices");
+  }
+}
+
+function setLogDate(k){
+  const tk=todayKey();
+  if(!k) k=tk;
+  if(k>tk) k=tk;                                   // never the future
+  if(state.startDate && k<state.startDate) k=state.startDate;
+  logDate=k; render();
+}
+function wireStatic(){
+  document.getElementById("btnExport").addEventListener("click",exportBackup);
+  document.getElementById("btnImport").addEventListener("click",importBackup);
+  document.getElementById("btnSetup").addEventListener("click",openSetup);
+  document.getElementById("suTest").addEventListener("click",testSetup);
+  document.getElementById("suSave").addEventListener("click",saveSetup);
+  document.getElementById("suClear").addEventListener("click",clearSetup);
+  document.getElementById("suClose").addEventListener("click",closeSetup);
+  document.getElementById("setupModal").addEventListener("click",(e)=>{ if(e.target.id==="setupModal") closeSetup(); });
+  document.getElementById("pimPlus").addEventListener("click",()=>advancePim(1));
+  document.getElementById("pimMinus").addEventListener("click",()=>advancePim(-1));
+  const ld=document.getElementById("logDateInput");
+  if(ld) ld.addEventListener("change",()=>setLogDate(ld.value));
+  const lt=document.getElementById("logTodayBtn");
+  if(lt) lt.addEventListener("click",()=>setLogDate(todayKey()));
+  document.querySelectorAll(".phase-head").forEach(h=>{
+    h.addEventListener("click",()=>h.parentElement.classList.toggle("open"));
+  });
+}
+
+/* ---------- in-tool audio player with genuine auto-logging ---------- */
+function wireAudio(){
+  const el=document.getElementById("audioEl");
+  const inp=document.getElementById("audioUrl");
+  const status=document.getElementById("audioStatus");
+  const fileBtn=document.getElementById("audioFile");
+  const loadBtn=document.getElementById("audioLoad");
+  if(!el) return;
+  let logged=false;
+  if(state.audioUrl) inp.value=state.audioUrl;
+  const setStatus=(t,done)=>{ status.textContent=t; status.className="listen-status"+(done?" done":""); };
+  function loadSrc(src,label,persist){
+    logged=false; el.src=src; el.load();
+    if(persist!==false){ state.audioUrl=src; save(); }
+    setStatus("Loaded"+(label?(" · "+label):"")+" — press play. It logs itself when it finishes.");
+    el.play().catch(()=>{});
+  }
+  loadBtn.addEventListener("click",()=>{
+    const u=(inp.value||"").trim();
+    if(!u){ setStatus("Paste an audio URL first."); return; }
+    loadSrc(u,"",true);
+  });
+  inp.addEventListener("keydown",(e)=>{ if(e.key==="Enter") loadBtn.click(); });
+  fileBtn.addEventListener("click",()=>{
+    const fi=document.createElement("input"); fi.type="file"; fi.accept="audio/*";
+    fi.onchange=()=>{ const f=fi.files[0]; if(!f) return; loadSrc(URL.createObjectURL(f),f.name,false); };
+    fi.click();
+  });
+  function doLog(){
+    if(logged) return; logged=true;
+    logActivity("listen", todayKey());   // completion is a "now" event → always today
+    setStatus("✓ Logged this listen — +6 drops.",true);
+  }
+  el.addEventListener("ended",doLog);
+  el.addEventListener("timeupdate",()=>{
+    if(!logged && el.duration && (el.currentTime/el.duration)>=0.92) doLog();
+  });
+  el.addEventListener("error",()=>{ if(el.getAttribute("src")) setStatus("Couldn't load that audio (bad URL or the host blocks embedding). Try a direct MP3 link, or load a downloaded file."); });
+}
+
+/* ---------- hero motif: scatter girih stars ---------- */
+function scatterMotif(){
+  const host=document.getElementById("consoleMotif");
+  if(!host) return;
+  const N=16; let html="";
+  for(let i=0;i<N;i++){
+    const size=30+Math.random()*70;
+    const x=Math.random()*100, y=Math.random()*100;
+    const rot=Math.random()*45;
+    html+='<svg style="position:absolute;left:'+x+'%;top:'+y+'%;width:'+size+'px;height:'+size+'px;transform:translate(-50%,-50%) rotate('+rot+'deg);" viewBox="0 0 100 100"><use href="#star8"/></svg>';
+  }
+  host.innerHTML=html;
+}
+
+/* ---------- reveal on scroll ---------- */
+function observeReveal(){
+  const io=new IntersectionObserver((es)=>{
+    es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});
+  },{threshold:.12});
+  document.querySelectorAll(".rv").forEach(el=>io.observe(el));
+}
+
+/* ---------- vocab data + chips ---------- */
+const VOCAB={
+  "g-pron":[
+    {fa:"من",tl:"man",mn:"I / me"},
+    {fa:"تو",tl:"to",mn:"you (informal)"},
+    {fa:"شما",tl:"shomâ",mn:"you (formal/plural)"},
+    {fa:"اون",tl:"un",mn:"he / she / it",col:true},
+    {fa:"ما",tl:"mâ",mn:"we"},
+    {fa:"اونا",tl:"unâ",mn:"they",col:true},
+    {fa:"خوب",tl:"khub",mn:"good"},
+    {fa:"آره",tl:"âre",mn:"yeah",col:true},
+    {fa:"نه",tl:"na",mn:"no"}
+  ],
+  "g-greet":[
+    {fa:"سلام",tl:"salâm",mn:"hello"},
+    {fa:"خدافظ",tl:"khodâfez",mn:"bye",col:true},
+    {fa:"مرسی",tl:"mersi",mn:"thanks"},
+    {fa:"ممنون",tl:"mamnun",mn:"thank you"},
+    {fa:"ببخشید",tl:"bebakhshid",mn:"excuse me / sorry"},
+    {fa:"خواهش می‌کنم",tl:"khâhesh mikonam",mn:"you're welcome"},
+    {fa:"چطوری؟",tl:"chetori?",mn:"how are you?",col:true},
+    {fa:"خوبم",tl:"khubam",mn:"I'm good"}
+  ],
+  "g-verb":[
+    {fa:"می‌خوام",tl:"mikhâm",mn:"I want",col:true},
+    {fa:"دارم",tl:"dâram",mn:"I have"},
+    {fa:"می‌رم",tl:"miram",mn:"I go",col:true},
+    {fa:"میام",tl:"miyâm",mn:"I come",col:true},
+    {fa:"می‌خورم",tl:"mikhoram",mn:"I eat"},
+    {fa:"می‌کنم",tl:"mikonam",mn:"I do / make"},
+    {fa:"دوست دارم",tl:"dust dâram",mn:"I like / love"},
+    {fa:"بلدم",tl:"baladam",mn:"I know how to"},
+    {fa:"می‌فهمم",tl:"mifahmam",mn:"I understand"}
+  ],
+  "g-q":[
+    {fa:"چی",tl:"chi",mn:"what",col:true},
+    {fa:"کجا",tl:"kojâ",mn:"where"},
+    {fa:"کی",tl:"key",mn:"when"},
+    {fa:"چطور",tl:"chetor",mn:"how"},
+    {fa:"چند",tl:"chand",mn:"how many / how much"},
+    {fa:"نمی‌دونم",tl:"nemidunam",mn:"I don't know",col:true},
+    {fa:"نمی‌فهمم",tl:"nemifahmam",mn:"I don't understand"},
+    {fa:"یواش‌تر لطفاً",tl:"yavâsh-tar lotfan",mn:"slower, please"}
+  ]
+};
+function buildChips(){
+  Object.keys(VOCAB).forEach(id=>{
+    const host=document.getElementById(id);
+    if(!host) return;
+    host.innerHTML="";
+    VOCAB[id].forEach(w=>{
+      const el=document.createElement("div");
+      el.className="vchip"; el.dataset.state="0";
+      const col=w.col?'<div class="col">spoken form</div>':'';
+      el.innerHTML='<span class="hint">۱/۳</span><div class="face"><span class="fa">'+w.fa+'</span>'+col+'</div>';
+      el.addEventListener("click",()=>{
+        let s=(parseInt(el.dataset.state)+1)%3;
+        el.dataset.state=s;
+        const hint='<span class="hint">'+["۱","۲","۳"][s]+'/۳</span>';
+        if(s===0) el.innerHTML=hint+'<div class="face"><span class="fa">'+w.fa+'</span>'+col+'</div>';
+        else if(s===1) el.innerHTML=hint+'<div class="face"><span class="tl">'+w.tl+'</span>'+col+'</div>';
+        else el.innerHTML=hint+'<div class="face"><span class="mn">'+w.mn+'</span>'+col+'</div>';
+      });
+      host.appendChild(el);
+    });
+  });
+}
+
+boot();
+</script>
+</body>
+</html>
