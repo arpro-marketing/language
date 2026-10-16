@@ -20,3 +20,8 @@ Replace only the cost meter block (the raw HTML block holding `id="elmeter"`) wi
 - Removes the theme `.row` clearfix pseudo-elements that took the first grid cell, so the three inputs sit in one row (one column under 620px).
 - Estimates sold stays fully visible; on Service call it shows "Not used for service calls: booked is sold." under the box.
 Verify logged out at 1440 and 390: one −/+ pair per input, three inputs in one row at 1440, defaults $90/26%, panel $252/16%, generator $252/5%, no sideways scroll.
+
+## Fix-obvious pass (2026-10-16, Andrew: "if something is obviously broken or suboptimal then fix it")
+1. Electrician meter: replace the meter block's style with current e13.html (adds the "Estimates sold" fix: full strength on Service call, hint line under it). Verify: Estimates sold opacity 1, hint visible on Service call, gone on Panel/Generator.
+2. Electrician schema: replace the schema block with current e22.html (BreadcrumbList removed; Yoast's stays). Verify: exactly one BreadcrumbList in the public HTML.
+3. Window and door meter (page 7107): add wd-meter-arrow-fix.css at the top of its meter block's style. Verify: no visible .fs-number-arrow, + still steps 200 to 205.
