@@ -1,0 +1,2020 @@
+<div class="vc_row-full-width vc_clearfix"></div><div data-vc-full-width="true" data-vc-full-width-temp="true" data-vc-full-width-init="false" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid vc_custom_wd8 vc_row-no-padding"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="text-block " ><div class="simple-text "><style>#argmRoot{
+  --argm-size: 720px;          /* THE SIZE KNOB. 720 not 640: the viewBox went 760->860 to give the longest node names ("Conversion", "Attribution") clearance from the border. Same radial size on screen, just with margin. */
+  --argm-red:#dc2626; --argm-orange:#ef662f; --argm-amber:#eab308;
+  --argm-green:#10b981; --argm-elite:#059669;
+  --argm-bg:#2c2c2c; --argm-panel:#262626; --argm-line:#3a3a3a;
+  --argm-txt:#d1d5db; --argm-mut:#9ca3af;
+  font-family:'DM Sans',sans-serif;
+}
+#argmRoot *{box-sizing:border-box;}
+#argmRoot .argm-shell{background:var(--argm-bg);padding:54px 20px 60px;color:#fff;position:relative;overflow:hidden;}
+#argmRoot .argm-glow{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 42%, rgba(239,102,47,0.09) 0%, rgba(239,102,47,0.02) 32%, rgba(0,0,0,0.32) 100%);pointer-events:none;}
+#argmRoot .argm-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1;}
+
+#argmRoot .argm-eyebrow{font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--argm-orange);text-align:center;margin-bottom:10px;}
+#argmRoot .argm-h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(26px,4.4vw,38px);line-height:1.12;font-weight:800;color:#fff;margin:0 0 12px;letter-spacing:-0.5px;text-align:center;}
+#argmRoot .argm-h2 sup{font-size:0.42em;vertical-align:super;color:var(--argm-orange);}
+#argmRoot .argm-sub{font-size:15px;line-height:1.6;color:var(--argm-mut);max-width:620px;margin:0 auto 6px;text-align:center;}
+
+#argmRoot .argm-labelwrap{text-align:center;margin-bottom:22px;}
+#argmRoot .argm-label{display:inline-flex;align-items:center;gap:8px;margin:16px auto 0;padding:7px 14px;border:1px solid #3f3f3f;border-radius:999px;background:rgba(0,0,0,0.25);font-size:12.5px;color:var(--argm-mut);text-align:left;line-height:1.5;}
+#argmRoot .argm-label b{color:#e5e7eb;font-weight:700;}
+
+#argmRoot .argm-modes{display:flex;justify-content:center;gap:8px;margin:0 auto 24px;}
+#argmRoot .argm-mode{font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;padding:10px 18px;border-radius:8px;border:1px solid #3f3f3f;background:rgba(0,0,0,0.2);color:var(--argm-mut);cursor:pointer;transition:all .18s ease;}
+#argmRoot .argm-mode:hover{border-color:#5a5a5a;color:#e5e7eb;}
+#argmRoot .argm-mode.argm-on{background:var(--argm-orange);border-color:var(--argm-orange);color:#fff;}
+
+#argmRoot .argm-verdict{max-width:660px;margin:0 auto 24px;padding:18px 22px;background:rgba(0,0,0,0.24);border:1px solid var(--argm-line);border-radius:12px;}
+#argmRoot .argm-vk{text-align:center;font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#e0736b;margin-bottom:6px;}
+#argmRoot .argm-vnum{text-align:center;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;letter-spacing:-1px;line-height:1;color:#fff;font-size:clamp(38px,6.5vw,58px);}
+#argmRoot #argmProse{opacity:1;}
+#argmRoot .argm-vmath{font-size:12.5px;line-height:1.6;color:var(--argm-mut);margin-top:12px;text-align:center;}
+/* Tells him the thing he is looking at responds to scrolling. Without this the comet
+   sitting still mid-collapse just reads as broken. */
+#argmRoot .argm-scrollcue{text-align:center;font-size:12px;letter-spacing:1.4px;text-transform:uppercase;color:var(--argm-orange);margin:16px 0 2px;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;opacity:0;transition:opacity .5s ease;}
+#argmRoot .argm-scrollcue.argm-vis{opacity:.85;}
+@keyframes argmCueBob{0%,100%{transform:translateY(0);}50%{transform:translateY(3px);}}
+#argmRoot .argm-scrollcue.argm-vis{animation:argmCueBob 1.8s ease-in-out infinite;}
+#argmRoot .argm-vnum{transition:opacity .6s ease;}
+#argmRoot .argm-fade{opacity:0;transition:opacity .8s ease;}
+#argmRoot .argm-fade.argm-vis{opacity:1;}
+#argmRoot .argm-vfloor{font-size:12.5px;line-height:1.6;color:#9ca3af;margin-top:10px;text-align:center;font-style:italic;border-top:1px solid #3a3a3a;padding-top:10px;}
+#argmRoot .argm-chainwrap{margin:6px auto 18px;max-width:1000px;position:relative;}
+#argmRoot .argm-hint{text-align:center;font-size:12px;color:#7d7d7d;margin:0 auto 14px;font-style:italic;opacity:0;transition:opacity .5s ease;}
+/* edge fades so a phone user can see there is more chain to swipe */
+#argmRoot .argm-chainwrap:before,#argmRoot .argm-chainwrap:after{content:"";position:absolute;top:0;bottom:0;width:26px;pointer-events:none;z-index:2;opacity:0;transition:opacity .2s;}
+#argmRoot .argm-chainwrap:before{left:0;background:linear-gradient(90deg,var(--argm-bg),rgba(44,44,44,0));}
+#argmRoot .argm-chainwrap:after{right:0;background:linear-gradient(270deg,var(--argm-bg),rgba(44,44,44,0));}
+#argmRoot .argm-chainwrap.argm-scrollable:before,#argmRoot .argm-chainwrap.argm-scrollable:after{opacity:1;}
+#argmRoot .argm-chain{display:flex;align-items:flex-start;justify-content:center;flex-wrap:nowrap;gap:0;overflow-x:auto;padding-bottom:4px;scrollbar-width:none;}
+#argmRoot .argm-chain::-webkit-scrollbar{display:none;}
+#argmRoot .argm-link{flex:0 0 auto;text-align:center;padding:5px 6px;min-width:56px;opacity:0;transform:translateY(7px);transition:opacity .55s ease,transform .55s cubic-bezier(.2,.8,.3,1);}
+#argmRoot .argm-link.argm-vis{opacity:1;transform:none;}
+#argmRoot .argm-link b{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:800;color:#e5e7eb;line-height:1.1;font-variant-numeric:tabular-nums;}
+#argmRoot .argm-link span{display:block;font-size:9.5px;color:#7d7d7d;text-transform:uppercase;letter-spacing:.6px;margin-top:2px;}
+#argmRoot .argm-link:first-child b{color:#fff;}
+#argmRoot .argm-link:last-child{padding-left:10px;}
+#argmRoot .argm-link:last-child b{color:var(--argm-orange);font-size:30px;line-height:1;letter-spacing:-1px;text-shadow:0 0 22px rgba(239,102,47,.55);}
+#argmRoot .argm-link:last-child span{color:#e5e7eb;font-weight:700;font-size:10px;}
+#argmRoot .argm-plain{max-width:720px;margin:0 auto 6px;text-align:center;font-size:14.5px;line-height:1.65;color:var(--argm-txt);}
+#argmRoot .argm-plain b{color:#fff;}
+#argmRoot .argm-plain .argm-em{color:var(--argm-orange);font-weight:700;}
+/* The percentage is meaningless on its own. Name what it measures, and point it. */
+#argmRoot .argm-gate{flex:0 0 auto;text-align:center;padding:2px 4px 0;min-width:62px;opacity:0;transform:translateY(7px);transition:opacity .55s ease .1s,transform .55s cubic-bezier(.2,.8,.3,1) .1s;}
+#argmRoot .argm-gate.argm-vis{opacity:1;transform:none;}
+#argmRoot .argm-gate-pct{font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:800;color:var(--argm-orange);font-variant-numeric:tabular-nums;line-height:1;}
+#argmRoot .argm-gate-arrow{display:block;height:9px;margin:3px 0 2px;position:relative;}
+#argmRoot .argm-gate-arrow:before{content:"";position:absolute;top:4px;left:2px;right:8px;height:1.5px;background:linear-gradient(90deg,rgba(239,102,47,.15),rgba(239,102,47,.85));}
+#argmRoot .argm-gate-arrow:after{content:"";position:absolute;top:1px;right:2px;width:0;height:0;border-top:4px solid transparent;border-bottom:4px solid transparent;border-left:6px solid rgba(239,102,47,.85);}
+#argmRoot .argm-gate-flow{display:block;font-size:8.5px;line-height:1.25;color:#8b8b8b;letter-spacing:.2px;}
+#argmRoot .argm-lever{margin-top:14px;padding-top:12px;border-top:1px solid #3a3a3a;font-size:13.5px;line-height:1.65;color:var(--argm-txt);text-align:left;}
+#argmRoot .argm-lever b{color:var(--argm-orange);}
+#argmRoot .argm-a11y{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
+/* The chain needs ~758px. On a phone that puts nearly 400px of it off the edge, and a
+   horizontal-swipe row you cannot see the ends of is worse than no row. Below 820px it
+   WRAPS onto two or three lines instead. The arrows still point right within each line,
+   which is all the reading order needs. */
+@media (max-width:820px){
+  #argmRoot .argm-chainwrap{overflow:visible;}
+  #argmRoot .argm-chain{flex-wrap:wrap;overflow-x:visible;justify-content:center;row-gap:2px;}
+  #argmRoot .argm-chainwrap.argm-scrollable:before,#argmRoot .argm-chainwrap.argm-scrollable:after{opacity:0;}
+  #argmRoot .argm-link{min-width:52px;padding:4px 3px;}
+  #argmRoot .argm-link b{font-size:13.5px;}
+  #argmRoot .argm-link span{font-size:8px;}
+  #argmRoot .argm-link:last-child b{font-size:26px;}
+  #argmRoot .argm-gate{min-width:66px;padding:2px 3px 0;}
+  #argmRoot .argm-gate-flow{font-size:8px;}
+}
+/* Give the radial the screen. The shell padding is there for the TEXT - the stage does
+   not need it, so let the stage break out of it and take the full width. */
+@media (max-width:700px){
+  #argmRoot .argm-stage{width:calc(100% + 24px);max-width:calc(100% + 24px);margin-left:-12px;margin-right:-12px;}
+}
+@media (max-width:480px){
+  #argmRoot .argm-shell{padding:40px 12px 46px;}
+  #argmRoot .argm-stage{width:calc(100% + 20px);max-width:calc(100% + 20px);margin-left:-10px;margin-right:-10px;}
+}
+#argmRoot .argm-vsbig{text-align:center;font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(23px,3.6vw,32px);font-weight:800;color:#fff;letter-spacing:-0.5px;line-height:1.15;}
+#argmRoot .argm-vssub{text-align:center;font-size:13.5px;color:var(--argm-mut);margin:10px 0 0;line-height:1.6;}
+
+#argmRoot .argm-stage{position:relative;width:100%;max-width:var(--argm-size);margin:0 auto;opacity:0;transform:scale(.94);transition:opacity 1s ease,transform 1s cubic-bezier(.2,.8,.3,1);}
+#argmRoot .argm-stage.argm-in{opacity:1;transform:scale(1);}
+#argmRoot #argmSvg{width:100%;height:auto;display:block;overflow:visible;}
+
+#argmRoot .argm-legend{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin:18px auto 0;max-width:640px;}
+#argmRoot .argm-lg{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;letter-spacing:.6px;color:var(--argm-mut);border:1px solid #3a3a3a;border-radius:999px;padding:5px 10px;}
+#argmRoot .argm-lgdot{width:9px;height:9px;border-radius:50%;display:block;}
+
+#argmRoot .argm-detail{max-width:820px;margin:26px auto 0;background:var(--argm-panel);border-left:4px solid var(--argm-orange);border-radius:8px;padding:22px 26px;}
+#argmRoot .argm-dhead{display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:4px;}
+#argmRoot .argm-dname{font-family:'Plus Jakarta Sans',sans-serif;font-size:22px;font-weight:800;color:#fff;margin:0;}
+#argmRoot .argm-dscore{font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:800;letter-spacing:1px;}
+#argmRoot .argm-dtag{font-size:14px;color:var(--argm-orange);font-style:italic;font-weight:600;margin:6px 0 14px;}
+#argmRoot .argm-dfind{font-size:15px;line-height:1.7;color:#e5e7eb;margin:0 0 18px;padding:12px 14px;background:rgba(239,102,47,0.06);border-radius:6px;}
+#argmRoot .argm-dempty{font-size:13.5px;line-height:1.65;color:var(--argm-mut);margin:0 0 18px;padding:12px 14px;background:rgba(255,255,255,0.03);border:1px dashed #3f3f3f;border-radius:6px;font-style:italic;}
+
+#argmRoot .argm-subs{margin:0 0 18px;}
+#argmRoot .argm-subhd{font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--argm-mut);margin-bottom:10px;}
+#argmRoot .argm-sub2{margin-bottom:9px;}
+#argmRoot .argm-subtop{display:flex;justify-content:space-between;gap:10px;font-size:12.5px;margin-bottom:4px;}
+#argmRoot .argm-sublab{color:var(--argm-txt);}
+#argmRoot .argm-subval{color:var(--argm-mut);font-variant-numeric:tabular-nums;font-weight:700;white-space:nowrap;}
+#argmRoot .argm-bar{height:7px;background:#1c1c1c;border-radius:4px;overflow:hidden;}
+#argmRoot .argm-barfill{height:100%;width:0;border-radius:4px;transition:width .8s cubic-bezier(.2,.8,.3,1);}
+
+#argmRoot .argm-cols{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:4px;}
+#argmRoot .argm-col h4{font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;margin:0 0 7px;}
+#argmRoot .argm-col p{font-size:13.5px;line-height:1.65;color:var(--argm-txt);margin:0;}
+#argmRoot .argm-cp h4{color:#e0736b;}
+#argmRoot .argm-cf h4{color:var(--argm-green);}
+#argmRoot .argm-bench{margin-top:16px;padding-top:12px;border-top:1px solid #3a3a3a;font-size:12px;line-height:1.6;color:#8b8b8b;font-style:italic;}
+
+#argmRoot .argm-quiz{max-width:820px;margin:24px auto 0;display:none;}
+#argmRoot .argm-quiz.argm-show{display:block;}
+#argmRoot .argm-q{background:var(--argm-panel);border:1px solid #333;border-radius:8px;padding:14px 16px;margin-bottom:8px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;}
+#argmRoot .argm-qt{font-size:14.5px;line-height:1.5;color:#e5e7eb;flex:1 1 320px;margin:0;}
+#argmRoot .argm-qb{display:flex;gap:6px;flex:0 0 auto;}
+#argmRoot .argm-opt{font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:700;padding:8px 13px;border-radius:6px;border:1px solid #454545;background:#1e1e1e;color:var(--argm-mut);cursor:pointer;transition:all .15s ease;}
+#argmRoot .argm-opt:hover{border-color:#6a6a6a;color:#fff;}
+#argmRoot .argm-opt.argm-sel{background:var(--argm-orange);border-color:var(--argm-orange);color:#fff;}
+#argmRoot .argm-qprog{text-align:center;font-size:12.5px;color:var(--argm-mut);margin:14px 0 0;}
+
+#argmRoot .argm-cta{max-width:640px;margin:30px auto 0;text-align:center;}
+#argmRoot .argm-ctaline{font-size:15.5px;line-height:1.65;color:#e5e7eb;margin:0 0 16px;}
+#argmRoot .argm-ctaline b{color:#fff;}
+#argmRoot .argm-btn{display:inline-block;background:var(--argm-orange);color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:15px;padding:14px 30px;border-radius:8px;text-decoration:none;transition:background .18s ease;}
+#argmRoot .argm-btn:hover{background:#d4551f;color:#fff;}
+#argmRoot .argm-ctafine{font-size:12.5px;color:#8b8b8b;margin:12px 0 0;}
+/* ---- transport: skip / play / pause across the six gates ---- */
+#argmRoot .argm-transport{max-width:640px;margin:34px auto 0;text-align:center;}
+#argmRoot .argm-tp-row{display:inline-flex;align-items:center;gap:10px;padding:8px 14px;background:rgba(0,0,0,0.28);border:1px solid var(--argm-line);border-radius:999px;}
+#argmRoot .argm-tp-btn{-webkit-appearance:none;appearance:none;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;padding:0;border-radius:50%;border:1px solid #3f3f3f;background:rgba(255,255,255,0.04);color:#cfd2d6;transition:background .16s ease,border-color .16s ease,color .16s ease,transform .12s ease,box-shadow .16s ease;}
+#argmRoot .argm-tp-btn svg{width:19px;height:19px;fill:currentColor;pointer-events:none;}
+#argmRoot .argm-tp-btn:hover{border-color:#5a5a5a;color:#fff;background:rgba(255,255,255,0.08);}
+#argmRoot .argm-tp-btn:active{transform:scale(0.92);}
+#argmRoot .argm-tp-btn:focus-visible{outline:2px solid var(--argm-orange);outline-offset:2px;}
+#argmRoot .argm-tp-play,#argmRoot .argm-tp-pause{width:46px;height:46px;}
+#argmRoot .argm-tp-btn.argm-tp-on{background:var(--argm-orange);border-color:var(--argm-orange);color:#fff;box-shadow:0 0 16px rgba(239,102,47,.45);}
+#argmRoot .argm-tp-track{display:flex;align-items:center;justify-content:center;gap:9px;margin:14px auto 0;}
+#argmRoot .argm-tp-pip{-webkit-appearance:none;appearance:none;cursor:pointer;width:11px;height:11px;padding:0;border-radius:50%;border:1px solid #565656;background:rgba(255,255,255,0.06);transition:transform .16s ease,background .16s ease,border-color .16s ease,box-shadow .16s ease;}
+#argmRoot .argm-tp-pip:hover{border-color:#8a8a8a;transform:scale(1.18);}
+#argmRoot .argm-tp-pip.argm-done{background:#6e6e6e;border-color:#6e6e6e;}
+#argmRoot .argm-tp-pip.argm-cur{background:var(--argm-orange);border-color:var(--argm-orange);transform:scale(1.32);box-shadow:0 0 12px rgba(239,102,47,.6);}
+#argmRoot .argm-tp-pip:focus-visible{outline:2px solid var(--argm-orange);outline-offset:2px;}
+#argmRoot .argm-tp-label{font-size:12.5px;line-height:1.5;color:var(--argm-mut);margin:12px auto 0;min-height:18px;font-family:'DM Sans',sans-serif;}
+#argmRoot .argm-tp-label b{color:#e5e7eb;font-weight:700;}
+#argmRoot .argm-lock{font-size:13.5px;color:#8b8b8b;font-style:italic;margin:0;padding:14px;border:1px dashed #3f3f3f;border-radius:8px;}
+#argmRoot .argm-fields{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:stretch;}
+#argmRoot .argm-in{flex:1 1 210px;min-width:0;background:#1e1e1e;border:1px solid #454545;border-radius:8px;padding:13px 14px;color:#fff;font-family:'DM Sans',sans-serif;font-size:14.5px;}
+#argmRoot .argm-in::placeholder{color:#6f6f6f;}
+#argmRoot .argm-in:focus{outline:none;border-color:var(--argm-orange);}
+#argmRoot .argm-send{flex:0 0 auto;background:var(--argm-orange);color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:15px;padding:13px 26px;border:1px solid var(--argm-orange);border-radius:8px;cursor:pointer;transition:background .18s ease;}
+#argmRoot .argm-send:hover{background:#d4551f;}
+#argmRoot .argm-send:disabled{opacity:.6;cursor:default;}
+#argmRoot .argm-err{display:none;font-size:13px;color:#f87171;margin:10px 0 0;font-weight:600;}
+#argmRoot .argm-okbig{font-family:'Plus Jakarta Sans',sans-serif;font-size:24px;font-weight:800;color:var(--argm-green);margin-bottom:8px;}
+#argmRoot .argm-oksub{font-size:14.5px;line-height:1.65;color:#e5e7eb;margin:0;}
+@media (max-width:520px){
+  #argmRoot .argm-in{flex:1 1 100%;}
+  #argmRoot .argm-send{flex:1 1 100%;}
+}
+
+@keyframes argmBreath{0%,100%{opacity:.55;transform:scale(1);}50%{opacity:.95;transform:scale(1.07);}}
+#argmRoot .argm-halo-o{animation:argmBreath 4.2s ease-in-out infinite;transform-origin:center;transform-box:fill-box;}
+#argmRoot .argm-halo-m{animation:argmBreath 3.0s ease-in-out infinite;transform-origin:center;transform-box:fill-box;}
+@keyframes argmSat{0%,100%{opacity:.45;transform:scale(1);}50%{opacity:.8;transform:scale(1.05);}}
+#argmRoot .argm-sathalo{transform-origin:center;transform-box:fill-box;animation:argmSat 4.8s ease-in-out infinite;}
+@keyframes argmWorst{0%,100%{opacity:.18;transform:scale(1);}50%{opacity:.6;transform:scale(1.1);}}
+#argmRoot .argm-worst{transform-origin:center;transform-box:fill-box;animation:argmWorst 2.1s ease-in-out infinite;}
+#argmRoot .argm-node{cursor:pointer;outline:none;}
+/* comet proximity: EVERY node reacts as the comet arrives, not just the worst one */
+@keyframes argmNearBlink{0%,100%{opacity:1;}50%{opacity:.62;}}
+#argmRoot .argm-node.argm-near .argm-fx{transform:scale(1.16);}
+#argmRoot .argm-node.argm-near .argm-body{animation:argmNearBlink .5s ease-in-out infinite;}
+/* EVERY node flares in its own tier colour the moment the comet lands on it */
+/* The comet is scroll-pinned during the collapse, so it stops dead whenever the user
+   stops scrolling - which reads as broken, not as "you are driving". A permanent halo
+   breath keeps it alive while it waits. */
+@keyframes argmCometIdle{0%,100%{opacity:.55;transform:scale(1);}50%{opacity:1;transform:scale(1.18);}}
+#argmRoot #argmCHalo{transform-origin:center;transform-box:fill-box;animation:argmCometIdle 1.9s ease-in-out infinite;}
+#argmRoot #argmComet{transition:opacity .45s ease;}
+@keyframes argmFlare{0%{opacity:0;transform:scale(.85);}22%{opacity:.85;transform:scale(1.05);}100%{opacity:0;transform:scale(1.5);}}
+#argmRoot .argm-flare{transform-origin:center;transform-box:fill-box;animation:argmFlare 1.1s cubic-bezier(.2,.7,.3,1) forwards;pointer-events:none;}
+/* entrance: nodes ride their own spokes inward and settle */
+#argmRoot .argm-node{transition:transform .05s linear;}
+#argmRoot .argm-assembling .argm-node{transition:none;}
+@keyframes argmPingOut{0%{opacity:.75;transform:scale(1);}100%{opacity:0;transform:scale(2.1);}}
+#argmRoot .argm-ping{transform-origin:center;transform-box:fill-box;animation:argmPingOut .9s cubic-bezier(.2,.7,.3,1) forwards;pointer-events:none;}
+@keyframes argmRingSpin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+#argmRoot .argm-spin{transform-origin:430px 430px;animation:argmRingSpin 64s linear infinite;}
+#argmRoot .argm-spin-rev{transform-origin:430px 430px;animation:argmRingSpin 96s linear infinite reverse;}
+@keyframes argmCoreRing{0%,100%{opacity:.30;}50%{opacity:.75;}}
+#argmRoot .argm-corering{transform-origin:430px 430px;animation:argmRingSpin 22s linear infinite, argmCoreRing 3.4s ease-in-out infinite;}
+#argmRoot .argm-fx{transition:transform .2s cubic-bezier(.34,1.5,.64,1);transform-origin:center;transform-box:fill-box;}
+#argmRoot .argm-node:hover .argm-fx{transform:scale(1.06);}
+#argmRoot .argm-fx.argm-fxon{transform:scale(1.14);}
+#argmRoot .argm-nm{opacity:0;transition:opacity .35s ease;pointer-events:none;}
+#argmRoot .argm-node:hover .argm-nm,#argmRoot .argm-node.argm-act .argm-nm,#argmRoot .argm-node:focus .argm-nm{opacity:1;}
+#argmRoot .argm-ns{opacity:0;transition:opacity .5s ease;}
+#argmRoot .argm-node.argm-scored .argm-ns{opacity:1;}
+
+@media (max-width:700px){
+  #argmRoot .argm-shell{padding:40px 14px 46px;}
+  #argmRoot .argm-cols{grid-template-columns:1fr;gap:14px;}
+  #argmRoot .argm-detail{padding:18px 16px;border-radius:6px;}
+  #argmRoot .argm-verdict{padding:16px 14px;}
+  #argmRoot .argm-q{padding:12px;}
+  #argmRoot .argm-qt{flex:1 1 100%;}
+  #argmRoot .argm-qb{width:100%;}
+  #argmRoot .argm-opt{flex:1;}
+}
+@media (prefers-reduced-motion: reduce){
+  #argmRoot .argm-halo-o,#argmRoot .argm-halo-m,#argmRoot .argm-sathalo,#argmRoot .argm-worst,
+  #argmRoot .argm-spin,#argmRoot .argm-spin-rev,#argmRoot .argm-corering,
+  #argmRoot .argm-node.argm-near .argm-body,#argmRoot .argm-ping,#argmRoot .argm-flare,#argmRoot #argmCHalo,#argmRoot .argm-scrollcue{animation:none !important;}
+  #argmRoot .argm-stage{transition:none;opacity:1;transform:none;}
+}#argmRoot [data-argmscroll]{color:#ef662f;cursor:pointer;text-decoration:underline;text-underline-offset:2px;}
+</style><div id="argmRoot" data-fullbleed="1" data-killgaps="1"><div class="argm-shell"><div class="argm-glow"></div><div class="argm-inner"><h2 class="argm-h2">The 6-Gap Revenue Map<sup>&trade;</sup></h2><p class="argm-sub" id="argmSub">Six things decide whether a search turns into a booked job. We measure all six, score them, and hand you the one that costs you most. Here is the instrument, running.</p><div class="argm-labelwrap"> <span class="argm-label"><b>Example scan</b> &nbsp;a composite contractor. Every finding on it is one we have written about a real business.</span></div><div class="argm-modes"> <button type="button" class="argm-mode argm-on" id="argmModeDemo">Watch a scan</button> <button type="button" class="argm-mode" id="argmModeSelf">Score my business</button></div><div class="argm-verdict"><div class="argm-vk" id="argmVK">Where 10,000 searches actually go</div><div id="argmVMoney"><div class="argm-vnum"><span id="argmVNum">0</span> <span style="font-size:.30em;font-weight:700;color:#9ca3af;letter-spacing:0;">booked jobs / month</span></div><div id="argmProse"><div class="argm-vmath" id="argmVMath"></div><div class="argm-lever" id="argmLever"></div><div class="argm-vfloor">Pass rates are interpolated between published bottom-quartile and top-quartile benchmarks. Click any gate for its source.</div></div></div><div id="argmVSelf" style="display:none;"></div></div><div class="argm-chainwrap" id="argmChain"></div><p class="argm-plain" id="argmPlain"></p><p class="argm-hint" id="argmHint">Click any gate to hold it while you read. The scan picks back up after 20 seconds.</p><div class="argm-stage" id="argmStage"> <svg id="argmSvg" viewBox="0 0 860 860" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Six-gap radial diagnostic"> <defs> <radialGradient id="argmHaloO" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#ef662f" stop-opacity="0.4"/><stop offset="55%" stop-color="#ef662f" stop-opacity="0.09"/><stop offset="100%" stop-color="#ef662f" stop-opacity="0"/></radialGradient> <radialGradient id="argmHaloM" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#ef662f" stop-opacity="0.62"/><stop offset="65%" stop-color="#ef662f" stop-opacity="0.16"/><stop offset="100%" stop-color="#ef662f" stop-opacity="0"/></radialGradient> <radialGradient id="argmCoreG2" cx="35%" cy="35%" r="70%"><stop offset="0%" stop-color="#ff8855"/><stop offset="55%" stop-color="#ef662f"/><stop offset="100%" stop-color="#bc4716"/></radialGradient> <radialGradient id="argmIdle" cx="40%" cy="35%" r="65%"><stop offset="0%" stop-color="#3a3a3a"/><stop offset="100%" stop-color="#1c1c1c"/></radialGradient> <radialGradient id="argmSatHaloG" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#ef662f" stop-opacity="0.18"/><stop offset="60%" stop-color="#ef662f" stop-opacity="0.04"/><stop offset="100%" stop-color="#ef662f" stop-opacity="0"/></radialGradient> <radialGradient id="argmCometG2" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#fff" stop-opacity="1"/><stop offset="30%" stop-color="#ffd0b8" stop-opacity="0.95"/><stop offset="100%" stop-color="#ef662f" stop-opacity="0"/></radialGradient> <pattern id="argmGrid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#3a3a3a" stroke-width="0.5" opacity="0.4"/></pattern> <radialGradient id="argmVig" cx="50%" cy="50%" r="62%"><stop offset="55%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#000" stop-opacity="0.55"/></radialGradient> <radialGradient id="argmFloor" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#ef662f" stop-opacity="0.10"/><stop offset="45%" stop-color="#ef662f" stop-opacity="0.03"/><stop offset="100%" stop-color="#ef662f" stop-opacity="0"/></radialGradient> <linearGradient id="argmBeamG" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#ef662f" stop-opacity="0"/><stop offset="100%" stop-color="#ffb08a" stop-opacity="0.5"/></linearGradient> <filter id="argmSoft" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter> </defs> <g id="argmChrome"></g> <circle id="argmFloorGlow" cx="430" cy="430" r="330" fill="url(#argmFloor)"/> <g id="argmDrift"></g> <g id="argmLines"></g> <g id="argmDots"></g> <line id="argmBeam" x1="430" y1="430" x2="430" y2="150" stroke="url(#argmBeamG)" stroke-width="2" opacity="0"/> <g id="argmPings"></g> <g id="argmComet" style="opacity:0;"> <g id="argmTrail"></g> <circle id="argmCHalo" cx="430" cy="150" r="34" fill="url(#argmCometG2)"/> <circle id="argmCHead" cx="430" cy="150" r="9" fill="#ffffff"/> </g> <g id="argmCore"></g> <g id="argmGaps"></g> <g id="argmCohort" style="opacity:0;"> <rect id="argmCohortBg" x="0" y="0" width="120" height="40" rx="6" fill="#1a1a1a" stroke="#ef662f" stroke-opacity="0.6"/> <text id="argmCohortN" x="0" y="0" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-weight="800" fill="#fff">10,000</text> <text id="argmCohortL" x="0" y="0" text-anchor="middle" font-family="DM Sans, sans-serif" font-weight="600" fill="#9ca3af">searching</text> </g> <rect id="argmVignette" x="0" y="0" width="860" height="860" fill="url(#argmVig)" pointer-events="none"/> </svg></div><div class="argm-legend" id="argmLegend"></div><div class="argm-detail" id="argmDetail"></div><div class="argm-quiz" id="argmQuiz"></div><div class="argm-transport" id="argmTransport" role="group" aria-label="Playback controls for the gap scan"><div class="argm-tp-row"><button type="button" class="argm-tp-btn" id="argmTpBack" aria-label="Previous gap" title="Previous gap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5a1 1 0 0 1 2 0v5.1l9.5-5.9A1 1 0 0 1 19 5.06v13.88a1 1 0 0 1-1.5.86L8 13.9V19a1 1 0 0 1-2 0z"/></svg></button><button type="button" class="argm-tp-btn argm-tp-play" id="argmTpPlay" aria-label="Play" title="Play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.14v13.72a1 1 0 0 0 1.53.85l10.79-6.86a1 1 0 0 0 0-1.7L9.53 4.29A1 1 0 0 0 8 5.14z"/></svg></button><button type="button" class="argm-tp-btn argm-tp-pause" id="argmTpPause" aria-label="Pause" title="Pause"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h3.2v16H7zM13.8 4H17v16h-3.2z"/></svg></button><button type="button" class="argm-tp-btn" id="argmTpFwd" aria-label="Next gap" title="Next gap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 5a1 1 0 0 0-2 0v5.1L6.5 4.2A1 1 0 0 0 5 5.06v13.88a1 1 0 0 0 1.5.86L16 13.9V19a1 1 0 0 0 2 0z"/></svg></button></div><div class="argm-tp-track" id="argmTpTrack" role="group" aria-label="Jump to a specific gap"><button type="button" class="argm-tp-pip" data-g="0" aria-label="Gap 1"></button><button type="button" class="argm-tp-pip" data-g="1" aria-label="Gap 2"></button><button type="button" class="argm-tp-pip" data-g="2" aria-label="Gap 3"></button><button type="button" class="argm-tp-pip" data-g="3" aria-label="Gap 4"></button><button type="button" class="argm-tp-pip" data-g="4" aria-label="Gap 5"></button><button type="button" class="argm-tp-pip" data-g="5" aria-label="Gap 6"></button></div><div class="argm-tp-label" id="argmTpLabel" aria-live="polite">Auto-scanning all six gaps&hellip;</div></div><div class="argm-cta"><p class="argm-ctaline" id="argmCtaLine">This is an example. <b>Yours runs on your actual site, your actual competitor, your actual reviews.</b></p> <a class="argm-btn" id="argmCtaBtn" href="/contact/">Get my real scan &rarr;</a><div id="argmFormWrap" style="display:none;"><form id="argmForm" data-endpoint="https://formspree.io/f/xeeyavwa" novalidate><p class="argm-lock" id="argmFormLock">Answer all seven, and we will scan the gaps you flagged.</p><div id="argmFormFields" style="display:none;"><div class="argm-fields"> <input class="argm-in" type="text" id="argmWeb" name="website" placeholder="yourcompany.com" autocomplete="url"> <input class="argm-in" type="email" id="argmEmail" name="email" placeholder="you@company.com" autocomplete="email"> <button class="argm-send" type="submit" id="argmSubmit">Send me the real scan &rarr;</button></div><p class="argm-err" id="argmFormErr"></p></div></form><div id="argmFormOk" style="display:none;"></div><div id="argmCapFlip" style="display:none;"></div></div><p class="argm-ctafine" id="argmCtaFine">Takes 30 seconds to request. No call, no pitch. Your gaps documented on video within 48 hours.</p></div></div></div><div id="argmData" style="display:none;" aria-hidden="true"><div data-basis="1" data-cohort="10000" data-job="6800" data-target="78"></div><div data-gap="visibility" data-score="31" data-icon="eye" data-role="gate" data-order="1" data-passlo="4" data-passhi="32" data-flow="they find your site" data-src="Advanced Web Ranking CTR study: top-3 captures over 50% of clicks; position 11+ is effectively 0."> <i data-f="name">Visibility</i> <i data-f="tag">You are not where buyers are searching.</i> <i data-f="finding">Three of this contractor's service lines have no page of their own, and the towns he names in his footer all link to the same generic services page. Google sees one business in one place. He believes he covers three cities.</i> <i data-f="problem">When someone in your service area searches for exactly what you sell, you do not come up. Your competitor does. Every search you miss is a customer handed to somebody else, and you never find out it happened.</i> <i data-f="fix">Topical authority architecture, a technical SEO baseline, schema infrastructure, and real city pages built to rank for the searches that produce booked jobs instead of vanity traffic.</i> <i data-f="bench">Top 3 results capture over 50% of clicks. Position 11 and beyond is effectively invisible. Source: Advanced Web Ranking CTR studies.</i> <i data-f="q">Do you have a separate page on your site for each city you serve?</i> <i data-f="subs">Service Page Coverage|32;Ranking Presence|30;Schema Markup|13;SERP CTR Engineering|27;Content Depth and Freshness|60;Location Pages|20</i></div><div data-gap="authority" data-score="91" data-icon="shield" data-role="gate" data-order="2" data-passlo="55" data-passhi="88" data-flow="they choose you, not a competitor" data-src="Andrew Ryan Marketing benchmark: share who shortlist you rather than bounce to a competitor with stronger proof."> <i data-f="name">Authority</i> <i data-f="tag">This one he already wins.</i> <i data-f="finding">312 reviews at 4.9 stars, still adding six a month, and a Google Business Profile filled out properly. This is elite, and it is the reason the rest of the map is worth fixing. He has already earned the trust. He is just not being found by the people who would give it to him.</i> <i data-f="problem">You show up but lose the click to a competitor with stronger trust signals. Or you get the click and lose the customer, because nothing on the page says this is the safe choice.</i> <i data-f="fix">Review acceleration systems, third-party citation building, authority content, and proof architecture that makes choosing you the obvious call at every doubt point.</i> <i data-f="bench">Weak trust architecture converts bottom-quartile, under 1.8%. Engineered authority converts top-quartile, 11.6% and up. Source: Unbounce Conversion Benchmark Report, Q4 2024.</i> <i data-f="q">Are you getting new Google reviews every week without having to ask twice?</i> <i data-f="subs">Google Reviews (312 at 4.9 stars)|97;Review Momentum|90;GBP Optimization|95;Citations and NAP|87;Social Presence|80</i></div><div data-gap="trust" data-score="58" data-icon="handshake" data-role="gate" data-order="3" data-passlo="1.2" data-passhi="4" data-flow="they become a lead" data-src="Andrew Ryan Marketing benchmark: contractor site visit-to-lead runs 1.2% bottom quartile to 4% top. Deliberately NOT the Unbounce 6.6% landing-page median, which measures paid traffic on focused LPs and does not apply here."> <i data-f="name">Trust</i> <i data-f="tag">The site does not close the visitor.</i> <i data-f="finding">The site loads at 68 out of 100 on mobile and the call button sits just below the fold. Not broken. Not built to convert either. Average is the most expensive score on this map, because nothing about it feels urgent enough to fix.</i> <i data-f="problem">Visitors land, look around, and leave without calling. The page is not broken, it is just not built to close. Every page that does not actively close the visitor pays you nothing.</i> <i data-f="fix">Conversion-engineered page architecture, psychological triggers at the decision points, real proof at every objection moment, and CTAs built to convert at the top-quartile rate.</i> <i data-f="bench">Cross-industry median landing page conversion is 6.6%. Top quartile is 11.6% and up. Source: Unbounce Conversion Benchmark Report, Q4 2024.</i> <i data-f="q">Can someone find your phone number without scrolling, on their phone?</i> <i data-f="subs">Conversion Architecture|55;Mobile Page Speed (68/100)|60;Trust Signals at CTA|60;Message Clarity|60</i></div><div data-gap="speed" data-score="44" data-icon="clock" data-role="gate" data-order="4" data-passlo="35" data-passhi="85" data-flow="you reach them in time" data-src="Oldroyd, McElheran and Elkington, Harvard Business Review 2011: contact within 1 hour is about 7x more likely to qualify."> <i data-f="name">Speed</i> <i data-f="tag">You respond too slowly to win.</i> <i data-f="finding">No online booking. A secret-shop got a callback in four hours. He has a chat widget, which is why this is not critical, but by hour four the job is usually booked with whoever picked up first.</i> <i data-f="problem">Most service businesses answer in hours, not minutes. By the time you call back, the customer already booked the competitor who answered first. The lead you paid for is gone before your phone rings.</i> <i data-f="fix">Automated response infrastructure, AI lead qualification, intelligent routing, and the systems that make a sub-60-second response the default instead of the exception.</i> <i data-f="bench">Contacting a lead within 1 hour makes qualification roughly 7x more likely, and 60x more likely than waiting 24 hours. Source: Oldroyd, McElheran and Elkington, Harvard Business Review, 2011.</i> <i data-f="q">Can a customer book you online without talking to anyone first?</i> <i data-f="subs">Instant Contact Options|63;Online Booking|0;Live Chat or Chatbot|60;Form Friction|67</i></div><div data-gap="conversion" data-score="22" data-icon="funnel" data-role="gate" data-order="5" data-passlo="18" data-passhi="34" data-flow="they book the job" data-src="Andrew Ryan Marketing client data: close rates run 18% to 34% on the same lead flow."> <i data-f="name">Conversion</i> <i data-f="tag">Leads do not become booked jobs.</i> <i data-f="finding">No retargeting pixel and no follow-up sequence. Every lead that does not call on day one is simply gone, with nothing built to bring them back. This is his worst gap and the one costing the most, because these are people who already found him and already wanted him.</i> <i data-f="problem">You are getting leads. Most never become customers. Either the follow-up is broken, the sales conversation is not built to close, or the lead quality is too low to convert no matter what you do.</i> <i data-f="fix">Lead-scoring infrastructure, automated nurture for warm leads, sales conversation frameworks, and qualification that filters tire-kickers before they burn your team's day.</i> <i data-f="bench">A 20% close rate versus a 35% close rate doubles revenue on exactly the same leads. Source: Andrew Ryan Marketing client benchmarks.</i> <i data-f="q">Does anyone follow up with a lead who did not call back?</i> <i data-f="subs">Lead Capture and Magnets|20;Nurture and Follow-up|12;Retargeting|0;Booking-to-Close Path|45;Active-Research (secret-shop)|50</i></div><div data-gap="attribution" data-score="78" data-icon="chart" data-role="flywheel" data-order="6" data-passlo="0" data-passhi="0" data-flow="decides whether the next lap is better" data-src="Forrester: most service businesses operate with no closed-loop attribution."> <i data-f="name">Attribution</i> <i data-f="tag">Strong, and it is how we know the rest.</i> <i data-f="finding">GA4 is configured properly, conversion events fire, and call tracking is live. He can see what is happening. That is exactly why the Conversion score at 22 is so expensive: the data has been telling him for a year, and nobody was reading it.</i> <i data-f="problem">You are spending on marketing but cannot say which dollar produced which booked job. So you double down on what feels like it is working and quietly waste money on what is not.</i> <i data-f="fix">End-to-end tracking from first impression to closed sale, channel-level ROI reporting, and dashboards that tell you exactly which dollar produced which booked job, every month.</i> <i data-f="bench">Most service businesses operate with no closed-loop attribution. It is the largest measurable blind spot in the category. Source: Forrester.</i> <i data-f="q">Can you name which marketing dollar produced your last booked job?</i> <i data-f="subs">Web Analytics (GA4)|93;Conversion Tracking|80;Call Tracking|75;Tag Management|67;Ad Pixels|50</i></div><div data-copy="demoHeadline">Where 10,000 searches actually go</div><div data-copy="selfHeadline">Where your searches go</div><div data-copy="demoSub">Five gates stand between a search and a booked job. Every one of them leaks, and they do not add up, they multiply. The sixth gate decides whether you ever find out. Watch it run.</div><div data-copy="selfSub">Seven questions. No typing, no email. The map rescores as you answer.</div><div data-copy="demoCta">This is an example.<b><br>Yours runs on your actual site, your actual competitor, your actual reviews.</b></div><div data-copy="selfCta">That is your self-assessment. <b>Ours is measured, and it is usually harsher.</b></div><div data-copy="selfCtaDone"><span data-argmscroll="argmVSelf">Your map above has rescored &uarr;</span> - that is your self-assessment. <b>Ours is measured, and it is usually harsher.</b></div><div data-copy="demoFine">Takes 30 seconds to request. No call, no pitch. Your gaps documented on video within 48 hours.</div><div data-copy="selfFine">Self-scored answers are optimistic by nature. The real scan uses your site, your competitor and your numbers.</div><div data-copy="capQ">If we doubled your qualified leads next month, could your crews and office absorb the work?</div><div data-copy="capYes">Yes, easily</div><div data-copy="capStrain">We&rsquo;d strain but manage</div><div data-copy="capNo">No &mdash; we&rsquo;re near capacity now</div><div data-copy="capHead">You may not have a lead problem.</div><div data-copy="capBody">Based on your answer, more leads isn&rsquo;t your next move &mdash; capacity is. Manufacturing demand you can&rsquo;t deliver costs you money and reputation, not just missed jobs. The highest-return work here is expanding what you can fulfill first, then opening the demand valve &mdash; in that order.</div><div data-copy="capBody2">That&rsquo;s a different conversation, and it&rsquo;s the one worth having.</div><div data-copy="capCta">Book the capacity conversation &rarr;</div><div data-copy="optYes">Yes</div><div data-copy="optNo">No</div><div data-copy="optUnsure">Not sure</div></div></div> <script>(function(){
+  "use strict";
+  /* Zero logical-AND operators and zero raw ampersands below, by design. See header. */
+
+  var root = document.getElementById("argmRoot");
+  if(!root){ return; }
+  if(root.getAttribute("data-argm-init") === "1"){ return; }
+  root.setAttribute("data-argm-init", "1");
+
+  var $ = function(id){ return document.getElementById(id); };
+  var dataBox = $("argmData");
+  var ORDER = ["visibility", "authority", "trust", "speed", "conversion", "attribution"];
+
+  function fieldOf(box, key){
+    var el = box.querySelector('[data-f="' + key + '"]');
+    if(!el){ return ""; }
+    return el.textContent.trim();
+  }
+  function copyOf(key){
+    var el = dataBox.querySelector('[data-copy="' + key + '"]');
+    if(!el){ return ""; }
+    return el.innerHTML.trim();
+  }
+
+  var GAPS = [];
+  var i, j;
+  for(i = 0; i < ORDER.length; i++){
+    var box = dataBox.querySelector('[data-gap="' + ORDER[i] + '"]');
+    if(!box){ continue; }
+    var rawSubs = fieldOf(box, "subs").split(";");
+    var subs = [];
+    for(j = 0; j < rawSubs.length; j++){
+      var p = rawSubs[j].split("|");
+      if(p.length === 2){
+        subs.push({ label: p[0].trim(), pct: parseFloat(p[1]) });
+      }
+    }
+    GAPS.push({
+      key: ORDER[i],
+      icon: box.getAttribute("data-icon"),
+      order: parseFloat(box.getAttribute("data-order")),
+      demoScore: parseFloat(box.getAttribute("data-score")),
+      score: parseFloat(box.getAttribute("data-score")),
+      name: fieldOf(box, "name"),
+      tag: fieldOf(box, "tag"),
+      finding: fieldOf(box, "finding"),
+      problem: fieldOf(box, "problem"),
+      fix: fieldOf(box, "fix"),
+      bench: fieldOf(box, "bench"),
+      q: fieldOf(box, "q"),
+      subs: subs,
+      demoSubs: subs.slice(0),
+      subsCount: subs.length,
+      role:   box.getAttribute("data-role"),
+      passLo: parseFloat(box.getAttribute("data-passlo")),
+      passHi: parseFloat(box.getAttribute("data-passhi")),
+      flow:   box.getAttribute("data-flow"),
+      src:    box.getAttribute("data-src")
+    });
+  }
+
+  var basisEl = dataBox.querySelector("[data-basis]");
+  var BASIS = {
+    cohort: parseFloat(basisEl.getAttribute("data-cohort")),
+    job:    parseFloat(basisEl.getAttribute("data-job")),
+    target: parseFloat(basisEl.getAttribute("data-target"))
+  };
+
+  /* ================================================================================
+     THE MODEL
+     Five gates stand between a search and a booked job, in order. Each one passes a
+     share of what reaches it, interpolated between a bottom-quartile and a top-quartile
+     rate taken from published research (see data-src on each gap). They MULTIPLY, which
+     is why six mediocre scores compound into a catastrophic end-to-end rate - the thing
+     no contractor can see from inside his own business.
+
+     Attribution is NOT a gate. It filters nobody. A contractor with no tracking still
+     books jobs, he just never learns why. It is the flywheel: it decides whether lap two
+     is better than lap one. That is also the only honest reason this shape is a circle
+     rather than a funnel - the sixth gate feeds the first.
+     ================================================================================ */
+  function gatesInOrder(){
+    var g = [];
+    for(var i = 0; i < GAPS.length; i++){
+      if(GAPS[i].role === "gate"){ g.push(GAPS[i]); }
+    }
+    g.sort(function(a, b){ return a.order - b.order; });
+    return g;
+  }
+  function flywheelGap(){
+    for(var i = 0; i < GAPS.length; i++){
+      if(GAPS[i].role === "flywheel"){ return GAPS[i]; }
+    }
+    return null;
+  }
+  function passOf(g, score){
+    var s = (score === undefined) ? g.score : score;
+    return g.passLo + (s / 100) * (g.passHi - g.passLo);
+  }
+  /* Returns every step of the collapse, so the number on screen is never asserted -
+     the visitor watches it get derived. */
+  function funnel(overrideKey, overrideScore){
+    var gs = gatesInOrder();
+    var n = BASIS.cohort;
+    var steps = [];
+    for(var i = 0; i < gs.length; i++){
+      var g = gs[i];
+      var sc = (overrideKey === g.key) ? overrideScore : g.score;
+      var p = passOf(g, sc);
+      var before = n;
+      n = n * p / 100;
+      steps.push({ key: g.key, name: g.name, pass: p, before: before, after: n, lost: before - n, flow: g.flow });
+    }
+    return { steps: steps, jobs: n };
+  }
+  function jobsNow(){ return funnel().jobs; }
+  function jobsIf(key, score){ return funnel(key, score).jobs; }
+
+  /* THE LEVER.
+     Not the worst score - the biggest lever. They are different, and that difference is
+     the whole argument. Conversion at 22 is the ugliest number on the board, but it sits
+     at the END of the funnel and only ever touches the 17 people who got that far.
+     Visibility gates everything downstream, so fixing it is worth 2.0x while fixing the
+     worst score is worth 1.4x. Pulsing the lowest number would tell him to fix the wrong
+     thing, which is exactly what every other agency does. */
+  function leverRank(){
+    var gs = gatesInOrder();
+    var base = jobsNow();
+    var out = [];
+    for(var i = 0; i < gs.length; i++){
+      var lifted = jobsIf(gs[i].key, BASIS.target);
+      out.push({ key: gs[i].key, name: gs[i].name, mult: lifted / base, jobs: lifted, score: gs[i].score });
+    }
+    out.sort(function(a, b){ return b.mult - a.mult; });
+    return out;
+  }
+  function bestLever(){ return leverRank()[0]; }
+  function idxOfKey(k){
+    for(var i = 0; i < GAPS.length; i++){ if(GAPS[i].key === k){ return i; } }
+    return 0;
+  }
+  /* Attribution compounds. Same five gaps, same start; the only variable is whether he
+     can see what worked. */
+  function laps(attrScore, n){
+    var gs = gatesInOrder();
+    var sc = [];
+    for(var i = 0; i < gs.length; i++){ sc.push(gs[i].score); }
+    var out = [];
+    for(var L = 0; L < n; L++){
+      var p = BASIS.cohort;
+      for(var j = 0; j < gs.length; j++){ p = p * passOf(gs[j], sc[j]) / 100; }
+      out.push(p);
+      var lift = 1 + (attrScore / 100) * 0.28;
+      for(var k = 0; k < sc.length; k++){ sc[k] = Math.min(95, sc[k] * lift); }
+    }
+    return out;
+  }
+
+  var TIERS = [
+    { min: 0,  name: "CRITICAL", color: "#dc2626" },
+    { min: 35, name: "WEAK",     color: "#ef662f" },
+    { min: 55, name: "AVERAGE",  color: "#eab308" },
+    { min: 75, name: "STRONG",   color: "#10b981" },
+    { min: 90, name: "ELITE",    color: "#059669" }
+  ];
+  function tierOf(s){
+    var t = TIERS[0];
+    for(var k = 0; k < TIERS.length; k++){
+      if(s >= TIERS[k].min){ t = TIERS[k]; }
+    }
+    return t;
+  }
+
+  var ICONS = {
+    eye:       "M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z M9 12 a3 3 0 1 0 6 0 a3 3 0 1 0 -6 0",
+    shield:    "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z",
+    handshake: "M11 17l-5-5 5-5 M13 7l5 5-5 5 M3 12h18",
+    clock:     "M12 22 a10 10 0 1 0 0 -20 a10 10 0 1 0 0 20 M12 6 v6 l4 2",
+    funnel:    "M22 3 L2 3 L10 12.46 L10 19 L14 21 L14 12.46 Z",
+    chart:     "M18 20 L18 10 M12 20 L12 4 M6 20 L6 14"
+  };
+
+  /* ---------- geometry ----------
+     viewBox is fixed at 760x760. What changes with width is k, the number of viewBox units
+     per rendered CSS pixel. Every font size and stroke is px * k, so apparent size holds
+     constant at 375px and at 1440px. This is why this radial needs no list fallback. */
+  var CX = 430, CY = 430;
+  var geom = { orbitR: 280, gapR: 52, coreEdge: 80, coreR: 70, k: 1.5, narrow: false };
+  var svg = $("argmSvg");
+
+  function measure(){
+    var w = svg.getBoundingClientRect().width;
+    if(!w){ w = 500; }
+    if(w < 240){ w = 240; }
+    geom.k = 860 / w;
+    geom.narrow = w < 480;
+    /* The core has to hold "$230,308" at a constant apparent size. At 375px the old
+       coreR of 66 gave a 65px-wide disc trying to hold ~75px of text, so it overflowed AND
+       the fixed y-offsets collided. The core is now sized so the SAME screen-px text block
+       fits at every width. */
+    geom.orbitR   = geom.narrow ? 236 : 280;
+    geom.gapR     = geom.narrow ? 58  : 52;
+    geom.coreR    = geom.narrow ? 96  : 70;
+    geom.coreEdge = geom.coreR + 8;
+  }
+  function px(n){ return (n * geom.k).toFixed(1); }
+  function ang(i2){ return -90 + i2 * 60; }
+  function pos(deg, r){
+    var rad = deg * Math.PI / 180;
+    return { x: CX + r * Math.cos(rad), y: CY + r * Math.sin(rad) };
+  }
+  function gapPos(i2){ return pos(ang(i2), geom.orbitR); }
+
+  var mode = "demo";
+  var selected = 0;
+  var scanned = false;
+  var cometDeg = 230;
+  var trail = [];
+  var raf = null, lastTs = null;
+  var visited = {};
+  var timers = [];
+  var answers = [null, null, null, null, null, null];
+  var reduce = false;
+  if(window.matchMedia){
+    if(window.matchMedia("(prefers-reduced-motion: reduce)").matches){ reduce = true; }
+  }
+  function after(ms, fn){ var t = setTimeout(fn, ms); timers.push(t); return t; }
+
+  var chromeG = $("argmChrome"), linesG = $("argmLines"), gapsG = $("argmGaps"), coreG = $("argmCore");
+  var cometG = $("argmComet"), cHead = $("argmCHead"), cHalo = $("argmCHalo"), trailG = $("argmTrail");
+  var dotsG = $("argmDots"), driftG = $("argmDrift"), pingsG = $("argmPings"), beam = $("argmBeam");
+  var cohortG = $("argmCohort"), cohortN = $("argmCohortN"), cohortL = $("argmCohortL"), cohortBg = $("argmCohortBg");
+  var floorGlow = $("argmFloorGlow"), vign = $("argmVignette");
+  var SVGNS = "http://www.w3.org/2000/svg";
+  function q(sel){ return svg.querySelector(sel); }
+
+  function buildChrome(){
+    var h = '<rect width="860" height="860" fill="url(#argmGrid)" opacity="0.5"/>';
+    if(!geom.narrow){
+      h += '<g stroke="#555" stroke-width="1" fill="none" opacity="0.6">';
+      h += '<path d="M 40 70 L 40 40 L 70 40"/><path d="M 790 40 L 820 40 L 820 70"/>';
+      h += '<path d="M 40 790 L 40 820 L 70 820"/><path d="M 790 820 L 820 820 L 820 790"/></g>';
+      h += '<circle cx="430" cy="430" r="350" fill="none" stroke="#3c3c3c" stroke-width="1" stroke-dasharray="1,8" opacity="0.45"/>';
+    }
+    /* counter-rotating dashed rings give the field parallax depth instead of a flat plate */
+    h += '<circle class="argm-spin" cx="430" cy="430" r="' + (geom.orbitR + 44) + '" fill="none" stroke="#4a4a4a" stroke-width="' + px(0.6) + '" stroke-dasharray="' + px(1) + ' ' + px(9) + '" opacity="0.5"/>';
+    h += '<circle class="argm-spin-rev" cx="430" cy="430" r="' + (geom.orbitR - 74) + '" fill="none" stroke="#3f3f3f" stroke-width="' + px(0.6) + '" stroke-dasharray="' + px(2) + ' ' + px(12) + '" opacity="0.42"/>';
+    h += '<circle cx="430" cy="430" r="' + geom.orbitR + '" fill="none" stroke="#3d3d3d" stroke-width="' + px(0.8) + '" opacity="0.7"/>';
+    if(!geom.narrow){
+      /* instrument coordinates, like a real scope */
+      var cds = [["N", CX, CY - geom.orbitR - 62, "middle"], ["E - 090", CX + geom.orbitR + 62, CY + 4, "middle"],
+                 ["S - 180", CX, CY + geom.orbitR + 66, "middle"], ["W - 270", CX - geom.orbitR - 62, CY + 4, "middle"]];
+      for(var c = 0; c < cds.length; c++){
+        h += '<text x="' + cds[c][1] + '" y="' + cds[c][2] + '" text-anchor="' + cds[c][3] + '" font-family="DM Sans, sans-serif" font-size="' + px(6.5) + '" font-weight="600" letter-spacing="' + px(1) + '" fill="#6a6a6a" opacity="0.75">' + cds[c][0] + '</text>';
+      }
+    }
+    for(var d = 0; d < 360; d += 10){
+      var rad = (d - 90) * Math.PI / 180;
+      var major = (d % 60 === 0);
+      var tl = major ? 10 : 5;
+      var x1 = CX + (geom.orbitR - tl / 2) * Math.cos(rad), y1 = CY + (geom.orbitR - tl / 2) * Math.sin(rad);
+      var x2 = CX + (geom.orbitR + tl / 2) * Math.cos(rad), y2 = CY + (geom.orbitR + tl / 2) * Math.sin(rad);
+      h += '<line x1="' + x1.toFixed(1) + '" y1="' + y1.toFixed(1) + '" x2="' + x2.toFixed(1) + '" y2="' + y2.toFixed(1) + '" stroke="' + (major ? "#ef662f" : "#4a4a4a") + '" stroke-width="' + px(major ? 1.2 : 0.8) + '" opacity="' + (major ? 0.7 : 0.55) + '"/>';
+    }
+    chromeG.innerHTML = h;
+  }
+
+  function buildLines(){
+    var h = "";
+    for(var i2 = 0; i2 < 6; i2++){
+      var a = ang(i2);
+      var s = pos(a, geom.coreEdge);
+      var e = pos(a, geom.orbitR - geom.gapR);
+      h += '<path data-line="' + i2 + '" d="M ' + s.x.toFixed(1) + ' ' + s.y.toFixed(1) + ' L ' + e.x.toFixed(1) + ' ' + e.y.toFixed(1) + '" fill="none" stroke="#6e4536" stroke-width="' + px(1) + '" opacity="0.6" style="transition:stroke .25s ease,stroke-width .25s ease,opacity .25s ease;"/>';
+    }
+    linesG.innerHTML = h;
+  }
+  /* While he reads a gate, light the line that connects it to the core - the literal path
+     the money takes. It answers "which one am I looking at" without him hunting. */
+  function litSpoke(i){
+    for(var n = 0; n < 6; n++){
+      var el = q('[data-line="' + n + '"]');
+      if(!el){ continue; }
+      if(n === i){
+        var col = scanned ? tierOf(GAPS[n].score).color : "#ef662f";
+        el.setAttribute("stroke", col);
+        el.setAttribute("stroke-width", px(2.6));
+        el.setAttribute("opacity", "0.95");
+      } else {
+        el.setAttribute("stroke", "#6e4536");
+        el.setAttribute("stroke-width", px(1));
+        el.setAttribute("opacity", "0.6");
+      }
+    }
+  }
+
+  function buildCore(){
+    var r = geom.coreR;
+    var h = "";
+    /* Depth stack: two breathing halos, a spinning dashed collar, the disc, a specular
+       highlight, then the readout. */
+    h += '<circle cx="430" cy="430" r="' + (r * 1.95).toFixed(0) + '" fill="url(#argmHaloO)" class="argm-halo-o"/>';
+    h += '<circle cx="430" cy="430" r="' + (r * 1.45).toFixed(0) + '" fill="url(#argmHaloM)" class="argm-halo-m"/>';
+    h += '<circle class="argm-corering" cx="430" cy="430" r="' + (r * 1.22).toFixed(1) + '" fill="none" stroke="#ff8855" stroke-width="' + px(1) + '" stroke-dasharray="' + px(3) + ' ' + px(7) + '" opacity="0.5"/>';
+    h += '<circle cx="430" cy="430" r="' + r + '" fill="url(#argmCoreG2)"/>';
+    h += '<circle cx="430" cy="430" r="' + r + '" fill="none" stroke="#ffd0b8" stroke-width="' + px(0.8) + '" opacity="0.35"/>';
+    h += '<ellipse cx="' + (CX - r * 0.22).toFixed(0) + '" cy="' + (CY - r * 0.28).toFixed(0) + '" rx="' + (r * 0.34).toFixed(0) + '" ry="' + (r * 0.2).toFixed(0) + '" fill="#fff" opacity="0.16"/>';
+    /* y-offsets are in SCREEN px and scaled by k, exactly like the font sizes. Previously
+       the fonts scaled and the offsets did not, so at 375px the 34.5-unit "$230,308" was
+       crammed into a 28-unit line gap - 123% of the space, hence the squish. */
+    h += '<text id="argmL1" x="430" y="' + (CY - 14 * geom.k).toFixed(1) + '" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="' + px(7) + '" font-weight="700" letter-spacing="' + px(1.2) + '" fill="#ffe0d3" opacity="0.9">REVENUE AT RISK</text>';
+    h += '<text id="argmL2" x="430" y="' + (CY + 8 * geom.k).toFixed(1) + '" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="' + px(17) + '" font-weight="800" fill="#fff" letter-spacing="-0.3">$0</text>';
+    h += '<text id="argmL3" x="430" y="' + (CY + 23 * geom.k).toFixed(1) + '" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="' + px(6.5) + '" font-weight="600" letter-spacing="' + px(0.6) + '" fill="#ffe5d9" opacity="0.85">every year</text>';
+    coreG.innerHTML = h;
+  }
+
+  /* 0 = flung out along their own spokes, 1 = seated on the ring. They do not fly in from
+     nowhere like the scroll-assembly trick everyone is running - they travel the line that
+     connects them to the core, which is the line the money travels. The motion means
+     something, which is the only reason to have motion. */
+  var assembly = 0;
+  function buildGaps(){
+    var h = "";
+    for(var i3 = 0; i3 < 6; i3++){
+      var g = GAPS[i3];
+      var p = gapPos(i3);
+      var r = geom.gapR;
+      var deg = ang(i3);
+      var lp = pos(deg, geom.orbitR + r + (geom.narrow ? 22 : 28));
+      var anchor = "middle";
+      if(deg > -90){ if(deg < 90){ anchor = "start"; } }
+      if(deg > 90){ anchor = "end"; }
+
+      var outR = geom.orbitR + (1 - assembly) * (geom.orbitR * 0.85);
+      var op = pos(deg, outR);
+      var sc = 1 + (1 - assembly) * 0.55;
+      var tx = (op.x - p.x).toFixed(2), ty = (op.y - p.y).toFixed(2);
+      h += '<g class="argm-node" data-i="' + i3 + '" role="button" tabindex="0" aria-label="' + g.name + ' gap"' +
+           ' transform="translate(' + tx + ',' + ty + ') rotate(0)" data-ax="' + tx + '" data-ay="' + ty + '" data-as="' + sc.toFixed(3) + '">';
+      h += '<circle class="argm-sathalo" cx="' + p.x.toFixed(1) + '" cy="' + p.y.toFixed(1) + '" r="' + (r * 1.75).toFixed(1) + '" fill="url(#argmSatHaloG)"/>';
+      h += '<circle data-wp="' + i3 + '" cx="' + p.x.toFixed(1) + '" cy="' + p.y.toFixed(1) + '" r="' + (r * 1.5).toFixed(1) + '" fill="#dc2626" opacity="0" style="display:none;"/>';
+      h += '<g class="argm-fx" data-fx="' + i3 + '">';
+      h += '<circle data-body="' + i3 + '" cx="' + p.x.toFixed(1) + '" cy="' + p.y.toFixed(1) + '" r="' + r.toFixed(1) + '" fill="url(#argmIdle)" stroke="#ef662f" stroke-width="' + px(1.2) + '" stroke-opacity="0.5"/>';
+      h += '<path data-icon="' + i3 + '" d="' + ICONS[g.icon] + '" fill="none" stroke="#ef662f" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" transform="translate(' + (p.x - r * 0.36).toFixed(1) + ',' + (p.y - r * 0.64).toFixed(1) + ') scale(' + (r * 0.03).toFixed(3) + ')"/>';
+      h += '<text class="argm-ns" data-score="' + i3 + '" x="' + p.x.toFixed(1) + '" y="' + (p.y + r * 0.58).toFixed(1) + '" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="' + px(13) + '" font-weight="800" fill="#ef662f">0</text>';
+      h += '</g>';
+      h += '<text class="argm-nm" data-nm="' + i3 + '" x="' + lp.x.toFixed(1) + '" y="' + lp.y.toFixed(1) + '" text-anchor="' + anchor + '" font-family="Plus Jakarta Sans, sans-serif" font-size="' + px(11) + '" font-weight="700" fill="#e5e7eb" letter-spacing="' + px(0.4) + '">' + g.name + '</text>';
+      h += '</g>';
+    }
+    gapsG.innerHTML = h;
+
+    var nodes = gapsG.querySelectorAll(".argm-node");
+    for(var n = 0; n < nodes.length; n++){
+      (function(el){
+        function fire(){ onPick(parseInt(el.getAttribute("data-i"), 10)); }
+        el.addEventListener("click", fire);
+        el.addEventListener("keydown", function(ev){
+          if(ev.key === "Enter"){ fire(); }
+          if(ev.key === " "){ ev.preventDefault(); fire(); }
+        });
+      })(nodes[n]);
+    }
+  }
+
+  function paintScore(i4){
+    var g = GAPS[i4];
+    var t = tierOf(g.score);
+    var txt = q('[data-score="' + i4 + '"]');
+    var body = q('[data-body="' + i4 + '"]');
+    var icon = q('[data-icon="' + i4 + '"]');
+    if(txt){ txt.textContent = Math.round(g.score); txt.setAttribute("fill", t.color); }
+    if(body){ body.setAttribute("stroke", t.color); body.setAttribute("stroke-opacity", "0.95"); }
+    if(icon){ icon.setAttribute("stroke", t.color); }
+    var node = gapsG.querySelector('.argm-node[data-i="' + i4 + '"]');
+    if(node){ node.classList.add("argm-scored"); }
+  }
+  function worstIdx(){
+    var lo = 1e9, w = 0;
+    for(var i5 = 0; i5 < 6; i5++){
+      if(GAPS[i5].score < lo){ lo = GAPS[i5].score; w = i5; }
+    }
+    return w;
+  }
+  /* Was markWorst(). Pulsing the lowest number told him to fix the end of the funnel,
+     which is what every other agency sells and what the math says is wrong. */
+  function markLever(){
+    var w = (mode === "demo") ? idxOfKey(bestLever().key) : worstIdx();
+    for(var i6 = 0; i6 < 6; i6++){
+      var el = q('[data-wp="' + i6 + '"]');
+      if(!el){ continue; }
+      if(i6 === w){
+        el.style.display = "block";
+        el.setAttribute("class", "argm-worst");
+      } else {
+        el.style.display = "none";
+        el.setAttribute("class", "");
+      }
+    }
+  }
+  function paintAllScores(){
+    for(var i7 = 0; i7 < 6; i7++){ paintScore(i7); }
+    markLever();
+  }
+  function setActive(i8){
+    var nodes = gapsG.querySelectorAll(".argm-node");
+    for(var n2 = 0; n2 < nodes.length; n2++){
+      nodes[n2].classList.remove("argm-act");
+      var fx = nodes[n2].querySelector(".argm-fx");
+      if(fx){ fx.classList.remove("argm-fxon"); }
+    }
+    var node = gapsG.querySelector('.argm-node[data-i="' + i8 + '"]');
+    if(node){
+      node.classList.add("argm-act");
+      var fx2 = node.querySelector(".argm-fx");
+      if(fx2){ fx2.classList.add("argm-fxon"); }
+    }
+    litSpoke(i8);
+  }
+
+  /* ---------- ENERGY FLOW ----------
+     Dots travel from each gap node INTO the core. The core reads "REVENUE AT RISK", so the
+     core is the leak - dots arriving there are money draining out of it. That fixes the
+     semantics of the animation: the WORSE a gap scores, the more dots it emits, the faster
+     they run, and the redder they are. An ELITE gap trickles two slow green dots. A CRITICAL
+     one floods six fast red ones. You can read the diagnosis from across the room without
+     looking at a single number, which is the whole point of an instrument. */
+  var dots = [], dotEls = [];
+  function buildDots(){
+    dots = [];
+    var h = "";
+    for(var i = 0; i < 6; i++){
+      var sc = scanned ? GAPS[i].score : 55;
+      var n = 2 + Math.round((100 - sc) / 20);          /* 2 (elite) .. 7 (critical) */
+      for(var j = 0; j < n; j++){
+        dots.push({ i: i, t: j / n, sp: 0.16 + ((100 - sc) / 100) * 0.30 });
+        h += '<circle data-dot="' + (dots.length - 1) + '" r="2" fill="#ef662f" opacity="0"/>';
+      }
+    }
+    dotsG.innerHTML = h;
+    dotEls = dotsG.querySelectorAll("[data-dot]");
+  }
+  function tickDots(dt){
+    var rOut = geom.orbitR - geom.gapR;
+    var rIn = geom.coreEdge;
+    for(var k = 0; k < dots.length; k++){
+      var d = dots[k];
+      d.t += d.sp * dt;
+      while(d.t > 1){ d.t -= 1; }
+      var p = pos(ang(d.i), rOut + (rIn - rOut) * d.t);
+      var el = dotEls[k];
+      if(!el){ continue; }
+      el.setAttribute("cx", p.x.toFixed(1));
+      el.setAttribute("cy", p.y.toFixed(1));
+      el.setAttribute("r", px(2.1));
+      var o = 1;
+      if(d.t < 0.14){ o = d.t / 0.14; }
+      if(d.t > 0.86){ o = (1 - d.t) / 0.14; }
+      el.setAttribute("opacity", (o * 0.95).toFixed(2));
+      el.setAttribute("fill", scanned ? tierOf(GAPS[d.i].score).color : "#ef662f");
+    }
+  }
+
+  /* ---------- DRIFT FIELD ----------
+     Slow parallax motes. Cheap, but they are what stops the background reading as a flat
+     plate: the eye needs something moving off-axis to perceive depth. */
+  var drift = [], driftEls = [];
+  function buildDrift(){
+    drift = [];
+    var h = "";
+    for(var i = 0; i < 30; i++){
+      var a = Math.random() * 360;
+      var r = 120 + Math.random() * (geom.orbitR + 70 - 120);
+      var p = pos(a, r);
+      drift.push({ x: p.x, y: p.y, ph: Math.random() * 6.283, sp: 0.25 + Math.random() * 0.6, amp: 5 + Math.random() * 11 });
+      h += '<circle data-dr="' + i + '" r="1.4" fill="#ef662f" opacity="0.15"/>';
+    }
+    driftG.innerHTML = h;
+    driftEls = driftG.querySelectorAll("[data-dr]");
+  }
+  function tickDrift(t){
+    for(var i = 0; i < drift.length; i++){
+      var d = drift[i], el = driftEls[i];
+      if(!el){ continue; }
+      el.setAttribute("cx", (d.x + Math.sin(t * d.sp + d.ph) * d.amp).toFixed(1));
+      el.setAttribute("cy", (d.y + Math.cos(t * d.sp * 0.75 + d.ph) * d.amp).toFixed(1));
+      el.setAttribute("r", px(1.3));
+      el.setAttribute("opacity", (0.09 + 0.15 * (0.5 + 0.5 * Math.sin(t * 0.7 + d.ph))).toFixed(2));
+    }
+  }
+
+  /* ---------- PING ----------
+     Fires on EVERY comet pass, not just the first. The map should stay alive after the
+     scan finishes, otherwise it is a loading spinner that already loaded. */
+  function ping(i){
+    var p = gapPos(i);
+    var c = document.createElementNS(SVGNS, "circle");
+    c.setAttribute("cx", p.x.toFixed(1));
+    c.setAttribute("cy", p.y.toFixed(1));
+    c.setAttribute("r", geom.gapR.toFixed(1));
+    c.setAttribute("fill", "none");
+    c.setAttribute("stroke", scanned ? tierOf(GAPS[i].score).color : "#ef662f");
+    c.setAttribute("stroke-width", px(1.4));
+    c.setAttribute("class", "argm-ping");
+    pingsG.appendChild(c);
+    setTimeout(function(){ if(c.parentNode){ c.parentNode.removeChild(c); } }, 950);
+  }
+
+  /* Every node flares in its OWN tier colour as the comet lands. Previously only the
+     lever ever glowed, so five of the six sat inert and the map looked like it had one
+     idea. Green nodes flare green - the instrument reports, it does not only accuse. */
+  function flare(i){
+    var p = gapPos(i);
+    var c = document.createElementNS(SVGNS, "circle");
+    c.setAttribute("cx", p.x.toFixed(1));
+    c.setAttribute("cy", p.y.toFixed(1));
+    c.setAttribute("r", (geom.gapR * 1.15).toFixed(1));
+    c.setAttribute("fill", scanned ? tierOf(GAPS[i].score).color : "#ef662f");
+    c.setAttribute("opacity", "0");
+    c.setAttribute("class", "argm-flare");
+    pingsG.appendChild(c);
+    setTimeout(function(){ if(c.parentNode){ c.parentNode.removeChild(c); } }, 1150);
+  }
+
+  /* Click a node and the panel used to sit there forever - the map went quiet and stayed
+     quiet. Now a click HOLDS his choice for 15s, then the comet resumes narrating. */
+  var userHold = false, holdTimer = null;
+  /* transport pause: freezes the self-running scan / orbit without touching scroll.
+     Separate from userHold (which is the temporary hold a node-click grants). */
+  var argmPaused = false;
+  function holdFor(ms){
+    userHold = true;
+    if(holdTimer){ clearTimeout(holdTimer); }
+    holdTimer = setTimeout(function(){ userHold = false; }, ms);
+  }
+  function onPickSoft(i){
+    selected = i;
+    setActive(i);
+    renderDetail(i);
+  }
+
+  function setNear(i){
+    var nodes = gapsG.querySelectorAll(".argm-node");
+    for(var n = 0; n < nodes.length; n++){ nodes[n].classList.remove("argm-near"); }
+    if(i < 0){ return; }
+    var node = gapsG.querySelector('.argm-node[data-i="' + i + '"]');
+    if(node){ node.classList.add("argm-near"); }
+  }
+
+  function placeComet(deg){
+    var p = pos(deg, geom.orbitR);
+    cHead.setAttribute("cx", p.x); cHead.setAttribute("cy", p.y); cHead.setAttribute("r", px(6));
+    cHalo.setAttribute("cx", p.x); cHalo.setAttribute("cy", p.y); cHalo.setAttribute("r", px(22));
+    /* When scroll is still, the comet is still - pushing identical points builds a solid
+       blob that reads as a smudge. Only record real movement. */
+    var last = trail.length ? trail[trail.length - 1] : null;
+    var moved = true;
+    if(last){ if(Math.abs(last.x - p.x) < 0.4){ if(Math.abs(last.y - p.y) < 0.4){ moved = false; } } }
+    if(moved){ trail.push(p); }
+    if(trail.length > 10){ trail.shift(); }
+    var h = "";
+    for(var k2 = 0; k2 < trail.length; k2++){
+      var op = (k2 / trail.length) * 0.55;
+      var rr = (2 + (k2 / trail.length) * 4) * geom.k;
+      h += '<circle cx="' + trail[k2].x.toFixed(1) + '" cy="' + trail[k2].y.toFixed(1) + '" r="' + rr.toFixed(1) + '" fill="#ff8855" opacity="' + op.toFixed(2) + '"/>';
+    }
+    trailG.innerHTML = h;
+    /* the beam says the instrument is reading THIS gap, right now */
+    beam.setAttribute("x1", CX);
+    beam.setAttribute("y1", CY);
+    beam.setAttribute("x2", p.x.toFixed(1));
+    beam.setAttribute("y2", p.y.toFixed(1));
+    beam.setAttribute("stroke-width", px(1.4));
+    beam.setAttribute("opacity", "0.5");
+  }
+  /* The comet stops being decoration and starts carrying a cohort. 10,000 people set out;
+     you watch them get eaten gate by gate. */
+  function placeCohort(deg, n, label){
+    var p = pos(deg, geom.orbitR + geom.gapR + 34 * geom.k);
+    var w = 96 * geom.k, h = 34 * geom.k;
+    cohortBg.setAttribute("x", (p.x - w / 2).toFixed(1));
+    cohortBg.setAttribute("y", (p.y - h / 2).toFixed(1));
+    cohortBg.setAttribute("width", w.toFixed(1));
+    cohortBg.setAttribute("height", h.toFixed(1));
+    cohortBg.setAttribute("rx", px(5));
+    cohortN.setAttribute("x", p.x.toFixed(1));
+    cohortN.setAttribute("y", (p.y - 1 * geom.k).toFixed(1));
+    cohortN.setAttribute("font-size", px(13));
+    cohortN.textContent = comma(n);
+    cohortL.setAttribute("x", p.x.toFixed(1));
+    cohortL.setAttribute("y", (p.y + 11 * geom.k).toFixed(1));
+    cohortL.setAttribute("font-size", px(6.5));
+    cohortL.textContent = label;
+  }
+  function nearest(deg){
+    var best = 0, bd = 1e9;
+    for(var i9 = 0; i9 < 6; i9++){
+      var d = deg - ang(i9);
+      while(d > 180){ d -= 360; }
+      while(d < -180){ d += 360; }
+      if(Math.abs(d) < Math.abs(bd)){ bd = d; best = i9; }
+    }
+    return { i: best, d: bd };
+  }
+  function visitedCount(){
+    var c = 0;
+    for(var vk in visited){ if(visited.hasOwnProperty(vk)){ c++; } }
+    return c;
+  }
+  var nearNow = -1, pingedAt = -1, clock = 0, armed = false;
+  /* Where the cohort stands right now, given how far the funnel has run. */
+  function cohortAt(p){
+    var f = funnel();
+    var n = f.steps.length;                 /* 5 gates */
+    var idx = Math.floor(p * n);
+    if(idx >= n){ return { n: f.jobs, label: "booked", done: true }; }
+    var st = f.steps[idx];
+    var local = (p * n) - idx;
+    var v = st.before + (st.after - st.before) * local;
+    return { n: v, label: idx === 0 ? "searching" : f.steps[idx - 1].name.toLowerCase(), done: false };
+  }
+  function tick(ts){
+    if(lastTs === null){ lastTs = ts; }
+    var dt = (ts - lastTs) / 1000;
+    lastTs = ts;
+    if(dt > 0.1){ dt = 0.1; }
+    clock += dt;
+    if(assemblyProgress() > 0.92){ useAuto = true; }
+    if(useAuto && !argmPaused){ autoP += dt * 0.30; if(autoP > 1){ autoP = 1; } }
+
+    if(!reduce){
+      /* Assembly stays scroll-driven and reversible ALWAYS - scroll up and they fly apart,
+         scroll down and they come home. The lock that briefly lived here existed to stop a
+         feedback loop from the prose box growing on reveal; the prose no longer grows, so
+         the loop is gone and the lock was just breaking the nicest thing in the section. */
+      applyAssembly(assemblyProgress());
+    }
+    var p = progress();
+    var z = nearest(cometDeg);
+    var adist = Math.abs(z.d);
+
+    /* Before the funnel has run, the comet IS the scroll head - it walks the gates as he
+       scrolls. Once it has run, it detaches and orbits as ambient life. */
+    if(!scanned){
+      /* THE STICK: the comet is pinned to funnel progress, but the funnel does not begin
+         until 55% of the way through. So for the entire assembly phase - roughly 585px of
+         scrolling - cometDeg was frozen at -90 and it sat parked at the top of the ring looking broken.
+         It now stays hidden until the collapse actually begins, and fades in on arrival. */
+      /* Gate on the timer, not on scroll position: the scan owns itself now, but the
+         comet should still idle-orbit until that timer actually starts. */
+      var mp = useAuto ? 1 : 0;
+      /* HYSTERESIS. The two branches place the comet by completely different rules - free
+         orbit vs snapped-to-scroll - and `armed` was being cleared every single frame the
+         assembly branch ran. So scrolling anywhere near the 0.55 boundary flipped between
+         them every few frames and the comet lurched back and forth. Arm at 0.55, and only
+         fall back to orbiting below 0.42. One clean handoff instead of a fight. */
+      var enter = ASSEMBLY_END;
+      var leave = ASSEMBLY_END - 0.13;
+      var inFunnel = armed ? (mp >= leave) : (mp >= enter);
+      if(!inFunnel){
+        /* v1 froze the comet at the top of the ring through all of assembly - it looked
+           broken. v2 hid it instead, which was worse: it was simply absent unless you
+           landed in exactly the right scroll window.
+           v3: it ORBITS on its own while the nodes assemble. Always there, always moving,
+           and it reads as the instrument idling before the scan begins. */
+        cometG.style.opacity = "1";
+        cohortG.style.opacity = "0";
+        cue(false);
+        if(!argmPaused){ cometDeg += 110 * dt; while(cometDeg >= 360){ cometDeg -= 360; } }
+        armed = false;
+        placeComet(cometDeg);
+        tickDots(dt);
+        tickDrift(clock);
+        raf = requestAnimationFrame(tick);
+        return;
+      }
+      /* Crossing into the collapse: the head takes its mark at the first gate. Drop the
+         trail so the handoff does not smear a line across the ring. */
+      cometG.style.opacity = "1";
+      if(!armed){ armed = true; trail = []; }
+      cometDeg = -90 + p * 300;
+      z = nearest(cometDeg);
+      adist = Math.abs(z.d);
+      var c = cohortAt(p);
+      cohortG.style.opacity = "1";
+      cue(true);
+      placeCohort(cometDeg, c.n, c.label);
+
+      /* Score every gate the head has PASSED, not merely the one it is next to. Proximity
+         alone breaks the moment someone arrives with the section already scrolled past -
+         a deep link, or a refresh mid-page - because progress clamps to 1, the head lands
+         at the far end, no gate is ever "near", the scan never completes and the verdict
+         never renders. Sweeping catches every gate behind the head at any progress. */
+      for(var vi = 0; vi < 6; vi++){
+        if(visited[vi]){ continue; }
+        if(ang(vi) > cometDeg + 0.5){ continue; }
+        visited[vi] = true;
+        if(visitedCount() === 1){ revealProse(); }   /* the costliest-gap verdict lands on first contact, not after a full lap */
+        paintScore(vi);
+        setActive(vi);
+        renderDetail(vi);
+        selected = vi;
+        ping(vi);
+        revealGate(vi);   /* the number arrives at the speed he is scrolling */
+      }
+      if(visitedCount() === 6){
+        scanned = true;
+        markLever();
+        buildDots();
+        renderVerdict();
+        revealProse();
+        lockDetailHeight();
+        var lv = idxOfKey(bestLever().key);
+        selected = lv;
+        setActive(lv);
+        renderDetail(lv);
+      }
+    } else {
+      if(!argmPaused){
+        var speed = 150;
+        if(adist < 26){ speed = 36; }
+        cometDeg += speed * dt;
+        while(cometDeg >= 360){ cometDeg -= 360; }
+      }
+      cohortG.style.opacity = "0";
+      cue(false);
+    }
+    placeComet(cometDeg);
+    tickDots(dt);
+    tickDrift(clock);
+
+    /* EVERY node grows and blinks as the comet arrives, on every lap. Previously only the
+       worst node ever pulsed and only after the scan, so the map died the moment it
+       finished. The comet now visibly interrogates each gap forever. */
+    /* Was 24 degrees - the node grew while the comet was still visibly short of it, which
+       reads as the animation guessing. 11 degrees lands the growth on arrival. */
+    if(adist < 11){
+      if(nearNow !== z.i){
+        nearNow = z.i;
+        setNear(z.i);
+        if(pingedAt !== z.i){
+          ping(z.i);
+          flare(z.i);
+          pingedAt = z.i;
+          if(scanned){ if(!userHold){ onPickSoft(z.i); } }
+        }
+      }
+    } else {
+      if(nearNow !== -1){ nearNow = -1; setNear(-1); }
+      if(adist > 30){ pingedAt = -1; }
+    }
+
+    raf = requestAnimationFrame(tick);
+  }
+  function startScan(){
+    cometG.style.opacity = "1";
+    trail = []; cometDeg = -90; visited = {};
+    scrollP = scrollProgress();
+    buildDots();
+    buildDrift();
+    placeComet(cometDeg);
+    countUp();
+    if(reduce){
+      scanned = true;
+      for(var rv = 0; rv < 6; rv++){ visited[rv] = true; }
+      paintAllScores();
+      buildDots();
+      renderVerdict();
+      selected = idxOfKey(bestLever().key);
+      setActive(selected);
+      renderDetail(selected);
+      cohortG.style.opacity = "0";
+      return;
+    }
+    lastTs = null;
+    if(raf){ cancelAnimationFrame(raf); }
+    raf = requestAnimationFrame(tick);
+  }
+
+  function revenue(){
+    var extraLeads = BASIS.traffic * ((BASIS.tgtConv - BASIS.curConv) / 100);
+    return extraLeads * BASIS.close * BASIS.job * 12;
+  }
+  function money(n){
+    return "$" + Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+  function comma(n){
+    return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+  function fmtJobs(n){
+    if(n < 10){ return n.toFixed(1); }
+    return Math.round(n).toString();
+  }
+  /* The headline is not asserted, it is DERIVED - the visitor watches every step of the
+     collapse and can check the arithmetic himself. That is the difference between a claim
+     and an instrument. */
+  /* The chain used to be built only once all six gates were done - so the box sat empty
+     and then every number landed at once. Startling, and it wasted the best beat we have.
+     Now the skeleton exists from the start and each link fades in as its gate is passed,
+     so the data arrives at the speed he is scrolling. */
+  function buildChain(){
+    var f = funnel();
+    var h = '<div class="argm-chain">';
+    h += '<div class="argm-link" data-link="0"><b>' + comma(BASIS.cohort) + '</b><span>searching</span></div>';
+    for(var s = 0; s < f.steps.length; s++){
+      var st = f.steps[s];
+      h += '<div class="argm-gate" data-gatecell="' + s + '"><span class="argm-gate-pct">' + st.pass.toFixed(1) + '%</span>' +
+           '<span class="argm-gate-arrow"></span>' +
+           '<span class="argm-gate-flow">' + st.flow + '</span></div>';
+      /* Every other link is a count of people still in play, so the gate name reads fine.
+         The last one is a count of jobs won - "4 conversion" is just wrong. */
+      var lbl = (s === f.steps.length - 1) ? "conversions" : st.name.toLowerCase();
+      h += '<div class="argm-link" data-link="' + (s + 1) + '"><b>' + comma(st.after) + '</b><span>' + lbl + '</span></div>';
+    }
+    h += '</div>';
+    var cw = $("argmChain");
+    cw.innerHTML = h;
+    var inner = cw.querySelector(".argm-chain");
+    if(inner){
+      /* Below 820px the chain wraps, so there is nothing to swipe and the edge fades must
+         not appear - they would imply hidden content that is actually on line two. */
+      var wraps = (window.innerWidth || 1200) <= 820;
+      if(wraps){ cw.classList.remove("argm-scrollable"); }
+      else if(inner.scrollWidth > inner.clientWidth + 4){ cw.classList.add("argm-scrollable"); }
+      else { cw.classList.remove("argm-scrollable"); }
+    }
+    var l0 = cw.querySelector('[data-link="0"]');
+    if(l0){ l0.classList.add("argm-vis"); }
+    if(chainRevealed){ revealChainAll(false); }
+  }
+  function revealGate(i){
+    var g = $("argmChain").querySelector('[data-gatecell="' + i + '"]');
+    var l = $("argmChain").querySelector('[data-link="' + (i + 1) + '"]');
+    if(g){ g.classList.add("argm-vis"); }
+    if(l){ l.classList.add("argm-vis"); }
+  }
+  /* Present from the first frame. It used to grow in on completion, which meant it
+     appeared while you were looking somewhere else entirely. Boring beats broken. */
+  function revealProse(){
+    var pr = $("argmProse");
+    if(pr){ pr.classList.add("argm-vis"); }
+    var pl = $("argmPlain");
+    if(pl){ pl.style.opacity = "1"; }
+  }
+  /* Show the cue only while scroll is actually driving something - i.e. the collapse is
+     live and unfinished. Before that there is nothing to run; after, it is done. */
+  function cue(on){ return; }   /* retired: the scan no longer waits on the scrollbar */
+
+  function renderVerdict(){
+    var hint = $("argmHint");
+    if(hint){ hint.style.opacity = scanned ? "1" : "0"; }
+    var f = funnel();
+    var lev = bestLever();
+    var worstScore = GAPS[0], gs = gatesInOrder();
+    for(var i = 0; i < gs.length; i++){
+      if(gs[i].score < worstScore.score){ worstScore = gs[i]; }
+    }
+    /* A bare "12.7%" means nothing to a roofer on a phone. Every gate now says what it
+       measures, in words, with an arrow showing which way the math runs. These strings
+       were already written - they were sitting in a title attribute nobody would hover. */
+    buildChain();
+    /* buildChain resets every link to hidden, so only re-reveal once the scan is actually
+       done. Called at boot (via startScan -> countUp) this used to reveal all six
+       immediately, which is exactly the pop we are removing. */
+    if(scanned){
+      for(var rv = 0; rv < f.steps.length; rv++){ revealGate(rv); }
+    } else {
+      for(var rv2 = 0; rv2 < 6; rv2++){ if(visited[rv2]){ revealGate(rv2); } }
+    }
+
+    $("argmVNum").textContent = fmtJobs(f.jobs);
+    $("argmVMath").innerHTML =
+      '<b style="color:#e5e7eb;">' + comma(BASIS.cohort) + ' searches become ' + fmtJobs(f.jobs) +
+      ' booked jobs.</b> Five gates, each passing a share of what reaches it. They do not add up. They multiply.' +
+      '<span style="display:block;margin-top:6px;">Average score across the six: <b style="color:#e5e7eb;">' +
+      Math.round((GAPS[0].score + GAPS[1].score + GAPS[2].score + GAPS[3].score + GAPS[4].score + GAPS[5].score) / 6) +
+      '/100</b>. Sounds survivable. It works out to <b style="color:#e5e7eb;">one booked job for every ' +
+      '~' + comma(Math.round(BASIS.cohort / f.jobs / 100) * 100) + ' searches</b>.</span>';
+
+    /* THE payoff line: worst score and biggest lever are different, and that is why he has
+       been fixing the wrong thing for years. */
+    var lh = '';
+    if(lev.key !== worstScore.key){
+      lh = '<b>Your worst score is ' + worstScore.name + ' at ' + Math.round(worstScore.score) +
+           '. Your biggest lever is ' + lev.name + '.</b> They are not the same thing. ' +
+           worstScore.name + ' sits at the end of the chain and only ever touches the ' +
+           comma(f.steps[f.steps.length - 2].after) + ' people who got that far. ' + lev.name +
+           ' gates everything behind it. Take it from ' + Math.round(lev.score) + ' to ' +
+           Math.round(BASIS.target) + ' and you book <b style="color:#fff;">' +
+           fmtJobs(lev.jobs) + ' a month instead of ' + fmtJobs(f.jobs) + '</b> - ' +
+           lev.mult.toFixed(1) + 'x, from one move.';
+    } else {
+      lh = '<b>Your biggest lever is ' + lev.name + '.</b> Take it from ' + Math.round(lev.score) +
+           ' to ' + Math.round(BASIS.target) + ' and you book <b style="color:#fff;">' +
+           fmtJobs(lev.jobs) + ' a month instead of ' + fmtJobs(f.jobs) + '</b> - ' + lev.mult.toFixed(1) + 'x.';
+    }
+    $("argmLever").innerHTML = lh;
+
+    /* Say the chain back to him in words. It confirms he read it right, and it turns the
+       gut-punch into a lever: the gates multiply, so widening any one of them moves the
+       last number further than intuition says it should. */
+    var pl = $("argmPlain");
+    if(pl){
+      /* "visibility alone takes it to 7.6" was an asserted number with its reasoning cut
+         off - the exact thing this whole section exists to argue against. Say the
+         assumption out loud: which gate, from what to what, and that the target is
+         deliberately STRONG rather than elite. Now he can check it. */
+      pl.innerHTML = '<b>' + comma(BASIS.cohort) + ' people went looking for what he sells this month. ' +
+        '<span class="argm-em">' + fmtJobs(f.jobs) + '</span> hired him.</b> ' +
+        'Every step above can be improved. The effect multiplies, so improving just one creates ' +
+        'more customers than you would think: take ' + lev.name.toLowerCase() + ' from <b>' +
+        Math.round(lev.score) + ' to ' + Math.round(BASIS.target) + '</b> - strong, not elite - and ' +
+        fmtJobs(f.jobs) + ' becomes <span class="argm-em">' + fmtJobs(lev.jobs) + '</span>.';
+    }
+    markLever();
+  }
+  function countUp(){ renderVerdict(); }
+
+  function detailHTML(i10){
+    var g = GAPS[i10];
+    var t = tierOf(g.score);
+    var h = "";
+    h += '<div class="argm-dhead"><h3 class="argm-dname">The ' + g.name + ' Gap</h3>';
+    h += '<span class="argm-dscore" style="color:' + t.color + ';">' + Math.round(g.score) + ' / 100 - ' + t.name + '</span></div>';
+    h += '<p class="argm-dtag">' + g.tag + '</p>';
+    if(mode === "demo"){
+      h += '<p class="argm-dfind">' + g.finding + '</p>';
+    }
+    /* A yes/no answer cannot produce a sub-breakdown, and inventing bars from one tap
+       would be exactly the fabrication this map exists to argue against. Say so instead. */
+    if(g.subs.length > 0){
+      h += '<div class="argm-subs"><div class="argm-subhd">The breakdown</div>';
+      for(var s = 0; s < g.subs.length; s++){
+        var sub = g.subs[s];
+        var pct = sub.pct;
+        var st = tierOf(pct);
+        h += '<div class="argm-sub2"><div class="argm-subtop"><span class="argm-sublab">' + sub.label + '</span>';
+        h += '<span class="argm-subval" style="color:' + st.color + ';">' + st.name + '</span></div>';
+        h += '<div class="argm-bar"><div class="argm-barfill" data-w="' + pct.toFixed(1) + '" style="background:' + st.color + ';"></div></div></div>';
+      }
+      h += '</div>';
+    } else {
+      var ts = 0;
+      for(var t2 = 0; t2 < GAPS.length; t2++){ ts += GAPS[t2].subsCount; }
+      h += '<p class="argm-dempty">One answer cannot produce a breakdown. The real scan scores the ' +
+           g.subsCount + ' signals inside this gap - ' + ts + ' across the full map - and shows you every one.</p>';
+    }
+    h += '<div class="argm-cols">';
+    h += '<div class="argm-col argm-cp"><h4>What it costs you</h4><p>' + g.problem + '</p></div>';
+    h += '<div class="argm-col argm-cf"><h4>How we close it</h4><p>' + g.fix + '</p></div>';
+    h += '</div>';
+    h += '<div class="argm-bench">' + g.bench + '</div>';
+    return h;
+  }
+
+  /* ---------- HEIGHT LOCK ----------
+     Each gap has a different amount to say - 4 to 6 sub-bars, findings of different
+     lengths - so the panel was a different height for every gate. The comet lands on a
+     new one every ~1.3s, so the section grew and shrank by ~80px on a loop and dragged
+     the whole page up and down under the reader.
+
+     That is Cumulative Layout Shift: an unexpected reflow with no user input behind it,
+     repeating forever, on the homepage of an SEO agency. Measure all six once, reserve
+     the tallest, let the short ones carry whitespace. Nothing shrinks, nothing moves. */
+  function lockDetailHeight(){
+    var d = $("argmDetail");
+    if(!d){ return; }
+    var w = d.getBoundingClientRect().width;
+    if(!w){ return; }
+    var probe = document.createElement("div");
+    probe.className = d.className;
+    probe.style.position = "absolute";
+    probe.style.left = "-99999px";
+    probe.style.top = "0";
+    probe.style.width = w + "px";
+    probe.style.minHeight = "0";
+    probe.style.visibility = "hidden";
+    probe.setAttribute("aria-hidden", "true");
+    d.parentNode.appendChild(probe);
+    var maxH = 0;
+    for(var i = 0; i < 6; i++){
+      probe.innerHTML = detailHTML(i);
+      var h = probe.getBoundingClientRect().height;
+      if(h > maxH){ maxH = h; }
+    }
+    probe.parentNode.removeChild(probe);
+    if(maxH > 0){ d.style.minHeight = Math.ceil(maxH) + "px"; }
+  }
+
+  function renderDetail(i10){
+    var g = GAPS[i10];
+    var t = tierOf(g.score);
+    var d = $("argmDetail");
+    d.style.borderLeftColor = t.color;
+    d.innerHTML = detailHTML(i10);
+    var bars = d.querySelectorAll(".argm-barfill");
+    requestAnimationFrame(function(){
+      for(var b = 0; b < bars.length; b++){
+        bars[b].style.width = bars[b].getAttribute("data-w") + "%";
+      }
+    });
+  }
+
+  /* The core reads money in demo mode and the worst gap in self mode. It must never show
+     the composite dollar figure while the headline says the gaps are costing YOU. */
+  function coreMode(m){
+    var l1 = $("argmL1"), l2 = $("argmL2"), l3 = $("argmL3");
+    if(!l1){ return; }
+    if(m === "money"){
+      /* JOBS, not dollars. The five gates multiplied say he is losing ~$995k/yr, which is
+         arithmetically true and completely unbelievable as a headline. "4 jobs a month
+         today, 16 with the gates tight" he believes instantly - and he does the dollar
+         math himself, so he trusts his own number instead of auditing ours. */
+      l1.textContent = "BOOKED";
+      l3.textContent = "a month";
+      l2.setAttribute("font-size", px(17));
+      l2.textContent = fmtJobs(jobsNow());
+      return;
+    }
+    var done = 0;
+    for(var d4 = 0; d4 < 6; d4++){ if(answers[d4] !== null){ done++; } }
+    if(done === 0){
+      l1.textContent = "WORST GAP";
+      l2.setAttribute("font-size", px(13));
+      l2.textContent = "--";
+      l3.textContent = "answer six questions";
+      return;
+    }
+    var set = worstSet();
+    if(set.length === 1){
+      l1.textContent = "WORST GAP";
+      l2.setAttribute("font-size", px(13));
+      l2.textContent = GAPS[set[0]].name;
+    } else {
+      l1.textContent = "WORST GAPS";
+      l2.setAttribute("font-size", px(15));
+      l2.textContent = set.length + " tied";
+    }
+    l3.textContent = Math.round(GAPS[set[0]].score) + " / 100";
+  }
+
+  function onPick(i11){
+    selected = i11;
+    setActive(i11);
+    renderDetail(i11);
+    holdFor(20000);   /* 20s, not 15: there is a lot to read in a drill-down */
+    if(mode === "self"){ coreMode("self"); }
+  }
+
+  function buildLegend(){
+    var h = "";
+    for(var t2 = 0; t2 < TIERS.length; t2++){
+      h += '<span class="argm-lg"><span class="argm-lgdot" style="background:' + TIERS[t2].color + ';"></span>' + TIERS[t2].name + '</span>';
+    }
+    $("argmLegend").innerHTML = h;
+  }
+
+  var SELF = { yes: 82, no: 26, unsure: 41 };
+  var capAnswer = null;
+  var chainRevealed = false, chainShownOnce = false;
+
+  /* ---------- capacity gate ----------
+     The map measures everything upstream of the booked job. This one question checks
+     downstream: whether the business can absorb what the map would produce. If it cannot,
+     recommending demand is the losing move, so the output flips to the capacity
+     conversation instead. Detection only - the model behind it never ships. */
+  function capacityFlip(on){
+    var flipEl = $("argmCapFlip");
+    var fw = $("argmFormWrap");
+    if(on){
+      formEl.style.display = "none";
+      $("argmFormOk").style.display = "none";
+      flipEl.style.display = "block";
+      flipEl.innerHTML = '<div class="argm-okbig">' + copyOf("capHead") + '</div>' +
+        '<p class="argm-oksub">' + copyOf("capBody") + '</p>' +
+        '<p class="argm-oksub" style="margin-top:10px;"><b>' + copyOf("capBody2") + '</b></p>' +
+        '<a class="argm-btn" style="margin-top:16px;" href="/contact/?conversation=capacity">' + copyOf("capCta") + '</a>';
+      $("argmCtaLine").style.display = "none";
+      $("argmCtaFine").style.display = "none";
+      if(window.gtag){ window.gtag("event", "sixgap_capacity_flip", {}); }
+    } else {
+      flipEl.style.display = "none";
+      flipEl.innerHTML = "";
+      formEl.style.display = "";
+      $("argmCtaLine").style.display = "";
+      $("argmCtaFine").style.display = "";
+    }
+  }
+  function resolveOutcome(done){
+    if(capAnswer === "capacity"){
+      capacityFlip(true);
+      return;
+    }
+    capacityFlip(false);
+    $("argmCtaLine").innerHTML = (done === 7) ? copyOf("selfCtaDone") : copyOf("selfCta");
+    if(done === 7){ unlockForm(); } else { lockForm(); }
+  }
+
+  /* Three possible self-scores across six gaps means ties are not an edge case, they are
+     the norm. Naming one winner out of three tied gaps would be false precision - the exact
+     thing this instrument exists to argue against. So report every gap at the low score. */
+  function worstSet(){
+    var lo = 1e9, i15;
+    for(i15 = 0; i15 < 6; i15++){
+      if(GAPS[i15].score < lo){ lo = GAPS[i15].score; }
+    }
+    var set = [];
+    for(i15 = 0; i15 < 6; i15++){
+      if(GAPS[i15].score === lo){ set.push(i15); }
+    }
+    return set;
+  }
+  function nameList(idxs){
+    var names = [];
+    for(var n3 = 0; n3 < idxs.length; n3++){ names.push(GAPS[idxs[n3]].name); }
+    if(names.length === 1){ return names[0]; }
+    if(names.length === 2){ return names[0] + " and " + names[1]; }
+    return names.slice(0, names.length - 1).join(", ") + " and " + names[names.length - 1];
+  }
+
+  function setSelfVerdict(){
+    var done = 0;
+    for(var d3 = 0; d3 < 6; d3++){ if(answers[d3] !== null){ done++; } }
+    if(capAnswer !== null){ done++; }
+    var el = $("argmVSelf");
+    if(capAnswer === "capacity"){
+      el.innerHTML = '<div class="argm-vsbig"><span style="color:#eab308;">' + copyOf("capHead") + '</span></div>' +
+        '<p class="argm-vssub">Your answers point at fulfillment, not demand. The read is below, and it changes the conversation.</p>';
+      return;
+    }
+    if(done < 7){
+      el.innerHTML = '<div class="argm-vsbig">' + done + ' of 7 answered</div>' +
+        '<p class="argm-vssub">Answer the seven questions <span data-argmscroll="argmQuiz">below the map &darr;</span> - your worst gap appears here once all seven are in.</p>';
+      return;
+    }
+    var set = worstSet();
+    var t = tierOf(GAPS[set[0]].score);
+    var lead = (set.length === 1) ? "Your worst gap is " : "Your worst gaps are ";
+    var tail = (set.length === 1)
+      ? "That is where the money is going. How much is a question your own numbers answer, not ours."
+      : "A self-scan cannot separate them. A real scan can, and it will tell you which one to fix first.";
+    el.innerHTML = '<div class="argm-vsbig">' + lead + '<span style="color:' + t.color + ';">' +
+      nameList(set) + '</span></div>' +
+      '<p class="argm-vssub">' + tail + '</p>';
+  }
+
+  function buildQuiz(){
+    var h = '<p class="argm-sub" style="margin-bottom:16px;">' + copyOf("selfSub") + '</p>';
+    for(var i12 = 0; i12 < 6; i12++){
+      h += '<div class="argm-q"><p class="argm-qt"><b style="color:#ef662f;">' + GAPS[i12].name +
+           '.</b> ' + GAPS[i12].q + '</p><div class="argm-qb">';
+      h += '<button type="button" class="argm-opt" data-qi="' + i12 + '" data-a="yes">' + copyOf("optYes") + '</button>';
+      h += '<button type="button" class="argm-opt" data-qi="' + i12 + '" data-a="no">' + copyOf("optNo") + '</button>';
+      h += '<button type="button" class="argm-opt" data-qi="' + i12 + '" data-a="unsure">' + copyOf("optUnsure") + '</button>';
+      h += '</div></div>';
+    }
+    h += '<div class="argm-q argm-qcap"><p class="argm-qt"><b style="color:#ef662f;">Capacity.</b> ' + copyOf("capQ") + '</p><div class="argm-qb">';
+    h += '<button type="button" class="argm-opt" data-qi="6" data-a="easy">' + copyOf("capYes") + '</button>';
+    h += '<button type="button" class="argm-opt" data-qi="6" data-a="strain">' + copyOf("capStrain") + '</button>';
+    h += '<button type="button" class="argm-opt" data-qi="6" data-a="capacity">' + copyOf("capNo") + '</button>';
+    h += '</div></div>';
+    h += '<p class="argm-qprog" id="argmQProg">0 of 7 answered</p>';
+    var qbox = $("argmQuiz");
+    qbox.innerHTML = h;
+    var opts = qbox.querySelectorAll(".argm-opt");
+    for(var o = 0; o < opts.length; o++){
+      (function(el){
+        el.addEventListener("click", function(){
+          var qi = parseInt(el.getAttribute("data-qi"), 10);
+          var a = el.getAttribute("data-a");
+          var sibs = qbox.querySelectorAll('.argm-opt[data-qi="' + qi + '"]');
+          for(var s2 = 0; s2 < sibs.length; s2++){ sibs[s2].classList.remove("argm-sel"); }
+          el.classList.add("argm-sel");
+          if(qi === 6){
+            capAnswer = a;
+          } else {
+            answers[qi] = a;
+            GAPS[qi].score = SELF[a];
+            GAPS[qi].subs = [];
+            paintScore(qi);
+            markLever();
+            buildDots();   /* the flow re-reads their answer immediately */
+            onPick(qi);
+          }
+          var done = 0;
+          for(var d2 = 0; d2 < 6; d2++){ if(answers[d2] !== null){ done++; } }
+          if(capAnswer !== null){ done++; }
+          $("argmQProg").textContent = done + " of 7 answered";
+          setSelfVerdict();
+          coreMode("self");
+          lockDetailHeight();
+          resolveOutcome(done);
+          if(window.gtag){
+            if(done === 7){ window.gtag("event", "sixgap_self_complete", { worst: GAPS[worstIdx()].key, capacity: capAnswer }); }
+          }
+        });
+      })(opts[o]);
+    }
+  }
+
+  /* ---------- lead capture ----------
+     Not "email me my results". That would play a contractor his own six answers back at
+     him - a thin deliverable, and a satisfaction off-ramp from a stronger CTA. This is the
+     real-scan request with his answers attached as intel, so there is exactly one exit
+     from this section and it goes through us. */
+  var formEl = $("argmForm");
+
+  function normUrl(v){
+    v = v.trim();
+    if(v === ""){ return ""; }
+    if(v.indexOf("http://") === 0){ return v; }
+    if(v.indexOf("https://") === 0){ return v; }
+    return "https://" + v;
+  }
+  function validEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()); }
+  function validSite(v){ return /^https?:\/\/[^\s.\/]+\.[^\s\/]{2,}/.test(v); }
+
+  function showFormErr(msg){
+    var e = $("argmFormErr");
+    e.textContent = msg;
+    e.style.display = "block";
+  }
+  function unlockForm(){
+    $("argmFormLock").style.display = "none";
+    $("argmFormFields").style.display = "block";
+  }
+  function lockForm(){
+    $("argmFormLock").style.display = "block";
+    $("argmFormFields").style.display = "none";
+    $("argmFormErr").style.display = "none";
+    formEl.style.display = "";
+    $("argmFormOk").style.display = "none";
+  }
+  function answeredCount(){
+    var c = 0;
+    for(var a3 = 0; a3 < 6; a3++){ if(answers[a3] !== null){ c++; } }
+    return c;
+  }
+  /* Readable in the Formspree inbox. This is the whole point of the trade: you learn what
+     he thinks is broken before you ever open his site. */
+  function answerSummary(){
+    var lines = [];
+    for(var a2 = 0; a2 < 6; a2++){
+      var v = (answers[a2] === null) ? "no answer" : answers[a2].toUpperCase();
+      lines.push(GAPS[a2].name + ": " + v + " -- " + GAPS[a2].q);
+    }
+    var cv = (capAnswer === null) ? "no answer" : capAnswer.toUpperCase();
+    lines.push("Capacity: " + cv + " -- If we doubled qualified leads, could they absorb the work?");
+    return lines.join("\n");
+  }
+
+  formEl.addEventListener("submit", function(ev){
+    ev.preventDefault();
+    $("argmFormErr").style.display = "none";
+
+    if(answeredCount() < 6 || capAnswer === null){ showFormErr("Answer all seven questions first."); return; }
+
+    var site = normUrl($("argmWeb").value);
+    var mail = $("argmEmail").value.trim();
+    if(!validSite(site)){ showFormErr("That website address does not look right. Try yourcompany.com"); return; }
+    if(!validEmail(mail)){ showFormErr("That email does not look right."); return; }
+
+    var endpoint = formEl.getAttribute("data-endpoint");
+    /* Guard kept deliberately. If this endpoint is ever blanked, swapped for a placeholder,
+       or mangled by an editor, the form refuses to submit and points him at a real inbox
+       rather than swallowing the lead. Costs nothing; the window-and-door calculator ate
+       leads for weeks precisely because nothing was watching. */
+    if(!endpoint || endpoint.indexOf("REPLACE") !== -1 || endpoint.indexOf("formspree.io/f/") === -1){
+      showFormErr("This form is not connected. Email andrew@andrewryanmarketing.com and we will scan it manually.");
+      return;
+    }
+
+    var worst = nameList(worstSet());
+    var btn = $("argmSubmit");
+    btn.disabled = true;
+    btn.textContent = "Sending...";
+
+    var fd = new FormData();
+    fd.append("website", site);
+    fd.append("email", mail);
+    fd.append("source", "homepage-6gap-selfscan");
+    fd.append("capacity_state", capAnswer || "no answer");
+    fd.append("worst_gaps", worst);
+    fd.append("self_scan_answers", answerSummary());
+    fd.append("_subject", "6-Gap self-scan: " + site + " -- worst: " + worst);
+
+    fetch(endpoint, { method: "POST", body: fd, headers: { "Accept": "application/json" } })
+      .then(function(r){
+        if(r.ok){ return; }
+        throw new Error("Formspree returned " + r.status);
+      })
+      .then(function(){
+        formEl.style.display = "none";
+        var okEl = $("argmFormOk");
+        okEl.style.display = "block";
+        okEl.innerHTML = '<div class="argm-okbig">Scan requested.</div>' +
+          '<p class="argm-oksub">You will have it within 48 hours, on video, at ' + mail +
+          '. We will start with ' + worst + ', because that is what you flagged.</p>';
+        if(window.gtag){ window.gtag("event", "sixgap_lead", { worst: GAPS[worstSet()[0]].key }); }
+      })
+      .catch(function(err){
+        /* Never fail silently. The window-and-door calculator did exactly that, and ate
+           leads for weeks before anyone noticed. */
+        btn.disabled = false;
+        btn.textContent = "Send me the real scan";
+        showFormErr("That did not send. Email andrew@andrewryanmarketing.com and we will scan it manually.");
+        if(window.console){ window.console.error("6-gap capture failed:", err); }
+      });
+  });
+
+  function setMode(m){
+    mode = m;
+    var bd = $("argmModeDemo"), bs = $("argmModeSelf");
+    var i13;
+    if(m === "demo"){
+      bd.classList.add("argm-on"); bs.classList.remove("argm-on");
+      $("argmQuiz").classList.remove("argm-show");
+      $("argmVK").textContent = copyOf("demoHeadline");
+      $("argmSub").innerHTML = copyOf("demoSub");
+      $("argmCtaLine").innerHTML = copyOf("demoCta");
+      $("argmCtaFine").textContent = copyOf("demoFine");
+      $("argmVMoney").style.display = "";
+      $("argmVSelf").style.display = "none";
+      $("argmCtaBtn").style.display = "";
+      $("argmFormWrap").style.display = "none";
+      capacityFlip(false);
+      $("argmCapFlip").style.display = "none";
+      for(i13 = 0; i13 < 6; i13++){
+        GAPS[i13].score = GAPS[i13].demoScore;
+        GAPS[i13].subs = GAPS[i13].demoSubs;
+      }
+      paintAllScores();
+      buildDots();
+      coreMode("money");
+      onPick(worstIdx());
+      countUp();
+      revealProse();
+      lockDetailHeight();
+    } else {
+      bs.classList.add("argm-on"); bd.classList.remove("argm-on");
+      $("argmQuiz").classList.add("argm-show");
+      $("argmVK").textContent = copyOf("selfHeadline");
+      $("argmSub").innerHTML = copyOf("selfSub");
+      $("argmCtaLine").innerHTML = copyOf("selfCta");
+      $("argmCtaFine").textContent = copyOf("selfFine");
+      $("argmVMoney").style.display = "none";
+      $("argmVSelf").style.display = "";
+      /* One exit from this section, and it goes through us. */
+      $("argmCtaBtn").style.display = "none";
+      $("argmFormWrap").style.display = "block";
+      lockForm();
+      for(i13 = 0; i13 < 6; i13++){
+        GAPS[i13].score = 50;
+        GAPS[i13].subs = [];
+        answers[i13] = null;
+      }
+      capAnswer = null;
+      capacityFlip(false);
+      buildQuiz();
+      paintAllScores();
+      buildDots();
+      coreMode("self");
+      lockDetailHeight();
+      setSelfVerdict();
+      onPick(0);
+    }
+    if(window.gtag){ window.gtag("event", "sixgap_mode", { mode: m }); }
+  }
+
+  /* ---------- full-bleed breakout ----------
+     WPBakery wraps this in vc_row / vc_column and both add horizontal padding, so a dark
+     section shows white gutters left and right. Rather than guess the padding - it changes
+     per breakpoint, per theme, and per row setting - measure the actual gap and cancel it.
+
+     Why not the usual calc(50% - 50vw) trick: 100vw INCLUDES the scrollbar, so on desktop
+     it overshoots by ~15px and spawns a horizontal scrollbar. The usual cure for that is
+     body{overflow-x:hidden}, which would break the sticky ROI widget on this page.
+     documentElement.clientWidth EXCLUDES the scrollbar, so this is exact and safe.
+
+     Self-correcting: if the row is already stretched with no paddings, the measured gap is
+     0 and this applies nothing. */
+  function bleed(){
+    if(root.getAttribute("data-fullbleed") !== "1"){
+      /* Disabled: clear anything we previously applied, do not leave a stale margin. */
+      root.style.marginLeft = "";
+      root.style.marginRight = "";
+      return;
+    }
+    /* Always measure from a known-zero state. That makes this idempotent, so it is safe to
+       re-run as many times as the page relayouts - which is the whole point below. */
+    root.style.marginLeft = "0px";
+    root.style.marginRight = "0px";
+    var r = root.getBoundingClientRect();
+    var docW = document.documentElement.clientWidth;
+    var gapL = Math.round(r.left);
+    var gapR = Math.round(docW - r.right);
+    if(gapL > 0){ root.style.marginLeft = "-" + gapL + "px"; }
+    if(gapR > 0){ root.style.marginRight = "-" + gapR + "px"; }
+  }
+
+  /* ---------- vertical gap killer ----------
+     The white bands above and below are NOT padding. WPBakery ships
+     .wpb_content_element{margin-bottom:35px} and .wpb_row{margin-bottom:35px}. Margins are
+     untouched by "Stretch row and content (no paddings)" and by padding:0, which is why
+     setting padding everywhere changed nothing, and why a -40px margin hack "worked" - it
+     was cancelling 35px.
+
+     This zeroes the margins on our own ancestor chain up to the row, and on the row above
+     us, then measures whatever gap survives and cancels that too. Zero-first makes it
+     idempotent, so it is safe to re-run on every relayout. */
+  function rowOf(){
+    var el = root, hops = 0;
+    while(el){
+      if(hops > 10){ return null; }
+      if(el.classList){
+        if(el.classList.contains("vc_row")){ return el; }
+        if(el.classList.contains("wpb_row")){ return el; }
+      }
+      el = el.parentElement;
+      hops++;
+    }
+    return null;
+  }
+  function killGaps(){
+    if(root.getAttribute("data-killgaps") !== "1"){ return; }
+    var row = rowOf();
+    if(!row){ return; }
+
+    /* 1. zero every margin between root and the row (this is where the 35px lives) */
+    var el = root.parentElement, hops = 0;
+    while(el){
+      if(hops > 10){ break; }
+      el.style.marginTop = "0px";
+      el.style.marginBottom = "0px";
+      if(el === row){ break; }
+      el = el.parentElement;
+      hops++;
+    }
+    row.style.marginTop = "0px";
+    row.style.marginBottom = "0px";
+
+    /* 2. the band ABOVE belongs to the previous row, not to us */
+    var prev = row.previousElementSibling;
+    if(prev){ prev.style.marginBottom = "0px"; }
+    var next = row.nextElementSibling;
+    if(next){ next.style.marginTop = "0px"; }
+
+    /* 3. cancel anything that survived (theme rules we cannot see from here) */
+    if(prev){
+      var gapA = Math.round(row.getBoundingClientRect().top - prev.getBoundingClientRect().bottom);
+      if(gapA > 0){ row.style.marginTop = "-" + gapA + "px"; }
+    }
+    if(next){
+      var gapB = Math.round(next.getBoundingClientRect().top - row.getBoundingClientRect().bottom);
+      if(gapB > 0){ row.style.marginBottom = "-" + gapB + "px"; }
+    }
+  }
+
+  function applyAssembly(a){
+    assembly = a;
+    var nodes = gapsG.querySelectorAll(".argm-node");
+    for(var n = 0; n < nodes.length; n++){
+      var i = parseInt(nodes[n].getAttribute("data-i"), 10);
+      var deg = ang(i);
+      var seat = gapPos(i);
+      var outR = geom.orbitR + (1 - a) * (geom.orbitR * 0.85);
+      var op = pos(deg, outR);
+      var o = (a < 0.12) ? (a / 0.12) : 1;
+      nodes[n].setAttribute("transform", "translate(" + (op.x - seat.x).toFixed(2) + "," + (op.y - seat.y).toFixed(2) + ")");
+      nodes[n].setAttribute("opacity", o.toFixed(2));
+    }
+  }
+
+
+  var lastNarrow = null, lastK = null;
+  function layout(){
+    /* bleed first: it changes the SVG width that measure() is about to read. */
+    bleed();
+    killGaps();
+    measure();
+    var changed = false;
+    if(lastNarrow !== geom.narrow){ changed = true; }
+    if(lastK === null){ changed = true; }
+    else if(Math.abs(lastK - geom.k) > 0.06){ changed = true; }
+    if(!changed){ return; }
+    lastNarrow = geom.narrow;
+    lastK = geom.k;
+    buildChrome();
+    buildLines();
+    buildCore();
+    buildGaps();
+    applyAssembly(assembly);
+    if(floorGlow){ floorGlow.setAttribute("r", (geom.orbitR + 50).toFixed(0)); }
+    if(dots.length > 0){ buildDots(); }
+    if(drift.length > 0){ buildDrift(); }
+    if(scanned){
+      paintAllScores();
+      setActive(selected);
+      litSpoke(selected);
+    }
+    coreMode(mode === "demo" ? "money" : "self");
+    lockDetailHeight();
+  }
+
+  var rt = null;
+  function relayoutSoon(ms){
+    if(rt){ clearTimeout(rt); }
+    rt = setTimeout(layout, ms);
+  }
+  window.addEventListener("resize", function(){ relayoutSoon(160); });
+
+  /* ---------- why this re-runs ----------
+     WPBakery applies "Stretch row and content" from its own JS on document-ready, AFTER
+     this script has already parsed and run. So a single bleed() at init measures the
+     PRE-stretch position, cancels gutters that are about to disappear on their own, and
+     drags the section left by exactly the old gutter width. That was a real bug on the
+     live page. bleed() is idempotent, so the fix is simply to measure again once the
+     page has stopped moving. */
+  window.addEventListener("load", function(){ layout(); relayoutSoon(120); });
+  after(250, layout);
+  after(1200, layout);
+  if(window.ResizeObserver){
+    var par = root.parentElement;
+    if(par){
+      /* Watching the PARENT, not root: root margins do not change the parent box, so this
+         cannot feed back into itself. Catches the row stretch whenever WPBakery gets to it. */
+      var ro = new ResizeObserver(function(){ relayoutSoon(120); });
+      ro.observe(par);
+    }
+  }
+
+  buildLegend();
+  layout();
+  buildChain();
+  renderVerdict();
+  revealProse();
+  renderDetail(0);
+
+  /* ================= SCROLL DRIVE =================
+     The 2026 craft standard is scrub, not playback: tie the story to scroll position
+     instead of a timer, because when someone controls the pacing they stop being an
+     audience and start being a participant. He does not watch the funnel collapse.
+     He causes it, and scrolling back rewinds it.
+
+     No pinning and no scroll hijack - both are hostile. Progress is simply how far the
+     stage has travelled through the viewport. If he never scrolls (section already fully
+     in view on a tall monitor), a fallback timer advances it so it always completes. */
+  /* One master scroll position drives two sequential phases so they never fight:
+       0.00 - 0.55  the nodes ride their spokes inward and seat  (reversible, always)
+       0.55 - 1.00  the funnel collapses 10,000 -> 4             (locks once complete)
+     Assembly stays reversible forever: scroll up and they fly back out, scroll down and
+     they come home. The funnel does not - a verdict that un-decides itself is a toy. */
+  var ASSEMBLY_END = 0.55;
+  var scrollP = 0, autoP = 0, useAuto = false, masterP = 0;
+  /* Master travel: from just below the fold to well past centre. ~1060px, split between
+     the two phases. NOTE: your ask was that assembly finish only once the whole radial box
+     is in the viewport. At an 800px viewport and a 640px stage, "fully in view" happens at
+     top=160 - which leaves the funnel about 80px of scroll. Unusable. So assembly finishes
+     at ~85% visible instead, which is close and leaves the collapse a real runway. The only
+     way to have both is a sticky stage in a tall wrapper - see the note in the doc. */
+  function masterProgress(){
+    var r = $("argmStage").getBoundingClientRect();
+    var vh = window.innerHeight || 800;
+    var h = r.height || 640;
+    var startAt = vh * 1.05;
+    var endAt = -h * 0.35;
+    var span = startAt - endAt;
+    if(span < 200){ span = 200; }
+    var p = (startAt - r.top) / span;
+    if(p < 0){ p = 0; }
+    if(p > 1){ p = 1; }
+    return p;
+  }
+  function scrollProgress(){
+    var el = $("argmStage");
+    var r = el.getBoundingClientRect();
+    var vh = window.innerHeight || 800;
+    /* The first version ran the whole 10,000-to-4 story across 400px of scroll - one flick
+       of a trackpad. It finished before anyone could look at it, which is why the counter
+       appeared to do nothing. Now: start just below the fold, finish when the radial is
+       CENTRED, so the collapse takes ~760px and the radial is on screen for every frame
+       of it. */
+    var m = masterProgress();
+    var p = (m - ASSEMBLY_END) / (1 - ASSEMBLY_END);
+    if(p < 0){ p = 0; }
+    if(p > 1){ p = 1; }
+    return p;
+  }
+  function assemblyProgress(){
+    var p = masterProgress() / ASSEMBLY_END;
+    if(p < 0){ p = 0; }
+    if(p > 1){ p = 1; }
+    /* ease so they decelerate into their seats rather than arriving at constant speed */
+    return 1 - Math.pow(1 - p, 3);
+  }
+  /* The collapse used to be glued to the scrollbar. That single decision caused every
+     bug of the last hour: the comet froze whenever you stopped scrolling, the numbers
+     only landed if you scrolled far enough, and the payoff fired 800px above where you
+     were looking. It was clever and it did not work.
+
+     Now: SCROLL assembles the nodes (that part is legible and it works). The scan runs
+     ITSELF, on a timer, once they are seated. It cannot stall and it cannot reveal
+     off-screen, because it does not care where you are. */
+  function progress(){ return autoP; }
+
+  var started = false;
+  function boot(){
+    if(started){ return; }
+    started = true;
+    $("argmStage").classList.add("argm-in");
+    applyAssembly(reduce ? 1 : assemblyProgress());
+    after(300, startScan);
+
+    if(window.gtag){ window.gtag("event", "sixgap_view", {}); }
+  }
+  window.addEventListener("scroll", function(){
+    scrollP = scrollProgress();
+    if(!reduce){ applyAssembly(assemblyProgress()); }
+  }, { passive: true });
+
+  /* ---------- chain: reveal on sight, not on comet ----------
+     The collapse chain used to fade in link-by-link as the comet visited gates - the far
+     end took most of a lap to exist, and nothing appeared until the radar below it booted.
+     It now builds immediately and cascades in the moment the chain itself scrolls into
+     view. The comet still pings every gate; it no longer gates visibility. */
+  function revealChainAll(stagger){
+    var cells = $("argmChain").querySelectorAll(".argm-gate, .argm-link");
+    for(var rc = 0; rc < cells.length; rc++){
+      if(stagger){
+        (function(el, d){ setTimeout(function(){ el.classList.add("argm-vis"); }, d); })(cells[rc], rc * 90);
+      } else {
+        cells[rc].classList.add("argm-vis");
+      }
+    }
+  }
+  buildChain();   /* cells exist before the scan ever boots */
+  if(window.IntersectionObserver){
+    var chainIo = new IntersectionObserver(function(entries){
+      for(var ce = 0; ce < entries.length; ce++){
+        if(entries[ce].isIntersecting){
+          chainRevealed = true;
+          revealChainAll(!chainShownOnce);
+          chainShownOnce = true;
+          chainIo.disconnect();
+        }
+      }
+    }, { threshold: 0.2 });
+    chainIo.observe($("argmChain"));
+  } else {
+    chainRevealed = true; chainShownOnce = true; revealChainAll(false);
+  }
+  if(window.IntersectionObserver){
+    var io = new IntersectionObserver(function(entries){
+      for(var e = 0; e < entries.length; e++){
+        if(entries[e].isIntersecting){ boot(); io.disconnect(); }
+      }
+    }, { threshold: 0.25 });
+    io.observe($("argmStage"));
+  } else {
+    boot();
+  }
+
+  $("argmRoot").addEventListener("click", function(ev){
+    var t = (ev.target && ev.target.closest) ? ev.target.closest("[data-argmscroll]") : null;
+    if(!t){ return; }
+    var dest = $(t.getAttribute("data-argmscroll"));
+    if(dest && dest.scrollIntoView){ dest.scrollIntoView({ behavior: "smooth", block: "center" }); }
+  });
+  $("argmModeDemo").addEventListener("click", function(){ setMode("demo"); });
+  $("argmModeSelf").addEventListener("click", function(){ setMode("self"); });
+  $("argmCtaBtn").addEventListener("click", function(ev){
+    /* One primary CTA, one exit: the real-scan request. The demo button now opens the
+       self-scan (which feeds the form) instead of detouring to /contact/. The href
+       survives as the no-JS fallback. */
+    ev.preventDefault();
+    setMode("self");
+    var qz = $("argmQuiz");
+    if(qz && qz.scrollIntoView){ qz.scrollIntoView({ behavior: "smooth", block: "center" }); }
+    if(window.gtag){ window.gtag("event", "sixgap_cta", { mode: mode }); }
+  });
+
+  /* ================= TRANSPORT CONTROL =================
+     The scan narrates itself: autoP walks the comet across the six gates before the
+     verdict, then the comet orbits and auto-picks after. These controls put a hand on
+     that clock. They drive the SAME state the auto-scroll drives - autoP, selected,
+     cometDeg, visited - so the manual path and the automatic path never fork. Pause
+     freezes the advance in tick(); skip seats the comet on a gate and holds it. */
+  var tpBack = $("argmTpBack"), tpPlay = $("argmTpPlay"), tpPause = $("argmTpPause"),
+      tpFwd = $("argmTpFwd"), tpTrack = $("argmTpTrack"), tpLabel = $("argmTpLabel");
+  var GATE_NAMES = [];
+  for(var gn = 0; gn < 6; gn++){ GATE_NAMES.push((GAPS[gn] && GAPS[gn].name) ? GAPS[gn].name : ("Gap " + (gn + 1))); }
+
+  function tpCurrentGate(){
+    if(scanned){ return Math.max(0, Math.min(5, selected)); }
+    var g = Math.round(autoP * 5);
+    if(g < 0){ g = 0; }
+    if(g > 5){ g = 5; }
+    return g;
+  }
+  function tpUpdateUI(){
+    if(tpPlay){ tpPlay.classList.toggle("argm-tp-on", !argmPaused); }
+    if(tpPause){ tpPause.classList.toggle("argm-tp-on", argmPaused); }
+    var cur = tpCurrentGate();
+    if(tpTrack){
+      var pips = tpTrack.querySelectorAll(".argm-tp-pip");
+      for(var pi = 0; pi < pips.length; pi++){
+        var pv = parseInt(pips[pi].getAttribute("data-g"), 10);
+        pips[pi].classList.remove("argm-cur", "argm-done");
+        if(scanned || pv < cur || (visited && visited[pv])){ pips[pi].classList.add("argm-done"); }
+        if(pv === cur){ pips[pi].classList.add("argm-cur"); }
+      }
+    }
+    if(tpLabel){
+      if(argmPaused){
+        tpLabel.innerHTML = 'Holding on <b>' + GATE_NAMES[cur] + '</b> &nbsp;&middot;&nbsp; gap ' + (cur + 1) + ' of 6 &mdash; press play to resume';
+      } else if(scanned){
+        tpLabel.innerHTML = 'Live scan &middot; the comet is walking all six gaps';
+      } else {
+        tpLabel.innerHTML = 'Auto-scanning &middot; <b>' + GATE_NAMES[cur] + '</b> &nbsp;gap ' + (cur + 1) + ' of 6';
+      }
+    }
+  }
+  function tpEnsureBooted(){ if(!started){ boot(); } }
+  function tpPlayFn(){ tpEnsureBooted(); argmPaused = false; tpUpdateUI(); }
+  function tpPauseFn(){ tpEnsureBooted(); argmPaused = true; tpUpdateUI(); }
+  function tpGoTo(i){
+    tpEnsureBooted();
+    if(i < 0){ i = 0; }
+    if(i > 5){ i = 5; }
+    argmPaused = true;                 /* a deliberate jump = sit and read; play resumes it */
+    cometDeg = ang(i);
+    if(!scanned){
+      autoP = i / 5;                   /* keep the self-scan clock consistent with the jump */
+      for(var v = 0; v <= i; v++){
+        if(!visited[v]){
+          visited[v] = true;
+          if(visitedCount() === 1){ revealProse(); }
+          paintScore(v);
+          ping(v);
+          revealGate(v);
+        }
+      }
+      if(visitedCount() === 6){
+        scanned = true;
+        markLever();
+        buildDots();
+        renderVerdict();
+        revealProse();
+        lockDetailHeight();
+      }
+    }
+    selected = i;
+    setActive(i);
+    renderDetail(i);
+    litSpoke(i);
+    placeComet(cometDeg);
+    if(window.gtag){ window.gtag("event", "sixgap_transport", { gate: i }); }
+    tpUpdateUI();
+  }
+  function tpStep(dir){
+    var next = tpCurrentGate() + dir;
+    if(next > 5){ next = 0; }   /* past gate 6 loops back to gate 1 */
+    if(next < 0){ next = 5; }   /* before gate 1 loops to gate 6 */
+    tpGoTo(next);
+  }
+
+  if(tpBack){ tpBack.addEventListener("click", function(){ tpStep(-1); }); }
+  if(tpFwd){ tpFwd.addEventListener("click", function(){ tpStep(1); }); }
+  if(tpPlay){ tpPlay.addEventListener("click", tpPlayFn); }
+  if(tpPause){ tpPause.addEventListener("click", tpPauseFn); }
+  if(tpTrack){
+    tpTrack.addEventListener("click", function(ev){
+      var b = (ev.target && ev.target.closest) ? ev.target.closest(".argm-tp-pip") : null;
+      if(!b){ return; }
+      tpGoTo(parseInt(b.getAttribute("data-g"), 10));
+    });
+  }
+  /* keep the pips + label honest while the self-scan drives itself; cheap, isolated,
+     and never touches the fragile tick loop */
+  setInterval(function(){ if(!argmPaused){ tpUpdateUI(); } }, 400);
+  tpUpdateUI();
+
+})();</script>
+</div></div></div></div></div></div>

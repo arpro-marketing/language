@@ -1,0 +1,222 @@
+
+			<!-- 6-Gap Revenue Map band (collapse control). Must sit directly ABOVE the 6-Gap diagnostic row (the #argmRoot text-block row). -->
+<style>
+.arm-sgw{--o:#EF662F;--o-soft:#f79b76;--ink:#10141b;--mut:#5c6773;
+  background:linear-gradient(180deg,#fff6f2 0%,#fcefe8 100%);color:var(--ink);font-family:Helvetica,Arial,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased;
+  padding:64px clamp(18px,5vw,28px) 58px;position:relative;box-sizing:border-box;overflow-x:clip}
+@supports not (overflow-x:clip){.arm-sgw{overflow-x:hidden}}
+.arm-sgw *{box-sizing:border-box;min-width:0}
+.arm-sgw__in{max-width:1120px;margin:0 auto;position:relative}
+.arm-sgw__head{text-align:center;max-width:780px;margin:0 auto 26px}
+.arm-sgw__eye{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--o);margin:0 0 12px}
+.arm-sgw .arm-sgw__eye a,.arm-sgw .arm-sgw__eye a:visited{color:inherit;text-decoration:none}
+.arm-sgw .arm-sgw__eye a:hover{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.arm-sgw__h{font-size:clamp(24px,3vw,34px);line-height:1.2;font-weight:700;letter-spacing:-.02em;margin:0 0 12px;color:var(--ink);text-wrap:balance}
+.arm-sgw__h em{font-style:normal;color:var(--o)}
+.arm-sgw__lead{font-size:15.5px;color:var(--mut);margin:0;line-height:1.55}
+.arm-sgw__lead b{color:var(--ink);font-weight:700}
+.arm-sgw__map{position:relative;background:#10141b;color:#eef1f4;border-radius:18px;padding:22px 22px 18px;box-shadow:0 24px 60px rgba(16,20,27,.18)}
+.arm-sgw__map::before{content:"";position:absolute;inset:0;pointer-events:none;border-radius:18px;background:radial-gradient(70% 90% at 92% 50%,rgba(239,102,47,.16),transparent 60%)}
+.arm-sgw__mk{position:relative;margin:0 0 16px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#aeb7c2}
+.arm-sgw__mk b{color:var(--o)}
+.arm-sgw__row{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr) auto;align-items:center;gap:0 6px;padding:4px 0 2px}
+.arm-sgw__n{text-align:center;padding:0 2px}
+.arm-sgw__n b{display:block;font:700 28px/1.1 "SF Mono",Menlo,Consolas,monospace;letter-spacing:-.03em;color:#fff;font-variant-numeric:tabular-nums}
+.arm-sgw__n small{display:block;font-size:11px;color:#aeb7c2;margin-top:5px;letter-spacing:.02em;line-height:1.25;max-width:84px;margin-left:auto;margin-right:auto}
+.arm-sgw__n--out b{color:var(--o);font-size:36px;text-shadow:0 0 26px rgba(239,102,47,.55)}
+.arm-sgw__n--out small{color:#fff;font-weight:700;max-width:none;white-space:nowrap}
+.arm-sgw__g{position:relative;text-align:center;padding:0 2px;min-width:0}
+.arm-sgw__g .gt{display:block;font:700 9px/1 "SF Mono",Menlo,Consolas,monospace;letter-spacing:.12em;color:var(--o);margin-bottom:3px}
+.arm-sgw__g .gn{display:block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#eef1f4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.arm-sgw__g .ln{display:block;height:2px;margin:6px 4px;background:linear-gradient(90deg,rgba(239,102,47,.25),var(--o));position:relative}
+.arm-sgw__g .ln::after{content:"";position:absolute;right:-3px;top:-3px;border-top:4px solid transparent;border-bottom:4px solid transparent;border-left:6px solid var(--o)}
+.arm-sgw__g .gp{display:block;font:700 12.5px/1 "SF Mono",Menlo,Consolas,monospace;color:var(--o-soft);font-variant-numeric:tabular-nums}
+.arm-sgw__fw{position:relative;display:flex;align-items:center;gap:14px;margin:16px 0 0;padding:10px 14px;border:1px dashed rgba(239,102,47,.45);border-radius:10px;font-size:12.5px;color:#aeb7c2;line-height:1.45}
+.arm-sgw__fw .gn{flex:none;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--o);white-space:nowrap}
+.arm-sgw__fw .gn i{font-style:normal;font:700 9.5px/1 "SF Mono",Menlo,Consolas,monospace;letter-spacing:.08em;margin-right:6px;color:var(--o)}
+.arm-sgw__fw b{color:#eef1f4;font-weight:700}
+.arm-sgw__pay{position:relative;margin:14px 0 0;padding:12px 16px;border-radius:10px;background:rgba(239,102,47,.09);border:1px solid rgba(239,102,47,.35);display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center}
+.arm-sgw__pay .pn{font:700 26px/1 "SF Mono",Menlo,Consolas,monospace;color:#fff;letter-spacing:-.02em;white-space:nowrap}
+.arm-sgw__pay .pn b{color:var(--o)}
+.arm-sgw__pay .pn i{font-style:normal;color:#7c8794;font-size:18px;margin:0 6px}
+.arm-sgw__pay p{margin:0;font-size:13.5px;color:#eef1f4;line-height:1.45}
+.arm-sgw__pay p b{color:#fff}
+.arm-sgw__pay p span{color:#aeb7c2}
+.arm-sgw__ctl{text-align:center;margin-top:22px}
+.arm-sgw__btn{display:inline-flex;align-items:center;gap:12px;padding:16px 26px;border-radius:12px;background:var(--o);color:#fff;border:0;cursor:pointer;
+  font:700 16px/1.2 Helvetica,Arial,sans-serif;box-shadow:0 12px 30px rgba(239,102,47,.32);transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
+.arm-sgw__btn:hover{transform:translateY(-2px);box-shadow:0 18px 36px rgba(239,102,47,.4);background:#d24f1e;color:#fff}
+.arm-sgw__btn:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.arm-sgw__btn .ar{display:inline-block;transition:transform .3s ease;font-size:18px}
+.arm-sgw__btn[aria-expanded="true"]{background:var(--ink);box-shadow:0 12px 30px rgba(16,20,27,.25)}
+.arm-sgw__btn[aria-expanded="true"] .ar{transform:rotate(90deg)}
+.arm-sgw__meta{display:block;margin:10px 0 0;font-size:12.5px;color:var(--mut)}
+.arm-sgw__skip{display:block;margin:10px 0 0;font-size:13px;color:var(--mut)}
+.arm-sgw__skip a{color:var(--ink);font-weight:700;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(239,102,47,.6);cursor:pointer}
+.arm-sgw__skip a:hover{color:var(--o)}
+.arm-sgw__anchor{position:absolute;top:0;left:0;width:1px;height:1px;overflow:hidden}
+[data-arm-sixgap-row]{transition:height .55s cubic-bezier(.2,.7,.2,1)}
+[data-arm-sixgap-row] .argm-eyebrow,[data-arm-sixgap-row] .argm-h2{display:none}
+.arm-sgw__closebar{background:#2c2c2c;text-align:center;padding:0 18px 34px;margin:0;position:relative;z-index:2}
+.arm-sgw__closebar button{background:transparent;border:1px solid rgba(239,102,47,.55);color:#EF662F;font:700 13px/1.2 Helvetica,Arial,sans-serif;padding:11px 18px;border-radius:9px;cursor:pointer;min-height:44px}
+.arm-sgw__closebar button:hover{background:rgba(239,102,47,.12)}
+@media (max-width:860px){
+  .arm-sgw{padding:52px clamp(18px,5vw,28px) 46px}
+  .arm-sgw__map{padding:18px 16px 14px;border-radius:14px}
+  .arm-sgw__map::before{border-radius:14px}
+  .arm-sgw__row{grid-template-columns:1fr;gap:0}
+  .arm-sgw__n{display:grid;grid-template-columns:auto 1fr;align-items:baseline;gap:12px;text-align:left;padding:2px 0}
+  .arm-sgw__n b{font-size:28px}
+  .arm-sgw__n small{margin:0;max-width:none;font-size:12.5px}
+  .arm-sgw__n--out b{font-size:34px}
+  .arm-sgw__g{display:grid;grid-template-columns:22px auto 1fr auto;align-items:center;gap:0 10px;text-align:left;padding:5px 0}
+  .arm-sgw__g .ln{width:2px;height:22px;margin:0 auto;background:linear-gradient(180deg,rgba(239,102,47,.25),var(--o));grid-row:1;grid-column:1}
+  .arm-sgw__g .ln::after{right:-2px;top:auto;bottom:-1px;border-left:3px solid transparent;border-right:3px solid transparent;border-top:6px solid var(--o);border-bottom:0}
+  .arm-sgw__g .gt{grid-column:2;margin:0}
+  .arm-sgw__g .gn{grid-column:3;white-space:normal;font-size:11.5px;overflow:visible}
+  .arm-sgw__g .gp{grid-column:4;text-align:right}
+  .arm-sgw__fw{flex-direction:column;align-items:flex-start;gap:6px}
+  .arm-sgw__pay{grid-template-columns:1fr;gap:8px}
+  .arm-sgw__pay .pn{font-size:24px}
+  .arm-sgw__btn{width:100%;justify-content:center;padding:16px 18px;font-size:15px}
+}
+@media (prefers-reduced-motion:reduce){.arm-sgw *{transition:none!important}[data-arm-sixgap-row]{transition:none!important}}
+</style>
+<section class="arm-sgw" id="sixgap-el" aria-label="The 6-Gap Revenue Map">
+  <span class="arm-sgw__anchor" id="eldiag" aria-hidden="true"></span>
+  <div class="arm-sgw__in">
+    <div class="arm-sgw__head">
+      <p class="arm-sgw__eye"><a href="https://andrewryanmarketing.com/6-gap-revenue-map/">The 6-Gap Revenue Map™</a></p>
+      <h2 class="arm-sgw__h">Which gap is costing your electrical company the most?</h2>
+      <p class="arm-sgw__lead">Six gaps stand between a homeowner’s search and a booked job. Five are gates, and they don’t add up, <b>they multiply.</b></p>
+    </div>
+    <div class="arm-sgw__map" role="group" aria-label="Example scan: where 10,000 searches actually go">
+      <div class="arm-sgw__mk"><b>Example scan</b> · a composite company</div>
+      <div class="arm-sgw__row">
+        <div class="arm-sgw__n arm-sgw__n--in"><b>10,000</b><small>searching</small></div>
+        <div class="arm-sgw__g"><span class="gt">GAP 1</span><span class="gn">Visibility</span><span class="ln"></span><span class="gp">12.7%</span></div>
+        <div class="arm-sgw__n"><b>1,270</b><small>found you</small></div>
+        <div class="arm-sgw__g"><span class="gt">GAP 2</span><span class="gn">Authority</span><span class="ln"></span><span class="gp">85.0%</span></div>
+        <div class="arm-sgw__n"><b>1,080</b><small>considered you</small></div>
+        <div class="arm-sgw__g"><span class="gt">GAP 3</span><span class="gn">Trust</span><span class="ln"></span><span class="gp">2.8%</span></div>
+        <div class="arm-sgw__n"><b>30</b><small>became leads</small></div>
+        <div class="arm-sgw__g"><span class="gt">GAP 4</span><span class="gn">Speed</span><span class="ln"></span><span class="gp">57.0%</span></div>
+        <div class="arm-sgw__n"><b>17</b><small>reached in time</small></div>
+        <div class="arm-sgw__g"><span class="gt">GAP 5</span><span class="gn">Conversion</span><span class="ln"></span><span class="gp">21.5%</span></div>
+        <div class="arm-sgw__n arm-sgw__n--out"><b>3.7</b><small>booked jobs / mo</small></div>
+      </div>
+      <div class="arm-sgw__fw"><span class="gn"><i>GAP 6</i>Attribution</span><span>Not a gate — the flywheel. It decides whether <b>next month’s 10,000 do better than this month’s.</b></span></div>
+      <div class="arm-sgw__pay">
+        <div class="pn">3.7 <i>→</i> <b>7.6</b></div>
+        <p><b>Worst score: Conversion. Biggest lever: Visibility.</b> <span>Take Visibility from 31 to 78 and 3.7 booked jobs a month becomes 7.6. That’s what multiplying means.</span></p>
+      </div>
+    </div>
+    <div class="arm-sgw__ctl">
+      <button type="button" class="arm-sgw__btn" id="sixgap-el-toggle" aria-expanded="false" aria-controls="argmRoot"><span class="lbl">Open the 6-Gap Revenue Map</span><span class="ar" aria-hidden="true">→</span></button>
+      <p class="arm-sgw__meta">Ninety seconds tells you which gap is doing the damage — rarely the one the last agency pitched. Nothing is saved; it runs in your browser.</p>
+      <p class="arm-sgw__skip">Already ran it? <a data-arm-skip-sixgap="1">Skip to what we build &amp; run ↓</a></p>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  if(window.__armSGW){ return; } window.__armSGW=1;
+  var sec=document.getElementById('sixgap-el'); if(!sec){ return; }
+  var btn=document.getElementById('sixgap-el-toggle'); if(!btn){ return; }
+  var lbl=btn.querySelector('.lbl');
+  var row=null, root=null, isOpen=false, saved={fb:null,kg:null}, animating=false;
+  function hdr(){ var h=document.querySelector('.tt-header'); var v=0; if(h){ v=Math.round(h.getBoundingClientRect().height); } if(v>0){ if(v<220){ return v; } } return 70; }
+  function rowOf(el){ var hops=0; while(el){ if(hops>12){ break; } if(el.classList){ if(el.classList.contains('vc_row')){ return el; } if(el.classList.contains('wpb_row')){ return el; } } el=el.parentElement; hops++; } return null; }
+  function collapseNow(r){ r.setAttribute('data-arm-sixgap-row','1'); btn.setAttribute('aria-controls', r.id||'argmRoot'); r.style.display='none'; r.setAttribute('aria-hidden','true'); }
+  function claim(el){
+    if(root){ return; }
+    root=el; row=rowOf(el); if(!row){ row=el; }
+    saved.fb=root.getAttribute('data-fullbleed'); saved.kg=root.getAttribute('data-killgaps');
+    root.setAttribute('data-fullbleed','0'); root.setAttribute('data-killgaps','0');
+    collapseNow(row);
+    var bar=document.createElement('div'); bar.className='arm-sgw__closebar';
+    var cb=document.createElement('button'); cb.type='button'; cb.textContent='Close the map \u2191'; cb.setAttribute('data-arm-close-sixgap','1');
+    bar.appendChild(cb); root.appendChild(bar);
+    var h=location.hash; if(h){ if(wantsOpen(h)){ openMap(false,true); } }
+    if(!isOpen){ sealSoon(); setTimeout(seal,600); setTimeout(seal,1500); }
+  }
+  function wantsOpen(h){
+    if(h==='#sixgap'){ return true; } if(h==='#sixgap-el'){ return true; } if(h==='#eldiag'){ return true; } if(h==='#diag'){ return true; } if(h==='#argmRoot'){ return true; }
+    var t=null; try{ t=document.querySelector(h); }catch(e){ t=null; }
+    if(t){ if(row){ if(row.contains(t)){ return true; } } }
+    return false;
+  }
+  /* seal to the band's ROW bottom, not its section bottom: the sitewide -20px content-box margin makes the row 20px shorter than the section, and each section is clipped to its row, so sealing to the section leaves a 20px bare strip of page background between the two rows. */
+  function secBottom(){ /* painted bottom = min(section, row): the row clips the section, and the row can also be taller than the section by the sitewide 35px trailing slack. */ var b=sec.getBoundingClientRect().bottom; var r=(sec.closest?sec.closest('.vc_row'):null); if(r){ var rb=r.getBoundingClientRect().bottom; if(rb<b){ b=rb; } } return b; }
+  function ping(){ try{ window.dispatchEvent(new Event('resize')); }catch(e){} }
+  var sealed=false, sealT=null;
+  function nextRow(){ if(!row){ return null; } var n=row.nextElementSibling; var hops=0; while(n){ if(hops>6){ break; } if(n.getBoundingClientRect().height>0){ return n; } n=n.nextElementSibling; hops++; } return null; }
+  function seal(){
+    if(isOpen){ return; } var n=nextRow(); if(!n){ return; }
+    n.style.removeProperty('margin-top');
+    var mt=parseFloat(getComputedStyle(n).marginTop); if(isNaN(mt)){ mt=0; }
+    var i=0;
+    while(i<5){
+      var g=Math.round(n.getBoundingClientRect().top-secBottom());
+      if(g<1){ if(g>-1){ break; } }
+      mt=mt-g; n.style.setProperty('margin-top',mt+'px','important'); sealed=true; i++;
+    }
+  }
+  function unseal(){ if(!sealed){ return; } var n=nextRow(); if(n){ n.style.removeProperty('margin-top'); } sealed=false; }
+  function sealSoon(){ if(sealT){ clearTimeout(sealT); } sealT=setTimeout(seal,80); }
+  function scrollToRow(){ if(!row){ return; } var y=row.getBoundingClientRect().top+window.pageYOffset-hdr()-12; window.scrollTo({top:y,behavior:'smooth'}); }
+  function openMap(animate,scrollAfter){
+    if(!row){ return; } if(isOpen){ if(scrollAfter){ scrollToRow(); } return; }
+    unseal();
+    isOpen=true; animating=true;
+    btn.setAttribute('aria-expanded','true'); if(lbl){ lbl.textContent='Close the 6-Gap Revenue Map'; }
+    row.removeAttribute('aria-hidden');
+    if(saved.fb!==null){ root.setAttribute('data-fullbleed',saved.fb); }
+    row.style.display='';
+    var reduce=false; if(window.matchMedia){ if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){ reduce=true; } }
+    if(reduce){ animate=false; }
+    if(!animate){ row.style.height=''; row.style.overflow=''; if(saved.kg!==null){ root.setAttribute('data-killgaps',saved.kg); } animating=false; ping(); if(scrollAfter){ setTimeout(scrollToRow,60); } return; }
+    row.style.overflow='hidden'; row.style.height='0px';
+    var target=row.scrollHeight;
+    ping();
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){ row.style.height=target+'px'; }); });
+    if(scrollAfter){ setTimeout(scrollToRow,80); }
+    setTimeout(function(){ row.style.height=''; row.style.overflow=''; if(saved.kg!==null){ root.setAttribute('data-killgaps',saved.kg); } animating=false; ping(); },600);
+  }
+  function closeMap(){
+    if(!row){ return; } if(!isOpen){ return; }
+    isOpen=false;
+    btn.setAttribute('aria-expanded','false'); if(lbl){ lbl.textContent='Open the 6-Gap Revenue Map'; }
+    root.setAttribute('data-fullbleed','0'); root.setAttribute('data-killgaps','0');
+    row.style.marginTop=''; row.style.marginBottom='';
+    row.style.display='none'; row.setAttribute('aria-hidden','true');
+    sealSoon();
+    var y=sec.getBoundingClientRect().top+window.pageYOffset-hdr()-12;
+    window.scrollTo({top:y,behavior:'smooth'});
+    ping();
+  }
+  btn.addEventListener('click',function(){ if(animating){ return; } if(isOpen){ closeMap(); } else { openMap(true,true); } });
+  document.addEventListener('click',function(e){
+    var t=e.target; if(!t){ return; } if(!t.closest){ return; }
+    var w=t.closest('[data-scroll="eldiag"]'); if(w){ e.preventDefault(); openMap(true,true); try{ history.replaceState(null,'','#sixgap-el'); }catch(err){} return; }
+    var o=t.closest('[data-arm-open-sixgap]'); if(o){ e.preventDefault(); openMap(true,true); try{ history.replaceState(null,'','#sixgap-el'); }catch(err){} return; }
+    var c=t.closest('[data-arm-close-sixgap]'); if(c){ e.preventDefault(); closeMap(); return; }
+    var s=t.closest('[data-arm-skip-sixgap]'); if(s){ e.preventDefault(); var n=null; if(row){ n=row.nextElementSibling; var hops=0; while(n){ if(hops>8){ break; } if(n.getBoundingClientRect().height>0){ break; } n=n.nextElementSibling; hops++; } } if(n){ var y=n.getBoundingClientRect().top+window.pageYOffset-hdr()-12; window.scrollTo({top:y,behavior:'smooth'}); } return; }
+  },true);
+  window.addEventListener('hashchange',function(){ if(wantsOpen(location.hash)){ openMap(true,true); } });
+  window.addEventListener('resize',function(){ if(!isOpen){ sealSoon(); } });
+  window.addEventListener('load',function(){ if(!isOpen){ sealSoon(); } });
+  var found=document.getElementById('argmRoot');
+  if(found){ claim(found); }
+  else {
+    var mo=null;
+    if('MutationObserver' in window){
+      mo=new MutationObserver(function(){ var r=document.getElementById('argmRoot'); if(r){ claim(r); mo.disconnect(); } });
+      mo.observe(document.documentElement,{childList:true,subtree:true});
+    }
+    document.addEventListener('DOMContentLoaded',function(){ var r=document.getElementById('argmRoot'); if(r){ claim(r); if(mo){ mo.disconnect(); } } else { btn.style.display='none'; } });
+  }
+})();
+</script>
+
+		

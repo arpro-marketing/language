@@ -1,0 +1,119 @@
+
+			<!-- Page JS (ASCII-safe, run-once, document-scoped) -->
+<script>
+(function(){
+  if(window.__armElInit){ return; } window.__armElInit=1;
+  function ready(fn){ if(document.readyState!=='loading'){ fn(); } else { document.addEventListener('DOMContentLoaded', fn); } }
+  ready(function(){
+    var blocks=document.querySelectorAll('.arm-el');
+    if(blocks.length<1){ return; }
+    var reduce=false;
+    if(window.matchMedia){ if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){ reduce=true; } }
+
+    var canIO=false;
+    if('IntersectionObserver' in window){ canIO=true; }
+    if(reduce){ canIO=false; }
+    if(canIO){
+      var b; for(b=0;b<blocks.length;b++){ blocks[b].classList.add('reveal-on'); }
+      var io=new IntersectionObserver(function(es){
+        var i; for(i=0;i<es.length;i++){ if(es[i].isIntersecting){ es[i].target.classList.add('in'); io.unobserve(es[i].target); } }
+      },{ threshold:0.12 });
+      var revs=document.querySelectorAll('.arm-el .rev');
+      var r; for(r=0;r<revs.length;r++){ io.observe(revs[r]); }
+      setTimeout(function(){ var k; for(k=0;k<revs.length;k++){ revs[k].classList.add('in'); } }, 4000);
+    }
+
+    var scr=document.querySelectorAll('[data-scroll="eldiag"]');
+    var s; for(s=0;s<scr.length;s++){
+      scr[s].addEventListener('click', function(){
+        var t=document.getElementById('eldiag');
+        if(t){ t.scrollIntoView({ behavior: reduce?'auto':'smooth', block:'start' }); }
+      });
+    }
+
+    function wireAcc(sel){
+      var hs=document.querySelectorAll(sel);
+      var i; for(i=0;i<hs.length;i++){
+        hs[i].addEventListener('click', function(){
+          var p=this.parentNode; var nowOpen=p.classList.toggle('open');
+          this.setAttribute('aria-expanded', nowOpen?'true':'false');
+        });
+      }
+    }
+    wireAcc('.arm-el .layer .hd');
+    wireAcc('.arm-el .faq .qh');
+
+    /* ===== Cost-per-job meter, by job type ===== */
+    var cpl=document.getElementById('elcpl');
+    var bk=document.getElementById('elbook');
+    var sd=document.getElementById('elsold');
+    var sdf=document.getElementById('elsoldf');
+    var out=document.getElementById('elcpj');
+    var pctEl=document.getElementById('elpct');
+    var kEl=document.getElementById('elcpjk');
+    var note=document.getElementById('elcpjnote');
+    var JOBS={
+      svc:{price:351,k:'Service call, $351 average',pre:'Booked is sold, so about ',est:false},
+      panel:{price:1600,k:'Panel upgrade, about $1,600',pre:'Booked, then estimated and sold, about ',est:true},
+      gen:{price:5157,k:'Standby generator, $5,157',pre:'About ',est:true}
+    };
+    var job='svc';
+    function money(n){
+      var v=Math.round(n); var str=String(v); var o=''; var c=0; var k;
+      for(k=str.length-1;k>-1;k--){
+        o=str.charAt(k)+o; c=c+1;
+        var atG=false; if(c%3===0){ atG=true; }
+        var notF=false; if(k>0){ notF=true; }
+        if(atG){ if(notF){ o=','+o; } }
+      }
+      return '$'+o;
+    }
+    function num(el,dflt,min){ var v=parseFloat(el.value); if(isNaN(v)){ v=dflt; } if(v<min){ v=min; } return v; }
+    function calc(){
+      if(!cpl){ return; }
+      var j=JOBS[job];
+      var c=num(cpl,39,0);
+      var b=num(bk,43.4,0.1);
+      var sold=num(sd,35.6,0.1);
+      var cost=c/(b/100);
+      if(j.est){ cost=cost/(sold/100); }
+      var pct=Math.round((cost/j.price)*100);
+      out.textContent=money(cost);
+      pctEl.innerHTML=pct+'%<small>of the ticket</small>';
+      kEl.textContent=j.k;
+      note.textContent=j.pre+money(cost)+' to win one, '+pct+'% of the ticket.';
+      if(sdf){ if(j.est){ sdf.classList.remove('dim'); } else { sdf.classList.add('dim'); } }
+      var pres=document.querySelectorAll('#elmeter .pre'); var q;
+      for(q=0;q<pres.length;q++){
+        var on=false; if(pres[q].getAttribute('data-job')===job){ on=true; }
+        if(on){ pres[q].classList.add('on'); pres[q].setAttribute('aria-pressed','true'); } else { pres[q].classList.remove('on'); pres[q].setAttribute('aria-pressed','false'); }
+      }
+    }
+    if(cpl){
+      cpl.addEventListener('input', calc);
+      bk.addEventListener('input', calc);
+      sd.addEventListener('input', calc);
+      var pres=document.querySelectorAll('#elmeter .pre'); var z;
+      for(z=0;z<pres.length;z++){
+        pres[z].addEventListener('click', function(){ job=this.getAttribute('data-job'); calc(); });
+      }
+      calc();
+    }
+
+    /* ===== Budget stage switcher ===== */
+    var segs=document.querySelectorAll('.arm-el .seg'); var g;
+    for(g=0;g<segs.length;g++){
+      segs[g].addEventListener('click', function(){
+        var id=this.getAttribute('data-stage');
+        var all=document.querySelectorAll('.arm-el .seg'); var a;
+        for(a=0;a<all.length;a++){ all[a].classList.remove('on'); all[a].setAttribute('aria-selected','false'); }
+        this.classList.add('on'); this.setAttribute('aria-selected','true');
+        var panes=document.querySelectorAll('.arm-el .stage'); var pn;
+        for(pn=0;pn<panes.length;pn++){ panes[pn].classList.remove('on'); }
+        var t=document.getElementById('stage-'+id); if(t){ t.classList.add('on'); }
+      });
+    }
+  });
+})();
+</script>
+		

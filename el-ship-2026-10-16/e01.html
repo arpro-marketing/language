@@ -1,0 +1,260 @@
+
+			<style>
+/* ============================================================
+   ARM · Electrician Marketing · Conversion Hub v2 (2026-10-16)
+   Shared stylesheet, adapted from the hub v2 template (.arm-el)
+   Brand 60/30/10 · white / #333 / #EF662F · Helvetica · left-aligned default
+   ============================================================ */
+.arm-el{
+  --o:#EF662F; --o-deep:#d24f1e; --o-soft:#FDF0EB;
+  --ink:#333333; --mut:#666666; --line:#E0E0E0; --wash:#F8F8F8;
+  --dark:#1a212b; --dark2:#10141b; --dl:#2a323d; --don:#eef1f4; --dmut:#aeb7c2;
+  --red:#C0392B; --grn:#27AE60;
+  color:var(--ink); background:transparent;
+  font-family:Helvetica,Arial,sans-serif; line-height:1.62; font-size:17px;
+  -webkit-font-smoothing:antialiased; box-sizing:border-box;
+}
+/* DEPLOY GEOMETRY (CONVENTION-WPBakery-Row-Zero-Bottom-Spacer-2026-09-02): rows carry margin-top:-35px, the raw-HTML box margin-bottom:-20px. The row is overflow:hidden and clips the last 20px of every block; the next row starts 35px above the clip line. padding-top:35px lands flush; padding-bottom:20px is the sacrificial band. Hero = padding-top:0. */
+.arm-el{padding-top:35px;padding-bottom:20px}
+.arm-el.arm-el-first{padding-top:0}
+.arm-el *{box-sizing:border-box}
+.arm-el img{max-width:100%}
+.arm-el .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+.arm-el .narrow{max-width:840px}
+.arm-el h1,.arm-el h2,.arm-el h3{font-weight:700;letter-spacing:-.02em;color:var(--ink);margin:0;text-wrap:balance;line-height:1.2}
+.arm-el p{margin:0 0 16px;line-height:1.62}
+.arm-el .eye{font-size:12.5px;letter-spacing:.19em;text-transform:uppercase;font-weight:700;color:var(--o);margin:0 0 14px;line-height:1.4}
+.arm-el .rev{opacity:1;transform:none}
+.arm-el.reveal-on .rev{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.arm-el.reveal-on .rev.in{opacity:1;transform:none}
+.arm-el .accent{color:var(--o)}
+.arm-el .center{text-align:center}
+.arm-el .center .lead,.arm-el .center h2{margin-left:auto;margin-right:auto}
+.arm-el a.tx{color:var(--o);font-weight:700;text-decoration:none}
+.arm-el a.tx:hover{text-decoration:underline}
+
+/* ---- hero ---- */
+.arm-el .hero{padding:60px 0 22px}
+.arm-el .hero h1{font-size:41px;line-height:1.15;max-width:900px;margin:0 0 20px}
+.arm-el .hero .sub{font-size:19px;color:var(--mut);max-width:720px;margin:0 0 30px}
+.arm-el .cta{display:inline-block;background:var(--o);color:#fff;text-decoration:none;font-weight:700;font-size:17px;line-height:1.3;
+  padding:16px 30px;border-radius:8px;border:0;cursor:pointer;font-family:inherit;transition:background .2s ease,transform .2s ease,box-shadow .2s ease}
+.arm-el .cta:hover{background:var(--o-deep);color:#fff;transform:translateY(-2px);box-shadow:0 10px 24px rgba(239,102,47,.28)}
+.arm-el .cta.lg{font-size:18px;padding:18px 34px}
+.arm-el .cta.lg:hover{transform:translateY(-3px)}
+.arm-el .founder{display:inline-block;margin:16px 0 0;font-size:15px;color:var(--mut);text-decoration:none;font-weight:600;line-height:1.5}
+.arm-el .founder:hover{color:var(--o)}
+.arm-el .founder u{text-decoration-color:var(--o)}
+.arm-el .csub{font-size:14.5px;color:var(--mut);max-width:640px;margin:14px 0 0;line-height:1.5}
+
+/* ---- proof bar ---- */
+.arm-el .proof{padding:30px 0 26px}
+.arm-el .proof .grid{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.arm-el .proof .stat{flex:1 1 150px;min-width:140px;text-align:center;background:#fff;border:1px solid var(--line);border-top:3px solid var(--o);border-radius:8px;padding:16px 10px;transition:transform .22s ease,box-shadow .22s ease}
+.arm-el .proof .stat:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.07)}
+.arm-el .proof .n{font-size:27px;font-weight:700;color:var(--o);line-height:1.1}
+.arm-el .proof .l{font-size:12.5px;color:var(--mut);margin-top:5px;letter-spacing:.02em;line-height:1.4}
+.arm-el .proof .foot{font-size:13px;color:var(--mut);margin:16px auto 0;max-width:760px;line-height:1.5}
+
+/* ---- direct answer ---- */
+.arm-el .dab{padding:8px 0 6px}
+.arm-el .dab .card{background:var(--wash);border-left:4px solid var(--o);border-radius:0 10px 10px 0;padding:20px 26px;transition:box-shadow .2s ease,transform .2s ease}
+.arm-el .dab .card:hover{box-shadow:0 8px 22px rgba(0,0,0,.06);transform:translateY(-2px)}
+.arm-el .dab h2{font-size:20px;margin:0 0 8px}
+.arm-el .dab p{font-size:18px;margin:0;color:var(--ink)}
+
+/* ---- sub-nav ---- */
+.arm-el .subnav{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--wash)}
+.arm-el .subnav .in{max-width:1080px;margin:0 auto;padding:12px 24px;display:flex;flex-wrap:nowrap;gap:8px 20px;align-items:center;font-size:14px;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch}
+.arm-el .subnav b{font-weight:700;color:var(--ink);margin-right:2px;flex:0 0 auto}
+.arm-el .subnav a{color:var(--mut);text-decoration:none;font-weight:600;padding-bottom:2px;flex:0 0 auto}
+.arm-el .subnav a:hover{color:var(--o)}
+.arm-el .subnav a.cur{color:var(--o);border-bottom:2px solid var(--o)}
+
+/* ---- section base ---- */
+.arm-el section{padding:52px 0;scroll-margin-top:20px}
+.arm-el section h2{font-size:29px;line-height:1.22;margin:0 0 10px;max-width:860px}
+.arm-el section .lead{font-size:18px;color:var(--mut);max-width:740px;margin:0 0 26px}
+.arm-el .wash{background:var(--wash)}
+
+/* ---- dark sections ---- */
+.arm-el .dark{background:var(--dark2);color:var(--don);margin-top:0}
+.arm-el .dark h2,.arm-el .dark h3{color:#fff}
+.arm-el .dark .lead{color:var(--dmut)}
+.arm-el .leakrow{display:flex;flex-wrap:wrap;gap:16px;align-items:stretch;margin-top:8px}
+.arm-el .leak{flex:1 1 220px;background:var(--dark);border:1px solid var(--dl);border-radius:12px;padding:22px 20px;transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+.arm-el .leak:hover{transform:translateY(-4px);border-color:var(--o);box-shadow:0 14px 30px rgba(0,0,0,.28)}
+.arm-el .leak .tag{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--o);margin-bottom:8px;line-height:1.4}
+.arm-el .leak .big{font-size:26px;font-weight:700;color:#fff;line-height:1.05;letter-spacing:-.01em;margin:0 0 8px;white-space:nowrap}
+.arm-el .leak h3{font-size:19px;margin:0 0 8px}
+.arm-el .leak p{font-size:15px;color:var(--dmut);margin:0}
+.arm-el .leak .src{font-size:12px;color:var(--dmut);opacity:.8;margin-top:10px;line-height:1.4}
+.arm-el .leak.fatal{border-color:rgba(192,57,43,.55)}
+.arm-el .leak.fatal .tag{color:#ff8a7a}
+.arm-el .darknote{color:var(--dmut);font-size:15.5px;margin:26px 0 0;max-width:760px}
+.arm-el .darknote b{color:#fff}
+
+/* ---- cta strip ---- */
+.arm-el .strip{background:var(--o-soft);border-top:1px solid #f3d9cd;border-bottom:1px solid #f3d9cd;padding:28px 0}
+.arm-el .strip .in{display:flex;flex-wrap:wrap;gap:16px 26px;align-items:center;justify-content:space-between}
+.arm-el .strip p{font-size:19px;font-weight:700;color:var(--ink);max-width:560px;margin:0;line-height:1.4}
+
+/* ---- 6-Gap intro (tool lives in the next row via shortcode) ---- */
+.arm-el .diag{background:#2c2c2c;color:var(--don);margin-top:0;padding-bottom:64px}
+.arm-el .diag h2{color:#fff}
+.arm-el .diag .lead{color:var(--dmut)}
+.arm-el .diag .six{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:6px 0 0}
+.arm-el .diag .six span{background:var(--dark);border:1px solid var(--dl);border-radius:20px;padding:7px 14px;font-size:13px;font-weight:700;color:var(--don);line-height:1.3;transition:border-color .18s ease,transform .18s ease}
+.arm-el .diag .six span:hover{border-color:var(--o);transform:translateY(-2px)}
+
+/* ---- accordion layers (the system) ---- */
+.arm-el .layer{border:1px solid var(--line);border-radius:11px;margin-bottom:12px;overflow:hidden;background:#fff;transition:border-color .2s ease,box-shadow .2s ease}
+.arm-el .layer:hover{border-color:#cfcfcf;box-shadow:0 6px 18px rgba(0,0,0,.05)}
+.arm-el .layer .hd{display:flex;gap:14px;align-items:center;padding:18px 20px;cursor:pointer;width:100%;background:none;border:0;text-align:left;font-family:inherit}
+.arm-el .layer .hd:hover{background:var(--wash)}
+.arm-el .layer .hd:focus-visible{outline:2px solid var(--o);outline-offset:-2px}
+.arm-el .layer .num{flex:0 0 auto;width:34px;height:34px;border-radius:50%;background:var(--o);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:15px;line-height:1}
+.arm-el .layer .ht{flex:1 1 auto}
+.arm-el .layer .ht h3{font-size:19px;margin:0}
+.arm-el .layer .ht p{font-size:14.5px;color:var(--mut);margin:2px 0 0;line-height:1.45}
+.arm-el .layer .tw{flex:0 0 auto;color:var(--o);font-size:24px;font-weight:700;transition:transform .25s ease;line-height:1}
+.arm-el .layer.open .tw{transform:rotate(45deg)}
+.arm-el .layer .bd{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.arm-el .layer.open .bd{max-height:900px}
+.arm-el .layer .bdin{padding:0 20px 20px 68px}
+.arm-el .layer .bdin p{font-size:15.5px;margin:0 0 12px}
+.arm-el .layer .bdin .mini{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--o);margin:0 0 4px;line-height:1.4}
+.arm-el .layer .bdin .deep{background:var(--wash);border-radius:8px;padding:12px 15px;font-size:14px;color:var(--mut);margin-top:4px;line-height:1.55}
+.arm-el .layer .bdin .deep b{color:var(--ink)}
+.arm-el .bridge{font-size:16px;color:var(--ink);margin:22px 0 0;max-width:820px}
+
+/* ---- cost-per-job meter (interactive) ---- */
+.arm-el .meter{background:#fff;border:1px solid var(--line);border-top:3px solid var(--o);border-radius:12px;padding:24px 26px;margin-top:8px;transition:box-shadow .2s ease}
+.arm-el .meter:hover{box-shadow:0 10px 24px rgba(0,0,0,.06)}
+.arm-el .meter .row{display:flex;flex-wrap:wrap;gap:18px 28px;align-items:flex-end}
+.arm-el .meter .f{flex:1 1 220px}
+.arm-el .meter label{display:block;font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);margin:0 0 8px;line-height:1.4}
+.arm-el .meter .inwrap{display:flex;align-items:center;gap:8px;border:1.5px solid var(--line);border-radius:8px;padding:8px 12px;background:var(--wash);transition:border-color .15s ease,box-shadow .15s ease}
+.arm-el .meter .inwrap:focus-within{border-color:var(--o);box-shadow:0 0 0 3px rgba(239,102,47,.15)}
+.arm-el .meter .inwrap span{color:var(--mut);font-weight:700}
+.arm-el .meter input[type=number]{width:100%;border:0;background:transparent;font-size:22px;font-weight:700;color:var(--ink);font-family:inherit;outline:0;-moz-appearance:textfield}
+.arm-el .meter input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none}
+.arm-el .meter input[type=range]{width:100%;accent-color:var(--o);cursor:pointer;margin:6px 0 0}
+.arm-el .meter .rv{font-size:22px;font-weight:700;color:var(--ink);line-height:1.1}
+.arm-el .meter .rv small{font-size:13px;color:var(--mut);font-weight:600;margin-left:6px}
+.arm-el .meter .out{flex:1 1 240px;background:var(--o-soft);border-radius:10px;padding:16px 18px;text-align:center}
+.arm-el .meter .out .k{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--o);line-height:1.4}
+.arm-el .meter .out .v{font-size:34px;font-weight:700;color:var(--ink);line-height:1.1;margin:4px 0 2px;letter-spacing:-.01em}
+.arm-el .meter .out .s{font-size:13px;color:var(--mut);line-height:1.4}
+.arm-el .meter .presets{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.arm-el .meter .pre{background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:7px 13px;font-size:13px;font-weight:700;color:var(--ink);cursor:pointer;font-family:inherit;line-height:1.3;transition:transform .18s ease,border-color .18s ease,background .18s ease}
+.arm-el .meter .pre:hover{transform:translateY(-2px);border-color:var(--o)}
+.arm-el .meter .pre.on{background:var(--o);border-color:var(--o);color:#fff}
+.arm-el .meter .note{font-size:13px;color:var(--mut);margin:14px 0 0;line-height:1.5}
+.arm-el .meter .note b{color:var(--ink)}
+
+/* ---- stage switcher (budget) ---- */
+.arm-el .segs{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 18px}
+.arm-el .seg{background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:9px 16px;font-size:14px;font-weight:700;color:var(--ink);cursor:pointer;font-family:inherit;line-height:1.3;transition:transform .18s ease,border-color .18s ease,background .18s ease}
+.arm-el .seg:hover{transform:translateY(-2px);border-color:var(--dmut)}
+.arm-el .seg:focus-visible{outline:2px solid var(--o);outline-offset:2px}
+.arm-el .seg.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.arm-el .stage{display:none;background:#fff;border:1px solid var(--line);border-left:4px solid var(--o);border-radius:0 12px 12px 0;padding:22px 26px}
+.arm-el .stage.on{display:block}
+.arm-el .stage h3{font-size:20px;margin:0 0 8px}
+.arm-el .stage p{font-size:16px;margin:0 0 10px}
+.arm-el .stage p:last-child{margin:0}
+.arm-el .stage .pl{display:inline-block;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--o);background:var(--o-soft);padding:4px 10px;border-radius:20px;margin:0 0 10px;line-height:1.4}
+.arm-el .timing{display:flex;flex-wrap:wrap;gap:16px;margin-top:18px}
+.arm-el .timing .c{flex:1 1 300px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--o);border-radius:11px;padding:20px 22px;transition:transform .22s ease,box-shadow .22s ease}
+.arm-el .timing .c:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,.06)}
+.arm-el .timing .c h3{font-size:17.5px;margin:0 0 8px}
+.arm-el .timing .c p{font-size:15px;color:var(--mut);margin:0}
+.arm-el .timing .c p b{color:var(--ink)}
+
+/* ---- compare table ---- */
+.arm-el .cmp-wrap{overflow-x:auto;margin-top:8px}
+.arm-el .cmp{width:100%;border-collapse:collapse;font-size:15px;min-width:640px}
+.arm-el .cmp th,.arm-el .cmp td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.5}
+.arm-el .cmp thead th{background:var(--ink);color:#fff;font-size:14px;font-weight:700}
+.arm-el .cmp thead th.arm{background:var(--o)}
+.arm-el .cmp td.vs{color:var(--mut)}
+.arm-el .cmp td.arm{background:var(--o-soft);color:var(--ink);font-weight:600}
+.arm-el .cmp tbody tr{transition:background .15s ease}
+.arm-el .cmp tbody tr:hover td.vs{background:#f0f0f0}
+.arm-el .cmp tbody tr:hover td.arm{background:#fbe4d9}
+.arm-el .caveat{font-size:13.5px;color:var(--mut);max-width:840px;line-height:1.5;margin:18px 0 0}
+
+/* ---- peer review card ---- */
+.arm-el .rvwrap{display:flex;flex-wrap:wrap;gap:18px;align-items:stretch;margin-top:8px}
+.arm-el .rvc{flex:1 1 420px;background:#fff;border:1px solid var(--line);border-left:4px solid var(--o);border-radius:0 12px 12px 0;padding:24px 26px;transition:transform .22s ease,box-shadow .22s ease}
+.arm-el .rvc:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,.06)}
+.arm-el .rvc .stars{color:var(--o);font-size:17px;letter-spacing:2px;margin:0 0 8px;line-height:1}
+.arm-el .rvc blockquote{margin:0 0 14px;font-size:16px;line-height:1.6;color:var(--ink)}
+.arm-el .rvc .who{font-size:14px;color:var(--mut);line-height:1.5}
+.arm-el .rvc .who b{color:var(--ink)}
+.arm-el .rvc .pill{display:inline-block;margin-top:8px;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--o);background:var(--o-soft);padding:4px 10px;border-radius:20px;line-height:1.4}
+.arm-el .rvside{flex:1 1 260px;display:flex;flex-direction:column;gap:14px}
+.arm-el .rcard{background:#fff;border:1px solid var(--line);border-top:3px solid var(--o);border-radius:11px;padding:18px 20px;transition:transform .22s ease,box-shadow .22s ease}
+.arm-el .rcard:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,.06)}
+.arm-el .rcard .vert{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--o);margin-bottom:8px;line-height:1.4}
+.arm-el .rcard .metric{font-size:28px;font-weight:700;color:var(--o);line-height:1.05;letter-spacing:-.01em}
+.arm-el .rcard .desc{font-size:14px;color:var(--ink);margin-top:8px;line-height:1.45}
+.arm-el .rcard .src{font-size:12px;color:var(--mut);margin-top:6px;line-height:1.4}
+
+/* ---- local band ---- */
+.arm-el .local .grid{display:flex;flex-wrap:wrap;gap:14px;margin-top:8px}
+.arm-el .local .t{flex:1 1 220px;background:#fff;border:1px solid var(--line);border-left:3px solid var(--o);border-radius:0 10px 10px 0;padding:16px 18px;font-size:15px;color:var(--mut);line-height:1.5;transition:transform .2s ease,box-shadow .2s ease}
+.arm-el .local .t:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,.06)}
+.arm-el .local .t b{color:var(--ink);display:block;margin-bottom:4px;font-size:16px}
+
+/* ---- faq ---- */
+.arm-el .faq .q{border-bottom:1px solid var(--line)}
+.arm-el .faq .qh{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:18px 6px;cursor:pointer;width:100%;background:none;border:0;text-align:left;font-family:inherit;transition:background .15s ease}
+.arm-el .faq .qh:hover{background:#fff}
+.arm-el .faq .qh:focus-visible{outline:2px solid var(--o);outline-offset:-2px}
+.arm-el .faq .qh h3{font-size:17.5px;line-height:1.35}
+.arm-el .faq .qh .tw{color:var(--o);font-size:24px;font-weight:700;flex:0 0 auto;transition:transform .25s ease;line-height:1}
+.arm-el .faq .q.open .tw{transform:rotate(45deg)}
+.arm-el .faq .a{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.arm-el .faq .q.open .a{max-height:560px}
+.arm-el .faq .a p{font-size:15.5px;color:var(--mut);padding:0 6px 20px}
+
+/* ---- final cta ---- */
+.arm-el .final{background:var(--dark2);color:var(--don);margin-top:0}
+.arm-el .final h2{color:#fff;font-size:32px;max-width:860px;margin:0 0 14px}
+.arm-el .final .lead{color:var(--dmut);margin:0 0 26px}
+.arm-el .final .north{font-size:15px;color:var(--o-soft);font-weight:700;margin:26px 0 0;letter-spacing:.01em;line-height:1.5}
+.arm-el .final .book{display:block;margin:14px 0 0;font-size:15px;color:var(--dmut);line-height:1.5}
+.arm-el .final .book a{color:#fff;font-weight:700;text-decoration:none;border-bottom:1px solid var(--o);transition:color .18s ease,border-color .18s ease}
+.arm-el .final .book a:hover{color:var(--o)}
+.arm-el .fwd{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.arm-el .fwd a{background:var(--dark);border:1px solid var(--dl);border-radius:9px;padding:13px 17px;color:var(--don);text-decoration:none;font-size:14px;font-weight:600;line-height:1.3;transition:border-color .2s ease,transform .2s ease}
+.arm-el .fwd a:hover{border-color:var(--o);color:#fff;transform:translateY(-2px)}
+.arm-el .fwd a span{color:var(--o);transition:transform .18s ease;display:inline-block}
+.arm-el .fwd a:hover span{transform:translateX(3px)}
+
+@media(hover:none){
+  .arm-el .seg:hover,.arm-el .pre:hover{transform:none}
+}
+@media(max-width:760px){
+  .arm-el{font-size:16px}
+  .arm-el .hero{padding:40px 0 14px}
+  .arm-el .hero h1{font-size:30px}
+  .arm-el .hero .sub{font-size:17px}
+  .arm-el section{padding:40px 0}
+  .arm-el section h2{font-size:24px}
+  .arm-el .proof .n{font-size:23px}
+  .arm-el .final h2{font-size:26px}
+  .arm-el .meter .out .v{font-size:28px}
+  .arm-el .leak .big{font-size:24px}
+}
+@media(max-width:400px){
+  .arm-el .hero h1{font-size:25px;line-height:1.2}
+}
+</style>
+<!-- Shared stylesheet -->
+<div class="arm-el arm-el-first">
+
+</div>
+		
