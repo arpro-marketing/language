@@ -11,7 +11,13 @@
 .arm-el .meter .out .s{flex:1 1 260px;font-size:15px;color:var(--ink)}
 .arm-el .meter .jlbl{display:block;font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);margin:18px 0 0;line-height:1.4}
 .arm-el .meter .presets{margin-top:8px}
-.arm-el .meter .f.dim{opacity:.45}
+/* Meter fix 2026-10-16: theme Formstone wraps number inputs with its own arrows, and the theme .row clearfix took the first grid cell */
+.arm-el #elmeter .row::before,.arm-el #elmeter .row::after{content:none!important;display:none!important}
+.arm-el #elmeter .row{align-items:start}
+.arm-el #elmeter .fs-number{display:flex!important;align-items:center;width:auto!important;height:auto!important;line-height:inherit!important;border:0!important;background:none!important;position:static!important}
+.arm-el #elmeter .fs-number-arrow{display:none!important}
+.arm-el #elmeter .fs-number-element{border:0!important;background:transparent!important;color:var(--ink)!important}
+.arm-el #elmeter .f.dim::after{content:"Not used for service calls: booked is sold.";display:block;font-size:13px;color:var(--mut);margin-top:6px;line-height:1.4}
 </style>
 <div class="arm-el">
 <section class="wash" id="math">

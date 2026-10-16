@@ -13,3 +13,10 @@ Approved by Andrew on 2026-10-16: commercial out; one company per market applies
 7. Roll back from the backup if any check fails.
 
 Previews: /mnt/project-files/elec-research-2026-10-16/preview/ (cloud project files).
+
+## Meter fix (2026-10-16, after v2 went live)
+Replace only the cost meter block (the raw HTML block holding `id="elmeter"`) with the current e13.html. Nothing else on the page changes.
+- Removes the theme's inner up/down arrows (Formstone) so each input has one −/+ pair.
+- Removes the theme `.row` clearfix pseudo-elements that took the first grid cell, so the three inputs sit in one row (one column under 620px).
+- Estimates sold stays fully visible; on Service call it shows "Not used for service calls: booked is sold." under the box.
+Verify logged out at 1440 and 390: one −/+ pair per input, three inputs in one row at 1440, defaults $90/26%, panel $252/16%, generator $252/5%, no sideways scroll.
