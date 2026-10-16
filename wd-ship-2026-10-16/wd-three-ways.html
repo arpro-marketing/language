@@ -1,0 +1,79 @@
+<style>
+/* ARM · W&D hub · "Three ways in" (draft 2026-10-10). Sits between the two-funnel strip and "The seven parts". Uses the page's .arm-wd tokens. */
+/* DEPLOY GEOMETRY: house rows carry margin-top:-35px; REST saves don't regenerate vc_custom CSS, so it is set here. */
+.vc_row:has(> .wpb_column .arm-w3){margin-top:-35px !important;}
+.arm-w3 .w3-h .accent{white-space:nowrap;}
+.arm-w3 .w3{padding:40px 0 0;}
+.arm-w3 .w3-h{font-family:'Plus Jakarta Sans',Helvetica,Arial,sans-serif;font-size:36px;line-height:1.15;letter-spacing:-.02em;max-width:820px;margin:0 auto 14px;text-align:center;}
+.arm-w3 .w3-sub{font-size:18px;color:var(--mut);max-width:640px;margin:0 auto 38px;text-align:center;}
+.arm-w3 .w3-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.arm-w3 .w3-card{position:relative;display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:12px;padding:26px 24px 22px;text-decoration:none;color:var(--ink);overflow:hidden;
+  transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;opacity:0;transform:translateY(16px);}
+.arm-w3 .w3-card::before{content:"";position:absolute;left:0;top:0;height:3px;width:34%;background:var(--o);transition:width .35s ease;}
+.arm-w3 .w3-card:hover,.arm-w3 .w3-card:focus-visible{transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,.08);border-color:rgba(239,102,47,.45);}
+.arm-w3 .w3-card:hover::before,.arm-w3 .w3-card:focus-visible::before{width:100%;}
+.arm-w3.w3-in .w3-card{opacity:1;transform:none;transition:opacity .55s ease,transform .55s ease,box-shadow .25s ease,border-color .25s ease;}
+.arm-w3.w3-in .w3-card:nth-child(2){transition-delay:.12s;}
+.arm-w3.w3-in .w3-card:nth-child(3){transition-delay:.24s;}
+.arm-w3.w3-in .w3-card:hover{transform:translateY(-4px);transition-delay:0s;}
+.arm-w3 .w3-n{font-family:'Plus Jakarta Sans',Helvetica,Arial,sans-serif;font-size:13px;font-weight:800;letter-spacing:.14em;color:var(--o);margin:0 0 12px;}
+.arm-w3 .w3-t{font-family:'Plus Jakarta Sans',Helvetica,Arial,sans-serif;font-size:22px;font-weight:800;line-height:1.2;letter-spacing:-.01em;margin:0 0 10px;color:var(--ink);}
+.arm-w3 .w3-p{font-size:16px;line-height:1.6;color:var(--mut);margin:0 0 18px;flex:1;}
+.arm-w3 .w3-go{font-family:'Plus Jakarta Sans',Helvetica,Arial,sans-serif;font-weight:700;font-size:15px;color:var(--o);}
+.arm-w3 .w3-go i{font-style:normal;display:inline-block;transition:transform .2s ease;}
+.arm-w3 .w3-card:hover .w3-go i{transform:translateX(4px);}
+.arm-w3 .w3-foot{text-align:center;margin:34px 0 0;}
+.arm-w3 .w3-q{font-size:16px;color:var(--mut);margin:0 0 14px;}
+@media(max-width:900px){.arm-w3 .w3-grid{grid-template-columns:1fr;gap:14px;}.arm-w3 .w3-h{font-size:28px;}.arm-w3 .w3{padding:32px 0 0;}.arm-w3 .w3-sub{font-size:17px;margin-bottom:28px;}}
+@media(prefers-reduced-motion:reduce){.arm-w3 .w3-card{opacity:1;transform:none;transition:none;}}
+</style>
+<section class="arm-wd arm-w3" id="three-ways-wd" aria-label="Three ways in">
+  <div class="wrap w3">
+    <p class="eye center">Your next growth move</p>
+    <h2 class="w3-h">Where should your <span class="accent">next million</span> in installs come from?</h2>
+    <p class="w3-sub">Three ways a window and door company grows from here. Start with the one you&rsquo;re facing this year.</p>
+    <div class="w3-grid">
+      <a class="w3-card" href="#system">
+        <p class="w3-n">01</p>
+        <h3 class="w3-t">Own your home market</h3>
+        <p class="w3-p">You&rsquo;re known in town, but the bigger brand still gets the first call. Take the map pack, the reviews and the estimate path in the towns you already serve.</p>
+        <span class="w3-go">See what it takes <i>&darr;</i></span>
+      </a>
+      <a class="w3-card" href="/contractor-growth-marketing/">
+        <p class="w3-n">02</p>
+        <h3 class="w3-t">Open the next market</h3>
+        <p class="w3-p">New town, no reviews, no referrals. See the cost per installed job there before you hire a crew or sign a lease.</p>
+        <span class="w3-go">Model the next market <i>&rarr;</i></span>
+      </a>
+      <a class="w3-card" href="/services/lead-to-booked-job/">
+        <p class="w3-n">03</p>
+        <h3 class="w3-t">Close more of what you run</h3>
+        <p class="w3-p">The leads come in and the estimates get run, but too few sign. Fix the callback, the set and the close before you buy more demand.</p>
+        <span class="w3-go">Fix the second funnel <i>&rarr;</i></span>
+      </a>
+    </div>
+    <div class="w3-foot">
+      <p class="w3-q">Not sure which one you&rsquo;re facing?</p>
+      <a class="cta" href="#wddiag" id="w3-cta">Uncover Your Revenue Gap &rarr;</a>
+    </div>
+  </div>
+</section>
+<script>
+/* Three ways in: staggered reveal on scroll; in-page links scroll clear of the fixed header. No logical-AND operators, by design. */
+(function(){
+  var sec=document.getElementById("three-ways-wd");if(!sec){return;}
+  function show(){sec.classList.add("w3-in");}
+  if(!("IntersectionObserver" in window)){show();}
+  else{var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){show();io.disconnect();}});},{threshold:0.15});io.observe(sec);}
+  function jump(id,e){
+    var t=document.getElementById(id);if(!t){return;}
+    e.preventDefault();
+    var hdr=document.querySelector(".tt-header"),off=80;if(hdr){off=hdr.getBoundingClientRect().height;}
+    var y=t.getBoundingClientRect().top+window.pageYOffset-off-20;
+    window.scrollTo({top:y,behavior:"smooth"});
+    window.setTimeout(function(){if(Math.abs(window.pageYOffset-y)>400){window.scrollTo(0,y);}},900);
+  }
+  var links=sec.querySelectorAll('a[href^="#"]');
+  for(var i=0;i<links.length;i++){(function(a){a.addEventListener("click",function(e){jump(a.getAttribute("href").slice(1),e);});})(links[i]);}
+})();
+</script>
