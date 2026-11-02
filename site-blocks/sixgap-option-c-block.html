@@ -1,0 +1,42 @@
+<style>
+/* Option C v2: narrowing steps, gate copy inside each step. Static, no JS. Scoped to .sgc */
+.sgc{--o:#ef662f;--fg:#e8edf2;--mu:#8b98a5;--ln:#27313c;--mono:"JetBrains Mono",ui-monospace,Consolas,monospace;color:var(--fg)}
+.sgc *{box-sizing:border-box}
+.sgc-steps{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));align-items:end;gap:4px;margin-top:22px}
+.sgc-s{display:flex;flex-direction:column;justify-content:flex-end;min-width:0}
+.sgc-n{text-align:center;padding-bottom:8px}
+.sgc-n b{display:block;font-family:var(--mono);font-weight:800;font-size:clamp(18px,2.2vw,28px);line-height:1.1;font-variant-numeric:tabular-nums}
+.sgc-n small{display:block;color:var(--mu);font-size:12.5px;line-height:1.3}
+.sgc-b{height:var(--h);background:linear-gradient(180deg,#3a4552,#232b34);border-top:2px solid #9aa6b2;padding:12px 8px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:1px;line-height:1.3}
+.sgc-b .g{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;color:var(--o)}
+.sgc-b .nm{font-weight:700;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase}
+.sgc-b .r{font-family:var(--mono);font-weight:700;font-size:13px;color:#ffb08f;margin-top:4px}
+.sgc-b .sc{font-family:var(--mono);font-size:11.5px;color:#c4ccd4}
+.sgc-b .v{font-size:11.5px;color:var(--mu)}
+.sgc-s.out .sgc-n b{color:var(--o);font-size:clamp(26px,3.2vw,40px)}
+.sgc-s.out .sgc-n small{color:var(--fg);font-weight:700}
+.sgc-s.out .sgc-b{background:linear-gradient(180deg,#c4521f,#7d3013);border-top-color:#ff8a57;box-shadow:0 0 28px rgba(239,102,47,.35)}
+.sgc-s.out .sgc-b .g,.sgc-s.out .sgc-b .r{color:#fff}
+.sgc-s.out .sgc-b .v,.sgc-s.out .sgc-b .sc{color:#ffe1d3}
+@media (max-width:700px){
+  .sgc-steps{grid-template-columns:1fr;gap:6px}
+  .sgc-s{flex-direction:row;align-items:stretch;justify-content:flex-start}
+  .sgc-b{height:auto;width:calc((100% - 100px)*var(--k));flex:none;min-width:0;border-top:0;border-left:2px solid #9aa6b2;padding:8px 10px;text-align:left;align-items:flex-start;display:grid;grid-template-columns:auto auto;column-gap:8px;row-gap:0;align-content:center}
+  .sgc-b .g{grid-column:1}.sgc-b .nm{grid-column:2}
+  .sgc-b .r{grid-column:1;margin-top:0}.sgc-b .sc{grid-column:2}
+  .sgc-b .v{grid-column:1/-1}
+  .sgc-s.in .sgc-b{min-height:40px}
+  .sgc-s.out .sgc-b{border-left-color:#ff8a57}
+  .sgc-n{flex:0 0 100px;text-align:left;padding:0 10px 0 0;align-self:center}
+}
+</style>
+<div class="sgc" role="group" aria-label="Example scan: where 10,000 searches go">
+  <div class="sgc-steps">
+    <div class="sgc-s in" style="--h:240px;--k:1"><div class="sgc-n"><b>10,000</b><small>searching</small></div><div class="sgc-b"></div></div>
+    <div class="sgc-s" style="--h:218px;--k:.95"><div class="sgc-n"><b>1,270</b><small>found you</small></div><div class="sgc-b"><span class="g">GAP 1</span><span class="nm">Visibility</span><span class="r">12.7%</span><span class="sc">31/100</span><span class="v">find your site</span></div></div>
+    <div class="sgc-s" style="--h:214px;--k:.93"><div class="sgc-n"><b>1,080</b><small>considered you</small></div><div class="sgc-b"><span class="g">GAP 2</span><span class="nm">Authority</span><span class="r">85.0%</span><span class="sc">91/100</span><span class="v">consider you</span></div></div>
+    <div class="sgc-s" style="--h:152px;--k:.86"><div class="sgc-n"><b>30</b><small>became leads</small></div><div class="sgc-b"><span class="g">GAP 3</span><span class="nm">Trust</span><span class="r">2.8%</span><span class="sc">58/100</span><span class="v">become a lead</span></div></div>
+    <div class="sgc-s" style="--h:144px;--k:.83"><div class="sgc-n"><b>17</b><small>reached in time</small></div><div class="sgc-b"><span class="g">GAP 4</span><span class="nm">Speed</span><span class="r">57.0%</span><span class="sc">44/100</span><span class="v">reached in time</span></div></div>
+    <div class="sgc-s out" style="--h:124px;--k:.8"><div class="sgc-n"><b>3.7</b><small>booked jobs / mo</small></div><div class="sgc-b"><span class="g">GAP 5</span><span class="nm">Conversion</span><span class="r">21.5%</span><span class="sc">22/100</span><span class="v">book the job</span></div></div>
+  </div>
+</div>
