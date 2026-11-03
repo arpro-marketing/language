@@ -1,0 +1,113 @@
+<style>
+.armp .detail .wrap{max-width:1180px}
+.armp .detail .acc{max-width:1180px}
+.armp .dx{padding:4px 20px 24px;display:grid;gap:18px;font-size:15.5px;line-height:1.5}
+.armp .dx .one{font:600 16.5px/1.45 var(--body);color:var(--ink);max-width:62ch}
+.armp .dx .dnote{font-size:14px;color:var(--muted)}
+.armp .dx a{color:var(--orangeText);font-weight:600}
+/* tier comparison */
+.armp .cmp{width:100%;border-collapse:separate;border-spacing:0;background:#fff;border-radius:12px;overflow:hidden;font-size:14.5px;line-height:1.45;table-layout:fixed}
+.armp .cmp th,.armp .cmp td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+.armp .cmp thead th{font:800 13px/1.2 var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--orangeText);background:#fff}
+.armp .cmp thead th small{display:block;margin-top:4px;font:700 15px/1.2 var(--display);letter-spacing:0;text-transform:none;color:var(--ink)}
+.armp .cmp tbody th{font:700 13px/1.35 var(--display);color:var(--muted);width:15%}
+.armp .cmp tr:last-child th,.armp .cmp tr:last-child td{border-bottom:0}
+.armp .cmp .rec{background:#fdf3ee}
+.armp .cmp .ln td{font-weight:600;color:var(--ink)}
+/* leaks */
+.armp .leaks{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.armp .leak{background:#fff;border-radius:12px;padding:16px;display:grid;gap:6px;align-content:start}
+.armp .leak .k{font:700 12px/1.2 var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.armp .leak .n{font:800 28px/1.05 var(--display);color:var(--ink)}
+.armp .leak p{font-size:14px;line-height:1.4;margin:0}
+.armp .leak .t{border-top:1px solid var(--line);padding-top:8px;font-size:14px}
+.armp .leak .t b{color:var(--orangeText)}
+.armp .leak .s{font-size:12px;color:var(--muted)}
+.armp .sum{background:var(--ink);color:var(--onDark);border-radius:12px;padding:18px 20px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.armp .sum b{font:800 30px/1 var(--display);color:var(--orange)}
+.armp .sum span{flex:1;min-width:220px}
+.armp .chips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.armp .chip{background:#fff;border-radius:12px;padding:14px 16px}
+.armp .chip b{display:block;font:800 22px/1.1 var(--display);color:var(--ink)}
+.armp .chip span{font-size:14px;color:var(--muted)}
+/* checklists */
+.armp .chk{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 24px}
+.armp .chk li{background:#fff;border-radius:10px;padding:12px 14px 12px 40px;position:relative;font-size:15px;line-height:1.45}
+.armp .chk li::before{content:"";position:absolute;left:16px;top:18px;width:10px;height:6px;border-left:2px solid var(--orangeText);border-bottom:2px solid var(--orangeText);transform:rotate(-45deg)}
+.armp .chk li b{color:var(--ink)}
+.armp .chk.x li::before{width:12px;height:2px;border:0;background:var(--muted);transform:rotate(45deg);top:22px;box-shadow:none}
+.armp .chk.x li::after{content:"";position:absolute;left:16px;top:22px;width:12px;height:2px;background:var(--muted);transform:rotate(-45deg)}
+@media (max-width:900px){
+ .armp .leaks{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .armp .cmp,.armp .cmp tbody,.armp .cmp tr,.armp .cmp th,.armp .cmp td{display:block;width:auto}
+ .armp .cmp thead{display:none}
+ .armp .cmp tbody tr{border-bottom:1px solid var(--line);padding:6px 0 10px}
+ .armp .cmp tbody th{width:auto;padding:12px 14px 4px;border:0;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
+ .armp .cmp td{border:0;padding:6px 14px}
+ .armp .cmp td::before{content:attr(data-t);display:block;font:800 11.5px/1.3 var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--orangeText);margin-bottom:2px}
+ .armp .cmp .rec{background:#fdf3ee;border-radius:8px}
+}
+@media (max-width:600px){.armp .leaks,.armp .chips,.armp .chk{grid-template-columns:1fr}.armp .dx{padding:4px 14px 20px}}
+</style>
+<section class="detail"><div class="wrap">
+  <h2>The full detail</h2>
+  <p class="lead">Every tier side by side, the math behind the price, and where we're the wrong fit.</p>
+  <div class="acc">
+
+  <details><summary><span class="q">Compare the four tiers</span></summary><div class="dx">
+    <p class="one">Same execution standard at every tier. What changes is the scope of the work and how much of Andrew's time it carries.</p>
+    <table class="cmp">
+      <thead><tr><th></th><th>Catalyst<small>$1,500–2,500/mo</small></th><th>Engine<small>$3,500/mo</small></th><th class="rec">System<small>$5,500–7,500/mo</small></th><th>Partnership<small>$10,000+/mo</small></th></tr></thead>
+      <tbody>
+      <tr class="ln"><th>In one line</th><td data-t="Catalyst">Gets you running.</td><td data-t="Engine">Gets you compounding.</td><td data-t="System" class="rec">Compounds across every channel.</td><td data-t="Partnership">Runs inside the business.</td></tr>
+      <tr><th>What we run</th><td data-t="Catalyst">Search visibility, the conversion foundation, and lead capture wired into your systems.</td><td data-t="Engine">Full SEO, conversion work built to top-quartile rates, and AI lead capture and qualification across forms, calls and chat, 24/7.</td><td data-t="System" class="rec">Everything in Engine, plus content at scale, paid ads with live attribution, lead scoring, ongoing conversion testing and reputation.</td><td data-t="Partnership">Everything in System, plus personalization across every touchpoint, market opportunity discovery and an AI copilot for decisions.</td></tr>
+      <tr><th>Competitor intel</th><td data-t="Catalyst">Snapshot every quarter</td><td data-t="Engine">Tracked continuously</td><td data-t="System" class="rec">Live dashboards, updated weekly</td><td data-t="Partnership">Market opportunity discovery</td></tr>
+      <tr><th>Andrew's role</th><td data-t="Catalyst">Quarterly strategy session with you.</td><td data-t="Engine">Hands on every page, system and recommendation.</td><td data-t="System" class="rec">Your marketing partner: strategy and infrastructure, month over month.</td><td data-t="Partnership">Embedded in daily decisions, as fractional CMO.</td></tr>
+      <tr><th>How it's priced</th><td data-t="Catalyst">By scope. Foundation work at a lower price, same quality standard.</td><td data-t="Engine">Fixed. Limited clients, so the price buys judgment, not volume.</td><td data-t="System" class="rec">Range by complexity: regulated, multi-location or premium brands sit higher. Usually 18–24 months.</td><td data-t="Partnership">Custom per business. $10,000 is the floor the depth requires.</td></tr>
+      <tr><th>Right fit if</th><td data-t="Catalyst">You need a reliable lead foundation, built right the first time.</td><td data-t="Engine">You want full strategic involvement, not deliverables in a queue.</td><td data-t="System" class="rec">The foundation works, and the next step is channels that compound.</td><td data-t="Partnership">You're done buying agencies and want a system competitors can't match.</td></tr>
+      <tr><th>Not the fit if</th><td data-t="Catalyst">You need Andrew in every decision today. That's Engine.</td><td data-t="Engine">You need template work at volume. That's Catalyst.</td><td data-t="System" class="rec">You're still building reliable lead flow. Start with Catalyst or Engine.</td><td data-t="Partnership">The goal is more leads next month. Engine or System gets there faster for less.</td></tr>
+      </tbody>
+    </table>
+    <p class="dnote"><b>Opening a new market?</b> One new market runs as System. Several run as Partnership. <a href="https://andrewryanmarketing.com/contractor-growth-marketing/#readiness">Score your expansion readiness first</a>, free, two minutes.</p>
+  </div></details>
+
+  <details><summary><span class="q">Why it's worth it: the four leaks behind the price</span></summary><div class="dx">
+    <p class="one">Most contractors lose revenue in four places between the search and the booked job. The cost of the gap is usually far larger than the cost of closing it.</p>
+    <div class="leaks">
+      <div class="leak"><span class="k">01 · Speed to lead</span><span class="n">5+ days</span><p>How long more than half of contractors take to respond. A 5-minute delay alone cuts qualified leads by 80%.</p><p class="t">Our target: <b>under 60 sec</b></p><span class="s">Estatehub, 2026</span></div>
+      <div class="leak"><span class="k">02 · Calls answered</span><span class="n">31–46%</span><p>Of marketing-driven calls in home services go unanswered.</p><p class="t">Our target: <b>95%+ answered or routed</b></p><span class="s">Invoca, 2025 (60M+ calls)</span></div>
+      <div class="leak"><span class="k">03 · Conversion rate</span><span class="n">2.6–7.3%</span><p>Typical search-ad conversion. Construction 2.61%, roofing 3.70%, doors and windows 4.41%.</p><p class="t">Our target: <b>2–3x the industry rate</b></p><span class="s">LocaliQ, 2025</span></div>
+      <div class="leak"><span class="k">04 · Close rate</span><span class="n">23 pts</span><p>The gap between average and top-performing contractors.</p><p class="t">Our target: <b>top-20% close rates</b></p><span class="s">RevAnalysis, 2026</span></div>
+    </div>
+    <div class="sum"><b>30–45%</b><span>of annual revenue lost between being found and booked work, when the four leaks stack. For most contractors that's six figures a year. Targets are what we build toward, not a promise.</span></div>
+    <div class="chips">
+      <div class="chip"><b>$0 → $50K MRR</b><span>SRV Trainer · full system rebuild from scratch</span></div>
+      <div class="chip"><b>#1 for 14 of 16</b><span>Tennessee Plumbing · map-pack service terms, BrightLocal-verified (April 2026)</span></div>
+    </div>
+  </div></details>
+
+  <details><summary><span class="q">What you won't pay for</span></summary><div class="dx">
+    <ul class="chk">
+      <li><b>No setup fees.</b> Work starts on day one at the monthly fee.</li>
+      <li><b>No ad-spend markup.</b> You pay Google, Meta and the other platforms directly.</li>
+      <li><b>No shared leads.</b> Every lead belongs to your business alone.</li>
+      <li><b>No reporting upsells.</b> Attribution, dashboards and competitor intel are included at every tier.</li>
+      <li><b>Clear exit terms.</b> Smaller engagements: a 3–6 month commitment, then month to month with 30 days' notice. 12-month build-heavy work: a 90-day exit.</li>
+      <li><b>No exit fees or clawbacks.</b> The work earns its renewal every month.</li>
+      <li><b>No "lite" tier.</b> Catalyst work meets the same standard as Partnership work. Tiers differ by scope, not quality.</li>
+    </ul>
+    <p class="dnote">The pricing is the pricing. Nothing on the other side of the contract changes it.</p>
+  </div></details>
+
+  <details><summary><span class="q">Where we're the wrong fit</span></summary><div class="dx">
+    <ul class="chk x">
+      <li><b>You want the cheapest option.</b> Catalyst is serious foundation work, not a $300-a-month SEO plan.</li>
+      <li><b>You want to set the strategy and have us execute it.</b> Andrew brings the strategy. That's what the fee pays for.</li>
+      <li><b>You need guaranteed numbers.</b> We guarantee the method, the standard and the discipline, not specific outcomes.</li>
+      <li><b>Your business is predatory or deceptive.</b> Declined at any budget.</li>
+    </ul>
+    <p class="dnote">Sometimes the answer is "not yet." Saying so early protects both sides.</p>
+  </div></details>
+
+  </div>
+</div></section>
