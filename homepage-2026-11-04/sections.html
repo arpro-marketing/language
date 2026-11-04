@@ -1,0 +1,198 @@
+<style>
+.nh{--o:#ef662f;--ink:#111318;--body:#3b3f47;--mut:#6b7280;--cream:#f7f3ec;--dark:#14161c;font-family:'DM Sans',sans-serif;}
+.nh *{box-sizing:border-box}
+.nh section{padding:112px 40px}
+.nh .in{max-width:1180px;margin:0 auto}
+.nh .narrow{max-width:760px}
+.nh .eb{font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--o);margin:0 0 14px}
+.nh h2{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(30px,3.6vw,46px);line-height:1.1;letter-spacing:-.8px;color:var(--ink);margin:0 0 18px}
+.nh h2 .o{color:var(--o)}
+.nh .lead{font-size:clamp(17px,1.4vw,20px);line-height:1.6;color:var(--body);margin:0 0 40px;max-width:760px}
+.nh p{margin:0}
+.nh a{color:var(--o);font-weight:700;text-decoration:none}
+.nh .light{background:#fff}.nh .cream{background:var(--cream)}.nh .dark{background:var(--dark)}
+.nh .dark h2{color:#fff}.nh .dark .lead{color:#c9ccd3}
+/* consequence */
+.nh .cmp{border:1px solid #e5e7eb;border-radius:14px;overflow:hidden;background:#fff}
+.nh .cmp-h,.nh .cmp-r{display:grid;grid-template-columns:1fr 1.2fr 1.4fr}
+.nh .cmp-h div{font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--mut);padding:16px 24px;background:#f9fafb;border-bottom:1px solid #e5e7eb}
+.nh .cmp-h div:last-child{color:var(--o)}
+.nh .cmp-r div{padding:24px 26px;font-size:17px;line-height:1.5;color:var(--body);border-bottom:1px solid #eef0f2}
+.nh .cmp-r div:last-child{background:#fff8f4;border-left:3px solid var(--o)}
+.nh .cmp-h div:last-child{background:#fff1e9;border-left:3px solid var(--o)}
+.nh .cmp-r:last-child div{border-bottom:0}
+.nh .cmp-r div:first-child{color:var(--mut);font-style:italic}
+.nh .cmp-r div:last-child{color:var(--ink);font-weight:700}
+.nh .cmp .lab{display:none}
+.nh .note{margin:22px 0 0;font-size:17px;color:var(--body)}
+.nh .money{margin-top:64px;display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center;background:#fff6f1;border:1px solid #f5d5c4;border-radius:16px;padding:40px 44px}
+.nh .money .big{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(40px,5vw,64px);color:var(--o);letter-spacing:-1.5px;line-height:1;white-space:nowrap}
+.nh .money .big small{display:block;font-size:16px;letter-spacing:0;color:#6b7280;font-weight:600;margin-top:8px}
+.nh .money p{color:#3b3f47;font-size:18px;line-height:1.6}
+.nh .money p b{color:#111318}
+/* possibility */
+.nh .wins{display:grid;grid-template-columns:1fr 1fr;gap:28px 56px;margin:0 0 72px}
+.nh .wins div{border-top:2px solid var(--o);padding-top:18px}
+.nh .wins h3{font-family:'Plus Jakarta Sans',sans-serif;font-size:21px;font-weight:800;color:var(--ink);margin:0 0 8px}
+.nh .wins p{font-size:17px;line-height:1.55;color:var(--body)}
+.nh .sub2{font-family:'Plus Jakarta Sans',sans-serif;font-size:22px;font-weight:800;color:var(--ink);margin:0 0 20px}
+.nh .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.nh .card{background:#fff;border:1px solid #ece7dd;border-radius:14px;padding:28px 26px;display:flex;flex-direction:column}
+.nh .card h3{font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;line-height:1.25;font-weight:800;color:var(--ink);margin:0 0 12px}
+.nh .card p{font-size:16px;line-height:1.55;color:var(--body);flex:1;margin-bottom:18px}
+/* credibility */
+.nh .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid #2e313a;border-bottom:1px solid #2e313a;margin:8px 0 16px}
+.nh .stats div{padding:28px 0}
+.nh .stats b{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(34px,3.6vw,48px);font-weight:800;color:#fff;letter-spacing:-1px}
+.nh .stats b.o{color:var(--o)}
+.nh .stats span{color:#9ca3af;font-size:15px}
+.nh .attr{color:#9ca3af;font-size:14px;line-height:1.55;margin:0 0 44px}
+.nh .quote{border-left:3px solid var(--o);padding:4px 0 4px 22px;color:#e5e7eb;font-size:19px;line-height:1.55;max-width:820px;margin:0 0 48px}
+.nh .quote cite{display:block;font-style:normal;color:#9ca3af;font-size:15px;margin-top:10px}
+.nh .proof{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.nh .proof div{background:#1d2028;border:1px solid #2e313a;border-radius:12px;padding:22px 22px}
+.nh .proof p{color:#c9ccd3;font-size:16px;line-height:1.55;margin-bottom:12px}
+/* method */
+.nh .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:0 0 40px;counter-reset:s}
+.nh .steps div{background:#f9fafb;border:1px solid #e5e7eb;border-radius:14px;padding:30px 26px}
+.nh .steps b{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:800;color:var(--o);letter-spacing:1.5px;margin-bottom:12px}
+.nh .steps h3{font-family:'Plus Jakarta Sans',sans-serif;font-size:21px;font-weight:800;color:var(--ink);margin:0 0 10px}
+.nh .steps p{font-size:16px;line-height:1.55;color:var(--body)}
+.nh .links{font-size:15px;line-height:2;color:var(--mut);border-top:1px solid #e5e7eb;padding-top:24px}
+.nh .links a{white-space:nowrap;color:var(--ink);font-weight:600;text-decoration:underline;text-decoration-color:#d1d5db;text-underline-offset:3px}
+/* invitation */
+.nh .two{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:8px 0 32px}
+.nh .opt{background:#1d2028;border:1px solid #2e313a;border-radius:16px;padding:36px 34px;display:flex;flex-direction:column}
+.nh .opt .tag{font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#9ca3af;margin-bottom:10px}
+.nh .opt h3{font-family:'Plus Jakarta Sans',sans-serif;font-size:24px;font-weight:800;color:#fff;margin:0 0 12px}
+.nh .opt p{color:#c9ccd3;font-size:17px;line-height:1.6;flex:1;margin-bottom:24px}
+.nh .btn{display:inline-block;align-self:flex-start;background:var(--o);color:#fff!important;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:16px;padding:15px 24px;border-radius:8px}
+.nh .btn.ghost{background:transparent;border:2px solid var(--o);color:#fff!important}
+.nh .small{color:#9ca3af;font-size:14px;margin-top:12px}
+.nh .fine{color:#c9ccd3;font-size:16px;line-height:1.6;border-top:1px solid #2e313a;padding-top:24px}
+@media(max-width:820px){
+ .nh section{padding:72px 40px}
+ .nh .cmp-h{display:none}
+ .nh .cmp-r{grid-template-columns:1fr;padding:18px 20px;border-bottom:1px solid #eef0f2}
+ .nh .cmp-r:last-child{border-bottom:0}
+ .nh .cmp-r div{padding:4px 0;border:0!important}
+ .nh .cmp .lab{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--mut);font-style:normal;margin:10px 0 2px}
+ .nh .cmp-r div:last-child .lab{color:var(--o)}
+ .nh .money{grid-template-columns:1fr;gap:16px;padding:32px 24px}
+ .nh .wins,.nh .cards,.nh .steps,.nh .two,.nh .proof{grid-template-columns:1fr}
+ .nh .stats{grid-template-columns:1fr 1fr}
+ .nh .opt{padding:28px 24px}
+}
+
+.nh .mathline{margin:28px 0 0;display:flex;gap:22px;align-items:baseline;flex-wrap:wrap;border-top:1px solid #e5e7eb;padding-top:26px}
+.nh .mathline .fig{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:32px;color:var(--o);letter-spacing:-.6px;white-space:nowrap}
+.nh .mathline p{flex:1 1 520px;font-size:16px;line-height:1.6;color:var(--body)}
+.nh .mathline p b{color:var(--ink)}
+.nh .mathline small{display:block;color:var(--mut);font-size:14px;margin-top:4px}
+.nh .wins{grid-template-columns:repeat(4,1fr);gap:32px}
+.nh .wins h3{font-size:19px;line-height:1.3}
+.nh .wins p{font-size:16px}
+.nh .bridge{font-family:'Plus Jakarta Sans',sans-serif;font-size:22px;font-weight:800;color:var(--ink);margin:0 0 22px;padding-top:56px;border-top:1px solid #e7e0d3}
+.nh .card .k{font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--o);margin-bottom:10px}
+.nh .orig{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:start}
+.nh .orig .lead{margin-bottom:0}
+.nh .stats{grid-template-columns:1fr 1fr;margin:0}
+.nh .stats div{padding:22px 0;border-bottom:1px solid #2e313a}
+.nh .stats div:nth-child(odd){padding-right:20px}
+.nh .stats div:nth-last-child(-n+2){border-bottom:0}
+.nh .proofrow{display:flex;flex-wrap:wrap;gap:12px 36px;border-top:1px solid #2e313a;padding-top:28px;margin-top:8px}
+.nh .proofrow span{color:#c9ccd3;font-size:16px}
+.nh .closer{font-family:'Plus Jakarta Sans',sans-serif}
+@media(max-width:820px){.nh .wins{grid-template-columns:1fr 1fr;gap:28px 20px}.nh .orig{grid-template-columns:1fr;gap:32px}.nh .proofrow{flex-direction:column}.nh .mathline .fig{font-size:28px}.nh .cmp-r div:last-child{background:#fff8f4;border-left:3px solid var(--o)!important;padding:12px 14px;margin-top:10px;border-radius:0 8px 8px 0}.nh .cmp-r div:last-child .lab{margin-top:0}}
+@media(max-width:700px){.nh section{padding:72px 20px}}
+@media(max-width:400px){.nh .btn{font-size:15px;padding:15px 16px}}
+@media(max-width:480px){.nh .wins{grid-template-columns:1fr}.nh .btn{align-self:stretch;text-align:center}}
+</style>
+<div class="nh">
+
+<section class="light" id="cost"><div class="in">
+ <p class="eb">What the gap costs</p>
+ <h2>When the scoreboard stops at the lead, <span class="o">you make expensive decisions.</span></h2>
+ <p class="lead">Your agency's report ends at the lead. Your business doesn't. So the big calls get made on half the picture. It often looks like this:</p>
+ <div class="cmp">
+  <div class="cmp-h"><div>The report says</div><div>What's really happening</div><div>So you</div></div>
+  <div class="cmp-r"><div><span class="lab">The report says</span>"Cost per lead is up. We need more leads."</div><div><span class="lab">What's really happening</span>New leads wait hours for a callback. The hot ones book with whoever called first.</div><div><span class="lab">So you</span>Raise ad spend, when follow-up was the bottleneck.</div></div>
+  <div class="cmp-r"><div><span class="lab">The report says</span>"Lead volume is up again."</div><div><span class="lab">What's really happening</span>Estimates go out and too many go quiet. Sold jobs are flat.</div><div><span class="lab">So you</span>Buy more leads, when too few appointments turn into sales.</div></div>
+  <div class="cmp-r"><div><span class="lab">The report says</span>"Let's push harder before the season."</div><div><span class="lab">What's really happening</span>Your crews are already booked out for weeks.</div><div><span class="lab">So you</span>Pay for demand you can't deliver.</div></div>
+  <div class="cmp-r"><div><span class="lab">The report says</span>"This is your cheapest channel."</div><div><span class="lab">What's really happening</span>Its leads are cheap because few of them book.</div><div><span class="lab">So you</span>Keep funding the channel that brings leads, not profitable jobs.</div></div>
+ </div>
+ <p class="note">Not every agency works this way, and not every business has all four. But a report that ends at the lead can't tell you which one is yours.</p>
+ <div class="mathline">
+  <span class="fig">$144,000 a year</span>
+  <p>That's what closing one more percentage point of your <b>60 shown appointments a month</b> is worth at a <b>$20,000 average job</b>. It never shows up in a lead report.<small>60 shown appointments × 1 point = 0.6 more sold jobs a month, or 7.2 a year. 7.2 × $20,000 = $144,000 a year in booked revenue, before costs. Illustrative, not a client result.</small></p>
+ </div>
+</div></section>
+
+<section class="cream" id="possible"><div class="in">
+ <p class="eb">When the goals align</p>
+ <h2>A business you can see, improve, <span class="o">and scale.</span></h2>
+ <p class="lead">Measure marketing all the way to the booked job, and the big decisions stop being guesses.</p>
+ <div class="wins">
+  <div><h3>You know which channels produce jobs.</h3><p>Spend, sales and revenue connected every month, so every dollar has a verdict.</p></div>
+  <div><h3>You know where jobs slip away.</h3><p>From the first call to the signed contract, you can see exactly where they fall through.</p></div>
+  <div><h3>You put money where it does the most.</h3><p>Fix the one thing holding growth back before you spend another dollar on leads.</p></div>
+  <div><h3>You know when you're ready to grow.</h3><p>Work coming in steadily enough to plan crews around, and a clear answer on the next market.</p></div>
+ </div>
+ <p class="bridge">Where are you headed?</p>
+ <div class="cards">
+  <div class="card"><span class="k">Own your market</span><h3>We're the best in town. Not enough people know it yet.</h3><p>Competitors with weaker work still win jobs that should be yours. We find where they're beating you and close the gap.</p><a href="/contractor-growth-stages/#hometown-strength">Own my market →</a></div>
+  <div class="card"><span class="k">Open the next market</span><h3>We own our town. We want the next one.</h3><p>A new location or a wider service area can multiply what works or break what you've built. See how it plays out before you commit a dollar.</p><a href="/contractor-growth-marketing/">Plan the next market →</a></div>
+  <div class="card"><span class="k">Fix the pipeline</span><h3>We get leads. Not enough of them become jobs.</h3><p>The phone rings, estimates go out, and too many go quiet. We find where the jobs fall through between the first call and the signed contract, and fix that first.</p><a href="/services/lead-to-booked-job/">Fix my pipeline →</a></div>
+ </div>
+</div></section>
+
+<section class="dark" id="why"><div class="in">
+ <p class="eb">Why we measure to the booked job</p>
+ <h2>Our founder built a sales department from scratch. <span class="o">Then made it run without him.</span></h2>
+ <div class="orig">
+  <div>
+   <p class="lead">At a high-volume dealership, Andrew-Ryan Profaci built the Business Development Center (BDC) from nothing: the processes, the follow-up systems, and the tracking from first lead to sold deal. He made it highly profitable, then built it to run without him in the room every day.</p>
+   <p class="lead" style="margin-top:18px">That's the work we do for contractors. Measure the whole journey, fix what's holding it back, and leave you a system that doesn't need you in every decision.</p>
+  </div>
+  <div>
+   <div class="stats">
+    <div><b>11,564</b><span>Leads worked</span></div>
+    <div><b>2,135</b><span>Appointments shown</span></div>
+    <div><b>761</b><span>Sold</span></div>
+    <div><b class="o">35.6%</b><span>Shown appointments sold</span></div>
+   </div>
+   <p class="attr" style="margin:14px 0 0">Andrew's own record from the department he built at one dealership: 27 months, every month on paper. Not a client result. <a href="/about/">Read the full record →</a></p>
+  </div>
+ </div>
+ <div class="quote" style="margin:56px 0 36px">"He even took into account the crew's installation capacity. Things we never would have thought of on our own."<cite>Gregg Murray, Founder, Relaunch Digital</cite></div>
+ <div class="proofrow">
+  <span>Google's AI named us for "contractor marketing company" (Aug 10). <a href="/ai-overview-proof/">See the proof →</a></span>
+  <span>Our study of 1,440 AI answers. <a href="/answer-gap-index/">Read it →</a></span>
+  <span>Documented rankings, real timelines. <a href="/case-studies/">Case studies →</a></span>
+ </div>
+</div></section>
+
+<section class="light" id="method"><div class="in">
+ <p class="eb">The Booked-Job Model<sup>™</sup></p>
+ <h2>How we find <span class="o">your gap.</span></h2>
+ <p class="lead">Andrew Ryan Marketing is a contractor marketing agency measured to the booked job. Before we recommend spending another dollar, we do three things:</p>
+ <div class="steps">
+  <div><b>01</b><h3>Measure the whole journey.</h3><p>From the first search to the lead, the appointment, the sold job and the finished work.</p></div>
+  <div><b>02</b><h3>Find the constraint.</h3><p>The one place your business loses the most jobs. It's often not where you'd guess.</p></div>
+  <div><b>03</b><h3>Fix that first.</h3><p>Then scale only what the numbers prove, sized to the crews you have.</p></div>
+ </div>
+ <p class="links">Our diagnostic: <a href="/6-gap-revenue-map/">The 6-Gap Revenue Map™</a> · <a href="/attribution/">How we measure it</a> · <a href="/pricing/">Pricing</a><br>The work: <a href="/services/seo-johnson-city-tn/">Local SEO &amp; Maps</a> · <a href="/services/ppc-for-contractors/">Paid Ads</a> · <a href="/services/generative-engine-optimization/">AI Visibility</a> · <a href="/services/reputation-management-for-contractors/">Reputation</a> · <a href="/services/lead-to-booked-job/">Speed-to-Lead &amp; Follow-Up</a> · <a href="/services/crm-email-and-automation/">CRM &amp; Automation</a> · <a href="/services/">All services</a><br>By trade: <a href="/services/roofing-marketing/">Roofing</a> · <a href="/services/remodeling-contractor-marketing/">Remodeling</a> · <a href="/services/window-and-door-marketing/">Windows &amp; Doors</a> · <a href="/services/flooring-company-marketing/">Flooring</a> · <a href="/services/fencing-company-marketing/">Fencing</a> · <a href="/services/hvac-marketing/">HVAC</a> · <a href="/services/marketing-for-electricians/">Electricians</a> · <a href="/industries/">All trades</a></p>
+</div></section>
+
+<section class="dark" id="start"><div class="in">
+ <p class="eb">Let's find your gap</p>
+ <h2>You're already spending money to grow. <span class="o">You should know what's producing the jobs.</span></h2>
+ <p class="lead">For established contractors with crews, trucks and a real sales process. Two free ways to start:</p>
+ <div class="two">
+  <div class="opt"><span class="tag">Free · no call</span><h3>Not sure where it's breaking?</h3><p>Answer seven quick questions. Within 48 hours you get a short video showing where your business is losing jobs. No call and no pitch.</p><a class="btn" href="/6-gap-revenue-map/">Get my gaps on video →</a></div>
+  <div class="opt"><span class="tag">Free · 20 minutes</span><h3>Already know what's broken?</h3><p>Take twenty minutes with Andrew, on your numbers. You leave with the fix named, whether or not we work together.</p><a class="btn ghost" href="https://calendly.com/andrew-andrewryanmarketing/gap-review?utm_source=arm-site&amp;utm_medium=cta&amp;utm_campaign=site&amp;utm_content=home-close" target="_blank" rel="noopener">Book the 20-minute Gap Review →</a></div>
+ </div>
+ <p class="fine">Separate from these free options: the full Booked-Job Model™ diagnostic is a paid, one-time engagement ($1,500). Growth engagements start at $3,500 a month. <a href="/pricing/">See pricing →</a></p>
+</div></section>
+
+</div>
