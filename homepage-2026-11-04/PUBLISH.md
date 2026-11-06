@@ -17,3 +17,8 @@ Source of truth: `build3.js` (the hero rewrite plus the row removal, run against
 - The Calendly buttons open gap-review.
 - No horizontal overflow at 390 or 360.
 - If any check fails: restore the backup revision and report.
+
+## 2026-11-06 polish pass (Andrew: "buttons and cards need hover effects")
+Append the whole of `polish.html` (one <style id="nh-polish"> + one <script id="nh-polish-js">) to the END of the homepage Raw HTML block that holds the `.nh` sections. No copy changes. If `#nh-polish` already exists, replace it (never duplicate).
+The script has no `&&` (WordPress encodes it and kills inline scripts). After saving, check that the served HTML still has no `&#038;&#038;` inside it.
+Verify logged out at 1440: hovering a scenario card lifts it 4px with an orange border; hovering a close option lifts it 5px with an orange glow; the buttons lift 2px and brighten; 12 arrows sit in `<span class="arrow">` and slide on hover; there are no page errors. At 390: no layout change and no overflow.

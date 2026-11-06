@@ -1,0 +1,42 @@
+<style id="nh-polish">
+/* Homepage polish: hover + focus states matching the site standard (pricing / W&D hub cards, .armx-s buttons) */
+.nh .btn,.nh .card,.nh .steps>div,.nh .opt,.nh .cmp-r>div,.nh .wins>div,.nh a,#rge .hx-cta{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease,background-color .25s ease,color .2s ease,text-decoration-color .2s ease}
+.nh .arrow{display:inline-block;transition:transform .2s ease}
+.nh a:hover .arrow,.nh a:focus-visible .arrow,#rge a:hover .arrow{transform:translateX(4px)}
+/* buttons */
+.nh .btn:hover,.nh .btn:focus-visible,#rge .hx-cta:hover,#rge .hx-cta:focus-visible{transform:translateY(-2px);background:#ff7a3d!important;box-shadow:0 12px 32px rgba(239,102,47,.45)}
+.nh .btn.ghost:hover,.nh .btn.ghost:focus-visible{background:rgba(239,102,47,.14)!important;border-color:#ff7a3d;box-shadow:0 12px 32px rgba(239,102,47,.22)}
+.nh .btn:active,#rge .hx-cta:active{transform:translateY(0);box-shadow:0 4px 12px rgba(239,102,47,.35)}
+/* light cards (scenarios, method steps) */
+.nh .card:hover,.nh .card:focus-within,.nh .steps>div:hover{transform:translateY(-4px);border-color:#ef662f;box-shadow:0 22px 40px -22px rgba(20,25,38,.32)}
+.nh .card:hover h3{color:#111318}
+/* dark cards (close options) */
+.nh .opt:hover,.nh .opt:focus-within{transform:translateY(-5px);border-color:rgba(239,102,47,.55);box-shadow:0 18px 40px rgba(239,102,47,.22)}
+/* consequence table rows */
+.nh .cmp-r:hover>div{background:#fafafa}
+.nh .cmp-r:hover>div:last-child{background:#ffeee5}
+/* outcomes */
+.nh .wins>div:hover{border-top-color:#ff7a3d}
+/* text links */
+.nh .card a:hover,.nh .attr a:hover,.nh .proofrow a:hover,.nh .fine a:hover{color:#ff7a3d}
+.nh .links a:hover,.nh .links a:focus-visible{color:#ef662f;text-decoration-color:#ef662f}
+.nh a:focus-visible,.nh .btn:focus-visible,#rge .hx-cta:focus-visible{outline:3px solid #ef662f;outline-offset:3px}
+@media (hover:none){.nh .card:hover,.nh .steps>div:hover,.nh .opt:hover,.nh .btn:hover{transform:none}}
+@media (prefers-reduced-motion:reduce){.nh *,#rge .hx-cta{transition:none!important}.nh .card:hover,.nh .steps>div:hover,.nh .opt:hover,.nh .btn:hover,#rge .hx-cta:hover,.nh a:hover .arrow{transform:none!important}}
+</style>
+<script id="nh-polish-js">
+(function(){
+ var hero=document.querySelector('#rge a[href="#vr"]');
+ if(hero){hero.classList.add('hx-cta');}
+ var links=document.querySelectorAll('.nh a, #rge a[href="#vr"]');
+ for(var i=0;i<links.length;i++){
+  var a=links[i];
+  if(a.querySelector('.arrow')){continue;}
+  var n=a.lastChild;
+  if(n){if(n.nodeType===3){
+   var t=n.textContent; var k=t.lastIndexOf('→');
+   if(k>-1){n.textContent=t.slice(0,k); var s=document.createElement('span'); s.className='arrow'; s.textContent='→'; a.appendChild(s); if(t.slice(k+1)){a.appendChild(document.createTextNode(t.slice(k+1)));}}
+  }}
+ }
+})();
+</script>
