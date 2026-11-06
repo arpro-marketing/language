@@ -1,0 +1,321 @@
+<div class="rh">
+<style>
+.rh{--o:#ef662f;--ink:#111318;--body:#3b3f47;--mut:#6b7280;--cream:#f7f3ec;--dark:#14161c;--line:#e5e7eb;font-family:'DM Sans',sans-serif;color:var(--body)}
+.rh *{box-sizing:border-box}
+.rh section{padding:112px 40px}
+.rh .in{max-width:1180px;margin:0 auto}
+.rh .narrow{max-width:780px}
+.rh p{margin:0}
+.rh a{color:var(--o);font-weight:700;text-decoration:none;transition:color .18s}
+.rh a:hover{color:#c94d1c}
+.rh a:focus-visible,.rh button:focus-visible,.rh summary:focus-visible,.rh input:focus-visible{outline:3px solid var(--o);outline-offset:3px;border-radius:4px}
+.rh .eb{font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--o);margin:0 0 14px}
+.rh h1,.rh h2,.rh h3{font-family:'Plus Jakarta Sans',sans-serif;color:var(--ink);margin:0}
+.rh h2{font-weight:800;font-size:clamp(30px,3.4vw,44px);line-height:1.1;letter-spacing:-.8px;margin:0 0 18px}
+.rh h3{font-weight:800;font-size:20px;line-height:1.3}
+.rh .lead{font-size:clamp(17px,1.4vw,20px);line-height:1.6;color:var(--body);margin:0 0 40px;max-width:780px}
+.rh .light{background:#fff}.rh .cream{background:var(--cream)}.rh .dark{background:var(--dark);color:#c9ccd3}
+.rh .dark h2,.rh .dark h3{color:#fff}.rh .dark .lead{color:#c9ccd3}
+.rh .btn{display:inline-block;background:var(--o);color:#fff!important;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:16px;padding:15px 24px;border-radius:8px;border:2px solid var(--o);transition:transform .18s,box-shadow .18s,background .18s;white-space:nowrap}
+.rh .btn .ar{display:inline-block;transition:transform .18s;margin-left:4px}
+.rh .btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(239,102,47,.32);background:#f0703d}
+.rh .btn:hover .ar{transform:translateX(4px)}
+.rh .btn.ghost{background:transparent;color:#fff!important}
+.rh .btn.ghost:hover{background:rgba(239,102,47,.12)}
+.rh .light .btn.ghost,.rh .cream .btn.ghost{color:var(--ink)!important}
+/* hero */
+.rh .hero{padding:96px 40px 80px}
+.rh .hero .in{max-width:1180px}
+.rh .subnav{display:flex;flex-wrap:wrap;gap:8px 26px;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:600;margin:0 0 44px;padding-bottom:18px;border-bottom:1px solid #2e313a}
+.rh .subnav a{color:#9ca3af}.rh .subnav a:hover{color:#fff}
+.rh .subnav a[aria-current]{color:#fff;border-bottom:2px solid var(--o);padding-bottom:2px}
+.rh h1{font-weight:800;color:#fff;font-size:clamp(34px,4.4vw,56px);line-height:1.06;letter-spacing:-1.2px;margin:0 0 30px;max-width:900px}
+.rh h1 .o{color:var(--o)}
+.rh .hero .big{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;color:#fff;font-size:clamp(20px,2.1vw,27px);line-height:1.3;letter-spacing:-.3px;margin:0 0 26px;max-width:860px}
+.rh .hero .big .lab{color:var(--o);font-weight:800}
+.rh .hero .ctas{display:flex;flex-wrap:wrap;gap:14px;margin:38px 0 14px}
+.rh .hero .small{color:#9ca3af;font-size:14px;line-height:1.55;max-width:760px}
+.rh .def{margin:56px 0 0;max-width:860px;border-left:3px solid var(--o);padding:6px 0 6px 24px}
+.rh .def b{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;letter-spacing:1.6px;text-transform:uppercase;color:var(--o);margin-bottom:8px}
+.rh .def p{color:#e5e7eb;font-size:17px;line-height:1.6}
+/* trade */
+.rh .four{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+.rh .four div{background:#fff;border:1px solid #ece7dd;border-radius:14px;padding:28px 26px;transition:transform .18s,box-shadow .18s,border-color .18s}
+.rh .four div:hover,.rh .parts li:hover,.rh .steps div:hover,.rh .opt:hover,.rh .ladder li:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(17,19,24,.08);border-color:var(--o)}
+.rh .four b{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(30px,2.6vw,38px);letter-spacing:-1px;color:var(--o);line-height:1;margin-bottom:8px}
+.rh .four b small{font-size:14px;letter-spacing:0;color:var(--mut);font-weight:600;display:block;margin-top:6px}
+.rh .four p{font-size:16px;line-height:1.55;color:var(--body)}
+.rh .four p .src{display:block;color:var(--mut);font-size:13px;margin-top:8px}
+.rh .so{margin:48px 0 0;font-family:'Plus Jakarta Sans',sans-serif;font-size:22px;font-weight:800;color:var(--ink);line-height:1.35;max-width:860px}
+/* cost */
+.rh .cpb{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
+.rh .cpb-h,.rh .cpb-r{display:grid;grid-template-columns:1.6fr .8fr 1fr}
+.rh .cpb-h div{font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--mut);padding:16px 24px;background:#f9fafb;border-bottom:1px solid var(--line)}
+.rh .cpb-h div:last-child{color:var(--o);background:#fff1e9;border-left:3px solid var(--o)}
+.rh .cpb-r div{padding:22px 24px;font-size:17px;line-height:1.5;border-bottom:1px solid #eef0f2}
+.rh .cpb-r:last-child div{border-bottom:0}
+.rh .cpb-r div:first-child{color:var(--body)}
+.rh .cpb-r div:first-child small{display:block;color:var(--mut);font-size:14px}
+.rh .cpb-r div:nth-child(2){font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;color:var(--ink)}
+.rh .cpb-r div:last-child{background:#fff8f4;border-left:3px solid var(--o);font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(24px,2.2vw,30px);color:var(--ink);letter-spacing:-.6px}
+.rh .cpb-r.best div:last-child{color:var(--o)}
+.rh .cpb .lab{display:none}
+.rh .math{margin:22px 0 0;font-size:15px;color:var(--mut);line-height:1.6}
+.rh .read{margin:36px 0 0;font-size:18px;line-height:1.6;color:var(--body);max-width:860px}
+.rh .read b{color:var(--ink)}
+.rh details.calc{margin:36px 0 0;border:1px solid var(--line);border-radius:14px;background:#fff}
+.rh details.calc summary{list-style:none;cursor:pointer;padding:20px 24px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:17px;color:var(--ink);display:flex;justify-content:space-between;align-items:center}
+.rh details.calc summary::-webkit-details-marker{display:none}
+.rh details.calc summary:hover{color:var(--o)}
+.rh details.calc summary .pm{color:var(--o);font-size:24px;line-height:1}
+.rh details.calc[open] summary .pm{transform:rotate(45deg)}
+.rh .calcb{padding:4px 24px 28px;display:grid;grid-template-columns:1fr 1fr auto;gap:28px;align-items:end}
+.rh .calcb label{display:block;font-size:14px;color:var(--mut);margin-bottom:8px}
+.rh .calcb output{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:22px;color:var(--ink);margin-bottom:6px}
+.rh .calcb input[type=range]{width:100%;accent-color:var(--o)}
+.rh .calcb .res{background:#fff8f4;border-left:3px solid var(--o);padding:16px 22px;min-width:220px}
+.rh .calcb .res b{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:34px;color:var(--o);letter-spacing:-.8px;line-height:1}
+.rh .calcb .res span{font-size:13px;color:var(--mut)}
+.rh .more{margin:36px 0 0;font-size:17px;color:var(--body)}
+/* system */
+.rh .parts{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.rh .parts li{background:#fff;border:1px solid #ece7dd;border-radius:14px;padding:26px 22px;transition:transform .18s,box-shadow .18s,border-color .18s}
+.rh .parts b{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:800;color:var(--o);letter-spacing:1.5px;margin-bottom:12px}
+.rh .parts h3{font-size:19px;margin-bottom:10px}
+.rh .parts p{font-size:15.5px;line-height:1.55}
+/* measure */
+.rh .prov{color:#9ca3af;font-size:15px;line-height:1.6;max-width:860px;margin:0 0 22px}
+.rh .prov b{color:#e5e7eb}
+.rh .stats{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid #2e313a;border-bottom:1px solid #2e313a;margin:0 0 28px}
+.rh .stats div{padding:28px 12px 28px 0}
+.rh .stats b{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(30px,3vw,42px);font-weight:800;color:#fff;letter-spacing:-1px;line-height:1}
+.rh .stats b.o{color:var(--o)}
+.rh .stats span{display:block;color:#9ca3af;font-size:14px;margin-top:8px}
+.rh .travel{color:#e5e7eb;font-size:18px;line-height:1.6;max-width:860px;margin:0 0 48px}
+.rh .terms{display:grid;grid-template-columns:repeat(2,1fr);gap:18px 40px;border-top:1px solid #2e313a;padding-top:36px}
+.rh .terms div{color:#c9ccd3;font-size:16px;line-height:1.55;padding-left:18px;border-left:2px solid var(--o)}
+.rh .terms b{color:#fff;display:block;font-family:'Plus Jakarta Sans',sans-serif;margin-bottom:4px}
+/* spend */
+.rh .ladder{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.rh .ladder li{background:#f9fafb;border:1px solid var(--line);border-radius:14px;padding:26px 22px;transition:transform .18s,box-shadow .18s,border-color .18s}
+.rh .ladder b{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:22px;color:var(--ink);letter-spacing:-.4px;margin-bottom:10px}
+.rh .ladder p{font-size:15.5px;line-height:1.55}
+.rh .tiers{margin:48px 0 0;border-top:1px solid var(--line);padding-top:36px;display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:start}
+.rh .tiers h3{font-size:22px;margin-bottom:14px}
+.rh .tiers table{width:100%;border-collapse:collapse;font-size:16px}
+.rh .tiers td{padding:12px 0;vertical-align:top;border-bottom:1px solid #eef0f2;color:var(--body)}
+.rh .tiers td b{color:var(--ink);font-family:'Plus Jakarta Sans',sans-serif}
+.rh .tiers td:last-child{text-align:right;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;color:var(--ink);white-space:nowrap}
+.rh .tiers tr:last-child td{border-bottom:0}
+.rh .diag{background:#fff8f4;border-left:3px solid var(--o);padding:22px 24px;font-size:16px;line-height:1.6}
+.rh .diag b{color:var(--ink);font-family:'Plus Jakarta Sans',sans-serif}
+.rh .diag .pr{color:var(--o);font-weight:800}
+/* gap */
+.rh .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:0 0 36px}
+.rh .steps div{background:#fff;border:1px solid #ece7dd;border-radius:14px;padding:30px 26px;transition:transform .18s,box-shadow .18s,border-color .18s}
+.rh .steps b{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:800;color:var(--o);letter-spacing:1.5px;margin-bottom:12px}
+.rh .steps h3{font-size:21px;margin-bottom:10px}
+.rh .steps p{font-size:16px;line-height:1.55}
+/* faq */
+.rh .faq{max-width:860px}
+.rh .faq details{border-bottom:1px solid var(--line)}
+.rh .faq details:first-of-type{border-top:1px solid var(--line)}
+.rh .faq summary{list-style:none;cursor:pointer;padding:22px 44px 22px 0;position:relative;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:18px;line-height:1.35;color:var(--ink)}
+.rh .faq summary::-webkit-details-marker{display:none}
+.rh .faq summary::after{content:'+';position:absolute;right:4px;top:18px;color:var(--o);font-size:26px;font-weight:400;transition:transform .18s}
+.rh .faq details[open] summary::after{transform:rotate(45deg)}
+.rh .faq summary:hover{color:var(--o)}
+.rh .faq .a{padding:0 0 24px;font-size:17px;line-height:1.6;color:var(--body);max-width:800px}
+/* close */
+.rh .two{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:8px 0 32px}
+.rh .opt{background:#1d2028;border:1px solid #2e313a;border-radius:16px;padding:36px 34px;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s,border-color .18s}
+.rh .opt .tag{font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#9ca3af;margin-bottom:10px}
+.rh .opt h3{font-size:24px;margin:0 0 12px}
+.rh .opt p{color:#c9ccd3;font-size:17px;line-height:1.6;flex:1;margin-bottom:24px}
+.rh .opt .btn{align-self:flex-start}
+.rh .fine{color:#c9ccd3;font-size:16px;line-height:1.6;border-top:1px solid #2e313a;padding-top:24px}
+.rh .closer h2{font-size:clamp(28px,3.1vw,40px)}
+@media(max-width:1024px){.rh .parts{grid-template-columns:repeat(3,1fr)}.rh .ladder{grid-template-columns:1fr 1fr}.rh .stats{grid-template-columns:repeat(3,1fr)}.rh .stats div:nth-child(n+4){border-top:1px solid #2e313a}}
+@media(max-width:820px){
+ .rh section{padding:72px 40px}.rh .hero{padding:64px 40px 56px}
+ .rh .four{grid-template-columns:1fr 1fr}
+ .rh .cpb-h{display:none}
+ .rh .cpb-r{grid-template-columns:1fr;padding:18px 20px;border-bottom:1px solid #eef0f2}
+ .rh .cpb-r:last-child{border-bottom:0}
+ .rh .cpb-r div{padding:4px 0;border:0!important}
+ .rh .cpb-r div:last-child{background:#fff8f4;border-left:3px solid var(--o)!important;padding:12px 14px;margin-top:10px;border-radius:0 8px 8px 0}
+ .rh .cpb .lab{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--mut);margin:8px 0 2px}
+ .rh .cpb-r div:last-child .lab{color:var(--o);margin-top:0}
+ .rh .calcb{grid-template-columns:1fr}
+ .rh .parts{grid-template-columns:1fr 1fr}
+ .rh .tiers{grid-template-columns:1fr;gap:28px}
+ .rh .steps,.rh .two,.rh .terms{grid-template-columns:1fr}
+ .rh .opt{padding:28px 24px}
+}
+@media(max-width:700px){.rh section{padding:72px 20px}.rh .hero{padding:56px 20px 48px}.rh .parts,.rh .ladder,.rh .four{grid-template-columns:1fr}.rh .stats{grid-template-columns:1fr 1fr}.rh .stats div:nth-child(n+3){border-top:1px solid #2e313a}.rh .hero .ctas .btn{width:100%;text-align:center}}
+@media(max-width:400px){.rh .btn{font-size:15px;padding:15px 16px}.rh h1{font-size:32px}.rh .opt .btn,.rh .hero .ctas .btn{white-space:normal;width:100%;text-align:center;align-self:stretch}}
+@media(prefers-reduced-motion:reduce){.rh *{transition:none!important;transform:none!important}}
+</style>
+
+<!-- 1 HERO (C) -->
+<section class="hero dark" id="top"><div class="in">
+ <p class="eb">Remodeling contractor marketing</p>
+ <nav class="subnav" aria-label="Remodeling marketing pages"><a href="/services/remodeling-contractor-marketing/" aria-current="page">Remodeling marketing</a><a href="/seo-for-remodeling-contractors/">Remodeling SEO</a><a href="/ppc-for-remodeling-contractors/">Remodeling PPC</a><a href="/remodeling-contractor-lead-generation/">Remodeling lead generation</a><a href="#faq">Questions</a></nav>
+ <h1>Remodeling Contractor Marketing <span class="o">Measured to the Booked Project</span></h1>
+ <p class="big">You sell a remodel in the homeowner's kitchen, at the design consult, after weeks of their research and two or three other bids. Your marketing agency reports leads and clicks.</p>
+ <p class="big"><span class="lab">The problem is:</span> your agency is paid to produce inquiries. You get paid when a project is booked and built. That difference is where remodeling marketing quietly loses money.</p>
+ <p class="big"><span class="lab">The solution:</span> marketing for remodeling contractors that is measured to the booked project, so every inquiry is counted as a project that did or did not get booked.</p>
+ <div class="ctas"><a class="btn" href="https://calendly.com/andrew-andrewryanmarketing/gap-review?utm_source=arm-site&amp;utm_medium=cta&amp;utm_campaign=site&amp;utm_content=remodel-hero">Book the 20-minute Gap Review <span class="ar">→</span></a><a class="btn ghost" href="/#argmRoot">Get my gaps on video <span class="ar">→</span></a></div>
+ <p class="small">The Gap Review is a free call with Andrew: you leave with your biggest gap named and the next move. The video is a free recorded walkthrough of your market, no call.</p>
+ <div class="def" id="definition"><b>What remodeling contractor marketing is</b><p>Remodeling contractor marketing, also called home remodeling marketing, is the system a remodeler uses to be found, chosen and booked by homeowners planning a kitchen, bath, addition or whole-home project. Built properly it covers search, ads, reviews, the in-home consult and the follow-up after it, and it is measured to the booked project, not to the lead or the click.</p></div>
+</div></section>
+
+<!-- 2 TRADE (B) -->
+<section class="cream" id="why"><div class="in">
+ <p class="eb">Why the remodeling trade is different</p>
+ <h2>Why marketing for remodeling contractors works differently</h2>
+ <p class="lead">A plumber sells on the phone the same day. A remodeler sells in a living room after weeks of research. Four numbers decide how remodeling marketing has to be built.</p>
+ <div class="four">
+  <div><b>$12K to $100K+ <small>the ticket</small></b><p>Average bath $12,146, average kitchen $26,941; whole-home and additions run six figures. Every lost consult is a five-figure project, not a $200 repair.<span class="src">Angi 2026 · HomeAdvisor 2025</span></p></div>
+  <div><b>3+ bids <small>collected over weeks</small></b><p>You are chosen for trust, not price. The homeowner has to let you into the house.</p></div>
+  <div><b>The consult <small>where the sale is decided</small></b><p>Not the click, not the form. Everything before it exists to earn that appointment.</p></div>
+  <div><b>5 minutes <small>the response window</small></b><p>Reach a new inquiry inside five minutes and you are first onto the calendar. An hour later you are the third callback.<span class="src">Harvard Business Review, 2011</span></p></div>
+ </div>
+ <p class="so">So remodeling marketing has one job: more consults with homeowners who already trust you, and a follow-up that carries each consult to a signature.</p>
+</div></section>
+
+<!-- 3 COST (A) -->
+<section class="light" id="cost"><div class="in">
+ <p class="eb">The number your agency does not report</p>
+ <h2>What a remodeling lead really costs you</h2>
+ <p class="lead">Every vendor sells you cost per lead. A search-ad inquiry for remodeling runs $150 to $400 depending on market and project type. Cost per lead tells you nothing. Cost per booked project tells you everything.</p>
+ <div class="cpb">
+  <div class="cpb-h"><div>Same $250 inquiry</div><div>Your close rate</div><div>One booked project costs</div></div>
+  <div class="cpb-r"><div><span class="lab">Inquiry</span>Shared inquiry, typical<small>HomeAdvisor, Angi; sold to 3–4 remodelers</small></div><div><span class="lab">Close rate</span>8%</div><div><span class="lab">One booked project costs</span>$3,125</div></div>
+  <div class="cpb-r"><div><span class="lab">Inquiry</span>Shared inquiry, reached first<small>Same four contractors; you called first</small></div><div><span class="lab">Close rate</span>15%</div><div><span class="lab">One booked project costs</span>$1,667</div></div>
+  <div class="cpb-r best"><div><span class="lab">Inquiry</span>Your own inquiry, reached in five minutes<small>Nobody else was sold the inquiry; consult booked on the first call</small></div><div><span class="lab">Close rate</span>33%</div><div><span class="lab">One booked project costs</span>$758</div></div>
+ </div>
+ <p class="math">Cost per booked project = cost per inquiry ÷ close rate. Published industry ranges: shared inquiries close at 8–15%, exclusive inquiries you generate yourself at 25–35%. Illustrative arithmetic, not a client result.</p>
+ <p class="read"><b>Read it down, not across.</b> Cheaper inquiries move the number a little. Reaching a shared inquiry first cuts the cost in half. Owning the inquiry and reaching it in five minutes moves it four times over, at the same price per inquiry. The close rate depends on two things: whether the inquiry was yours alone, and how fast you reached it. That is why the two halves of remodeling marketing below are built together.</p>
+ <details class="calc" id="calc"><summary>Run your own numbers <span class="pm">+</span></summary>
+  <div class="calcb">
+   <div><label for="rhCpl">Cost per inquiry</label><output id="rhCplOut">$250</output><input type="range" id="rhCpl" min="50" max="600" step="10" value="250"></div>
+   <div><label for="rhCr">Close rate on inquiries</label><output id="rhCrOut">15%</output><input type="range" id="rhCr" min="3" max="50" step="1" value="15"></div>
+   <div class="res"><span>One booked project costs</span><b id="rhRes">$1,667</b></div>
+  </div>
+ </details>
+ <p class="more">Where remodelers get their inquiries, and how to stop renting them, is on our page on <a href="/remodeling-contractor-lead-generation/">remodeling lead generation</a>.</p>
+</div></section>
+
+<!-- 4 SYSTEM (B) -->
+<section class="cream" id="system"><div class="in">
+ <p class="eb">The remodeling marketing system</p>
+ <h2>What home remodeling marketing covers when it is built for the booked project</h2>
+ <p class="lead">Five parts of remodeling marketing. An engine with four strong parts and one weak one runs at the level of the weak one, so we build them in the order of what is costing you most. Response and follow-up pay in the first month, paid search in weeks, rankings and reviews compound over three to six months.</p>
+ <ol class="parts">
+  <li><b>01</b><h3>Get found where homeowners plan the remodel</h3><p>Project-type pages for "kitchen remodeler in [city]" and "bathroom remodel near me", a Google Business Profile that wins the map pack, reviews by project type. The playbook is on our <a href="/seo-for-remodeling-contractors/">remodeling SEO page</a>.</p></li>
+  <li><b>02</b><h3>Get chosen before the first call, as the remodeler they trust</h3><p>A site that shows your work by neighborhood and project type, recent reviews, a clear next step above the fold. A researching homeowner should finish your site wanting the consult.</p></li>
+  <li><b>03</b><h3>Turn demand on when the calendar needs it</h3><p>Google Ads and Local Services Ads filtered to homeowners ready to remodel, not DIYers pricing a backsplash. How paid search pencils out is on our <a href="/ppc-for-remodeling-contractors/">remodeling PPC page</a>.</p></li>
+  <li><b>04</b><h3>Win the consult and carry it to a signature</h3><p>A new inquiry reached in under five minutes, the appointment confirmed, no-shows reduced, the estimate followed until it is a yes or a no. Most remodelers have no system here. This is <a href="/remodeling-contractor-lead-generation/">the inquiry-to-booked-project workflow</a>.</p></li>
+  <li><b>05</b><h3>Measure every remodeling marketing dollar to the booked project</h3><p>Every call and form tagged to its source and followed to sold or lost. Next month's remodeling marketing budget is decided by what booked, not by what clicked.</p></li>
+ </ol>
+</div></section>
+
+<!-- 5 MEASURE (C) -->
+<section class="dark" id="measure"><div class="in">
+ <p class="eb">How we measure remodeling marketing</p>
+ <h2>Measured to the booked project, because that is how we learned to sell</h2>
+ <p class="prov"><b>Our founder's operator record.</b> Before this agency he built a dealership's sales department from scratch and ran it for 27 months: the phones, the follow-up, the close. These are his numbers from that pipeline, reported monthly in writing. They are not a remodeling client's results.</p>
+ <div class="stats"><div><b>11,564</b><span>Leads worked</span></div><div><b>2,135</b><span>Appointments shown</span></div><div><b>761</b><span>Sales closed</span></div><div><b class="o">35.6%</b><span>Show-to-sale</span></div><div><b>$34M+</b><span>Closed revenue</span></div></div>
+ <p class="travel">The close rate is 35.6% of the appointments that showed, a different denominator from the close rates on inquiries in the table above. The method is what travels: response speed, show rate, close rate. We apply the same three numbers to remodeling consults. Activity is not progress.</p>
+ <h3 style="margin:0 0 22px;font-size:22px">Four terms in writing before you sign</h3>
+ <div class="terms">
+  <div><b>You own everything from day one</b>Website, ad accounts, data. Ad spend is paid directly to Google in accounts you control, never marked up.</div>
+  <div><b>One remodeler per market</b>Defined in writing at signing, so you never compete with our other clients for the same homeowners.</div>
+  <div><b>Terms that match the engagement</b>12-month engagements have 90-day exits. Smaller engagements start at 3 to 6 months, then run month to month.</div>
+  <div><b>You work with Andrew directly</b>No account managers between you and the person doing the work.</div>
+ </div>
+</div></section>
+
+<!-- 6 SPEND (A) -->
+<section class="light" id="spend"><div class="in">
+ <p class="eb">Remodeling marketing budget</p>
+ <h2>How much should a remodeling company spend on marketing?</h2>
+ <p class="lead">There is no honest percentage. Home remodeling marketing spend follows your cost per booked project and the stage you are in. Anyone quoting "5 to 10% of revenue" before asking your close rate is guessing with your money.</p>
+ <ul class="ladder">
+  <li><b>Under $1M</b><p>Buy one predictable channel on top of referrals. Prove the cost per booked project, then stop guessing.</p></li>
+  <li><b>$1M to $3M</b><p>Widen the channel that works and add a second. Lock down response speed and review velocity.</p></li>
+  <li><b>$3M to $10M</b><p>Several channels reinforcing each other, tracked attribution, remodeling marketing that runs without your daily attention.</p></li>
+  <li><b>$10M+</b><p>Predictable cost per booked project across markets. The question becomes which markets and crews earn the next dollar.</p></li>
+ </ul>
+ <div class="tiers">
+  <div><h3>What it costs to work with us, in the open</h3>
+   <table><tr><td><b>Growth Catalyst</b><br><span style="color:var(--mut);font-size:15px">We need a stronger foundation.</span></td><td>$1,500 to $2,500 a month</td></tr><tr><td><b>Growth Engine</b><br><span style="color:var(--mut);font-size:15px">We're getting leads. We need more jobs.</span></td><td>$3,500 a month</td></tr><tr><td><b>Growth System</b><br><span style="color:var(--mut);font-size:15px">We're ready to scale what's working.</span></td><td>$5,500 to $7,500 a month</td></tr><tr><td><b>Growth Partnership</b><br><span style="color:var(--mut);font-size:15px">We're growing across markets.</span></td><td>$10,000+ a month</td></tr></table>
+   <p style="margin-top:16px"><a href="/pricing/">See the four tiers <span class="ar">→</span></a></p></div>
+  <div class="diag"><b>The Booked-Job Model™ diagnostic</b> is a one-time <span class="pr">$1,500</span>: the full model run on your remodeling company's numbers, yours to keep whether or not we work together. Most owners start here.</div>
+ </div>
+</div></section>
+
+<!-- 7 GAP (B) -->
+<section class="cream" id="gap"><div class="in">
+ <p class="eb">Where your next dollar goes</p>
+ <h2>How we find your remodeling marketing gap</h2>
+ <p class="lead">The Booked-Job Model™ is how we decide where your next remodeling marketing dollar does the most work, before you spend it.</p>
+ <div class="steps">
+  <div><b>STEP 1</b><h3>Your real numbers</h3><p>Inquiries, consults, booked projects, average project value, and how many projects your crews can start a month.</p></div>
+  <div><b>STEP 2</b><h3>The one gap that costs the most</h3><p>Somewhere between being found and the booked project, one gap is capping growth: usually visibility, response speed, the consult, or crew capacity. The others are noise until it is fixed.</p></div>
+  <div><b>STEP 3</b><h3>Fix that first, then scale what the numbers prove</h3><p>When crews are the limit, more inquiries are a backlog. The honest answer then is "not yet", and we show you the math.</p></div>
+ </div>
+ <p class="more">Want the quick version? The <a href="/6-gap-revenue-map/">6-Gap Revenue Map</a> runs in 60 seconds, no email.</p>
+</div></section>
+
+<!-- 8 FAQ (A) -->
+<section class="light" id="faq"><div class="in">
+ <p class="eb">Questions remodelers ask</p>
+ <h2>Remodeling marketing questions owners ask</h2>
+ <div class="faq">
+  <details><summary>How do I choose a remodeling marketing agency?</summary><div class="a">Ask four things. Who owns the website and ad accounts if you leave (it should be you). How an inquiry is counted (a consultation request, not a click). Whether they can show you remodeling project-type pages that rank, not just a homepage. And how results are reported: ask for inquiries tied to booked projects. Whether it calls itself a remodeling marketing agency or a remodeler marketing company, an agency that will not put its price in writing is making a choice; ours is on the pricing page.</div></details>
+  <details><summary>What is the difference between remodeling lead generation and remodeling marketing?</summary><div class="a">Lead generation is the part that creates demand: ranking, ads, exclusive inquiries, response speed. Remodeling marketing is the whole system that turns that demand into booked projects: it also covers the in-home consult, reviews and referrals, crew capacity, and measuring every dollar to the booked job. More inquiries into a system that cannot convert or build them only creates a backlog.</div></details>
+  <details><summary>How much should a remodeling company spend on marketing?</summary><div class="a">It depends on your close rate, your average project value and your stage. Under $1M, buy one predictable channel and prove the cost per booked project. From $1M to $3M, compound what works and add a second channel. At $3M and above, build several channels that reinforce each other. A percentage quoted before anyone asks your close rate is a guess.</div></details>
+  <details><summary>What does a remodeling lead cost?</summary><div class="a">Search-ad inquiries for remodeling run about $150 to $400 depending on market and project type, with cost per click of $8 to $18 for kitchen and bath terms and higher for additions and whole-home work. Cost per lead is the wrong number to optimize. Cost per booked project, cost per inquiry divided by your close rate, decides whether remodeling marketing pays.</div></details>
+  <details><summary>Why do shared leads from HomeAdvisor or Angi close so poorly for remodelers?</summary><div class="a">Because the same inquiry is sold to three or four contractors at once. The homeowner gets four calls and books with whoever reached them first. Published ranges put shared inquiries at 8 to 15% close against 25 to 35% for exclusive ones you generate yourself. On a five-figure remodel that gap is the difference between a channel that pays and one that drains.</div></details>
+  <details><summary>Google Ads or Local Services Ads for a remodeler?</summary><div class="a">Both, for different jobs. Local Services Ads cost per inquiry and favor remodelers with strong reviews and fast response; they work for bath and kitchen inquiries ready to book. Google Ads reach homeowners earlier in the research, including additions and whole-home work LSAs rarely show. We start with the one your reviews and calendar can support, then add the other.</div></details>
+  <details><summary>How long until remodeling marketing produces booked projects?</summary><div class="a">Paid search can produce consults in the first weeks. Search rankings and reviews compound over three to six months. Response speed and follow-up improve the close rate on the inquiries you already have in the first month, which is usually where we start.</div></details>
+  <details><summary>Who owns the website and ad accounts?</summary><div class="a">You do, from day one. Website, Google Business Profile, ad accounts and all tracking data stay in your name. Ad spend is paid to Google directly from your accounts, never marked up. If we part ways, everything keeps running without us.</div></details>
+  <details><summary>Do you work with more than one remodeler in a market?</summary><div class="a">No. As a remodeler marketing agency we take one remodeling company per market, defined in writing at signing, so you are never competing with our other clients for the same homeowners.</div></details>
+  <details><summary>What are the contract terms for remodeling marketing?</summary><div class="a">Terms depend on length and size. 12-month engagements have 90-day exits. Smaller engagements start as 3 to 6 month commitments, then run month to month. The Booked-Job Model diagnostic is a one-time $1,500 with no commitment after it.</div></details>
+ </div>
+</div></section>
+
+<!-- 9 CLOSE (C) -->
+<section class="dark closer" id="start"><div class="in">
+ <p class="eb">Find your remodeling marketing gap</p>
+ <h2>You already spend money to grow your remodeling company. You should know what is producing the projects.</h2>
+ <p class="lead">Two free ways to find the gap in your remodeling marketing, no pitch.</p>
+ <div class="two">
+  <div class="opt"><p class="tag">20 minutes</p><h3>Book the Gap Review</h3><p>A call with Andrew. You leave with the gap named and the next move.</p><a class="btn" href="https://calendly.com/andrew-andrewryanmarketing/gap-review?utm_source=arm-site&amp;utm_medium=cta&amp;utm_campaign=site&amp;utm_content=remodel-close">Book the 20-minute Gap Review <span class="ar">→</span></a></div>
+  <div class="opt"><p class="tag">No call</p><h3>Get my gaps on video</h3><p>A recorded walkthrough of your market and where the projects are being lost. Watch it on your own time.</p><a class="btn ghost" href="/#argmRoot">Get my gaps on video <span class="ar">→</span></a></div>
+ </div>
+ <p class="fine">Ready for the full model? The Booked-Job Model diagnostic is $1,500, one time. Ask on the call.</p>
+</div></section>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Service","@id":"https://andrewryanmarketing.com/services/remodeling-contractor-marketing/#service","name":"Remodeling Contractor Marketing","serviceType":"Remodeling contractor marketing","url":"https://andrewryanmarketing.com/services/remodeling-contractor-marketing/","description":"Remodeling contractor marketing measured to the booked project: search, ads, reviews, the in-home consult and follow-up, tracked from inquiry to signed remodel.","provider":{"@type":"Organization","name":"Andrew Ryan Marketing","url":"https://andrewryanmarketing.com/","telephone":"(423) 299-1718"},"areaServed":"US","audience":{"@type":"BusinessAudience","audienceType":"Remodeling contractors"},"offers":[{"@type":"Offer","name":"Growth Catalyst","price":"1500","priceCurrency":"USD"},{"@type":"Offer","name":"Growth Engine","price":"3500","priceCurrency":"USD"},{"@type":"Offer","name":"Growth System","price":"5500","priceCurrency":"USD"},{"@type":"Offer","name":"Growth Partnership","price":"10000","priceCurrency":"USD"},{"@type":"Offer","name":"Booked-Job Model diagnostic","price":"1500","priceCurrency":"USD"}]},
+{"@type":"DefinedTerm","name":"Remodeling contractor marketing","url":"https://andrewryanmarketing.com/services/remodeling-contractor-marketing/#definition","alternateName":"Home remodeling marketing","description":"The system a remodeler uses to be found, chosen and booked by homeowners planning a kitchen, bath, addition or whole-home project; covers search, ads, reviews, the in-home consult and follow-up, measured to the booked project rather than the lead or click."},
+{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://andrewryanmarketing.com/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://andrewryanmarketing.com/services/"},{"@type":"ListItem","position":3,"name":"Remodeling Contractor Marketing","item":"https://andrewryanmarketing.com/services/remodeling-contractor-marketing/"}]},
+{"@type":"FAQPage","mainEntity":[]}
+]}
+</script>
+<script>
+(function(){
+ var cpl=document.getElementById('rhCpl'),cr=document.getElementById('rhCr');
+ function fmt(n){return '$'+Math.round(n).toLocaleString('en-US')}
+ function go(){var c=+cpl.value,r=+cr.value;document.getElementById('rhCplOut').textContent=fmt(c);document.getElementById('rhCrOut').textContent=r+'%';document.getElementById('rhRes').textContent=fmt(c/(r/100))}
+ if(cpl){cpl.addEventListener('input',go);cr.addEventListener('input',go);go();}
+ var faq=[].slice.call(document.querySelectorAll('.rh .faq details')).map(function(d){return {"@type":"Question","name":d.querySelector('summary').textContent.trim(),"acceptedAnswer":{"@type":"Answer","text":d.querySelector('.a').textContent.trim()}}});
+ var s=document.querySelector('.rh script[type="application/ld+json"]');
+ try{var j=JSON.parse(s.textContent);j['@graph'][3].mainEntity=faq;s.textContent=JSON.stringify(j);}catch(e){}
+})();
+</script>
+</div>
