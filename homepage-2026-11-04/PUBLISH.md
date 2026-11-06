@@ -22,3 +22,7 @@ Source of truth: `build3.js` (the hero rewrite plus the row removal, run against
 Append the whole of `polish.html` (one <style id="nh-polish"> + one <script id="nh-polish-js">) to the END of the homepage Raw HTML block that holds the `.nh` sections. No copy changes. If `#nh-polish` already exists, replace it (never duplicate).
 The script has no `&&` (WordPress encodes it and kills inline scripts). After saving, check that the served HTML still has no `&#038;&#038;` inside it.
 Verify logged out at 1440: hovering a scenario card lifts it 4px with an orange border; hovering a close option lifts it 5px with an orange glow; the buttons lift 2px and brighten; 12 arrows sit in `<span class="arrow">` and slide on hover; there are no page errors. At 390: no layout change and no overflow.
+
+## 2026-11-06 W&D hub polish (Andrew "do it")
+Page: /services/window-and-door-marketing/ (the `.wdn` build). Append the whole of `wdn-polish.html` (style #wdn-polish + script #wdn-polish-js) to the END of the Raw HTML block holding the `.wdn` sections. Replace if #wdn-polish already exists. No copy changes. Script has no `&&`. Tested headless on the live page: hero button lifts 2px, 3 scenario cards lift 4px with orange border, 2 close options lift 5px with orange glow, ghost button tints, 15 arrows in span.arrow, 0 page errors.
+Verify logged out 1440 + 390 as for the homepage, then report live rev + rollback rev.

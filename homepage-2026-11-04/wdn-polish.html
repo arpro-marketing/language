@@ -1,0 +1,42 @@
+<style id="wdn-polish">
+/* W&D hub polish: hover + focus states matching the site standard (pricing / W&D hub cards, .armx-s buttons) */
+.wdn .btn,.wdn .card,.wdn .steps>div,.wdn .opt,.wdn .cmp-r>div,.wdn .wins>div,.wdn a,.wdn #top .btn{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease,background-color .25s ease,color .2s ease,text-decoration-color .2s ease}
+.wdn .arrow{display:inline-block;transition:transform .2s ease}
+.wdn a:hover .arrow,.wdn a:focus-visible .arrow,.wdn #top a:hover .arrow{transform:translateX(4px)}
+/* buttons */
+.wdn .btn:hover,.wdn .btn:focus-visible,.wdn #top .btn:hover,.wdn #top .btn:focus-visible{transform:translateY(-2px);background:#ff7a3d!important;box-shadow:0 12px 32px rgba(239,102,47,.45)}
+.wdn .btn.ghost:hover,.wdn .btn.ghost:focus-visible{background:rgba(239,102,47,.14)!important;border-color:#ff7a3d;box-shadow:0 12px 32px rgba(239,102,47,.22)}
+.wdn .btn:active,.wdn #top .btn:active{transform:translateY(0);box-shadow:0 4px 12px rgba(239,102,47,.35)}
+/* light cards (scenarios, method steps) */
+.wdn .card:hover,.wdn .card:focus-within,.wdn .steps>div:hover{transform:translateY(-4px);border-color:#ef662f;box-shadow:0 22px 40px -22px rgba(20,25,38,.32)}
+.wdn .card:hover h3{color:#111318}
+/* dark cards (close options) */
+.wdn .opt:hover,.wdn .opt:focus-within{transform:translateY(-5px);border-color:rgba(239,102,47,.55);box-shadow:0 18px 40px rgba(239,102,47,.22)}
+/* consequence table rows */
+.wdn .cmp-r:hover>div{background:#fafafa}
+.wdn .cmp-r:hover>div:last-child{background:#ffeee5}
+/* outcomes */
+.wdn .wins>div:hover{border-top-color:#ff7a3d}
+/* text links */
+.wdn .parts a:hover,.wdn .talk a:hover,.wdn .spend a:hover,.wdn .lead a:hover{color:#ff7a3d}
+.wdn summary{cursor:pointer;transition:color .2s ease}.wdn summary:hover{color:#ef662f}
+.wdn .card a:hover,.wdn .links a:hover,.wdn .attr a:hover,.wdn .proofrow a:hover,.wdn .fine a:hover{color:#ff7a3d}
+.wdn .links a:hover,.wdn .links a:focus-visible{color:#ef662f;text-decoration-color:#ef662f}
+.wdn a:focus-visible,.wdn .btn:focus-visible,.wdn #top .btn:focus-visible{outline:3px solid #ef662f;outline-offset:3px}
+@media (hover:none){.wdn .card:hover,.wdn .steps>div:hover,.wdn .opt:hover,.wdn .btn:hover{transform:none}}
+@media (prefers-reduced-motion:reduce){.wdn *,.wdn #top .btn{transition:none!important}.wdn .card:hover,.wdn .steps>div:hover,.wdn .opt:hover,.wdn .btn:hover,.wdn #top .btn:hover,.wdn a:hover .arrow{transform:none!important}}
+</style>
+<script id="wdn-polish-js">
+(function(){
+  var links=document.querySelectorAll('.wdn a');
+ for(var i=0;i<links.length;i++){
+  var a=links[i];
+  if(a.querySelector('.arrow')){continue;}
+  var n=a.lastChild;
+  if(n){if(n.nodeType===3){
+   var t=n.textContent; var k=t.lastIndexOf('→');
+   if(k>-1){n.textContent=t.slice(0,k); var s=document.createElement('span'); s.className='arrow'; s.textContent='→'; a.appendChild(s); if(t.slice(k+1)){a.appendChild(document.createTextNode(t.slice(k+1)));}}
+  }}
+ }
+})();
+</script>
