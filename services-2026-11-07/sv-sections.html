@@ -1,6 +1,6 @@
 <div class="sv">
 <style>
-.sv{--o:#ef662f;--ink:#111318;--body:#3b3f47;--mut:#6b7280;--cream:#f7f3ec;--dark:#14161c;--line:#e5e7eb;font-family:'DM Sans',sans-serif;color:var(--body)}
+.sv{--o:#ef662f;--ink:#111318;--body:#3b3f47;--mut:#5c5650;--cream:#f7f3ec;--dark:#14161c;--line:#e5e7eb;font-family:'DM Sans',sans-serif;color:var(--body)}
 .sv *{box-sizing:border-box}
 .sv section{padding:112px 40px}
 .sv .in{max-width:1180px;margin:0 auto}
@@ -141,7 +141,7 @@
 .sv .dir-head h2{margin:0}
 .sv .dir-head p:not(.eb){font-size:18px;line-height:1.6;color:var(--body)}
 .sv .dir-head p:not(.eb) b{color:var(--ink)}
-.sv .grp5{display:grid;grid-template-columns:260px minmax(0,1fr);gap:48px;padding:40px 0;border-top:1px solid #e3ddd1}
+.sv .grp5{display:grid;grid-template-columns:300px minmax(0,1fr);gap:44px;padding:40px 0;border-top:1px solid #e3ddd1}
 .sv .grp5:last-of-type{border-bottom:1px solid #e3ddd1}
 .sv .gname .tag{display:inline-block;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:13px;letter-spacing:1px;color:var(--o);margin:0 0 10px}
 .sv .gname h3{font-size:clamp(28px,2.4vw,32px);line-height:1.15;margin:0 0 10px;letter-spacing:-.5px;color:var(--o)}
@@ -149,7 +149,7 @@
 .sv .svlist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 40px}
 .sv a.svc{display:block;color:inherit;font-weight:400;padding:18px 20px 20px;margin:0 -20px;border-radius:12px;transition:background .18s,box-shadow .18s,transform .18s}
 .sv a.svc .nm{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:22px;line-height:1.25;letter-spacing:-.3px;color:var(--ink);margin:0 0 8px;transition:color .18s}
-.sv a.svc .nm .ar{display:inline-block;margin-left:8px;font-weight:600;color:#b8b2a7;transition:transform .18s,color .18s}
+.sv a.svc .nm .ar{display:inline-block;margin-left:8px;font-weight:600;color:#8a8378;transition:transform .18s,color .18s}
 .sv a.svc .fit{display:block;font-size:15.5px;line-height:1.55;color:var(--body)}
 .sv a.svc .fit i{font-style:normal;font-weight:700;color:var(--mut)}
 .sv a.svc:hover{background:#fff;box-shadow:0 12px 28px rgba(17,19,24,.07);transform:translateY(-2px)}
@@ -171,6 +171,9 @@
 .sv .alt{margin:26px 0 0;font-size:16px;color:#c9ccd3}
 @media (max-width:1000px){.sv .grp5{grid-template-columns:1fr;gap:18px}.sv .dir-head,.sv .dir-foot{grid-template-columns:1fr;gap:20px}}
 @media (max-width:760px){.sv .svlist{grid-template-columns:1fr;gap:0}.sv a.svc{padding:14px 14px 16px;margin:0 -14px}.sv a.svc .nm{font-size:20px}.sv .pill{grid-template-columns:1fr;gap:28px}.sv .grp5{padding:32px 0}}
+/* contrast pass: orange text on light sections */
+.sv .cream .eb,.sv .light .eb,.sv .cream .k,.sv .light .k,.sv .cream .tag,.sv .cream .gname h3,.sv .cream .stats b,.sv .cream blockquote .by .st,.sv .light .faq summary::after,.sv .light .faq summary:hover,.sv .cream h2 .o,.sv .light h2 .o,.sv .cream a.tl,.sv .cream a:not(.btn):not(.svc):not(.trades a),.sv .light a:not(.btn),.sv .cream a.svc:hover .nm,.sv .cream a.svc:hover .nm .ar{color:#c2410c}
+.sv .cream a.tl:hover,.sv .cream .trades a:hover,.sv .light a:not(.btn):hover{color:#9a3412}
 @media (prefers-reduced-motion:reduce){.sv *,.sv *::after{transition:none!important;animation:none!important}.sv .btn:hover,.sv .four div:hover,.sv .opt:hover,.sv .stats div:hover,.sv a.svc:hover,.sv .pill div:hover,.sv blockquote:hover,.sv .unsure:hover{transform:none!important}}
 </style>
 
