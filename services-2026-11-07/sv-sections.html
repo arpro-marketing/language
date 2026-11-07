@@ -14,6 +14,7 @@
 .sv h2{font-weight:800;font-size:clamp(30px,3.4vw,44px);line-height:1.1;letter-spacing:-.8px;margin:0 0 18px;max-width:900px}
 .sv h2 .o,.sv h1 .o{color:var(--o)}
 .sv h3{font-weight:800;font-size:20px;line-height:1.3}
+.sv .lead b{color:var(--ink)}
 .sv .lead{font-size:clamp(17px,1.4vw,19px);line-height:1.6;margin:0 0 40px;max-width:800px}
 .sv .light{background:#fff}.sv .cream{background:var(--cream)}.sv .dark{background:var(--dark);color:#c9ccd3}
 .sv .dark h1,.sv .dark h2,.sv .dark h3{color:#fff}
@@ -31,7 +32,8 @@
 .sv .hero .body{font-size:clamp(17px,1.4vw,19px);line-height:1.6;color:#c9ccd3;max-width:800px}
 .sv .hero .body b{color:#fff}
 .sv .hero .ctas{display:flex;flex-wrap:wrap;gap:14px;margin:38px 0 18px}
-.sv .hero .small{color:#9ca3af;font-size:15px}
+.sv .hero .small{color:#9ca3af;font-size:15px;line-height:1.6}
+.sv .hero .small .price{color:#fff;font-weight:700}
 /* router */
 .sv .route{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
 .sv .route-h,.sv .route a.r{display:grid;grid-template-columns:1fr 1.25fr;gap:0}
@@ -41,17 +43,21 @@
 .sv .route a.r:last-child{border-bottom:0}
 .sv .route a.r>div{padding:22px 26px}
 .sv .route .q{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:18px;line-height:1.4;color:var(--ink)}
-.sv .route .s b{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:18px;color:var(--ink);margin-bottom:4px;transition:color .18s}
-.sv .route .s b .ar{display:inline-block;color:var(--o);transition:transform .18s;margin-left:6px}
+.sv .route .s .sn{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:18px;color:var(--ink);margin-bottom:4px;transition:color .18s}
+.sv .route .s .sn .ar{display:inline-block;color:#9ca3af;transition:transform .18s;margin-left:6px}
 .sv .route .s span{font-size:16px;line-height:1.55;color:var(--body)}
 .sv .route a.r:hover{background:#fff8f4;box-shadow:inset 3px 0 0 var(--o)}
-.sv .route a.r:hover .s b{color:var(--o)}
-.sv .route a.r:hover .s b .ar{transform:translateX(4px)}
-.sv .route a.r.grow{background:#fffaf6}
-.sv .route a.r.grow .q{color:var(--o)}
+.sv .route a.r:hover .s .sn{color:var(--o)}
+.sv .route a.r:hover .s .sn .ar{transform:translateX(4px);color:var(--o)}
+.sv .route .grp{font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--mut);padding:14px 26px 10px;background:#fbfaf7;border-bottom:1px solid #eef0f2}
+.sv .route .s{display:flex;align-items:center}
+.sv .route .s .sn{margin:0}
+.sv .route{box-shadow:0 8px 24px rgba(17,19,24,.06)}
 .sv .trades{margin:28px 0 0;font-size:17px;line-height:1.7;max-width:900px}
+.sv .trades a:not(.tl){color:var(--ink);border-bottom:1px solid #cfc8bb}
+.sv .trades a:not(.tl):hover{color:var(--o);border-color:var(--o)}
 .sv .trades b{color:var(--ink);font-family:'Plus Jakarta Sans',sans-serif}
-.sv .unsure{margin:30px 0 0;padding:22px 26px;border-left:3px solid var(--o);background:var(--cream);border-radius:0 10px 10px 0;font-size:17px;line-height:1.6;max-width:900px}
+.sv .unsure{margin:30px 0 0;padding:22px 26px;border-left:3px solid var(--o);background:#fff;border-radius:0 10px 10px 0;font-size:17px;line-height:1.6;max-width:900px}
 .sv .unsure b{color:var(--ink)}
 /* why */
 .sv .dark .lead{color:#c9ccd3}
@@ -69,7 +75,9 @@
 .sv .stats div{background:#fff;border:1px solid #ece7dd;border-top:3px solid var(--o);border-radius:12px;padding:22px 16px;text-align:center;transition:transform .18s,box-shadow .18s,border-color .18s}
 .sv .stats b{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(26px,2.4vw,34px);color:var(--o);letter-spacing:-.8px;line-height:1.1}
 .sv .stats span{font-size:14px;color:var(--mut)}
-.sv .cap{font-size:15px;line-height:1.6;color:var(--mut);max-width:820px;margin:0 0 56px}
+.sv .cap{font-size:16px;line-height:1.6;color:var(--body);max-width:820px;margin:0 0 22px}
+.sv .stats{margin-bottom:56px}
+.sv .stats .u{font-style:normal;font-family:Arial,Helvetica,sans-serif;font-size:.55em;opacity:.7;font-weight:700;margin:0 1px}
 .sv blockquote,.sv blockquote *{font-family:'DM Sans',sans-serif;font-style:normal}
 .sv blockquote .k{font-family:'Plus Jakarta Sans',sans-serif}
 .sv blockquote{margin:0;background:#fff;border:1px solid #ece7dd;border-left:3px solid var(--o);border-radius:0 14px 14px 0;padding:32px 34px;max-width:900px}
@@ -102,9 +110,9 @@
  .sv .route-h{display:none}
  .sv .route a.r{grid-template-columns:1fr}
  .sv .route a.r>div{padding:0 20px}
- .sv .route a.r>div.q{padding-top:20px;padding-bottom:8px;font-size:17px}
+ .sv .route a.r>div.q{padding-top:18px;padding-bottom:6px;font-size:17px}
+ .sv .route .grp{padding:12px 20px 8px}
  .sv .route a.r>div.s{padding-bottom:20px}
- .sv .route .s b{color:var(--o)}
  .sv .four,.sv .opts{grid-template-columns:1fr}
  .sv .stats{grid-template-columns:1fr 1fr}.sv .stats div:last-child{grid-column:1/-1}
  .sv .hero .ctas .btn{width:100%;text-align:center}
@@ -117,30 +125,34 @@
 <section class="dark hero"><div class="in">
  <p class="eb">Marketing services for contractors · Johnson City, TN &amp; nationwide</p>
  <h1>Contractor marketing services, <span class="o">measured to the booked job.</span></h1>
- <p class="big">You've bought marketing services before. SEO from one company, ads from another, a CRM nobody follows up in. Each one reports its own number. None of them reports the one you care about: how many jobs it booked.</p>
- <p class="body">We run the same services as one system, measured to the booked job. And you don't need all of it. <b>You need the one gap that's costing you jobs, fixed first.</b> That's the Booked-Job Model™. The 6-Gap Revenue Map™ finds the gap.</p>
+ <p class="big">You've bought marketing services before. SEO from one company, ads from another, a CRM on the side. Each one reports its own number: rankings, clicks, leads. The one you care about, how many jobs it booked, usually isn't on any of them.</p>
+ <p class="body">We run the same services as one system. And you don't need all of it. <b>You need the one gap that's costing you jobs, fixed first.</b> That's the Booked-Job Model™. The 6-Gap Revenue Map™ finds the gap.</p>
  <div class="ctas"><a class="btn" href="https://calendly.com/andrew-andrewryanmarketing/gap-review?utm_source=arm-site&amp;utm_medium=cta&amp;utm_campaign=services-hero">Book the 20-minute Gap Review <span class="ar">→</span></a><a class="btn ghost" href="/6-gap-revenue-map/">Get my gaps on video <span class="ar">→</span></a></div>
- <p class="small">Prefer email, phone, or text? <a href="#">Contact Andrew →</a></p>
+ <p class="small"><b class="price">Growth engagements from $3,500/mo.</b> The Gap Review is free: 20 minutes with Andrew, on your numbers. Prefer email, phone, or text? <a href="#">Contact Andrew →</a></p>
 </div></section>
 
-<section class="light" id="which"><div class="in">
+<section class="cream" id="which"><div class="in">
  <p class="eb">How to pick</p>
- <h2>You don't need the whole menu. You need the <span class="o">one gap</span> that's capping growth.</h2>
+ <h2>Which contractor marketing service <span class="o">do you need?</span></h2>
  <p class="lead">Contractor marketing services from Andrew Ryan Marketing cover the full system a service business needs to grow: local SEO, paid advertising, lead generation, CRM &amp; automation, reputation management, and generative engine optimization, plus trade-specific systems for window &amp; door, remodeling, flooring, fence, and more. The whole system is measured to the booked job, not just the click. The right starting point is whichever gap is costing you the most right now.</p>
  <div class="route">
   <div class="route-h"><div>If this sounds like you</div><div>Start here</div></div>
-  <a class="r" href="/services/seo-johnson-city-tn/"><div class="q">Buyers search for what you do and find your competitors.</div><div class="s"><b>Local SEO<span class="ar">→</span></b><span>Rank in the map pack and the exact searches your buyers type: visibility that turns into booked jobs, not just traffic.</span></div></a>
-  <a class="r" href="/services/generative-engine-optimization/"><div class="q">Homeowners ask ChatGPT who to hire, and your name doesn't come up.</div><div class="s"><b>GEO / AI Search<span class="ar">→</span></b><span>Get named when buyers ask ChatGPT, Google AI Overviews, and Perplexity who to hire in your market.</span></div></a>
-  <a class="r" href="/services/ppc-for-contractors/"><div class="q">You need jobs on the calendar faster than rankings can deliver.</div><div class="s"><b>Paid Advertising<span class="ar">→</span></b><span>Predictable demand on tap, with every ad dollar measured to the job it actually produced, never vanity clicks.</span></div></a>
-  <a class="r" href="/services/lead-generation/"><div class="q">You're paying for leads five other contractors also got.</div><div class="s"><b>Lead Generation<span class="ar">→</span></b><span>Exclusive leads that are yours alone, never shared marketplace scraps sold to five competitors at once.</span></div></a>
-  <a class="r" href="/services/crm-email-and-automation/"><div class="q">Leads come in, but too many go cold before anyone follows up.</div><div class="s"><b>CRM &amp; Automation<span class="ar">→</span></b><span>Catch every lead in seconds and follow up automatically until they book, so nothing goes cold.</span></div></a>
-  <a class="r" href="/services/lead-to-booked-job/"><div class="q">You run plenty of appointments, but not enough of them sell.</div><div class="s"><b>Sales Pipeline<span class="ar">→</span></b><span>Speed-to-lead and relentless follow-up that convert the demand you already have into signed work.</span></div></a>
-  <a class="r" href="/services/reputation-management-for-contractors/"><div class="q">Competitors with worse work win on reviews.</div><div class="s"><b>Reputation<span class="ar">→</span></b><span>Turn your happiest customers into the reviews that win the click before a competitor is even seen.</span></div></a>
-  <a class="r" href="/attribution/"><div class="q">You can't tell which channel actually pays.</div><div class="s"><b>Attribution<span class="ar">→</span></b><span>A clean trail from first click to booked job, by source, so you know exactly what earned the revenue.</span></div></a>
-  <a class="r grow" href="/sales-and-marketing-consulting-for-contractors/"><div class="q">You're ready to grow into a new market and want it sequenced right.</div><div class="s"><b>Consulting<span class="ar">→</span></b><span>The whole system, sequenced by a founder, from your next lead to your next market.</span></div></a>
+  <div class="grp">Grow</div>
+  <a class="r" href="/sales-and-marketing-consulting-for-contractors/"><div class="q">You're opening a new market and want it sequenced right.</div><div class="s"><h3 class="sn">Consulting<span class="ar">→</span></h3></div></a>
+  <div class="grp">Get found</div>
+  <a class="r" href="/services/seo-johnson-city-tn/"><div class="q">Buyers search for what you do and find your competitors.</div><div class="s"><h3 class="sn">Local SEO<span class="ar">→</span></h3></div></a>
+  <a class="r" href="/services/generative-engine-optimization/"><div class="q">Homeowners ask ChatGPT who to hire, and your name doesn't come up.</div><div class="s"><h3 class="sn">GEO / AI Search<span class="ar">→</span></h3></div></a>
+  <a class="r" href="/services/ppc-for-contractors/"><div class="q">You need jobs on the calendar faster than rankings can deliver.</div><div class="s"><h3 class="sn">Paid Advertising<span class="ar">→</span></h3></div></a>
+  <a class="r" href="/services/lead-generation/"><div class="q">You're paying for leads five other contractors also got.</div><div class="s"><h3 class="sn">Lead Generation<span class="ar">→</span></h3></div></a>
+  <a class="r" href="/services/reputation-management-for-contractors/"><div class="q">Competitors with worse work win on reviews.</div><div class="s"><h3 class="sn">Reputation<span class="ar">→</span></h3></div></a>
+  <div class="grp">Turn leads into jobs</div>
+  <a class="r" href="/services/crm-email-and-automation/"><div class="q">Leads come in, but too many go cold before anyone follows up.</div><div class="s"><h3 class="sn">CRM &amp; Automation<span class="ar">→</span></h3></div></a>
+  <a class="r" href="/services/lead-to-booked-job/"><div class="q">You run plenty of appointments, but not enough of them sell.</div><div class="s"><h3 class="sn">Sales Pipeline<span class="ar">→</span></h3></div></a>
+  <div class="grp">Measure what works</div>
+  <a class="r" href="/attribution/"><div class="q">Every report looks good, but which channel actually pays?</div><div class="s"><h3 class="sn">Attribution<span class="ar">→</span></h3></div></a>
  </div>
  <p class="trades"><b>Built for your trade:</b> <a href="/services/window-and-door-marketing/">Window &amp; Door</a> · <a href="/services/remodeling-contractor-marketing/">Remodeling</a> · <a href="/services/flooring-company-marketing/">Flooring</a> · <a href="/services/fencing-company-marketing/">Fence</a> · HVAC, roofing, electricians, plumbers and more. Each industry gets its own strategy, localized to search intent, competition, and service demand. <a class="tl" href="/industries/">See every industry we build for <span class="ar">→</span></a></p>
- <p class="unsure"><b>Not sure which one?</b> The <a href="https://andrewryanmarketing.com/#rge">6-Gap Revenue Map</a> looks at your market and names the one gap costing you the most right now, in 60 seconds. No form, no email, no sales call. You start where the money is, not where a salesperson wants you to.</p>
+ <p class="unsure"><b>Not sure which one?</b> Answer seven quick questions and get a short video showing where your business is losing jobs, within 48 hours. No call and no pitch. <a class="tl" href="/6-gap-revenue-map/">Get my gaps on video <span class="ar">→</span></a></p>
 </div></section>
 
 <section class="dark" id="why"><div class="in">
@@ -149,24 +161,24 @@
  <p class="lead">The menu above looks like every agency's: SEO, ads, leads. The difference is what we measure to, how far we follow it, and how we decide what to run.</p>
  <div class="four">
   <div><p class="k">The unit</p><h3>Measured to the booked job</h3><p>Not clicks, not even leads: the signed job. Every service ties back to revenue you can bank, so you know what actually worked.</p></div>
-  <div><p class="k">Both sides</p><h3>What wins a job <em>and</em> what delivers it</h3><p>We look at demand and at capacity. When the limit is your crew, not your marketing, we'll say so. Sometimes the honest answer is <b>Not yet.</b></p></div>
+  <div><p class="k">Both sides</p><h3>What wins a job <em>and</em> what delivers it</h3><p>We look at demand and at capacity. When the limit is your crew, not your marketing, we'll say so. Sometimes the answer is <b>Not yet.</b></p></div>
   <div><p class="k">Yours alone</p><h3>Exclusive, one partner per market</h3><p>Your leads aren't resold five ways, and we don't run your closest competitor down the street. The advantage stays yours.</p></div>
-  <div><p class="k">Founder-led</p><h3>The person you reach is accountable</h3><p>Senior operator judgment on the account, not a junior running a playbook. You keep the system and the data: capability, not dependency.</p></div>
+  <div><p class="k">Founder-led</p><h3>The person you reach is accountable</h3><p>Senior operator judgment on the account, not a junior running a playbook. You keep the system and the data. Build capability, not dependency.</p></div>
  </div>
  <p class="after">Same words on the menu, a different engine underneath. <b>Growth engineered to reduce risk.</b></p>
 </div></section>
 
 <section class="cream" id="record"><div class="in">
- <p class="eb">The record behind the method</p>
+ <p class="eb">Our founder's own sales record, before the agency</p>
  <h2>Our founder built a sales department from scratch. Then made it run without him.</h2>
+ <p class="cap">The operator record behind the method: the lead-to-sale engine Andrew built, ran, and systematized until it ran without him. The same discipline now runs inside every contractor marketing system we build.</p>
  <div class="stats">
   <div><b>11,564</b><span>Leads worked</span></div>
   <div><b>2,135</b><span>Appointments shown</span></div>
   <div><b>761</b><span>Sales closed</span></div>
-  <div><b>35.6%</b><span>Show-to-sold</span></div>
-  <div><b>$34M+</b><span>Closed revenue</span></div>
+  <div><b>35.6<i class="u">%</i></b><span>Show-to-sale</span></div>
+  <div><b><i class="u">$</i>34M+</b><span>Closed revenue</span></div>
  </div>
- <p class="cap">The operator record behind the method: the lead-to-sale engine Andrew built, ran, and systematized until it ran without him. The same discipline now runs inside every contractor marketing system we build.</p>
  <blockquote>
   <p class="k">A fellow operator, unprompted</p>
   <p class="t">“Andrew was a huge help developing an in-depth marketing system for a window and door business we were working with. His process went way beyond a cookie cutter strategy. He took the time to learn about existing bottlenecks, how to identify new growth opportunities, and measure marketing effectiveness beyond traffic and leads. He even took into account the crew’s installation capacity. Things we never would have thought of on our own. If you’re in the contractor space and looking to expand into new markets, Andrew is your guy. Highly recommended!”</p>
