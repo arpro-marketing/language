@@ -120,58 +120,90 @@
  .sv blockquote{padding:26px 22px}
 }
 @media (prefers-reduced-motion:reduce){.sv *,.sv *::after{transition:none!important;animation:none!important}.sv .btn:hover,.sv .four div:hover,.sv .opt:hover,.sv .stats div:hover{transform:none}}
+
+/* v5 services directory */
+.sv .dir-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:end;margin:0 0 56px}
+.sv .dir-head h2{margin:0}
+.sv .dir-head p:not(.eb){font-size:18px;line-height:1.6;color:var(--body)}
+.sv .dir-head p:not(.eb) b{color:var(--ink)}
+.sv .grp5{display:grid;grid-template-columns:260px minmax(0,1fr);gap:48px;padding:40px 0;border-top:1px solid #e3ddd1}
+.sv .grp5:last-of-type{border-bottom:1px solid #e3ddd1}
+.sv .gname .tag{display:inline-block;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:13px;letter-spacing:1px;color:var(--o);margin:0 0 10px}
+.sv .gname h3{font-size:24px;line-height:1.2;margin:0 0 10px;letter-spacing:-.3px}
+.sv .gname p{font-size:15px;line-height:1.55;color:var(--mut)}
+.sv .svlist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 40px}
+.sv a.svc{display:block;color:inherit;font-weight:400;padding:18px 20px 20px;margin:0 -20px;border-radius:12px;transition:background .18s,box-shadow .18s,transform .18s}
+.sv a.svc .nm{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:22px;line-height:1.25;letter-spacing:-.3px;color:var(--ink);margin:0 0 8px;transition:color .18s}
+.sv a.svc .nm .ar{display:inline-block;margin-left:8px;font-weight:600;color:#b8b2a7;transition:transform .18s,color .18s}
+.sv a.svc .fit{display:block;font-size:15.5px;line-height:1.55;color:var(--body)}
+.sv a.svc .fit i{font-style:normal;font-weight:700;color:var(--mut)}
+.sv a.svc:hover{background:#fff;box-shadow:0 12px 28px rgba(17,19,24,.07);transform:translateY(-2px)}
+.sv a.svc:hover .nm{color:var(--o)}
+.sv a.svc:hover .nm .ar{transform:translateX(5px);color:var(--o)}
+.sv .dir-foot{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:40px;margin:44px 0 0;align-items:start}
+.sv .dir-foot .trades{margin:0}
+.sv .dir-foot .unsure{margin:0}
+/* pillars */
+.sv .pill{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;margin:8px 0 0}
+.sv .pill div{border-top:2px solid var(--o);padding:22px 0 0}
+.sv .pill h3{color:#fff;font-size:20px;margin:0 0 10px}
+.sv .pill p{font-size:16px;line-height:1.6;color:#c9ccd3}
+.sv .pill p b{color:#fff}
+/* close v5 */
+.sv .opt.pri{background:#1f1a17;border-color:var(--o);box-shadow:0 0 0 1px var(--o) inset}
+.sv .opt .price2{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;color:#fff;font-size:15px;margin:0 0 10px}
+.sv .opt .btn.ghost{background:transparent}
+.sv .alt{margin:26px 0 0;font-size:16px;color:#c9ccd3}
+@media (max-width:1000px){.sv .grp5{grid-template-columns:1fr;gap:18px}.sv .dir-head,.sv .dir-foot{grid-template-columns:1fr;gap:20px}}
+@media (max-width:760px){.sv .svlist{grid-template-columns:1fr;gap:0}.sv a.svc{padding:14px 14px 16px;margin:0 -14px}.sv a.svc .nm{font-size:20px}.sv .pill{grid-template-columns:1fr;gap:28px}.sv .grp5{padding:32px 0}}
 </style>
 
 <section class="dark hero"><div class="in">
  <p class="eb">Marketing services for contractors · Johnson City, TN &amp; nationwide</p>
  <h1>Contractor marketing services, <span class="o">measured to the booked job.</span></h1>
- <p class="big">You've bought marketing services before. SEO from one company, ads from another, a CRM on the side. Each one reports its own number: rankings, clicks, leads. The one you care about, how many jobs it booked, usually isn't on any of them.</p>
- <p class="body">We run the same services as one system. And you don't need all of it. <b>You need the one gap that's costing you jobs, fixed first.</b> That's the Booked-Job Model™. The 6-Gap Revenue Map™ finds the gap.</p>
- <div class="ctas"><a class="btn" href="https://calendly.com/andrew-andrewryanmarketing/gap-review?utm_source=arm-site&amp;utm_medium=cta&amp;utm_campaign=services-hero">Book the 20-minute Gap Review <span class="ar">→</span></a><a class="btn ghost" href="/6-gap-revenue-map/">Get my gaps on video <span class="ar">→</span></a></div>
+ <p class="big">Nine services, from getting found to closing the sale. Hire one, or combine them in a growth engagement built around the gap that’s costing you the most jobs.</p>
+ <div class="ctas"><a class="btn" href="https://calendly.com/andrew-andrewryanmarketing/gap-review?utm_source=arm-site&amp;utm_medium=cta&amp;utm_campaign=services-hero">Book the 20-minute Gap Review <span class="ar">→</span></a><a class="btn ghost" href="#services">See the services <span class="ar">↓</span></a></div>
  <p class="small"><b class="price">Growth engagements from $3,500/mo.</b> The Gap Review is free: 20 minutes with Andrew, on your numbers. Prefer email, phone, or text? <a href="#">Contact Andrew →</a></p>
 </div></section>
 
-<section class="cream" id="which"><div class="in">
- <p class="eb">How to pick</p>
- <h2>Which contractor marketing service <span class="o">do you need?</span></h2>
- <p class="lead">Contractor marketing services from Andrew Ryan Marketing cover the full system a service business needs to grow: local SEO, paid advertising, lead generation, CRM &amp; automation, reputation management, and generative engine optimization, plus trade-specific systems for window &amp; door, remodeling, flooring, fence, and more. The whole system is measured to the booked job, not just the click. The right starting point is whichever gap is costing you the most right now.</p>
- <div class="route">
-  <div class="route-h"><div>If this sounds like you</div><div>Start here</div></div>
-  <div class="grp">Grow</div>
-  <a class="r" href="/sales-and-marketing-consulting-for-contractors/"><div class="q">You're opening a new market and want it sequenced right.</div><div class="s"><h3 class="sn">Consulting<span class="ar">→</span></h3></div></a>
-  <div class="grp">Get found</div>
-  <a class="r" href="/services/seo-johnson-city-tn/"><div class="q">Buyers search for what you do and find your competitors.</div><div class="s"><h3 class="sn">Local SEO<span class="ar">→</span></h3></div></a>
-  <a class="r" href="/services/generative-engine-optimization/"><div class="q">Homeowners ask ChatGPT who to hire, and your name doesn't come up.</div><div class="s"><h3 class="sn">GEO / AI Search<span class="ar">→</span></h3></div></a>
-  <a class="r" href="/services/ppc-for-contractors/"><div class="q">You need jobs on the calendar faster than rankings can deliver.</div><div class="s"><h3 class="sn">Paid Advertising<span class="ar">→</span></h3></div></a>
-  <a class="r" href="/services/lead-generation/"><div class="q">You're paying for leads five other contractors also got.</div><div class="s"><h3 class="sn">Lead Generation<span class="ar">→</span></h3></div></a>
-  <a class="r" href="/services/reputation-management-for-contractors/"><div class="q">Competitors with worse work win on reviews.</div><div class="s"><h3 class="sn">Reputation<span class="ar">→</span></h3></div></a>
-  <div class="grp">Turn leads into jobs</div>
-  <a class="r" href="/services/crm-email-and-automation/"><div class="q">Leads come in, but too many go cold before anyone follows up.</div><div class="s"><h3 class="sn">CRM &amp; Automation<span class="ar">→</span></h3></div></a>
-  <a class="r" href="/services/lead-to-booked-job/"><div class="q">You run plenty of appointments, but not enough of them sell.</div><div class="s"><h3 class="sn">Sales Pipeline<span class="ar">→</span></h3></div></a>
-  <div class="grp">Measure what works</div>
-  <a class="r" href="/attribution/"><div class="q">Every report looks good, but which channel actually pays?</div><div class="s"><h3 class="sn">Attribution<span class="ar">→</span></h3></div></a>
+<section class="cream" id="services"><div class="in">
+ <div class="dir-head"><div><p class="eb">Our services</p><h2>Contractor marketing services, <span class="o">by what they fix.</span></h2></div>
+ <p>From getting found to closing more jobs, each service fixes one part of how you grow. Hire one on its own or combine them. <b>You don’t need to know which one you need:</b> that’s what the diagnostic is for.</p></div>
+  <div class="grp5"><div class="gname"><span class="tag">01</span><h3>Get found</h3><p>Show up where buyers look, and turn the look into a call.</p></div><div class="svlist">
+    <a class="svc" href="/services/seo-johnson-city-tn/"><span class="nm">Local SEO &amp; Google Maps<span class="ar">→</span></span><span class="fit"><i>Good fit if</i> buyers in your towns search for what you do and find your competitors first.</span></a>
+    <a class="svc" href="/services/ppc-for-contractors/"><span class="nm">Google Ads &amp; Paid Advertising<span class="ar">→</span></span><span class="fit"><i>Good fit if</i> you need jobs on the calendar faster than rankings can deliver.</span></a>
+    <a class="svc" href="/services/generative-engine-optimization/"><span class="nm">AI Search Visibility<span class="ar">→</span></span><span class="fit"><i>Good fit if</i> homeowners ask ChatGPT or Google who to hire and your name doesn’t come up.</span></a>
+    <a class="svc" href="/services/lead-generation/"><span class="nm">Lead Generation<span class="ar">→</span></span><span class="fit"><i>Good fit if</i> you’re paying for leads that four other contractors also got.</span></a>
+  </div></div>
+  <div class="grp5"><div class="gname"><span class="tag">02</span><h3>Win the job</h3><p>Answer fast, follow up, and give buyers a reason to pick you.</p></div><div class="svlist">
+    <a class="svc" href="/services/crm-email-and-automation/"><span class="nm">CRM &amp; Sales Automation<span class="ar">→</span></span><span class="fit"><i>Good fit if</i> leads come in, but too many go cold before anyone follows up.</span></a>
+    <a class="svc" href="/services/lead-to-booked-job/"><span class="nm">Sales Pipeline<span class="ar">→</span></span><span class="fit"><i>Good fit if</i> you run plenty of appointments, but not enough of them sell.</span></a>
+    <a class="svc" href="/services/reputation-management-for-contractors/"><span class="nm">Reputation Management<span class="ar">→</span></span><span class="fit"><i>Good fit if</i> competitors with fewer years in the trade win on reviews.</span></a>
+  </div></div>
+  <div class="grp5"><div class="gname"><span class="tag">03</span><h3>Measure and grow</h3><p>Know what pays, and grow on what the numbers prove.</p></div><div class="svlist">
+    <a class="svc" href="/attribution/"><span class="nm">Attribution<span class="ar">→</span></span><span class="fit"><i>Good fit if</i> every report looks good, but no one can show which channel books the jobs.</span></a>
+    <a class="svc" href="/sales-and-marketing-consulting-for-contractors/"><span class="nm">Growth Strategy &amp; Consulting<span class="ar">→</span></span><span class="fit"><i>Good fit if</i> you’re opening a new market or adding a crew and want it sequenced right.</span></a>
+  </div></div>
+ <div class="dir-foot">
+  <p class="trades"><b>Built for your trade:</b> <a href="/services/window-and-door-marketing/">Window &amp; Door</a> · <a href="/services/remodeling-contractor-marketing/">Remodeling</a> · <a href="/services/flooring-company-marketing/">Flooring</a> · <a href="/services/fencing-company-marketing/">Fence</a> · HVAC, roofing, electricians, plumbers and more. Each industry gets its own strategy, localized to search intent, competition, and service demand. <a class="tl" href="/industries/">See every industry we build for <span class="ar">→</span></a></p>
+  <p class="unsure"><b>Not sure where to start?</b> Answer seven quick questions and get a short video of where your growth may be getting stuck, within 48 hours. <a class="tl" href="/6-gap-revenue-map/">Get my gaps on video <span class="ar">→</span></a></p>
  </div>
- <p class="trades"><b>Built for your trade:</b> <a href="/services/window-and-door-marketing/">Window &amp; Door</a> · <a href="/services/remodeling-contractor-marketing/">Remodeling</a> · <a href="/services/flooring-company-marketing/">Flooring</a> · <a href="/services/fencing-company-marketing/">Fence</a> · HVAC, roofing, electricians, plumbers and more. Each industry gets its own strategy, localized to search intent, competition, and service demand. <a class="tl" href="/industries/">See every industry we build for <span class="ar">→</span></a></p>
- <p class="unsure"><b>Not sure which one?</b> Answer seven quick questions and get a short video showing where your business is losing jobs, within 48 hours. No call and no pitch. <a class="tl" href="/6-gap-revenue-map/">Get my gaps on video <span class="ar">→</span></a></p>
 </div></section>
 
 <section class="dark" id="why"><div class="in">
  <p class="eb">Why these aren't the same services everyone else lists</p>
  <h2>Most agencies sell the task. We build the system and <span class="o">own the outcome.</span></h2>
- <p class="lead">The menu above looks like every agency's: SEO, ads, leads. The difference is what we measure to, how far we follow it, and how we decide what to run.</p>
- <div class="four">
-  <div><p class="k">The unit</p><h3>Measured to the booked job</h3><p>Not clicks, not even leads: the signed job. Every service ties back to revenue you can bank, so you know what actually worked.</p></div>
-  <div><p class="k">Both sides</p><h3>What wins a job <em>and</em> what delivers it</h3><p>We look at demand and at capacity. When the limit is your crew, not your marketing, we'll say so. Sometimes the answer is <b>Not yet.</b></p></div>
-  <div><p class="k">Yours alone</p><h3>Exclusive, one partner per market</h3><p>Your leads aren't resold five ways, and we don't run your closest competitor down the street. The advantage stays yours.</p></div>
-  <div><p class="k">Founder-led</p><h3>The person you reach is accountable</h3><p>Senior operator judgment on the account, not a junior running a playbook. You keep the system and the data. Build capability, not dependency.</p></div>
+ <div class="pill">
+  <div><h3>Measured to the booked job</h3><p>We follow every service past the click, the lead and the appointment to the signed job, by source.</p></div>
+  <div><h3>Built across the system</h3><p>Marketing, sales, follow-up and crew capacity affect each other. We work on all four, so fixing one doesn’t break another.</p></div>
+  <div><h3>Accountable to the outcome</h3><p>We recommend what improves the business, including when more marketing isn’t it. Sometimes the answer is <b>Not yet.</b></p></div>
  </div>
- <p class="after">Same words on the menu, a different engine underneath. <b>Growth engineered to reduce risk.</b></p>
 </div></section>
 
 <section class="cream" id="record"><div class="in">
- <p class="eb">Our founder's own sales record, before the agency</p>
+ <p class="eb">Where the method comes from</p>
  <h2>Our founder built a sales department from scratch. Then made it run without him.</h2>
- <p class="cap">The operator record behind the method: the lead-to-sale engine Andrew built, ran, and systematized until it ran without him. The same discipline now runs inside every contractor marketing system we build.</p>
+ <p class="cap"><b>Historical, not client results:</b> Andrew's own record building and running a dealership's sales department, before he founded the agency. 761 sales from 2,135 appointments that showed is a 35.6% show-to-sale rate. The same discipline now runs inside every contractor marketing system we build.</p>
  <div class="stats">
   <div><b>11,564</b><span>Leads worked</span></div>
   <div><b>2,135</b><span>Appointments shown</span></div>
@@ -191,23 +223,22 @@
  <h2>Questions contractors ask us first</h2>
  <div class="faq">
   <details><summary>Which service do I actually need?</summary><div class="a">Usually one, to start — the one fixing your biggest leak. If you’re invisible in search, that’s SEO or GEO. If leads come in but don’t convert, it’s CRM and follow-up. If you can’t tell what’s working, it’s attribution. Not sure? Get your gaps on video: seven quick questions, and within 48 hours a short video names it.</div></details>
-  <details><summary>Do I have to buy all of it?</summary><div class="a">No — and we’ll talk you out of it if you try. We find the single constraint capping your growth, fix that first, and add services only when the numbers say the next one will pay. Growth engineered to reduce risk, not a bundle you don’t need yet.</div></details>
+  <details><summary>Can we hire you for one service?</summary><div class="a">Yes. You don’t have to buy all of it — and we’ll talk you out of it if you try. We find the single constraint capping your growth, fix that first, and add services only when the numbers say the next one will pay. Growth engineered to reduce risk, not a bundle you don’t need yet.</div></details>
+  <details><summary>How do you decide what to work on first?</summary><div class="a">We measure the path from inquiry to booked job and find the step losing you the most jobs. That step gets fixed first, even when it isn’t the one you expected. Sometimes it’s rankings, sometimes it’s follow-up, and sometimes it’s crew capacity, where more marketing isn’t the answer yet.</div></details>
   <details><summary>Do you only work with businesses in Johnson City?</summary><div class="a">No. We’re based in Johnson City and know the Tri-Cities and East Tennessee market deeply, but there’s no geographic limit — we run these systems for local service businesses, contractors, and national brands across the country. The system travels; the localization is part of the build.</div></details>
   <details><summary>How are your services different from other agencies?</summary><div class="a">Four ways. We measure to the booked job, not clicks or even leads. We look at both sides of growth — winning the job and having the capacity to deliver it — so we’ll tell you when marketing isn’t your problem. And your leads are exclusive, one partner per market. You own the system and the data when we’re done.</div></details>
   <details><summary>Do you replace the tools and website I already have?</summary><div class="a">Rarely. We keep what works and connect to it — your CRM, your field software, your site — and rebuild only what’s actually holding you back. The goal is capability inside your business, not a dependency you can never leave.</div></details>
-  <details><summary>What does it cost?</summary><div class="a">It depends on which services you need and how much we’re building versus tuning. It’s structured as a growth engagement, not a per-task invoice, and media is a straight pass-through with no markup. Our tiers are public if you want the ballpark — see <a href="/pricing/">pricing</a> — and we’ll scope it precisely before you commit. Terms depend on length and size: 12-month engagements have 90-day exits; smaller engagements start as 3–6 month commitments, then go month to month.</div></details>
+  <details><summary>What does a growth engagement cost?</summary><div class="a">It depends on which services you need and how much we’re building versus tuning. It’s structured as a growth engagement, not a per-task invoice, and media is a straight pass-through with no markup. Our tiers are public if you want the ballpark — see <a href="/pricing/">pricing</a> — and we’ll scope it precisely before you commit. Terms depend on length and size: 12-month engagements have 90-day exits; smaller engagements start as 3–6 month commitments, then go month to month.</div></details>
  </div>
 </div></section>
 
 <section class="dark close" id="start"><div class="in">
  <p class="eb">Start with the gap, not the guess</p>
- <h2>You've paid for services before. This time, <span class="o">start with the one that books jobs.</span></h2>
- <p class="lead">Two free ways to start:</p>
+ <h2>Find out what’s actually <span class="o">holding back your growth.</span></h2>
  <div class="opts">
-  <div class="opt"><p class="k">Free · no call</p><h3>Not sure where it's breaking?</h3><p>Answer seven quick questions. Within 48 hours you get a short video showing where your business is losing jobs. No call and no pitch.</p><a class="btn" href="/6-gap-revenue-map/">Get my gaps on video <span class="ar">→</span></a></div>
-  <div class="opt"><p class="k">Free · 20 minutes</p><h3>Already know what's broken?</h3><p>Take twenty minutes with Andrew, on your numbers. You leave with the fix named, whether or not we work together.</p><a class="btn" href="https://calendly.com/andrew-andrewryanmarketing/gap-review?utm_source=arm-site&amp;utm_medium=cta&amp;utm_campaign=services-hub">Book the 20-minute Gap Review <span class="ar">→</span></a></div>
+  <div class="opt"><p class="k">Free · no call</p><h3>Want a second set of eyes?</h3><p>Answer seven quick questions. Within 48 hours you get a short video with an outside view of where your growth may be getting stuck. No call and no pitch.</p><a class="btn ghost" href="/6-gap-revenue-map/">Get my gaps on video <span class="ar">→</span></a></div>
+  <div class="opt pri"><p class="k">Paid diagnostic · one time</p><h3>Ready to find the real constraint?</h3><p class="price2">$1,500</p><p>The Booked-Job Model™ diagnostic. We measure your numbers from inquiry to booked job, find the constraint that’s capping growth, and hand you a prioritized plan. It may not be the problem you expect.</p><a class="btn" href="https://calendly.com/andrew-andrewryanmarketing/gap-review?utm_source=arm-site&amp;utm_medium=cta&amp;utm_campaign=services-diagnostic">Start with a 20-minute call <span class="ar">→</span></a></div>
  </div>
- <p class="paid">Separate from these free options: the full Booked-Job Model™ diagnostic is a paid, one-time engagement ($1,500). Growth engagements start at $3,500 a month. <a class="tl" href="/pricing/">See pricing <span class="ar">→</span></a></p>
- <p class="contact">Prefer email, phone, or text? <a href="#">Contact Andrew →</a></p>
+ <p class="alt">Growth engagements start at $3,500 a month. <a class="tl" href="/pricing/">See pricing <span class="ar">→</span></a> &nbsp;·&nbsp; Prefer email, phone, or text? <a href="#">Contact Andrew →</a></p>
 </div></section>
 </div>

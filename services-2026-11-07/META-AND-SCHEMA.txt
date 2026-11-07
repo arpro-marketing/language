@@ -1,4 +1,4 @@
 Meta description for page 2349 (Yoast):
 Contractor marketing services built to book jobs, not clicks: SEO, ads, lead gen, CRM & reputation as one system. Find your #1 gap first.
 (846px at 14px Arial; was 886px)
-FAQ schema must be updated to match FAQ answers 1, 4 and 6 in sv-sections.html.
+FAQ schema must be regenerated from the 7 FAQ questions/answers in sv-sections.html (questions renamed/added in v5).
