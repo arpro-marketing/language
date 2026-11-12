@@ -1,0 +1,520 @@
+<div class="fl">
+<style>
+.fl{--o:#ef662f;--oh:#d4551f;--ol:#ff7a3d;--ink:#333333;--body:#333333;--mut:#666666;--soft:#f8f8f8;--tint:#fdf0eb;--line:#e0e0e0;--dark:#14161c;--dline:#2e313a;font-family:'DM Sans',sans-serif;color:var(--body)}
+.fl *{box-sizing:border-box}
+.fl section{padding:112px 40px}
+.fl .in{max-width:1180px;margin:0 auto}
+.fl p{margin:0;text-wrap:pretty}
+.fl .big,.fl .lead{text-wrap:balance}
+.fl a{color:var(--o);font-weight:700;text-decoration:none;transition:color .18s}
+.fl a:hover{color:var(--oh)}
+.fl .dark a:not(.btn):hover{color:var(--ol)}
+.fl a:focus-visible,.fl button:focus-visible,.fl summary:focus-visible,.fl input:focus-visible{outline:3px solid var(--o);outline-offset:3px;border-radius:4px}
+.fl a:active,.fl button:active{transform:translateY(1px)}
+.fl .tl .ar{display:inline-block;transition:transform .18s;margin-left:2px}
+.fl .tl:hover .ar{transform:translateX(4px)}
+.fl .eb{font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--o);margin:0 0 14px}
+.fl h1,.fl h2,.fl h3{font-family:'Plus Jakarta Sans',sans-serif;color:var(--ink);margin:0;text-wrap:balance}
+.fl h2{font-weight:800;font-size:clamp(30px,3.4vw,44px);line-height:1.1;letter-spacing:-.8px;margin:0 0 18px;max-width:900px}
+.fl h2 .o,.fl h1 .o{color:var(--o)}
+.fl h3{font-weight:800;font-size:21px;line-height:1.3}
+.fl .lead{font-size:clamp(17px,1.4vw,19px);line-height:1.6;margin:0 0 44px;max-width:780px}
+.fl .lead b{color:var(--ink)}
+.fl .light{background:#fff}.fl .soft{background:var(--soft)}.fl .dark{background:var(--dark);color:#dfe2e7}
+.fl .dark h1,.fl .dark h2,.fl .dark h3{color:#fff}.fl .dark .lead{color:#dfe2e7}.fl .dark .lead b{color:#fff}
+.fl .btn{display:inline-block;background:var(--o);color:#fff!important;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:17px;padding:15px 24px;border-radius:8px;border:2px solid var(--o);transition:transform .18s,box-shadow .18s,background .18s;white-space:nowrap}
+.fl .btn .ar{display:inline-block;transition:transform .18s;margin-left:4px}
+.fl .btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(239,102,47,.32);background:var(--oh);border-color:var(--oh)}
+.fl .btn:hover .ar{transform:translateX(4px)}
+.fl .btn.ghost{background:transparent}
+.fl .btn.ghost:hover{background:rgba(239,102,47,.12);border-color:var(--o)}
+.fl .light .btn.ghost,.fl .soft .btn.ghost{color:var(--ink)!important}
+.fl .illus{margin:0 0 18px;font-size:15px;color:var(--mut);line-height:1.5}.fl .illus b{color:var(--ink)}
+.fl .cpb .pth{display:flex;flex-wrap:wrap;align-items:center;gap:2px 0;font-weight:500}.fl .cpb .pth i{font-style:normal;color:var(--o);font-weight:700;margin:0 8px}.fl .cpb .pth span:first-child i{display:none}.fl .cpb .pth span{white-space:nowrap}
+.fl .take{margin:22px 0 0;font-size:17px;line-height:1.6;color:var(--body);max-width:900px}.fl .take b{color:var(--ink);font-weight:700}
+.fl .how{margin:18px 0 0;max-width:900px}
+.fl .how summary{cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:15px;color:var(--ink);display:inline-flex;align-items:center;gap:8px;padding:6px 0}
+.fl .how summary::-webkit-details-marker{display:none}.fl .how summary::marker{content:''}
+.fl .how summary::after{content:'+';color:var(--o);font-size:18px;line-height:1;transition:transform .18s}
+.fl .how[open] summary::after{transform:rotate(45deg)}
+.fl .how summary:hover{color:var(--o)}
+.fl .how p{font-size:15px;color:var(--mut);line-height:1.6;margin:8px 0 0}
+.fl .insight{margin:0;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(22px,2.2vw,30px);line-height:1.25;letter-spacing:-.5px;color:var(--ink);max-width:860px;text-wrap:balance}
+.fl .read{margin:14px 0 0}
+.fl .path{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
+.fl .path li{position:relative;padding:28px 26px 30px;border-left:1px solid var(--line);transition:background .18s}
+.fl .path li:first-child{border-left:0}
+.fl .path li:hover{background:var(--tint)}
+.fl .path li:not(:last-child)::after{content:'';position:absolute;right:-9px;top:34px;width:16px;height:16px;background:inherit;border-top:1px solid var(--line);border-right:1px solid var(--line);transform:rotate(45deg);z-index:1;background:#fff}
+.fl .path li:hover::after{background:var(--tint)}
+.fl .path .st{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--mut);margin-bottom:14px}
+.fl .path b{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(21px,1.7vw,25px);letter-spacing:-.5px;color:var(--o);line-height:1.1;margin-bottom:8px}
+.fl .path h3{font-size:18px;margin:0 0 10px}
+.fl .path p{font-size:16px;line-height:1.55}
+.fl .path .src{display:block;color:var(--mut);font-size:13px;margin-top:10px}
+.fl .grp{font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--o);margin:48px 0 14px}
+.fl #proof .lead+.grp{margin-top:36px}
+.fl #system h2,.fl #system .lead{text-align:center;margin-left:auto;margin-right:auto}
+.fl .sv-diag2{max-width:1000px;margin:48px auto 0}
+.fl .sv-duo{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.fl .sv-dcard{background:#fff;border:1px solid #333;border-radius:14px;padding:34px 32px 28px;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.fl .sv-dcard.team{border-color:var(--o)}
+.fl .sv-dcard:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(17,19,24,.08)}
+.fl .sv-dnum{font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--o);margin:0 0 14px}
+.fl .sv-dcard h3{font-size:clamp(24px,2.2vw,30px);letter-spacing:-.6px;margin:0 0 18px}
+.fl .sv-dlist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px 24px;flex:1;align-content:start}
+.fl .sv-dlist li{position:relative;padding-left:16px;font-size:17px}
+.fl .sv-dlist li::before{content:'';position:absolute;left:0;top:.62em;width:6px;height:6px;background:var(--o)}
+.fl .sv-dlist a{color:var(--ink);font-weight:500}.fl .sv-dlist a:hover{color:var(--o)}
+.fl .sv-dwho{margin:22px 0 0;padding-top:18px;border-top:1px solid var(--line);font-size:15px;color:var(--mut);line-height:1.55}
+.fl .sv-dwho b{display:block;color:var(--ink)}
+.fl .sv-merge{display:block;width:100%;height:64px}
+.fl .sv-stem{display:none}
+.fl .sv-measure{background:#333;border-radius:14px;max-width:640px;margin:0 auto;padding:34px 32px;text-align:center;box-shadow:0 18px 40px rgba(17,19,24,.12)}
+.fl .sv-measure .mk{font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--o);margin:0 0 10px}
+.fl .sv-measure .mt{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(24px,2.3vw,30px);letter-spacing:-.6px;color:#fff;margin:0 0 10px;text-wrap:balance}
+.fl .sv-measure .md{color:#d1d5db;font-size:17px;line-height:1.55;text-wrap:balance;max-width:440px;margin:0 auto}
+.fl .sv-dcap{text-align:center;color:var(--mut);font-size:17px;margin:28px 0 0}
+.fl .sv-dmore{text-align:center;margin:12px 0 0;font-size:17px}
+@media(max-width:700px){.fl .sv-duo{grid-template-columns:1fr;gap:14px}.fl .sv-merge{display:none}.fl .sv-stem{display:block;width:2px;height:36px;background:var(--o);margin:0 auto}.fl .sv-dcard{padding:26px 22px 22px}.fl .sv-measure{padding:28px 22px}}
+.fl .tlax{display:flex;justify-content:space-between;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--mut);margin:48px 0 14px}
+.fl .tlax span:last-child{color:var(--o)}
+.fl .tline{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(7,1fr);gap:0 16px;position:relative}
+.fl .tline::before{content:'';position:absolute;left:0;right:0;top:21px;height:4px;border-radius:2px;background:linear-gradient(90deg,var(--line),var(--o))}
+.fl .tn{position:relative;z-index:1;display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:#fff;border:2px solid var(--o);font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:15px;color:var(--o);margin-bottom:18px;transition:background .18s,color .18s,box-shadow .18s}
+.fl .tline li{display:contents}
+.fl .tb{margin:0;font-size:inherit}
+.fl .tb button{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;align-items:flex-start;width:100%;height:100%;padding:0 4px 18px;border-radius:10px;transition:transform .18s}
+.fl .tb button:hover{transform:translateY(-3px)}
+.fl .tb button:focus-visible{outline:2px solid var(--o);outline-offset:4px}
+.fl .tb button:hover .tn,.fl .tb button[aria-expanded="true"] .tn{background:var(--o);color:#fff;box-shadow:0 0 0 6px var(--tint)}
+.fl .tw{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:800;color:var(--o);margin:0 0 6px}
+.fl .th{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:17px;line-height:1.3;color:var(--ink);margin:0 0 8px;text-wrap:balance}
+.fl .tb button[aria-expanded="true"] .th{color:var(--o)}
+.fl .tx{display:block;font-family:'DM Sans',sans-serif;font-weight:400;font-size:15px;color:var(--mut);line-height:1.45}
+.fl .tp{grid-column:1/-1;grid-row:2;margin:18px 0 0;background:var(--tint);border-left:3px solid var(--o);border-radius:0 12px 12px 0;padding:26px 30px;animation:tpIn .25s ease}
+.fl .tp[data-closed]{display:none}
+.fl .tp p{font-size:17px;line-height:1.65;max-width:860px}
+.fl .tp .tsrc{font-size:13px;line-height:1.5;color:#666;margin:12px 0 0}
+.fl .tp .tph{font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#333;margin:0 0 6px}
+.fl .tp .tpw{font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--o);margin:0 0 8px}
+@keyframes tpIn{from{opacity:.4;transform:translateY(4px)}to{opacity:1;transform:none}}
+.fl .tlhint{margin:16px 0 0;font-size:15px;color:var(--mut)}
+@media(max-width:1100px){.fl .tlax{display:none}.fl .tline{grid-template-columns:1fr;gap:0;margin-top:40px}.fl .tline::before{left:21px;right:auto;top:0;bottom:0;width:4px;height:auto;background:linear-gradient(180deg,var(--line),var(--o))}.fl .tline li{display:block;position:relative;padding:0 0 22px}.fl .tline li:last-child{padding-bottom:0}.fl .tb button{display:grid;grid-template-columns:46px 1fr;column-gap:20px;padding:0;align-items:start}.fl .tn{grid-row:1/4;margin:0}.fl .tw,.fl .th,.fl .tx{grid-column:2}.fl .tb button:hover{transform:translateX(3px)}.fl .th{font-size:19px}.fl .tp{grid-row:auto;margin:14px 0 0 66px;padding:20px 22px}.fl .tp p{font-size:16px}}
+.fl .dab{max-width:760px;margin:18px auto 0;text-align:center;font-size:17px;line-height:1.6;color:var(--body)}
+.fl .midcta{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;margin:36px 0 0}
+.fl .midcta>span{color:var(--mut);font-size:16px;text-wrap:balance}
+.fl .how summary{text-wrap:balance}
+/* hero */
+.fl .hero{padding:96px 40px 88px}
+.fl .hero .eb{color:#9ca3af;letter-spacing:2.2px}
+.fl .hero .sub{font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;color:#fff;font-size:clamp(20px,1.9vw,26px);line-height:1.35;margin:22px 0 0;max-width:900px;text-wrap:balance}
+.fl .split{display:grid;grid-template-columns:repeat(2,minmax(0,300px));gap:12px;margin:44px 0 0}
+.fl .split .col{border-radius:10px;padding:22px 22px 20px;display:flex;flex-direction:column;gap:4px}
+.fl .split .them{border:1px solid var(--dline);background:#1b1d24}
+.fl .split .you{background:var(--o)}
+.fl .split .lbl{font-size:14px;color:#c4c7cf}.fl .split .you .lbl{color:#fff}
+.fl .split .bg{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(24px,2vw,28px);letter-spacing:-.8px;color:#fff;line-height:1.15}
+.fl .split .them .bg{color:#e5e7eb}
+.fl .hero .sol{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;color:#fff;font-size:clamp(20px,1.8vw,24px);line-height:1.4;margin:40px 0 0}
+.fl .hero>.in>.btn{margin:40px 0 0}
+.fl .hero .alt{color:#c4c7cf;font-size:15px;margin:18px 0 0}
+.fl .hero .alt a{color:var(--o);font-weight:700}.fl .hero .alt a:hover{color:var(--ol)}
+.fl .hero .rating{display:inline-block;margin:18px 0 0;color:#c4c7cf;font-size:14px}.fl .hero .rating:hover{color:#fff}
+.fl .hero .stars{color:var(--o);letter-spacing:2px;margin-right:4px}
+.fl h1{font-weight:800;color:#fff;font-size:clamp(34px,4.4vw,58px);line-height:1.06;letter-spacing:-1.2px;margin:0 0 32px;max-width:940px}
+/* services */
+/* math */
+.fl .cpb{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
+.fl .cpb-h,.fl .cpb-r{display:grid;grid-template-columns:1fr 1.75fr .9fr .8fr}
+.fl .cpb-h div{text-wrap:balance;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--mut);padding:16px 22px;background:var(--soft);border-bottom:1px solid var(--line)}
+.fl .cpb-h div:nth-child(4){color:var(--o);background:var(--tint);border-left:3px solid var(--o)}
+.fl .cpb-r div{padding:22px;font-size:17px;line-height:1.5;border-bottom:1px solid var(--line)}
+.fl .cpb-r:last-child div{border-bottom:0}
+.fl .cpb-r div:first-child{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;color:var(--ink)}
+.fl .cpb-r div:first-child small{display:block;font-family:'DM Sans',sans-serif;font-weight:400;color:var(--mut);font-size:15px}
+.fl .cpb-r div:nth-child(3){font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:24px;color:var(--ink)}
+.fl .cpb-r div:nth-child(4){background:#fff8f4;border-left:3px solid var(--o);font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(26px,2.3vw,32px);color:var(--ink);letter-spacing:-.6px}
+.fl .cpb-r.best div:nth-child(4){color:var(--o)}
+.fl .cpb .lab{display:none}
+.fl .math{margin:20px 0 0;font-size:15px;color:var(--mut);line-height:1.6;max-width:900px}
+.fl .read{margin:32px 0 0;font-size:18px;line-height:1.6;max-width:860px}
+.fl .read b{color:var(--ink)}
+.fl .calc{margin:64px 0 0;background:#fff;border:1px solid var(--line);border-radius:16px;padding:40px}
+.fl .calc h3{font-size:clamp(22px,2.2vw,28px);margin:0 0 8px}
+.fl .hero .sub .ln{display:block;text-wrap:balance}
+.fl .calc .sub{color:var(--mut);font-size:16px;margin:0 0 28px}
+.fl .chips{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 28px}
+.fl .chips button{font:600 15px 'Plus Jakarta Sans',sans-serif;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:999px;padding:10px 16px;min-height:44px;cursor:pointer;transition:border-color .18s,background .18s,transform .18s}
+.fl .chips button:hover{border-color:var(--o);transform:translateY(-2px)}
+.fl .chips button[aria-pressed=true]{background:var(--tint);border-color:var(--o);color:var(--ink)}
+.fl .cgrid{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:start}
+.fl .ins{display:grid;grid-template-columns:1fr 1fr;gap:26px 28px}
+.fl .ins label{display:block;font-size:15px;color:var(--mut);margin-bottom:6px}
+.fl .ins output{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:24px;color:var(--ink);margin-bottom:8px}
+.fl .ins input[type=range]{width:100%;accent-color:var(--o);min-height:32px;cursor:pointer}
+.fl .ins .opt-lab{font-size:13px;color:var(--mut)}
+.fl .res{background:var(--tint);border-left:3px solid var(--o);border-radius:0 12px 12px 0;padding:26px 28px}
+.fl .res .k{font-size:15px;color:var(--mut);margin:0 0 6px}
+.fl .res .big{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(36px,3.6vw,48px);color:var(--o);letter-spacing:-1px;line-height:1;margin:0 0 6px;font-variant-numeric:tabular-nums}
+.fl .res .big small{display:block;font-size:18px;letter-spacing:0;color:var(--ink);font-weight:700;margin-top:8px}
+.fl .res .gp{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:18px;color:var(--ink);margin:12px 0 0}
+.fl .res .now{font-size:16px;margin:14px 0 0;padding-top:14px;border-top:1px solid #f3d6c8}
+.fl .res .cap{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:17px;color:var(--ink);margin:14px 0 0}
+.fl .calc .fine{margin:24px 0 0;font-size:14px;line-height:1.6;color:var(--mut)}
+/* leaks */
+.fl .four{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.fl .four div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px 24px}
+.fl .four b{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(22px,1.75vw,26px);white-space:nowrap;letter-spacing:-.5px;color:var(--o);line-height:1.05;margin-bottom:6px}
+.fl .four h3{font-size:19px;margin:0 0 10px}
+.fl .four p{font-size:16px;line-height:1.55}
+.fl .four .src{display:block;color:var(--mut);font-size:13px;margin-top:10px}
+.fl .cap3{margin:64px 0 0;display:grid;grid-template-columns:1fr 1.3fr;gap:40px;padding-top:48px;border-top:1px solid var(--line)}
+.fl .cap3 h3{font-size:clamp(22px,2.2vw,28px)}
+.fl .cap3 p{font-size:17px;line-height:1.65}
+.fl .more{margin:40px 0 0;font-size:17px}
+/* outcomes */
+.fl .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.fl .steps>div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:30px 26px;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s,border-color .18s}
+.fl .steps>div:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(17,19,24,.08);border-color:var(--o)}
+.fl .steps b{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:800;color:var(--o);letter-spacing:1.5px;margin-bottom:12px}
+.fl .steps h3{margin-bottom:10px}
+.fl .steps p{font-size:16px;line-height:1.6;flex:1}
+.fl .steps .tl{margin-top:18px;font-size:16px}
+/* record */
+.fl .prov{color:#d1d5db;font-size:16px;line-height:1.6;max-width:860px;margin:0 0 22px}
+.fl .prov b{color:#e5e7eb}
+.fl .stats{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--dline);border-bottom:1px solid var(--dline);margin:0 0 28px}
+.fl .stats div{padding:28px 12px 28px 0}
+.fl .stats b{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(32px,3vw,44px);font-weight:800;color:#fff;letter-spacing:-1px;line-height:1;font-variant-numeric:tabular-nums}
+.fl .stats b.o{color:var(--o)}
+.fl .stats span{display:block;color:#c4c7cf;font-size:14px;margin-top:8px}
+.fl .travel{color:#e5e7eb;font-size:18px;line-height:1.6;max-width:860px;margin:0;padding-bottom:8px}
+.fl .adj{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.fl .adj .k{font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#c4c7cf;margin:0 0 10px}
+.fl .adj b{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(32px,3vw,42px);color:#fff;letter-spacing:-1px;line-height:1;margin:0 0 12px}
+.fl .adj p{font-size:16px;line-height:1.6;color:#e5e7eb}
+.fl .adj .src{display:block;color:#b8bcc6;font-size:14px;margin-top:8px}
+.fl .anon{margin:32px 0 0;color:#b8bcc6;font-size:15px}
+/* engage */
+.fl .cmp{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:56px 0 0;font-size:16px}
+.fl .cmp caption{text-align:left;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(22px,2.2vw,28px);color:var(--ink);padding:0 0 18px;text-wrap:balance;max-width:820px}
+.fl .cmp th,.fl .cmp td{padding:18px 20px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);line-height:1.5}
+.fl .cmp thead th{font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;letter-spacing:1.3px;text-transform:uppercase;color:var(--mut);background:var(--soft)}
+.fl .cmp thead th:last-child{color:var(--o);background:var(--tint)}
+.fl .cmp tbody th{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;color:var(--ink);width:20%}
+.fl .cmp td:last-child{background:#fff8f4;color:var(--ink);font-weight:600;border-left:3px solid var(--o)}
+.fl .cmp tr:last-child th,.fl .cmp tr:last-child td{border-bottom:0}
+.fl .need{margin:40px 0 0;background:var(--soft,#F8F8F8);border:1px solid #E0E0E0;border-left:4px solid #EF662F;border-radius:12px;padding:24px 28px}.fl .need b{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;color:#333;margin-bottom:6px}.fl .need p{font-size:16px;line-height:1.6;margin:0;max-width:880px}
+.fl .terms{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin:48px 0 56px}
+.fl .terms div{font-size:16px;line-height:1.6;padding:18px 0 0;border-top:3px solid var(--o)}
+.fl .terms b{color:var(--ink);display:block;text-wrap:balance;font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;margin-bottom:4px}
+.fl .price{margin:48px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:32px;padding-top:40px;border-top:1px solid var(--line);align-items:start}
+.fl .price p{font-size:17px;line-height:1.65}
+.fl .price .diag{background:var(--tint);border-left:3px solid var(--o);padding:22px 24px;border-radius:0 12px 12px 0}
+.fl .price .diag b{color:var(--ink);font-family:'Plus Jakarta Sans',sans-serif}
+.fl .price .pr{color:var(--o);font-weight:800}
+/* faq */
+.fl .faq{max-width:860px}
+.fl .faq details{border-bottom:1px solid var(--line)}
+.fl .faq details:first-of-type{border-top:1px solid var(--line)}
+.fl .faq summary{list-style:none;cursor:pointer;padding:22px 44px 22px 0;position:relative;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:19px;line-height:1.35;color:var(--ink);transition:color .18s}
+.fl .faq summary::-webkit-details-marker{display:none}
+.fl .faq summary::after{content:'+';position:absolute;right:4px;top:18px;color:var(--o);font-size:26px;font-weight:400;transition:transform .18s}
+.fl .faq details[open] summary::after{transform:rotate(45deg)}
+.fl .faq summary:hover{color:var(--o)}
+.fl .faq .a{padding:0 0 24px;font-size:17px;line-height:1.65;max-width:800px}
+/* close */
+.fl .two{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:8px 0 32px}
+.fl .opt{background:#1d2028;border:1px solid var(--dline);border-radius:16px;padding:36px 34px;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s,border-color .18s}
+.fl .opt:hover{transform:translateY(-3px);box-shadow:0 0 0 1px var(--o),0 16px 36px rgba(239,102,47,.18);border-color:var(--o)}
+.fl .opt .tag{font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#9ca3af;margin-bottom:10px}
+.fl .opt h3{font-size:24px;margin:0 0 12px}
+.fl .opt p{color:#c9ccd3;font-size:17px;line-height:1.6;flex:1;margin-bottom:24px}
+.fl .opt .btn{align-self:flex-start}
+.fl .fine2{color:#c9ccd3;font-size:16px;line-height:1.6;border-top:1px solid var(--dline);padding-top:24px}
+.fl .closer h2{font-size:clamp(28px,3.1vw,42px)}
+@media(max-width:1024px){.fl .path{grid-template-columns:1fr 1fr}.fl .path li:nth-child(3){border-left:0}.fl .path li:nth-child(n+3){border-top:1px solid var(--line)}.fl .path li:nth-child(2)::after{display:none}.fl .terms{grid-template-columns:1fr 1fr!important}.fl .four{grid-template-columns:1fr 1fr}.fl .stats{grid-template-columns:repeat(3,1fr)}.fl .stats div:nth-child(n+4){border-top:1px solid var(--dline)}.fl .cgrid{grid-template-columns:1fr}}
+@media(max-width:820px){
+ .fl section{padding:72px 40px}.fl .hero{padding:64px 40px 56px}
+ .fl .cpb-h{display:none}
+ .fl .cpb-r{grid-template-columns:1fr 1fr;padding:18px 20px;border-bottom:1px solid var(--line)}
+ .fl .cpb-r:last-child{border-bottom:0}
+ .fl .cpb-r div{padding:4px 0;border:0!important}
+ .fl .cpb-r div:first-child,.fl .cpb-r div:nth-child(2){grid-column:1/-1}
+ .fl .cpb-r div:nth-child(4){background:#fff8f4;border-left:3px solid var(--o)!important;padding:8px 12px;border-radius:0 8px 8px 0}
+ .fl .cpb .lab{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--mut);margin:8px 0 2px}
+ .fl .calc{padding:28px 22px}
+ .fl .ins{grid-template-columns:1fr}
+ .fl .cap3,.fl .steps,.fl .adj,.fl .two,.fl .terms,.fl .price{grid-template-columns:1fr}
+ .fl .opt{padding:28px 24px}
+ .fl .cmp thead{display:none}
+ .fl .cmp caption{display:block;width:auto;max-width:none;padding:0 0 16px}
+ .fl .cmp{border:0;border-radius:0;overflow:visible}
+ .fl .cmp tbody{border:1px solid var(--line);border-radius:14px;overflow:hidden}
+ .fl .cmp,.fl .cmp tbody,.fl .cmp tr,.fl .cmp th,.fl .cmp td{display:block;width:100%}
+ .fl .cmp tr{border-bottom:1px solid var(--line);padding:6px 0}
+ .fl .cmp tr:last-child{border-bottom:0}
+ .fl .cmp tbody th{width:100%;padding:16px 18px 6px;border:0}
+ .fl .cmp td{border:0;padding:6px 18px}
+ .fl .cmp td::before{content:attr(data-l);display:block;font:700 13px 'Plus Jakarta Sans',sans-serif;letter-spacing:1.1px;text-transform:uppercase;color:var(--mut);margin-bottom:2px}
+ .fl .cmp td:last-child{border-left:3px solid var(--o);margin:4px 0 12px}
+ .fl .cmp td:last-child::before{color:var(--o)}
+}
+@media(max-width:700px){.fl .path{grid-template-columns:1fr}.fl .path li{border-left:0!important;border-top:1px solid var(--line)}.fl .path li:first-child{border-top:0}.fl .path li::after{display:none}.fl .terms{grid-template-columns:1fr!important}.fl .split{grid-template-columns:1fr;gap:10px;margin-top:32px}.fl .split .col{padding:16px 18px}.fl .hero .sol{margin-top:30px}.fl section{padding:64px 20px}.fl .hero{padding:52px 20px 48px}.fl .four{grid-template-columns:1fr}.fl .stats{grid-template-columns:1fr 1fr}.fl .stats div:nth-child(n+3){border-top:1px solid var(--dline)}.fl .stats div:last-child{grid-column:1/-1}.fl .hero .btn{width:100%;text-align:center}.fl .subnav{gap:4px 18px;font-size:14px}}
+@media(max-width:400px){.fl .btn{font-size:16px;padding:15px 16px}.fl h1{font-size:33px}.fl .opt .btn,.fl .hero .btn{white-space:normal;width:100%;text-align:center;align-self:stretch}}
+@media(prefers-reduced-motion:reduce){.fl *{transition:none!important;transform:none!important;animation:none!important}}
+
+.fl .steps.s4{grid-template-columns:repeat(4,1fr)}
+.fl .bjm{margin:0 0 18px;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--mut)}
+.fl .guides{margin:40px 0 0;padding-top:28px;border-top:1px solid var(--line);font-size:16px;line-height:1.9;max-width:860px}
+.fl .guides b{font-family:'Plus Jakarta Sans',sans-serif;color:var(--ink);margin-right:6px}
+.fl .guides a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px;transition:color .15s,text-decoration-color .15s}
+.fl .guides a:hover{color:var(--o);text-decoration-color:var(--o)}
+.fl .guides span{color:var(--mut);margin:0 8px}
+@media(max-width:1100px){.fl .steps.s4{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.fl .steps.s4{grid-template-columns:1fr}}
+.fl .prov{color:#e5e7eb}.fl .stats span{color:#d9dce2;font-size:15px}.fl .adj .k{color:#d9dce2}.fl .anon{color:#cfd3da}.fl .dark .lead{color:#eef0f3}
+.fl .cmp th,.fl .cmp td{padding:14px 20px}
+@media print{.fl section{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+
+<!-- 1 HERO -->
+<section class="hero dark" id="top"><div class="in">
+ <p class="eb">SEO, Google Ads &amp; websites for flooring companies</p>
+ <h1>Flooring Company Marketing <span class="o">Measured to the Installed Job</span></h1>
+ <p class="sub"><span class="ln">You sell and install floors, residential or commercial.</span> <span class="ln">Your marketing should be measured to the installed job.</span></p>
+ <div class="split">
+  <div class="col them"><span class="lbl">Most agencies count</span><span class="bg">leads.</span></div>
+  <div class="col you"><span class="lbl">You count</span><span class="bg">floors installed.</span></div>
+ </div>
+ <p class="sol">The right flooring jobs.<br>More estimates sold.<br>Numbers you understand.</p>
+ <a class="btn" href="https://calendly.com/andrew-andrewryanmarketing/gap-review?utm_source=arm-site&amp;utm_medium=cta&amp;utm_campaign=site&amp;utm_content=flooring-hero">Let's talk about your marketing&nbsp;<span class="ar">→</span></a>
+ <p class="alt">Not ready to talk? <a href="/#vr">Get a free video review&nbsp;<span class="ar">→</span></a></p>
+ <a class="rating" href="https://www.google.com/maps?cid=5316129390931803308" target="_blank" rel="noopener"><span class="stars">★★★★★</span> 5.0 on Google · 6 reviews</a>
+</div></section>
+
+<!-- 1b SYSTEM OVERVIEW (homepage pattern) -->
+<section class="soft" id="system"><div class="in">
+ <h2>Flooring marketing that goes <span class="o">beyond the lead.</span></h2>
+ <p class="lead">Get found. Win more flooring jobs. Know what's working.</p>
+ <p class="dab">Andrew Ryan Marketing is a flooring marketing agency for established companies that sell and install flooring, from in-home measure contractors to showrooms with their own install crews, residential and commercial. We bring in buyers, help your team turn inquiries into sold jobs, and show you what each channel costs per installed floor.</p>
+ <div class="sv-diag2">
+  <div class="sv-duo">
+   <div class="sv-dcard mkt">
+    <p class="sv-dnum">01 / Get found</p>
+    <h3>Attract more leads.</h3>
+    <ul class="sv-dlist"><li><a href="/seo-for-flooring-contractors/">SEO</a></li><li><a href="/services/ppc-for-contractors/">Google Ads</a></li><li><a href="/services/ppc-for-contractors/">Local Services Ads</a></li><li><a href="/services/seo-johnson-city-tn/">Google Maps</a></li><li><a href="/services/">Websites</a></li><li><a href="/services/ppc-for-contractors/">Meta ads</a></li><li><a href="/services/ppc-for-contractors/">Retargeting</a></li><li><span>Direct mail</span></li><li><a href="/services/generative-engine-optimization/">AI Visibility</a></li></ul>
+    <p class="sv-dwho"><b>We run it for you.</b> Your flooring marketing, built and managed.</p>
+   </div>
+   <div class="sv-dcard team">
+    <p class="sv-dnum">02 / Win more jobs</p>
+    <h3>Turn more leads into jobs.</h3>
+    <ul class="sv-dlist"><li><a href="/services/lead-to-booked-job/">Speed to lead</a></li><li><a href="/services/lead-to-booked-job/">Measure booking</a></li><li><a href="/services/lead-to-booked-job/">Appointment confirmation</a></li><li><a href="/services/lead-to-booked-job/estimate-follow-up/">Estimate follow-up</a></li><li><a href="/sales-and-marketing-consulting-for-contractors/">Estimate-to-sale</a></li><li><a href="/services/crm-email-and-automation/">CRM</a></li></ul>
+    <p class="sv-dwho"><b>We help your team.</b> We build and improve the systems that help your office, showroom and sales reps turn more inquiries into sold and installed floors.</p>
+   </div>
+  </div>
+  <svg class="sv-merge" viewBox="0 0 1000 64" preserveAspectRatio="none" aria-hidden="true"><path d="M245 0 C245 40, 500 22, 500 64" fill="none" stroke="#333" stroke-width="2" vector-effect="non-scaling-stroke"/><path d="M755 0 C755 40, 500 22, 500 64" fill="none" stroke="#EF662F" stroke-width="2" vector-effect="non-scaling-stroke"/></svg>
+  <div class="sv-stem" aria-hidden="true"></div>
+  <div class="sv-measure arm-nobleed">
+   <p class="mk">One connected view</p>
+   <p class="mt">Both measured to the booked job.</p>
+   <p class="md">Know what's working, what's costing you installs, and what to improve next.</p>
+  </div>
+  <p class="sv-dcap">Choose the services you need, or connect the entire system.</p>
+  <p class="sv-dmore"><a class="tl" href="#services">See each service and when it pays off <span class="ar">↓</span></a></p>
+ </div>
+</div></section>
+
+<!-- 2 SERVICES -->
+<section class="light" id="services"><div class="in">
+ <p class="eb">What we build and run</p>
+ <h2>Seven flooring marketing services, one connected system</h2>
+ <p class="lead">As a marketing agency for flooring companies, we work on seven connected parts of your growth system. There's no fixed order: we diagnose the constraint and start where the return is largest. The early steps work on demand you already have and often pay back sooner; the later ones build value over time.</p>
+ <div class="tlax" aria-hidden="true"><span>Often pays back sooner</span><span>Builds over time</span></div>
+ <ol class="tline">
+  <li><h3 class="tb"><button type="button" id="svb1" aria-expanded="true" aria-controls="svp1"><span class="tn">01</span><span class="tw">Convert existing demand</span><span class="th">Speed to lead and measure booking</span></button></h3><div class="tp" id="svp1" role="region" aria-labelledby="svb1"><p class="tph">How we fix it</p><p class="tpw">01 · Convert existing demand</p><p>Every call, form and showroom inquiry is tracked. New inquiries get answered in minutes, not the next morning, because a homeowner comparing you to a box store is still shopping. The first conversation ends with a measure or showroom visit on the calendar, confirmed the day before so fewer reps drive to an empty house. <a class="tl" href="/services/lead-to-booked-job/">Lead response <span class="ar">→</span></a></p></div></li>
+  <li><h3 class="tb"><button type="button" id="svb2" aria-expanded="false" aria-controls="svp2"><span class="tn">02</span><span class="tw">Recover missed sales</span><span class="th">Estimate follow-up and estimate-to-sale</span></button></h3><div class="tp" id="svp2" role="region" aria-labelledby="svb2" data-closed><p class="tph">How we fix it</p><p class="tpw">02 · Recover missed sales</p><p>Every flooring estimate gets followed up until it's signed or lost, with the reason recorded. We tighten how quotes are presented: material options side by side, samples left in the home, a firm install date. Close rate is tracked by rep, material and lead source, so you know whether the problem is the lead or the close. Closing more of the measures you already run is usually your cheapest growth. <a class="tl" href="/services/lead-to-booked-job/estimate-follow-up/">Estimate follow-up <span class="ar">→</span></a></p></div></li>
+  <li><h3 class="tb"><button type="button" id="svb3" aria-expanded="false" aria-controls="svp3"><span class="tn">03</span><span class="tw">Generate targeted demand</span><span class="th">Flooring advertising that books measures</span></button></h3><div class="tp" id="svp3" role="region" aria-labelledby="svb3" data-closed><p class="tph">How we fix it</p><p class="tpw">03 · Generate targeted demand</p><p>Google Ads target the jobs your crews want: hardwood, whole-home vinyl plank, tile, stairs and commercial. Local Services Ads put you at the top for "flooring installer near me." Meta ads and retargeting keep your finished floors in view while homeowners choose materials. Direct mail reaches neighborhoods you already install in. Shared leads from Angi, HomeAdvisor and Thumbtack go to several companies at once; we build demand that comes to you alone, judged by cost per sold job. <a class="tl" href="/services/ppc-for-contractors/">Google Ads <span class="ar">→</span></a> <a class="tl" href="/flooring-contractor-lead-generation/">Flooring lead generation <span class="ar">→</span></a></p></div></li>
+  <li><h3 class="tb"><button type="button" id="svb4" aria-expanded="false" aria-controls="svp4"><span class="tn">04</span><span class="tw">Turn visitors into booked measures</span><span class="th">A flooring website that books the measure</span></button></h3><div class="tp" id="svp4" role="region" aria-labelledby="svb4" data-closed><p class="tph">How we fix it</p><p class="tpw">04 · Turn visitors into booked measures</p><p>Pages for each material you install and each town you serve, with before-and-after photos from your own jobs, honest price guidance, your installation warranty, and one clear next step: book a measure or visit the showroom. A homeowner who has already seen your work and your price range is easier to close.</p></div></li>
+  <li><h3 class="tb"><button type="button" id="svb5" aria-expanded="false" aria-controls="svp5"><span class="tn">05</span><span class="tw">Strengthen reputation and referrals</span><span class="th">Reviews, referrals and repeat business</span></button></h3><div class="tp" id="svp5" role="region" aria-labelledby="svb5" data-closed><p class="tph">How we fix it</p><p class="tpw">05 · Strengthen reputation and referrals</p><p>Review requests go out automatically when the install is finished. Past customers hear from you about the next room or the stairs. Builders, designers and property managers who send repeat work are tracked like any other source, so you know what each relationship is worth. <a class="tl" href="/services/reputation-management-for-contractors/">Reputation <span class="ar">→</span></a></p></div></li>
+  <li><h3 class="tb"><button type="button" id="svb6" aria-expanded="false" aria-controls="svp6"><span class="tn">06</span><span class="tw">Build lasting local visibility</span><span class="th">Local SEO and Google Maps for flooring companies</span></button></h3><div class="tp" id="svp6" role="region" aria-labelledby="svb6" data-closed><p class="tph">How we fix it</p><p class="tpw">06 · Build lasting local visibility</p><p>A complete Google Business Profile, steady reviews, and pages that match how people search: "hardwood floor installation [town]," "LVP installers near me," "commercial flooring contractor." This is where independent flooring companies beat the box stores, because the search is local and the reviews are yours. <a class="tl" href="/seo-for-flooring-contractors/">SEO for flooring contractors <span class="ar">→</span></a></p></div></li>
+  <li><h3 class="tb"><button type="button" id="svb7" aria-expanded="false" aria-controls="svp7"><span class="tn">07</span><span class="tw">Connect marketing to installed jobs</span><span class="th">Tracking to the sold and installed floor</span></button></h3><div class="tp" id="svp7" role="region" aria-labelledby="svb7" data-closed><p class="tph">How we fix it</p><p class="tpw">07 · Connect marketing to installed jobs</p><p>Every inquiry, measure and estimate is traced from its source through sold, installed and paid, by material and job type. Knowing each channel's true cost per sold job tells us where your next flooring marketing dollar earns the most. <a class="tl" href="/attribution/">Attribution <span class="ar">→</span></a></p></div></li>
+ </ol>
+ <p class="tlhint">Tap any step for what it covers.</p>
+</div></section>
+
+<!-- 3 MATH -->
+<section class="soft" id="math"><div class="in">
+ <p class="eb">The number your agency doesn't report</p>
+ <h2>Why sold flooring jobs change the math</h2>
+ <p class="lead">Most flooring marketing is judged by cost per lead. But ten measures can be worth very different amounts, depending on the job mix and how many you close. And revenue is only the start.</p>
+ <p class="illus"><b>Illustrative example, not client results.</b> Ten in-home measures at the same example close rate of 30%, priced at Angi's 2026 national averages for each job.</p>
+ <div class="cpb" role="table" aria-label="Illustrative sold revenue from ten flooring measures">
+  <div class="cpb-h" role="row"><div role="columnheader">Flooring job</div><div role="columnheader">Path to revenue</div><div role="columnheader">Sold from 10 measures</div><div role="columnheader">Sold revenue, before costs</div></div>
+  <div class="cpb-r" role="row"><div role="cell">Vinyl plank<small>$2,561 average</small></div><div role="cell"><span class="lab">Path to revenue</span><span class="pth"><span>Inquiry</span><span><i aria-hidden="true">→</i>Measure</span><span><i aria-hidden="true">→</i>Sold</span><span><i aria-hidden="true">→</i>Installed</span></span></div><div role="cell"><span class="lab">Sold from 10 measures</span>3 jobs</div><div role="cell"><span class="lab">Sold revenue</span>$7,683</div></div>
+  <div class="cpb-r" role="row"><div role="cell">Typical flooring install<small>$3,153 average</small></div><div role="cell"><span class="lab">Path to revenue</span><span class="pth"><span>Inquiry</span><span><i aria-hidden="true">→</i>Measure</span><span><i aria-hidden="true">→</i>Sold</span><span><i aria-hidden="true">→</i>Installed</span></span></div><div role="cell"><span class="lab">Sold from 10 measures</span>3 jobs</div><div role="cell"><span class="lab">Sold revenue</span>$9,459</div></div>
+  <div class="cpb-r best" role="row"><div role="cell">Hardwood installation<small>$4,723 average</small></div><div role="cell"><span class="lab">Path to revenue</span><span class="pth"><span>Inquiry</span><span><i aria-hidden="true">→</i>Measure</span><span><i aria-hidden="true">→</i>Sold</span><span><i aria-hidden="true">→</i>Installed</span></span></div><div role="cell"><span class="lab">Sold from 10 measures</span>3 jobs</div><div role="cell"><span class="lab">Sold revenue</span>$14,169</div></div>
+ </div>
+ <p class="take">A bigger ticket isn't automatically a better job. What it cost to win, its gross margin, and how many crew days it takes decide what it's really worth. <b>Job mix, close rate, margin and install capacity together decide which flooring work to chase, so we judge marketing by sold jobs and gross profit, not lead cost</b>.</p>
+ <details class="how"><summary>How these numbers are calculated</summary><p>Sold revenue = 10 measures × close rate × average job. Averages are Angi's 2026 national cost guides: flooring installation $3,153 across 5,966 projects, vinyl $2,561, hardwood $4,723. Old-floor removal and subfloor repair are usually billed on top. The 30% close rate is an example, not a benchmark, and matches the calculator's starting point below. Revenue only: margin and acquisition cost differ by job and by company. Illustrative arithmetic, not a client result.</p></details>
+</div></section>
+
+<!-- 3b CALCULATOR -->
+<section class="light" id="worth"><div class="in">
+ <h2>Same marketing spend. Very different results.</h2>
+ <p class="lead">Add your margin to see gross profit, not just revenue, and check whether your crews could install the extra work.</p>
+ <div class="calc" id="calc">
+  <h3>What's one more flooring sale in ten estimates worth to you?</h3>
+  <p class="sub">Change every number to yours. Nothing is saved; it runs in your browser.</p>
+  <div class="chips" role="group" aria-label="Average sold job"><button type="button" data-v="2561" aria-pressed="false">Vinyl plank · $2,561</button><button type="button" data-v="3153" aria-pressed="true">Typical install · $3,153</button><button type="button" data-v="4723" aria-pressed="false">Hardwood · $4,723</button></div>
+  <div class="cgrid">
+   <div class="ins">
+    <div><label for="flEst">Measures or estimates per month</label><output id="flEstOut">20</output><input type="range" id="flEst" min="5" max="300" step="1" value="20"></div>
+    <div><label for="flCr">Close rate (estimates sold)</label><output id="flCrOut">30%</output><input type="range" id="flCr" min="5" max="70" step="0.1" value="30"></div>
+    <div><label for="flJob">Average sold job</label><output id="flJobOut">$3,153</output><input type="range" id="flJob" min="500" max="25000" step="1" value="3153"></div>
+    <div><label for="flGm">Gross margin <span class="opt-lab">(optional)</span></label><output id="flGmOut">35%</output><input type="range" id="flGm" min="0" max="70" step="1" value="35"></div>
+   </div>
+   <div class="res" aria-live="polite">
+    <p class="k">One more sale in every ten estimates</p>
+    <p class="big"><span id="flAdd">+$75,672</span> <small>a year in sold revenue</small></p>
+    <p class="gp" id="flGp">+$26,485 a year in gross profit at 35%</p>
+    <p class="now">Today: <b id="flNow">$18,918</b> a month in sold work from <span id="flSold">6</span> sold jobs.</p>
+    <p class="cap" id="flCap">That's 2 more installs a month. Do your crews have the days?</p>
+   </div>
+  </div>
+  <p class="fine">Illustrative. Assumes the added sales install at this job value and margin, and that your crews and material lead times allow it. Not a forecast.</p>
+  <details class="how"><summary>Where the starting numbers come from</summary><p>20 estimates a month, a 30% close rate and a 35% gross margin are example starting points, not benchmarks. Change them to yours. Job values are Angi's 2026 national averages: flooring installation $3,153 (5,966 projects), vinyl $2,561, hardwood $4,723.</p></details>
+ </div>
+ <p class="midcta"><a class="btn" href="https://calendly.com/andrew-andrewryanmarketing/gap-review?utm_source=arm-site&amp;utm_medium=cta&amp;utm_campaign=site&amp;utm_content=flooring-mid">Let's talk about your marketing&nbsp;<span class="ar">→</span></a><span>Bring your real numbers. We'll run them with you.</span></p>
+</div></section>
+
+<!-- 4 LEAKS -->
+<section class="soft" id="leaks"><div class="in">
+ <p class="eb">Why generic marketing fails this trade</p>
+ <h2>Where flooring companies lose growth</h2>
+ <p class="lead">Every flooring job moves through four stages, and revenue can leak at any of them. Most flooring marketing reports stop at the lead. We follow it to the installed floor.</p>
+ <ol class="path">
+  <li><span class="st">1 · The search</span><b>Chosen on price</b><h3>Box stores, price shoppers and bid lists</h3><p>Homeowners compare per-square-foot prices and box-store installs online; commercial buyers compare bids. Win on price alone and margin shrinks. Your marketing has to show why your installation is worth more.</p></li>
+  <li><span class="st">2 · The measure</span><b>Booked isn't measured</b><h3>The most expensive hour you sell</h3><p>A measure, showroom visit or site walk that no-shows or reschedules costs a rep half a day you pay for anyway. Fast response, a confirmed appointment and a reminder protect it.</p></li>
+  <li><span class="st">3 · The estimate</span><b>Measured isn't sold</b><h3>The estimate has to close</h3><p>The homeowner has your quote, a box-store quote and a sample on the floor; the GC has three bids. Clear options, follow-up and a firm install date decide it. Most agencies never see this step.</p></li>
+  <li><span class="st">4 · The install</span><b>Sold isn't installed</b><h3>Revenue and margin land at the install</h3><p>Material lead times, subfloor and moisture surprises, and crew or subcontractor schedules can delay a job or cut its margin. We track sale to install, so marketing never outruns what your crews can deliver.</p></li>
+ </ol>
+ <div class="cap3">
+  <h3>Install crews booked out three weeks? More flooring marketing isn't the fix.</h3>
+  <p>When your crews are full, better use of that capacity beats more demand: aim marketing at higher-margin work, raise prices where demand supports it, tighten the schedule, or add a crew. And when capacity is the constraint, our answer to spending more on marketing is simple: Not yet.</p>
+ </div>
+</div></section>
+
+<!-- 5 OUTCOMES -->
+<section class="light" id="next"><div class="in">
+ <p class="eb">Your next growth move</p>
+ <h2>Where will your flooring company's next growth come from?</h2>
+ <p class="lead">Three problems look alike from the outside. Each needs a different fix.</p>
+ <div class="steps">
+  <div><b>01</b><h3>Sell more of the right flooring jobs</h3><p>When too many measures are single rooms of budget vinyl, we shift your marketing toward the hardwood, whole-home and commercial work with the margin you want.</p><a class="tl" href="#math">See the math <span class="ar">→</span></a></div>
+  <div><b>02</b><h3>Close more of the estimates you run</h3><p>Measures get run, but too few turn into sold jobs. Fix the response, follow-up and close before you buy more leads.</p><a class="tl" href="/services/lead-to-booked-job/">Fix the second funnel <span class="ar">→</span></a></div>
+  <div><b>03</b><h3>Open the next market or showroom</h3><p>Ready for a new town, a second showroom or more commercial accounts? We'll show you what it costs to win jobs there before you sign a lease or hire a crew.</p><a class="tl" href="/how-to-expand-a-contractor-business-into-a-new-market/">Model the next market <span class="ar">→</span></a></div>
+ </div>
+</div></section>
+
+<!-- 6 EVIDENCE -->
+<section class="dark" id="proof"><div class="in">
+ <p class="eb">Our track record</p>
+ <h2>Performance backed by real operating experience.</h2>
+ <p class="lead">Proven marketing performance. Real-world sales experience. Both working toward the same goal: more profitable jobs.</p>
+ <p class="grp">Operator experience</p>
+ <p class="prov">Our founder built and led an automotive dealership's sales department for 27 months, developing the systems for lead response, appointment setting, follow-up, and closing. The results below come from that operation and were documented in monthly performance reports.</p>
+ <div class="stats"><div><b>11,564</b><span>Leads worked</span></div><div><b>2,135</b><span>Appointments shown</span></div><div><b>761</b><span>Sales closed</span></div><div><b class="o">35.6%</b><span>Show-to-sale</span></div><div><b>$34M+</b><span>Closed revenue</span></div></div>
+ <p class="travel">35.6% is the share of shown appointments that bought, in automotive sales, not flooring. <b>The method is what travels</b>: response speed, show rate, close rate.</p>
+ <p class="grp">Marketing performance</p>
+ <div class="adj">
+  <div><p class="k">Home services · map-pack rank (lower is better)</p><b>5.4 → 2.5</b><p>An established plumbing company in East Tennessee: average map-pack rank across the tracking grid in 72 hours. #1 for 14 of 16 service terms, and it held.<span class="src">BrightLocal, Apr 2026</span></p></div>
+  <div><p class="k">Real estate · same rankings, more clicks</p><b>+32% CTR</b><p>+36% organic clicks in 30 days on the same rankings, before a single new page.<span class="src">Google Search Console, 2026</span></p></div>
+ </div>
+ <p class="anon">Client results anonymized by industry. Each is documented and can be walked through on the call.</p>
+</div></section>
+
+<!-- 7 ENGAGEMENT -->
+<section class="light" id="engagement"><div class="in">
+ <p class="eb">How an engagement works</p>
+ <h2>How we work with flooring companies</h2>
+ <p class="lead">Founder-led and diagnostic first. You work with Andrew directly, and nothing gets built until we know which gap costs your flooring business the most.</p>
+ <p class="bjm">The Booked-Job Model™, in four steps</p>
+ <div class="steps s4">
+  <div><b>STEP 1</b><h3>Measure the whole path</h3><p>Your real numbers: inquiries, measures run, estimates sold, average job and margin by material, and how much your crews can install in a month.</p></div>
+  <div><b>STEP 2</b><h3>Find the constraint</h3><p>That shows whether demand, response, the close or install capacity is the limit, and what each one is costing you.</p></div>
+  <div><b>STEP 3</b><h3>Fix what pays first</h3><p>We fix the constraint with the biggest financial impact first, so every dollar that follows has a better chance of a measurable return.</p></div>
+  <div><b>STEP 4</b><h3>Scale when it's justified</h3><p>More spend, a new market or another crew, only when sold jobs, margin and capacity say it will pay.</p></div>
+ </div>
+ <div class="need"><b>What we need from you</b><p>Admin access to your Google Business Profile, ad accounts, website and call tracking. Read access to your sales software, such as RFMS, QFloors or your CRM. One person who owns callbacks and measure confirmations. And 30 minutes with you each month.</p></div>
+ <div class="terms">
+  <div><b>You own everything from day one</b>Website, ad accounts, data. You pay the ad platforms directly through your own accounts. We never mark up ad spend. No setup fees.</div>
+  <div><b>One flooring company per market</b>Defined in writing at signing, so you never compete with our other clients for the same homeowners.</div>
+  <div><b>Terms that match the engagement</b>Smaller engagements start with a 3- to 6-month commitment, then run month to month with 30 days' notice. 12-month engagements carry a 90-day exit.</div>
+  <div><b>You work with Andrew directly</b>No account managers between you and the person doing the work.</div>
+ </div>
+ <table class="cmp">
+  <caption>Three ways flooring companies buy marketing. Only one leaves you owning the engine.</caption>
+  <thead><tr><th scope="col">What you're comparing</th><th scope="col">Lead marketplaces</th><th scope="col">A generalist agency</th><th scope="col">Andrew Ryan Marketing</th></tr></thead>
+  <tbody>
+   <tr><th scope="row">Who gets the inquiry</th><td data-l="Lead marketplaces">Often several companies at once.</td><td data-l="A generalist agency">Varies. Ask who else they serve locally.</td><td data-l="Andrew Ryan Marketing">Only you, in your market.</td></tr>
+   <tr><th scope="row">What gets measured</th><td data-l="Lead marketplaces">Leads delivered.</td><td data-l="A generalist agency">Often traffic, rankings and calls.</td><td data-l="Andrew Ryan Marketing">Cost per sold job, by material.</td></tr>
+   <tr><th scope="row">Who owns the assets</th><td data-l="Lead marketplaces">The marketplace. Stop paying and leads stop.</td><td data-l="A generalist agency">Varies. Check the contract.</td><td data-l="Andrew Ryan Marketing">You do, from day one.</td></tr>
+  </tbody>
+ </table>
+ <div class="price">
+  <p><b>What to spend:</b> there's no universal percentage. Anyone quoting a share of revenue before asking about your job mix and close rate is guessing with your money. Focused work like SEO, ad management and AI visibility runs $1,500–2,500 a month, full growth engagements start at $3,500, and <a href="/pricing/">every tier is on the pricing page</a>, so you can rule us in or out before a call.</p>
+  <div class="diag"><b>The Booked-Job Model™ diagnostic</b> is a one-time <span class="pr">$1,500</span>: three weeks, run on your flooring company's own numbers, with a written 90-day plan that's yours to keep whether or not we work together.</div>
+ </div>
+</div></section>
+
+<!-- 8 FAQ -->
+<section class="soft" id="faq"><div class="in">
+ <p class="eb">Questions flooring companies ask</p>
+ <h2>Flooring company marketing: the questions owners ask</h2>
+ <div class="faq">
+  <details><summary>How much should a flooring company spend on marketing?</summary><div class="a">There's no universal percentage. Agencies often quote 5–10% of revenue, but the number that matters is what it costs to win one sold job of the type you want, and whether the next dollar returns more than it costs. A company selling $4,700 hardwood installs can spend more to win each job than one selling $1,900 tile jobs and still come out ahead. Start with your job mix, close rate and margin, then set the budget.</div></details>
+  <details><summary>What is the most effective marketing strategy for a flooring company?</summary><div class="a">A connected system, not one channel. Google Ads and Local Services Ads can bring inquiries quickly. SEO and your Google Business Profile take longer to build, then lower what every job costs to win. Reviews turn searchers into callers. Fast response and estimate follow-up decide how many of those inquiries become sold floors. Judge all of it by cost per sold job.</div></details>
+  <details><summary>How do independent flooring companies compete with Home Depot and Lowe's?</summary><div class="a">Locally, you have advantages a big box can't copy. Google favors nearby businesses with strong reviews for "flooring installation [town]." You can show real projects from the homeowner's area, send an experienced person to measure, and give a firm install date and your own warranty. Market the installer, not just the material, and follow up faster than a retail counter.</div></details>
+  <details><summary>Should a flooring company hire a marketing agency or handle marketing in-house?</summary><div class="a">Handle the basics yourself if you have time: your Google Business Profile, review requests and project photos. Hire help when ads, SEO and tracking need daily attention you can't give, or when you can't tell which channel produces sold jobs. Either way, own your accounts and data.</div></details>
+  <details><summary>How do I know if my flooring company's marketing is actually working?</summary><div class="a">Track it past the lead. For each source you should know inquiries, measures booked, estimates sold, average sold job and gross profit. If your reports stop at clicks and leads, you can't tell a channel that sells hardwood from one that brings price shoppers. We report cost per sold job by channel and material every month.</div></details>
+ </div>
+ <p class="guides"><b>More flooring marketing guides:</b> <a href="/seo-for-flooring-contractors/">SEO for flooring contractors</a><span>·</span><a href="/flooring-lead-generation/">Flooring lead generation</a><span>·</span><a href="/flooring-contractor-lead-generation/">Flooring contractor lead generation</a><span>·</span><a href="/why-flooring-companies-struggle-online/">Why flooring companies struggle online</a><span>·</span><a href="/6-gap-revenue-map/">The 6-Gap Revenue Map</a></p>
+</div></section>
+
+<!-- 9 CLOSE -->
+<section class="dark closer" id="start"><div class="in">
+ <p class="eb">Find your flooring marketing gap</p>
+ <h2>You built the reputation. Now aim it at the floors your crews want to install, in the next market too.</h2>
+ <p class="lead">Your agency can tell you how many leads came in. You should know which ones became installed floors. Two free ways to find out, no pitch.</p>
+ <div class="two">
+  <div class="opt"><p class="tag">20 minutes</p><h3>Book the Gap Review</h3><p>A call with Andrew. You leave with the gap named and the next move.</p><a class="btn" href="https://calendly.com/andrew-andrewryanmarketing/gap-review?utm_source=arm-site&amp;utm_medium=cta&amp;utm_campaign=site&amp;utm_content=flooring-close">Let's talk about your&nbsp;marketing&nbsp;<span class="ar">→</span></a></div>
+  <div class="opt"><p class="tag">No call</p><h3>Get my gaps on video</h3><p>A recorded walkthrough of your market and where flooring jobs are being lost. Watch it on your own time.</p><a class="btn ghost" href="/#argmRoot">Get my gaps on&nbsp;video&nbsp;<span class="ar">→</span></a></div>
+ </div>
+ <p class="fine2">We work with flooring companies nationwide, and in person in Johnson City, Kingsport and Bristol (<a href="/services/seo-johnson-city-tn/">local SEO in Johnson City</a>).</p>
+</div></section>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Service", "@id": "https://andrewryanmarketing.com/services/flooring-company-marketing/#service", "name": "Flooring Company Marketing", "serviceType": "Flooring company marketing", "url": "https://andrewryanmarketing.com/services/flooring-company-marketing/", "description": "Flooring marketing measured to the sold job: SEO, Google Ads, Local Services Ads, Meta ads, retargeting, direct mail, websites and reviews, plus speed to lead, measure booking, appointment confirmation and estimate follow-up for companies that sell and install flooring, tracked from the inquiry to the installed floor.", "provider": {"@type": "Organization", "@id": "https://andrewryanmarketing.com/#organization", "name": "Andrew Ryan Marketing", "url": "https://andrewryanmarketing.com/", "telephone": "(423) 299-1718"}, "areaServed": {"@type": "Country", "name": "US"}, "audience": {"@type": "BusinessAudience", "audienceType": "Flooring companies and flooring contractors"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much should a flooring company spend on marketing?", "acceptedAnswer": {"@type": "Answer", "text": "There's no universal percentage. Agencies often quote 5–10% of revenue, but the number that matters is what it costs to win one sold job of the type you want, and whether the next dollar returns more than it costs. A company selling $4,700 hardwood installs can spend more to win each job than one selling $1,900 tile jobs and still come out ahead. Start with your job mix, close rate and margin, then set the budget."}}, {"@type": "Question", "name": "What is the most effective marketing strategy for a flooring company?", "acceptedAnswer": {"@type": "Answer", "text": "A connected system, not one channel. Google Ads and Local Services Ads can bring inquiries quickly. SEO and your Google Business Profile take longer to build, then lower what every job costs to win. Reviews turn searchers into callers. Fast response and estimate follow-up decide how many of those inquiries become sold floors. Judge all of it by cost per sold job."}}, {"@type": "Question", "name": "How do independent flooring companies compete with Home Depot and Lowe's?", "acceptedAnswer": {"@type": "Answer", "text": "Locally, you have advantages a big box can't copy. Google favors nearby businesses with strong reviews for \"flooring installation [town].\" You can show real projects from the homeowner's area, send an experienced person to measure, and give a firm install date and your own warranty. Market the installer, not just the material, and follow up faster than a retail counter."}}, {"@type": "Question", "name": "Should a flooring company hire a marketing agency or handle marketing in-house?", "acceptedAnswer": {"@type": "Answer", "text": "Handle the basics yourself if you have time: your Google Business Profile, review requests and project photos. Hire help when ads, SEO and tracking need daily attention you can't give, or when you can't tell which channel produces sold jobs. Either way, own your accounts and data."}}, {"@type": "Question", "name": "How do I know if my flooring company's marketing is actually working?", "acceptedAnswer": {"@type": "Answer", "text": "Track it past the lead. For each source you should know inquiries, measures booked, estimates sold, average sold job and gross profit. If your reports stop at clicks and leads, you can't tell a channel that sells hardwood from one that brings price shoppers. We report cost per sold job by channel and material every month."}}]}]}</script>
+<script>
+(function(){
+ var $=function(i){return document.getElementById(i)};
+ var est=$('flEst'),cr=$('flCr'),job=$('flJob'),gm=$('flGm');if(!est)return;
+ function m(n){return '$'+Math.round(n).toLocaleString('en-US')}
+ function go(){
+  var e=+est.value,c=+cr.value,j=+job.value,g=+gm.value;
+  $('flEstOut').textContent=e;$('flCrOut').textContent=(Math.round(c*10)/10)+'%';$('flJobOut').textContent=m(j);$('flGmOut').textContent=g+'%';
+  var sold=e*c/100,add=e*0.10;
+  $('flNow').textContent=m(sold*j);$('flSold').textContent=(Math.round(sold*10)/10);
+  $('flAdd').textContent='+'+m(add*j*12);
+  $('flGp').textContent=g>0?('+'+m(add*j*12*g/100)+' a year in gross profit at '+g+'%'):'Add your gross margin to see the profit.';
+  var r=Math.round(add);$('flCap').textContent=r>=1?("That's "+r+" more install"+(r===1?'':'s')+" a month. Do your crews have the days?"):"Less than one more sold job a month at this volume.";
+  [].forEach.call(document.querySelectorAll('.fl .chips button'),function(b){b.setAttribute('aria-pressed',String(+b.dataset.v===j))});
+ }
+ [est,cr,job,gm].forEach(function(x){x.addEventListener('input',go)});
+ [].forEach.call(document.querySelectorAll('.fl .chips button'),function(b){b.addEventListener('click',function(){job.value=b.dataset.v;go()})});
+ go();
+})();
+</script>
+<script>(function(){var r=document.querySelector('.fl .tline');if(!r)return;r.addEventListener('click',function(e){var b=e.target.closest('.tb button');if(!b)return;var open=b.getAttribute('aria-expanded')==='true';var mobile=window.matchMedia('(max-width:1100px)').matches;if(open){if(!mobile)return;}r.querySelectorAll('.tb button').forEach(function(x){x.setAttribute('aria-expanded','false');document.getElementById(x.getAttribute('aria-controls')).setAttribute('data-closed','')});if(!open){b.setAttribute('aria-expanded','true');document.getElementById(b.getAttribute('aria-controls')).removeAttribute('data-closed')}});})();</script>
+</div>

@@ -1,0 +1,20 @@
+<script>
+(function(){
+ var $=function(i){return document.getElementById(i)};
+ var est=$('flEst'),cr=$('flCr'),job=$('flJob'),gm=$('flGm');if(!est)return;
+ function m(n){return '$'+Math.round(n).toLocaleString('en-US')}
+ function go(){
+  var e=+est.value,c=+cr.value,j=+job.value,g=+gm.value;
+  $('flEstOut').textContent=e;$('flCrOut').textContent=(Math.round(c*10)/10)+'%';$('flJobOut').textContent=m(j);$('flGmOut').textContent=g+'%';
+  var sold=e*c/100,add=e*0.10;
+  $('flNow').textContent=m(sold*j);$('flSold').textContent=(Math.round(sold*10)/10);
+  $('flAdd').textContent='+'+m(add*j*12);
+  $('flGp').textContent=g>0?('+'+m(add*j*12*g/100)+' a year in gross profit at '+g+'%'):'Add your gross margin to see the profit.';
+  var r=Math.round(add);$('flCap').textContent=r>=1?("That's "+r+" more install"+(r===1?'':'s')+" a month. Do your crews have the days?"):"Less than one more sold job a month at this volume.";
+  [].forEach.call(document.querySelectorAll('.fl .chips button'),function(b){b.setAttribute('aria-pressed',String(+b.dataset.v===j))});
+ }
+ [est,cr,job,gm].forEach(function(x){x.addEventListener('input',go)});
+ [].forEach.call(document.querySelectorAll('.fl .chips button'),function(b){b.addEventListener('click',function(){job.value=b.dataset.v;go()})});
+ go();
+})();
+</script>
