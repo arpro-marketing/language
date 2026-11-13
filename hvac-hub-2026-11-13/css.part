@@ -277,7 +277,9 @@
 .hv .cmp th,.hv .cmp td{padding:14px 20px}
 @media print{.hv section{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 .hv .bjmc{margin:0 0 28px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:clamp(19px,1.7vw,23px);line-height:1.4;color:var(--ink);max-width:860px;text-wrap:balance}
-.hv .ins>div:last-child{grid-column:1/-1}
 .hv .res .cap.over{color:var(--oh)}
 @media(max-width:1100px){.hv .tb button{height:auto}}
+.hv .res .rev{font-size:15px;color:var(--mut);margin:8px 0 0}
+.hv .res .gp.over{color:var(--oh)}
+.hv .ins .wide{grid-column:1/-1}
 </style>
