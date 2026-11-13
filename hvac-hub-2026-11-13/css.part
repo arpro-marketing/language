@@ -283,4 +283,13 @@
 .hv .res .gp.over{color:var(--oh)}
 .hv .ins .wide{grid-column:1/-1}
 .hv .leaklinks{display:flex;flex-wrap:wrap;gap:12px 32px;margin:36px 0 0;font-size:17px}
+.hv .cap3 p+p{margin-top:14px}
+.hv .conn{margin:36px 0 0;background:#fff;border:1px solid #E0E0E0;border-radius:12px;padding:26px 28px}
+.hv .conn h3{font-size:clamp(19px,1.7vw,22px);margin:0 0 14px;text-wrap:balance}
+.hv .conn ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:16px 32px}
+.hv .conn li{font-size:16px;line-height:1.6;color:var(--body);padding-left:18px;position:relative}
+.hv .conn li:before{content:"";position:absolute;left:0;top:.62em;width:8px;height:8px;border-radius:50%;background:#EF662F}
+.hv .conn li b{color:var(--ink)}
+.hv .need.fit+.need{margin-top:16px}
+@media(max-width:760px){.hv .conn ul{grid-template-columns:1fr}.hv .conn{padding:22px 20px}}
 </style>
