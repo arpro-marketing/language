@@ -1,0 +1,23 @@
+<script>
+(function(){
+ var $=function(i){return document.getElementById(i)};
+ var est=$('hvEst'),cr=$('hvCr'),job=$('hvJob'),gm=$('hvGm'),cap=$('hvCapIn');if(!est)return;
+ function m(n){return '$'+Math.round(n).toLocaleString('en-US')}
+ function r1(n){return Math.round(n*10)/10}
+ function go(){
+  var e=+est.value,c=+cr.value,j=+job.value,g=+gm.value,k=+cap.value;
+  $('hvEstOut').textContent=e;$('hvCrOut').textContent=r1(c)+'%';$('hvJobOut').textContent=m(j);$('hvGmOut').textContent=g+'%';$('hvCapInOut').textContent=k;
+  var sold=e*c/100,add=e*0.10,tot=sold+add;
+  $('hvGp').textContent='+'+m(add*j*12*g/100);
+  $('hvAdd').textContent='From +'+m(add*j*12)+' a year in sold revenue at '+g+'% margin';
+  $('hvSold').textContent=r1(sold);$('hvNow').textContent=m(sold*j*g/100);
+  var t=Math.round(tot*10)/10,el=$('hvCap');
+  if(tot<=k){el.textContent="That's "+t+" installs a month, inside your "+k+". Your crews have room.";el.classList.remove('over')}
+  else{el.textContent="That's "+t+" installs a month, more than your crews' "+k+". Fix capacity before buying more marketing.";el.classList.add('over')}
+  [].forEach.call(document.querySelectorAll('.hv .chips button'),function(b){b.setAttribute('aria-pressed',String(+b.dataset.v===j))});
+ }
+ [est,cr,job,gm,cap].forEach(function(x){x.addEventListener('input',go)});
+ [].forEach.call(document.querySelectorAll('.hv .chips button'),function(b){b.addEventListener('click',function(){job.value=b.dataset.v;go()})});
+ go();
+})();
+</script>

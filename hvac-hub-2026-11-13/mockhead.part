@@ -1,0 +1,7 @@
+<title>HVAC Hub Mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<style>:root{color-scheme:light}html,body{background:#fff;color:#333}body{margin:0;font-family:'DM Sans',Arial,sans-serif;overflow-x:hidden}
+.mockbar{background:#F8F8F8;border-bottom:1px solid #E0E0E0;font:500 14px/1.4 'DM Sans',Arial,sans-serif;color:#666;padding:10px 16px;text-align:center}
+.mockbar b{color:#333}</style>
+<div class="mockbar"><b>Mockup</b> · /services/hvac-marketing/ · not live · proposed title: <b>HVAC Marketing Agency → Measured to the Sold Job</b></div>

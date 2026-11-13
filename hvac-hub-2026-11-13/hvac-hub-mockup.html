@@ -1,0 +1,537 @@
+<title>HVAC Hub Mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<style>:root{color-scheme:light}html,body{background:#fff;color:#333}body{margin:0;font-family:'DM Sans',Arial,sans-serif;overflow-x:hidden}
+.mockbar{background:#F8F8F8;border-bottom:1px solid #E0E0E0;font:500 14px/1.4 'DM Sans',Arial,sans-serif;color:#666;padding:10px 16px;text-align:center}
+.mockbar b{color:#333}</style>
+<div class="mockbar"><b>Mockup</b> · /services/hvac-marketing/ · not live · proposed title: <b>HVAC Marketing Agency → Measured to the Sold Job</b></div>
+<div class="hv">
+<style>
+.hv{--o:#ef662f;--oh:#d4551f;--ol:#ff7a3d;--ink:#333333;--body:#333333;--mut:#666666;--soft:#f8f8f8;--tint:#fdf0eb;--line:#e0e0e0;--dark:#14161c;--dline:#2e313a;font-family:'DM Sans',sans-serif;color:var(--body)}
+.hv *{box-sizing:border-box}
+.hv section{padding:112px 40px}
+.hv .in{max-width:1180px;margin:0 auto}
+.hv p{margin:0;text-wrap:pretty}
+.hv .big,.hv .lead{text-wrap:balance}
+.hv a{color:var(--o);font-weight:700;text-decoration:none;transition:color .18s}
+.hv a:hover{color:var(--oh)}
+.hv .dark a:not(.btn):hover{color:var(--ol)}
+.hv a:focus-visible,.hv button:focus-visible,.hv summary:focus-visible,.hv input:focus-visible{outline:3px solid var(--o);outline-offset:3px;border-radius:4px}
+.hv a:active,.hv button:active{transform:translateY(1px)}
+.hv .tl .ar{display:inline-block;transition:transform .18s;margin-left:2px}
+.hv .tl:hover .ar{transform:translateX(4px)}
+.hv .eb{font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--o);margin:0 0 14px}
+.hv h1,.hv h2,.hv h3{font-family:'Plus Jakarta Sans',sans-serif;color:var(--ink);margin:0;text-wrap:balance}
+.hv h2{font-weight:800;font-size:clamp(30px,3.4vw,44px);line-height:1.1;letter-spacing:-.8px;margin:0 0 18px;max-width:900px}
+.hv h2 .o,.hv h1 .o{color:var(--o)}
+.hv h3{font-weight:800;font-size:21px;line-height:1.3}
+.hv .lead{font-size:clamp(17px,1.4vw,19px);line-height:1.6;margin:0 0 44px;max-width:780px}
+.hv .lead b{color:var(--ink)}
+.hv .light{background:#fff}.hv .soft{background:var(--soft)}.hv .dark{background:var(--dark);color:#dfe2e7}
+.hv .dark h1,.hv .dark h2,.hv .dark h3{color:#fff}.hv .dark .lead{color:#dfe2e7}.hv .dark .lead b{color:#fff}
+.hv .btn{display:inline-block;background:var(--o);color:#fff!important;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:17px;padding:15px 24px;border-radius:8px;border:2px solid var(--o);transition:transform .18s,box-shadow .18s,background .18s;white-space:nowrap}
+.hv .btn .ar{display:inline-block;transition:transform .18s;margin-left:4px}
+.hv .btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(239,102,47,.32);background:var(--oh);border-color:var(--oh)}
+.hv .btn:hover .ar{transform:translateX(4px)}
+.hv .btn.ghost{background:transparent}
+.hv .btn.ghost:hover{background:rgba(239,102,47,.12);border-color:var(--o)}
+.hv .light .btn.ghost,.hv .soft .btn.ghost{color:var(--ink)!important}
+.hv .illus{margin:0 0 18px;font-size:15px;color:var(--mut);line-height:1.5}.hv .illus b{color:var(--ink)}
+.hv .cpb .pth{display:flex;flex-wrap:wrap;align-items:center;gap:2px 0;font-weight:500}.hv .cpb .pth i{font-style:normal;color:var(--o);font-weight:700;margin:0 8px}.hv .cpb .pth span:first-child i{display:none}.hv .cpb .pth span{white-space:nowrap}
+.hv .take{margin:22px 0 0;font-size:17px;line-height:1.6;color:var(--body);max-width:900px}.hv .take b{color:var(--ink);font-weight:700}
+.hv .how{margin:18px 0 0;max-width:900px}
+.hv .how summary{cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:15px;color:var(--ink);display:inline-flex;align-items:center;gap:8px;padding:6px 0}
+.hv .how summary::-webkit-details-marker{display:none}.hv .how summary::marker{content:''}
+.hv .how summary::after{content:'+';color:var(--o);font-size:18px;line-height:1;transition:transform .18s}
+.hv .how[open] summary::after{transform:rotate(45deg)}
+.hv .how summary:hover{color:var(--o)}
+.hv .how p{font-size:15px;color:var(--mut);line-height:1.6;margin:8px 0 0}
+.hv .insight{margin:0;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(22px,2.2vw,30px);line-height:1.25;letter-spacing:-.5px;color:var(--ink);max-width:860px;text-wrap:balance}
+.hv .read{margin:14px 0 0}
+.hv .path{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
+.hv .path li{position:relative;padding:28px 26px 30px;border-left:1px solid var(--line);transition:background .18s}
+.hv .path li:first-child{border-left:0}
+.hv .path li:hover{background:var(--tint)}
+.hv .path li:not(:last-child)::after{content:'';position:absolute;right:-9px;top:34px;width:16px;height:16px;background:inherit;border-top:1px solid var(--line);border-right:1px solid var(--line);transform:rotate(45deg);z-index:1;background:#fff}
+.hv .path li:hover::after{background:var(--tint)}
+.hv .path .st{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--mut);margin-bottom:14px}
+.hv .path b{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(21px,1.7vw,25px);letter-spacing:-.5px;color:var(--o);line-height:1.1;margin-bottom:8px}
+.hv .path h3{font-size:18px;margin:0 0 10px}
+.hv .path p{font-size:16px;line-height:1.55}
+.hv .path .src{display:block;color:var(--mut);font-size:13px;margin-top:10px}
+.hv .grp{font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--o);margin:48px 0 14px}
+.hv #proof .lead+.grp{margin-top:36px}
+.hv #system h2,.hv #system .lead{text-align:center;margin-left:auto;margin-right:auto}
+.hv .sv-diag2{max-width:1000px;margin:48px auto 0}
+.hv .sv-duo{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.hv .sv-dcard{background:#fff;border:1px solid #333;border-radius:14px;padding:34px 32px 28px;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.hv .sv-dcard.team{border-color:var(--o)}
+.hv .sv-dcard:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(17,19,24,.08)}
+.hv .sv-dnum{font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--o);margin:0 0 14px}
+.hv .sv-dcard h3{font-size:clamp(24px,2.2vw,30px);letter-spacing:-.6px;margin:0 0 18px}
+.hv .sv-dlist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px 24px;flex:1;align-content:start}
+.hv .sv-dlist li{position:relative;padding-left:16px;font-size:17px}
+.hv .sv-dlist li::before{content:'';position:absolute;left:0;top:.62em;width:6px;height:6px;background:var(--o)}
+.hv .sv-dlist a{color:var(--ink);font-weight:500}.hv .sv-dlist a:hover{color:var(--o)}
+.hv .sv-dwho{margin:22px 0 0;padding-top:18px;border-top:1px solid var(--line);font-size:15px;color:var(--mut);line-height:1.55}
+.hv .sv-dwho b{display:block;color:var(--ink)}
+.hv .sv-merge{display:block;width:100%;height:64px}
+.hv .sv-stem{display:none}
+.hv .sv-measure{background:#333;border-radius:14px;max-width:640px;margin:0 auto;padding:34px 32px;text-align:center;box-shadow:0 18px 40px rgba(17,19,24,.12)}
+.hv .sv-measure .mk{font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--o);margin:0 0 10px}
+.hv .sv-measure .mt{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(24px,2.3vw,30px);letter-spacing:-.6px;color:#fff;margin:0 0 10px;text-wrap:balance}
+.hv .sv-measure .md{color:#d1d5db;font-size:17px;line-height:1.55;text-wrap:balance;max-width:440px;margin:0 auto}
+.hv .sv-dcap{text-align:center;color:var(--mut);font-size:17px;margin:28px 0 0}
+.hv .sv-dmore{text-align:center;margin:12px 0 0;font-size:17px}
+@media(max-width:700px){.hv .sv-duo{grid-template-columns:1fr;gap:14px}.hv .sv-merge{display:none}.hv .sv-stem{display:block;width:2px;height:36px;background:var(--o);margin:0 auto}.hv .sv-dcard{padding:26px 22px 22px}.hv .sv-measure{padding:28px 22px}}
+.hv .tlax{display:flex;justify-content:space-between;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--mut);margin:48px 0 14px}
+.hv .tlax span:last-child{color:var(--o)}
+.hv .tline{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(7,1fr);gap:0 16px;position:relative}
+.hv .tline::before{content:'';position:absolute;left:0;right:0;top:21px;height:4px;border-radius:2px;background:linear-gradient(90deg,var(--line),var(--o))}
+.hv .tn{position:relative;z-index:1;display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:#fff;border:2px solid var(--o);font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:15px;color:var(--o);margin-bottom:18px;transition:background .18s,color .18s,box-shadow .18s}
+.hv .tline li{display:contents}
+.hv .tb{margin:0;font-size:inherit}
+.hv .tb button{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;align-items:flex-start;width:100%;height:100%;padding:0 4px 18px;border-radius:10px;transition:transform .18s}
+.hv .tb button:hover{transform:translateY(-3px)}
+.hv .tb button:focus-visible{outline:2px solid var(--o);outline-offset:4px}
+.hv .tb button:hover .tn,.hv .tb button[aria-expanded="true"] .tn{background:var(--o);color:#fff;box-shadow:0 0 0 6px var(--tint)}
+.hv .tw{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:800;color:var(--o);margin:0 0 6px}
+.hv .th{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:17px;line-height:1.3;color:var(--ink);margin:0 0 8px;text-wrap:balance}
+.hv .tb button[aria-expanded="true"] .th{color:var(--o)}
+.hv .tx{display:block;font-family:'DM Sans',sans-serif;font-weight:400;font-size:15px;color:var(--mut);line-height:1.45}
+.hv .tp{grid-column:1/-1;grid-row:2;margin:18px 0 0;background:var(--tint);border-left:3px solid var(--o);border-radius:0 12px 12px 0;padding:26px 30px;animation:tpIn .25s ease}
+.hv .tp[data-closed]{display:none}
+.hv .tp p{font-size:17px;line-height:1.65;max-width:860px}
+.hv .tp .tsrc{font-size:13px;line-height:1.5;color:#666;margin:12px 0 0}
+.hv .tp .tph{font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#333;margin:0 0 6px}
+.hv .tp .tpw{font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--o);margin:0 0 8px}
+@keyframes tpIn{from{opacity:.4;transform:translateY(4px)}to{opacity:1;transform:none}}
+.hv .tlhint{margin:16px 0 0;font-size:15px;color:var(--mut)}
+@media(max-width:1100px){.hv .tlax{display:none}.hv .tline{grid-template-columns:1fr;gap:0;margin-top:40px}.hv .tline::before{left:21px;right:auto;top:0;bottom:0;width:4px;height:auto;background:linear-gradient(180deg,var(--line),var(--o))}.hv .tline li{display:block;position:relative;padding:0 0 22px}.hv .tline li:last-child{padding-bottom:0}.hv .tb button{display:grid;grid-template-columns:46px 1fr;column-gap:20px;padding:0;align-items:start}.hv .tn{grid-row:1/4;margin:0}.hv .tw,.hv .th,.hv .tx{grid-column:2}.hv .tb button:hover{transform:translateX(3px)}.hv .th{font-size:19px}.hv .tp{grid-row:auto;margin:14px 0 0 66px;padding:20px 22px}.hv .tp p{font-size:16px}}
+.hv .dab{max-width:760px;margin:18px auto 0;text-align:center;font-size:17px;line-height:1.6;color:var(--body)}
+.hv .midcta{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;margin:36px 0 0}
+.hv .midcta>span{color:var(--mut);font-size:16px;text-wrap:balance}
+.hv .how summary{text-wrap:balance}
+/* hero */
+.hv .hero{padding:96px 40px 88px}
+.hv .hero .eb{color:#9ca3af;letter-spacing:2.2px}
+.hv .hero .sub{font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;color:#fff;font-size:clamp(20px,1.9vw,26px);line-height:1.35;margin:22px 0 0;max-width:900px;text-wrap:balance}
+.hv .split{display:grid;grid-template-columns:repeat(2,minmax(0,300px));gap:12px;margin:44px 0 0}
+.hv .split .col{border-radius:10px;padding:22px 22px 20px;display:flex;flex-direction:column;gap:4px}
+.hv .split .them{border:1px solid var(--dline);background:#1b1d24}
+.hv .split .you{background:var(--o)}
+.hv .split .lbl{font-size:14px;color:#c4c7cf}.hv .split .you .lbl{color:#fff}
+.hv .split .bg{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(24px,2vw,28px);letter-spacing:-.8px;color:#fff;line-height:1.15}
+.hv .split .them .bg{color:#e5e7eb}
+.hv .hero .sol{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;color:#fff;font-size:clamp(20px,1.8vw,24px);line-height:1.4;margin:40px 0 0}
+.hv .hero>.in>.btn{margin:40px 0 0}
+.hv .hero .alt{color:#c4c7cf;font-size:15px;margin:18px 0 0}
+.hv .hero .alt a{color:var(--o);font-weight:700}.hv .hero .alt a:hover{color:var(--ol)}
+.hv .hero .rating{display:inline-block;margin:18px 0 0;color:#c4c7cf;font-size:14px}.hv .hero .rating:hover{color:#fff}
+.hv .hero .stars{color:var(--o);letter-spacing:2px;margin-right:4px}
+.hv h1{font-weight:800;color:#fff;font-size:clamp(34px,4.4vw,58px);line-height:1.06;letter-spacing:-1.2px;margin:0 0 32px;max-width:940px}
+/* services */
+/* math */
+.hv .cpb{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
+.hv .cpb-h,.hv .cpb-r{display:grid;grid-template-columns:1fr 1.75fr .9fr .8fr}
+.hv .cpb-h div{text-wrap:balance;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--mut);padding:16px 22px;background:var(--soft);border-bottom:1px solid var(--line)}
+.hv .cpb-h div:nth-child(4){color:var(--o);background:var(--tint);border-left:3px solid var(--o)}
+.hv .cpb-r div{padding:22px;font-size:17px;line-height:1.5;border-bottom:1px solid var(--line)}
+.hv .cpb-r:last-child div{border-bottom:0}
+.hv .cpb-r div:first-child{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;color:var(--ink)}
+.hv .cpb-r div:first-child small{display:block;font-family:'DM Sans',sans-serif;font-weight:400;color:var(--mut);font-size:15px}
+.hv .cpb-r div:nth-child(3){font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:24px;color:var(--ink)}
+.hv .cpb-r div:nth-child(4){background:#fff8f4;border-left:3px solid var(--o);font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(26px,2.3vw,32px);color:var(--ink);letter-spacing:-.6px}
+.hv .cpb-r.best div:nth-child(4){color:var(--o)}
+.hv .cpb .lab{display:none}
+.hv .math{margin:20px 0 0;font-size:15px;color:var(--mut);line-height:1.6;max-width:900px}
+.hv .read{margin:32px 0 0;font-size:18px;line-height:1.6;max-width:860px}
+.hv .read b{color:var(--ink)}
+.hv .calc{margin:64px 0 0;background:#fff;border:1px solid var(--line);border-radius:16px;padding:40px}
+.hv .calc h3{font-size:clamp(22px,2.2vw,28px);margin:0 0 8px}
+.hv .hero .sub .ln{display:block;text-wrap:balance}
+.hv .calc .sub{color:var(--mut);font-size:16px;margin:0 0 28px}
+.hv .chips{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 28px}
+.hv .chips button{font:600 15px 'Plus Jakarta Sans',sans-serif;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:999px;padding:10px 16px;min-height:44px;cursor:pointer;transition:border-color .18s,background .18s,transform .18s}
+.hv .chips button:hover{border-color:var(--o);transform:translateY(-2px)}
+.hv .chips button[aria-pressed=true]{background:var(--tint);border-color:var(--o);color:var(--ink)}
+.hv .cgrid{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:start}
+.hv .ins{display:grid;grid-template-columns:1fr 1fr;gap:26px 28px}
+.hv .ins label{display:block;font-size:15px;color:var(--mut);margin-bottom:6px}
+.hv .ins output{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:24px;color:var(--ink);margin-bottom:8px}
+.hv .ins input[type=range]{width:100%;accent-color:var(--o);min-height:32px;cursor:pointer}
+.hv .ins .opt-lab{font-size:13px;color:var(--mut)}
+.hv .res{background:var(--tint);border-left:3px solid var(--o);border-radius:0 12px 12px 0;padding:26px 28px}
+.hv .res .k{font-size:15px;color:var(--mut);margin:0 0 6px}
+.hv .res .big{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(36px,3.6vw,48px);color:var(--o);letter-spacing:-1px;line-height:1;margin:0 0 6px;font-variant-numeric:tabular-nums}
+.hv .res .big small{display:block;font-size:18px;letter-spacing:0;color:var(--ink);font-weight:700;margin-top:8px}
+.hv .res .gp{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:18px;color:var(--ink);margin:12px 0 0}
+.hv .res .now{font-size:16px;margin:14px 0 0;padding-top:14px;border-top:1px solid #f3d6c8}
+.hv .res .cap{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:17px;color:var(--ink);margin:14px 0 0}
+.hv .calc .fine{margin:24px 0 0;font-size:14px;line-height:1.6;color:var(--mut)}
+/* leaks */
+.hv .four{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.hv .four div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px 24px}
+.hv .four b{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(22px,1.75vw,26px);white-space:nowrap;letter-spacing:-.5px;color:var(--o);line-height:1.05;margin-bottom:6px}
+.hv .four h3{font-size:19px;margin:0 0 10px}
+.hv .four p{font-size:16px;line-height:1.55}
+.hv .four .src{display:block;color:var(--mut);font-size:13px;margin-top:10px}
+.hv .cap3{margin:64px 0 0;display:grid;grid-template-columns:1fr 1.3fr;gap:40px;padding-top:48px;border-top:1px solid var(--line)}
+.hv .cap3 h3{font-size:clamp(22px,2.2vw,28px)}
+.hv .cap3 p{font-size:17px;line-height:1.65}
+.hv .more{margin:40px 0 0;font-size:17px}
+/* outcomes */
+.hv .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.hv .steps>div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:30px 26px;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s,border-color .18s}
+.hv .steps>div:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(17,19,24,.08);border-color:var(--o)}
+.hv .steps b{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:800;color:var(--o);letter-spacing:1.5px;margin-bottom:12px}
+.hv .steps h3{margin-bottom:10px}
+.hv .steps p{font-size:16px;line-height:1.6;flex:1}
+.hv .steps .tl{margin-top:18px;font-size:16px}
+/* record */
+.hv .prov{color:#d1d5db;font-size:16px;line-height:1.6;max-width:860px;margin:0 0 22px}
+.hv .prov b{color:#e5e7eb}
+.hv .stats{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--dline);border-bottom:1px solid var(--dline);margin:0 0 28px}
+.hv .stats div{padding:28px 12px 28px 0}
+.hv .stats b{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(32px,3vw,44px);font-weight:800;color:#fff;letter-spacing:-1px;line-height:1;font-variant-numeric:tabular-nums}
+.hv .stats b.o{color:var(--o)}
+.hv .stats span{display:block;color:#c4c7cf;font-size:14px;margin-top:8px}
+.hv .travel{color:#e5e7eb;font-size:18px;line-height:1.6;max-width:860px;margin:0;padding-bottom:8px}
+.hv .adj{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.hv .adj .k{font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#c4c7cf;margin:0 0 10px}
+.hv .adj b{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(32px,3vw,42px);color:#fff;letter-spacing:-1px;line-height:1;margin:0 0 12px}
+.hv .adj p{font-size:16px;line-height:1.6;color:#e5e7eb}
+.hv .adj .src{display:block;color:#b8bcc6;font-size:14px;margin-top:8px}
+.hv .anon{margin:32px 0 0;color:#b8bcc6;font-size:15px}
+/* engage */
+.hv .cmp{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:56px 0 0;font-size:16px}
+.hv .cmp caption{text-align:left;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(22px,2.2vw,28px);color:var(--ink);padding:0 0 18px;text-wrap:balance;max-width:820px}
+.hv .cmp th,.hv .cmp td{padding:18px 20px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);line-height:1.5}
+.hv .cmp thead th{font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;letter-spacing:1.3px;text-transform:uppercase;color:var(--mut);background:var(--soft)}
+.hv .cmp thead th:last-child{color:var(--o);background:var(--tint)}
+.hv .cmp tbody th{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;color:var(--ink);width:20%}
+.hv .cmp td:last-child{background:#fff8f4;color:var(--ink);font-weight:600;border-left:3px solid var(--o)}
+.hv .cmp tr:last-child th,.hv .cmp tr:last-child td{border-bottom:0}
+.hv .need{margin:40px 0 0;background:var(--soft,#F8F8F8);border:1px solid #E0E0E0;border-left:4px solid #EF662F;border-radius:12px;padding:24px 28px}.hv .need b{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;color:#333;margin-bottom:6px}.hv .need p{font-size:16px;line-height:1.6;margin:0;max-width:880px}
+.hv .terms{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin:48px 0 56px}
+.hv .terms div{font-size:16px;line-height:1.6;padding:18px 0 0;border-top:3px solid var(--o)}
+.hv .terms b{color:var(--ink);display:block;text-wrap:balance;font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;margin-bottom:4px}
+.hv .price{margin:48px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:32px;padding-top:40px;border-top:1px solid var(--line);align-items:start}
+.hv .price p{font-size:17px;line-height:1.65}
+.hv .price .diag{background:var(--tint);border-left:3px solid var(--o);padding:22px 24px;border-radius:0 12px 12px 0}
+.hv .price .diag b{color:var(--ink);font-family:'Plus Jakarta Sans',sans-serif}
+.hv .price .pr{color:var(--o);font-weight:800}
+/* faq */
+.hv .faq{max-width:860px}
+.hv .faq details{border-bottom:1px solid var(--line)}
+.hv .faq details:first-of-type{border-top:1px solid var(--line)}
+.hv .faq summary{list-style:none;cursor:pointer;padding:22px 44px 22px 0;position:relative;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:19px;line-height:1.35;color:var(--ink);transition:color .18s}
+.hv .faq summary::-webkit-details-marker{display:none}
+.hv .faq summary::after{content:'+';position:absolute;right:4px;top:18px;color:var(--o);font-size:26px;font-weight:400;transition:transform .18s}
+.hv .faq details[open] summary::after{transform:rotate(45deg)}
+.hv .faq summary:hover{color:var(--o)}
+.hv .faq .a{padding:0 0 24px;font-size:17px;line-height:1.65;max-width:800px}
+/* close */
+.hv .two{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:8px 0 32px}
+.hv .opt{background:#1d2028;border:1px solid var(--dline);border-radius:16px;padding:36px 34px;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s,border-color .18s}
+.hv .opt:hover{transform:translateY(-3px);box-shadow:0 0 0 1px var(--o),0 16px 36px rgba(239,102,47,.18);border-color:var(--o)}
+.hv .opt .tag{font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#9ca3af;margin-bottom:10px}
+.hv .opt h3{font-size:24px;margin:0 0 12px}
+.hv .opt p{color:#c9ccd3;font-size:17px;line-height:1.6;flex:1;margin-bottom:24px}
+.hv .opt .btn{align-self:flex-start}
+.hv .fine2{color:#c9ccd3;font-size:16px;line-height:1.6;border-top:1px solid var(--dline);padding-top:24px}
+.hv .closer h2{font-size:clamp(28px,3.1vw,42px)}
+@media(max-width:1024px){.hv .path{grid-template-columns:1fr 1fr}.hv .path li:nth-child(3){border-left:0}.hv .path li:nth-child(n+3){border-top:1px solid var(--line)}.hv .path li:nth-child(2)::after{display:none}.hv .terms{grid-template-columns:1fr 1fr!important}.hv .four{grid-template-columns:1fr 1fr}.hv .stats{grid-template-columns:repeat(3,1fr)}.hv .stats div:nth-child(n+4){border-top:1px solid var(--dline)}.hv .cgrid{grid-template-columns:1fr}}
+@media(max-width:820px){
+ .hv section{padding:72px 40px}.hv .hero{padding:64px 40px 56px}
+ .hv .cpb-h{display:none}
+ .hv .cpb-r{grid-template-columns:1fr 1fr;padding:18px 20px;border-bottom:1px solid var(--line)}
+ .hv .cpb-r:last-child{border-bottom:0}
+ .hv .cpb-r div{padding:4px 0;border:0!important}
+ .hv .cpb-r div:first-child,.hv .cpb-r div:nth-child(2){grid-column:1/-1}
+ .hv .cpb-r div:nth-child(4){background:#fff8f4;border-left:3px solid var(--o)!important;padding:8px 12px;border-radius:0 8px 8px 0}
+ .hv .cpb .lab{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--mut);margin:8px 0 2px}
+ .hv .calc{padding:28px 22px}
+ .hv .ins{grid-template-columns:1fr}
+ .hv .cap3,.hv .steps,.hv .adj,.hv .two,.hv .terms,.hv .price{grid-template-columns:1fr}
+ .hv .opt{padding:28px 24px}
+ .hv .cmp thead{display:none}
+ .hv .cmp caption{display:block;width:auto;max-width:none;padding:0 0 16px}
+ .hv .cmp{border:0;border-radius:0;overflow:visible}
+ .hv .cmp tbody{border:1px solid var(--line);border-radius:14px;overflow:hidden}
+ .hv .cmp,.hv .cmp tbody,.hv .cmp tr,.hv .cmp th,.hv .cmp td{display:block;width:100%}
+ .hv .cmp tr{border-bottom:1px solid var(--line);padding:6px 0}
+ .hv .cmp tr:last-child{border-bottom:0}
+ .hv .cmp tbody th{width:100%;padding:16px 18px 6px;border:0}
+ .hv .cmp td{border:0;padding:6px 18px}
+ .hv .cmp td::before{content:attr(data-l);display:block;font:700 13px 'Plus Jakarta Sans',sans-serif;letter-spacing:1.1px;text-transform:uppercase;color:var(--mut);margin-bottom:2px}
+ .hv .cmp td:last-child{border-left:3px solid var(--o);margin:4px 0 12px}
+ .hv .cmp td:last-child::before{color:var(--o)}
+}
+@media(max-width:700px){.hv .path{grid-template-columns:1fr}.hv .path li{border-left:0!important;border-top:1px solid var(--line)}.hv .path li:first-child{border-top:0}.hv .path li::after{display:none}.hv .terms{grid-template-columns:1fr!important}.hv .split{grid-template-columns:1fr;gap:10px;margin-top:32px}.hv .split .col{padding:16px 18px}.hv .hero .sol{margin-top:30px}.hv section{padding:64px 20px}.hv .hero{padding:52px 20px 48px}.hv .four{grid-template-columns:1fr}.hv .stats{grid-template-columns:1fr 1fr}.hv .stats div:nth-child(n+3){border-top:1px solid var(--dline)}.hv .stats div:last-child{grid-column:1/-1}.hv .hero .btn{width:100%;text-align:center}.hv .subnav{gap:4px 18px;font-size:14px}}
+@media(max-width:400px){.hv .btn{font-size:16px;padding:15px 16px}.hv h1{font-size:33px}.hv .opt .btn,.hv .hero .btn{white-space:normal;width:100%;text-align:center;align-self:stretch}}
+@media(prefers-reduced-motion:reduce){.hv *{transition:none!important;transform:none!important;animation:none!important}}
+
+.hv .steps.s4{grid-template-columns:repeat(4,1fr)}
+.hv .bjm{margin:0 0 18px;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--mut)}
+.hv .guides{margin:40px 0 0;padding-top:28px;border-top:1px solid var(--line);font-size:16px;line-height:1.9;max-width:860px}
+.hv .guides b{font-family:'Plus Jakarta Sans',sans-serif;color:var(--ink);margin-right:6px}
+.hv .guides a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px;transition:color .15s,text-decoration-color .15s}
+.hv .guides a:hover{color:var(--o);text-decoration-color:var(--o)}
+.hv .guides span{color:var(--mut);margin:0 8px}
+@media(max-width:1100px){.hv .steps.s4{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.hv .steps.s4{grid-template-columns:1fr}}
+.hv .prov{color:#e5e7eb}.hv .stats span{color:#d9dce2;font-size:15px}.hv .adj .k{color:#d9dce2}.hv .anon{color:#cfd3da}.hv .dark .lead{color:#eef0f3}
+.hv .cmp th,.hv .cmp td{padding:14px 20px}
+@media print{.hv section{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+.hv .bjmc{margin:0 0 28px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:clamp(19px,1.7vw,23px);line-height:1.4;color:var(--ink);max-width:860px;text-wrap:balance}
+.hv .ins>div:last-child{grid-column:1/-1}
+.hv .res .cap.over{color:var(--oh)}
+@media(max-width:1100px){.hv .tb button{height:auto}}
+</style>
+
+<!-- 1 HERO -->
+<section class="hero dark" id="top"><div class="in">
+ <p class="eb">SEO, Google Ads &amp; websites for HVAC companies</p>
+ <h1>HVAC Marketing Agency <span class="o">Measured to the Sold Job</span></h1>
+ <p class="sub"><span class="ln">You run service calls, replacements and maintenance plans.</span> <span class="ln">Your marketing should be measured to the sold job.</span></p>
+ <div class="split">
+  <div class="col them"><span class="lbl">Most agencies count</span><span class="bg">leads.</span></div>
+  <div class="col you"><span class="lbl">You count</span><span class="bg">profitable jobs.</span></div>
+ </div>
+ <p class="sol">The right HVAC calls.<br>More estimates sold.<br>Numbers you understand.</p>
+ <a class="btn" href="https://calendly.com/andrew-andrewryanmarketing/gap-review?utm_source=arm-site&amp;utm_medium=cta&amp;utm_campaign=site&amp;utm_content=hvac-hero">Let's talk about your marketing&nbsp;<span class="ar">→</span></a>
+ <p class="alt">Not ready to talk? <a href="/#vr">Get a free video review&nbsp;<span class="ar">→</span></a></p>
+ <a class="rating" href="https://www.google.com/maps?cid=5316129390931803308" target="_blank" rel="noopener"><span class="stars">★★★★★</span> 5.0 on Google · 6 reviews</a>
+</div></section>
+
+<!-- 1b SYSTEM OVERVIEW (homepage pattern) -->
+<section class="soft" id="system"><div class="in">
+ <h2>HVAC marketing that goes <span class="o">beyond the lead.</span></h2>
+ <p class="lead">Get found. Win more HVAC jobs. Know what's working.</p>
+ <p class="dab">Andrew Ryan Marketing is an HVAC marketing agency for established heating and cooling companies that run service, replacement and maintenance work, residential and light commercial. We bring in the calls, help your team turn them into sold jobs, and show you what each channel costs per sold job and the gross profit it returns.</p>
+ <div class="sv-diag2">
+  <div class="sv-duo">
+   <div class="sv-dcard mkt">
+    <p class="sv-dnum">01 / Get found</p>
+    <h3>Attract more calls.</h3>
+    <ul class="sv-dlist"><li><a href="/local-contractor-seo-blueprint/">SEO</a></li><li><a href="/services/ppc-for-contractors/">Google Ads</a></li><li><a href="/services/ppc-for-contractors/">Local Services Ads</a></li><li><a href="/local-contractor-seo-blueprint/">Google Maps</a></li><li><a href="/services/">Websites</a></li><li><a href="/services/ppc-for-contractors/">Meta ads</a></li><li><a href="/services/ppc-for-contractors/">Retargeting</a></li><li><span>Direct mail</span></li><li><a href="/services/generative-engine-optimization/">AI Visibility</a></li></ul>
+    <p class="sv-dwho"><b>We run it for you.</b> Your HVAC marketing, built and managed.</p>
+   </div>
+   <div class="sv-dcard team">
+    <p class="sv-dnum">02 / Win more jobs</p>
+    <h3>Turn more calls into sold jobs.</h3>
+    <ul class="sv-dlist"><li><a href="/services/lead-to-booked-job/">Speed to call</a></li><li><a href="/services/lead-to-booked-job/">Visit booking</a></li><li><a href="/services/lead-to-booked-job/">Appointment confirmation</a></li><li><a href="/services/lead-to-booked-job/estimate-follow-up/">Estimate follow-up</a></li><li><a href="/sales-and-marketing-consulting-for-contractors/">Estimate-to-sale</a></li><li><a href="/services/crm-email-and-automation/">CRM</a></li></ul>
+    <p class="sv-dwho"><b>We help your team.</b> This is the second funnel, everything after the phone rings. We build and improve the systems that help your CSRs, dispatchers and comfort advisors turn more calls into sold jobs.</p>
+   </div>
+  </div>
+  <svg class="sv-merge" viewBox="0 0 1000 64" preserveAspectRatio="none" aria-hidden="true"><path d="M245 0 C245 40, 500 22, 500 64" fill="none" stroke="#333" stroke-width="2" vector-effect="non-scaling-stroke"/><path d="M755 0 C755 40, 500 22, 500 64" fill="none" stroke="#EF662F" stroke-width="2" vector-effect="non-scaling-stroke"/></svg>
+  <div class="sv-stem" aria-hidden="true"></div>
+  <div class="sv-measure arm-nobleed">
+   <p class="mk">One connected view</p>
+   <p class="mt">Both measured to the booked job.</p>
+   <p class="md">Know what's working, what's costing you sold jobs, and what to improve next.</p>
+  </div>
+  <p class="sv-dcap">Choose the services you need, or connect the entire system.</p>
+  <p class="sv-dmore"><a class="tl" href="#services">See each service and when it pays off <span class="ar">↓</span></a></p>
+ </div>
+</div></section>
+
+<!-- 2 SERVICES -->
+<section class="light" id="services"><div class="in">
+ <p class="eb">What we build and run</p>
+ <h2>Seven HVAC marketing services, one connected system</h2>
+ <p class="lead">As a marketing agency for HVAC companies, we work on seven connected parts of your growth system. There's no fixed order: we find the constraint and start where the return is largest. The early steps work on demand you already have and often pay back sooner; the later ones build value over&nbsp;time.</p>
+ <div class="tlax" aria-hidden="true"><span>Often pays back sooner</span><span>Builds over time</span></div>
+ <ol class="tline">
+  <li><h3 class="tb"><button type="button" id="svb1" aria-expanded="true" aria-controls="svp1"><span class="tn">01</span><span class="tw">Convert existing demand</span><span class="th">Speed to call and visit booking</span></button></h3><div class="tp" id="svp1" role="region" aria-labelledby="svb1"><p class="tph">How we fix it</p><p class="tpw">01 · Convert existing demand</p><p>Every call, form and chat is tracked. When the AC quits in July, a homeowner who reaches voicemail calls the next company, so calls get answered live or returned in minutes. CSRs book the service call or comfort visit on the first call, and replacement visits are confirmed the day before. <a class="tl" href="/services/lead-to-booked-job/">Call response <span class="ar">→</span></a></p></div></li>
+  <li><h3 class="tb"><button type="button" id="svb2" aria-expanded="false" aria-controls="svp2"><span class="tn">02</span><span class="tw">Recover missed sales</span><span class="th">Estimate follow-up and estimate-to-sale</span></button></h3><div class="tp" id="svp2" role="region" aria-labelledby="svb2" data-closed><p class="tph">How we fix it</p><p class="tpw">02 · Recover missed sales</p><p>Every replacement estimate gets followed up until it's signed or lost, with the reason recorded. We help tighten how options are presented: good, better and best systems side by side, financing and utility rebates explained, a firm install date. Close rate is tracked by comfort advisor, system type and source, so you know whether the problem is the call or the close. Closing more of the estimates you already give is usually your cheapest growth. <a class="tl" href="/services/lead-to-booked-job/estimate-follow-up/">Estimate follow-up <span class="ar">→</span></a></p></div></li>
+  <li><h3 class="tb"><button type="button" id="svb3" aria-expanded="false" aria-controls="svp3"><span class="tn">03</span><span class="tw">Generate targeted demand</span><span class="th">HVAC advertising that books the right calls</span></button></h3><div class="tp" id="svp3" role="region" aria-labelledby="svb3" data-closed><p class="tph">How we fix it</p><p class="tpw">03 · Generate targeted demand</p><p>Google Ads target the work you want: AC and furnace replacement, heat pumps, ductless and repair calls in the zip codes you serve. Local Services Ads put you at the top for "AC repair near me." Meta ads and retargeting stay in front of homeowners comparing replacement quotes, and direct mail reaches neighborhoods where systems are aging. Shared leads from Angi, HomeAdvisor and Thumbtack go to several companies at once; we build demand that comes to you alone. <a class="tl" href="/services/ppc-for-contractors/">Google Ads <span class="ar">→</span></a></p></div></li>
+  <li><h3 class="tb"><button type="button" id="svb4" aria-expanded="false" aria-controls="svp4"><span class="tn">04</span><span class="tw">Turn visitors into booked calls</span><span class="th">An HVAC website that books the call</span></button></h3><div class="tp" id="svp4" role="region" aria-labelledby="svb4" data-closed><p class="tph">How we fix it</p><p class="tpw">04 · Turn visitors into booked calls</p><p>Pages for each service you sell and each town you serve: AC repair, furnace replacement, heat pumps, maintenance plans. Real photos of your trucks and techs, financing options, honest price guidance, and one clear next step: call now or book online.</p></div></li>
+  <li><h3 class="tb"><button type="button" id="svb5" aria-expanded="false" aria-controls="svp5"><span class="tn">05</span><span class="tw">Grow your customer base</span><span class="th">Reviews, maintenance plans and repeat business</span></button></h3><div class="tp" id="svp5" role="region" aria-labelledby="svb5" data-closed><p class="tph">How we fix it</p><p class="tpw">05 · Grow your customer base</p><p>Review requests go out after every service call and install. Maintenance-plan members get tune-up reminders, and aging systems your techs flag get followed up before they fail. Your own customers are your cheapest source of replacements, and in the mild shoulder months often the best one. <a class="tl" href="/services/reputation-management-for-contractors/">Reputation <span class="ar">→</span></a></p></div></li>
+  <li><h3 class="tb"><button type="button" id="svb6" aria-expanded="false" aria-controls="svp6"><span class="tn">06</span><span class="tw">Build lasting local visibility</span><span class="th">Local SEO and Google Maps for HVAC companies</span></button></h3><div class="tp" id="svp6" role="region" aria-labelledby="svb6" data-closed><p class="tph">How we fix it</p><p class="tpw">06 · Build lasting local visibility</p><p>A complete Google Business Profile, steady reviews, and pages that match how homeowners search: "AC repair [town]," "furnace replacement near me," "heat pump installer." Map rankings decide who gets the emergency call, and it's where an independent HVAC company can beat a bigger franchise: the search is local and the reviews are yours. <a class="tl" href="/local-contractor-seo-blueprint/">Local SEO for contractors <span class="ar">→</span></a></p></div></li>
+  <li><h3 class="tb"><button type="button" id="svb7" aria-expanded="false" aria-controls="svp7"><span class="tn">07</span><span class="tw">Connect marketing to sold jobs</span><span class="th">Tracking to the sold job and gross profit</span></button></h3><div class="tp" id="svp7" role="region" aria-labelledby="svb7" data-closed><p class="tph">How we fix it</p><p class="tpw">07 · Connect marketing to sold jobs</p><p>Every call, booked visit and estimate is traced from its source through sold, installed and paid, by job type, using the numbers in ServiceTitan, Housecall Pro or whatever runs your office. Each channel's true cost per sold job, and the gross profit behind it, tells us where your next HVAC marketing dollar earns the most. <a class="tl" href="/attribution/">Attribution <span class="ar">→</span></a></p></div></li>
+ </ol>
+ <p class="tlhint">Tap any step for what it covers.</p>
+</div></section>
+
+<!-- 3 MATH -->
+<section class="soft" id="math"><div class="in">
+ <p class="eb">The number your agency doesn't report</p>
+ <h2>Why sold HVAC jobs change the math</h2>
+ <p class="lead">Most HVAC marketing is judged by cost per call. But ten calls can be worth very different amounts, depending on the job and how many you close. And revenue is only the start.</p>
+ <p class="illus"><b>Illustrative example, not client results.</b> Ten opportunities of each type, priced at Angi's national averages. Replacements use the same example close rate of 40%.</p>
+ <div class="cpb" role="table" aria-label="Illustrative sold revenue from ten HVAC opportunities">
+  <div class="cpb-h" role="row"><div role="columnheader">HVAC job</div><div role="columnheader">Path to revenue</div><div role="columnheader">Sold from 10</div><div role="columnheader">Sold revenue, before costs</div></div>
+  <div class="cpb-r" role="row"><div role="cell">Repair call<small>$350 average</small></div><div role="cell"><span class="lab">Path to revenue</span><span class="pth"><span>Call</span><span><i aria-hidden="true">→</i>Booked</span><span><i aria-hidden="true">→</i>Repaired</span></span></div><div role="cell"><span class="lab">Sold from 10</span>10 repairs</div><div role="cell"><span class="lab">Sold revenue</span>$3,500</div></div>
+  <div class="cpb-r" role="row"><div role="cell">Furnace replacement<small>$4,814 average</small></div><div role="cell"><span class="lab">Path to revenue</span><span class="pth"><span>Call</span><span><i aria-hidden="true">→</i>Visit</span><span><i aria-hidden="true">→</i>Sold</span><span><i aria-hidden="true">→</i>Installed</span></span></div><div role="cell"><span class="lab">Sold from 10</span>4 systems</div><div role="cell"><span class="lab">Sold revenue</span>$19,256</div></div>
+  <div class="cpb-r best" role="row"><div role="cell">Full HVAC system replacement<small>$7,500 average</small></div><div role="cell"><span class="lab">Path to revenue</span><span class="pth"><span>Call</span><span><i aria-hidden="true">→</i>Visit</span><span><i aria-hidden="true">→</i>Sold</span><span><i aria-hidden="true">→</i>Installed</span></span></div><div role="cell"><span class="lab">Sold from 10</span>4 systems</div><div role="cell"><span class="lab">Sold revenue</span>$30,000</div></div>
+ </div>
+ <p class="take">A $350 repair call is also where many replacements start. What each job cost to win, its gross margin, and how many crew days it takes decide what it's really worth. <b>Job mix, close rate, margin and install capacity together decide which HVAC work to chase, so we judge marketing by sold jobs and gross profit, not cost per call</b>.</p>
+ <details class="how"><summary>How these numbers are calculated</summary><p>Sold revenue = 10 opportunities × close rate × average job. Averages are Angi's national cost guides: HVAC system replacement $7,500 and furnace installation $4,814 (2026 data), HVAC repair $350 (2025 data). Ductwork is usually billed on top. The 40% close rate on replacement estimates is an example, not a benchmark, and matches the calculator's starting point below. Repairs are counted as all completed. Revenue only: margin and acquisition cost differ by job and by company. Illustrative arithmetic, not a client result.</p></details>
+</div></section>
+
+<!-- 3b CALCULATOR -->
+<section class="light" id="worth"><div class="in">
+ <h2>Same marketing spend. Very different profit.</h2>
+ <p class="lead">Start with gross profit, not revenue, and check whether your install crews have room for the extra work.</p>
+ <div class="calc" id="calc">
+  <h3>What's one more HVAC sale in ten estimates worth to you?</h3>
+  <p class="sub">Change every number to yours. Nothing is saved; it runs in your browser.</p>
+  <div class="chips" role="group" aria-label="Average sold job"><button type="button" data-v="4814" aria-pressed="false">Furnace replacement · $4,814</button><button type="button" data-v="7500" aria-pressed="true">Full system · $7,500</button></div>
+  <div class="cgrid">
+   <div class="ins">
+    <div><label for="hvEst">Replacement estimates per month</label><output id="hvEstOut">20</output><input type="range" id="hvEst" min="4" max="300" step="1" value="20"></div>
+    <div><label for="hvCr">Close rate (estimates sold)</label><output id="hvCrOut">40%</output><input type="range" id="hvCr" min="5" max="80" step="0.1" value="40"></div>
+    <div><label for="hvJob">Average sold job</label><output id="hvJobOut">$7,500</output><input type="range" id="hvJob" min="1000" max="40000" step="1" value="7500"></div>
+    <div><label for="hvGm">Gross margin</label><output id="hvGmOut">40%</output><input type="range" id="hvGm" min="5" max="70" step="1" value="40"></div>
+    <div><label for="hvCapIn">Installs your crews can handle a month</label><output id="hvCapInOut">12</output><input type="range" id="hvCapIn" min="1" max="200" step="1" value="12"></div>
+   </div>
+   <div class="res" aria-live="polite">
+    <p class="k">One more sale in every ten estimates</p>
+    <p class="big"><span id="hvGp">+$72,000</span> <small>a year in gross profit</small></p>
+    <p class="gp" id="hvAdd">From +$180,000 a year in sold revenue at 40% margin</p>
+    <p class="now">Today: <b id="hvSold">8</b> installs and <b id="hvNow">$24,000</b> in gross profit a month.</p>
+    <p class="cap" id="hvCap">That's 10 installs a month, inside your 12. Your crews have room.</p>
+   </div>
+  </div>
+  <p class="fine">Illustrative. Assumes the added sales install at this job value and margin, and that equipment and crew schedules allow it. Not a forecast.</p>
+  <details class="how"><summary>Where the starting numbers come from</summary><p>20 estimates a month, a 40% close rate, a 40% gross margin and 12 installs a month are example starting points, not benchmarks. Change them to yours. Job values are Angi's national averages: HVAC system replacement $7,500 and furnace installation $4,814 (2026 data).</p></details>
+ </div>
+ <p class="midcta"><a class="btn" href="https://calendly.com/andrew-andrewryanmarketing/gap-review?utm_source=arm-site&amp;utm_medium=cta&amp;utm_campaign=site&amp;utm_content=hvac-mid">Let's talk about your marketing&nbsp;<span class="ar">→</span></a><span>Bring your real numbers. We'll run them with you.</span></p>
+</div></section>
+
+<!-- 4 LEAKS -->
+<section class="soft" id="leaks"><div class="in">
+ <p class="eb">Why generic marketing fails this trade</p>
+ <h2>Where HVAC companies lose growth</h2>
+ <p class="lead">Every HVAC job moves through four stages, and revenue can leak at any of them. Most HVAC marketing reports stop at the call. We follow it to the installed system.</p>
+ <ol class="path">
+  <li><span class="st">1 · The search</span><b>Chosen on speed and trust</b><h3>Emergencies, price shoppers and franchises</h3><p>A homeowner with no heat calls whoever shows up first with good reviews. One planning a replacement gets three quotes, often including a franchise. Your marketing has to win both.</p></li>
+  <li><span class="st">2 · The call</span><b>Called isn't booked</b><h3>The busiest week is when calls get missed</h3><p>A heat wave or the first cold snap floods the phones, and every missed or slow call goes to a competitor. How many calls get booked, and how fast, decides what your marketing buys.</p></li>
+  <li><span class="st">3 · The estimate</span><b>Quoted isn't sold</b><h3>The estimate has to close</h3><p>The homeowner has your quote, two others and a financing question. Clear options, a confident comfort advisor and steady follow-up decide it. Most agencies never see this step.</p></li>
+  <li><span class="st">4 · The install</span><b>Sold isn't installed</b><h3>Revenue and margin land at the install</h3><p>Equipment lead times, permits, ductwork surprises and peak-season crew schedules can delay a job or cut its margin. We track sale to install, so marketing never outruns what your crews can deliver.</p></li>
+ </ol>
+ <div class="cap3">
+  <h3>Install crews booked out two weeks in July? More HVAC marketing isn't the fix.</h3>
+  <p>When your crews are full, better use of that capacity beats more demand: aim marketing at higher-margin work, raise prices where demand supports it, tighten the schedule, or add a crew. In the quiet shoulder months, your own customer base usually beats new ad spend. And when capacity is the constraint, our answer to spending more on marketing is simple: Not yet.</p>
+ </div>
+</div></section>
+
+<!-- 5 OUTCOMES -->
+<section class="light" id="next"><div class="in">
+ <p class="eb">Your next growth move</p>
+ <h2>Where will your HVAC company's next growth come from?</h2>
+ <p class="lead">Three problems look alike from the outside. Each needs a different fix.</p>
+ <div class="steps">
+  <div><b>01</b><h3>Sell more of the right HVAC jobs</h3><p>When the board is full of small repairs but few replacements, we shift your marketing toward system replacements, heat pumps, maintenance plans and commercial work with the margin you want.</p><a class="tl" href="#math">See the math <span class="ar">→</span></a></div>
+  <div><b>02</b><h3>Close more of the estimates you give</h3><p>Comfort visits get run, but too few turn into sold systems. Fix the response, follow-up and close before you buy more calls.</p><a class="tl" href="/services/lead-to-booked-job/">Fix the second funnel <span class="ar">→</span></a></div>
+  <div><b>03</b><h3>Open the next market or add commercial</h3><p>Ready for a new service area, a second location or more commercial accounts? We'll show you what it costs to win jobs there before you hire techs or buy trucks.</p><a class="tl" href="/how-to-expand-a-contractor-business-into-a-new-market/">Model the next market <span class="ar">→</span></a></div>
+ </div>
+</div></section>
+
+<!-- 6 EVIDENCE -->
+<section class="dark" id="proof"><div class="in">
+ <p class="eb">Our track record</p>
+ <h2>Performance backed by real operating experience.</h2>
+ <p class="lead">Proven marketing performance. Real-world sales experience. Both working toward the same goal: more profitable jobs.</p>
+ <p class="grp">Operator experience</p>
+ <p class="prov">Our founder built and led an automotive dealership's sales department for 27 months, developing the systems for lead response, appointment setting, follow-up, and closing. The results below come from that operation and were documented in monthly performance reports.</p>
+ <div class="stats"><div><b>11,564</b><span>Leads worked</span></div><div><b>2,135</b><span>Appointments shown</span></div><div><b>761</b><span>Sales closed</span></div><div><b class="o">35.6%</b><span>Show-to-sale</span></div><div><b>$34M+</b><span>Closed revenue</span></div></div>
+ <p class="travel">35.6% is the share of shown appointments that bought, in automotive sales, not HVAC. <b>The method is what travels</b>: response speed, show rate, close rate. A comfort visit is a sales appointment too.</p>
+ <p class="grp">Marketing performance</p>
+ <div class="adj">
+  <div><p class="k">Home services · map-pack rank (lower is better)</p><b>5.4 → 2.5</b><p>An established plumbing company in East Tennessee: average map-pack rank across the tracking grid in 72 hours. #1 for 14 of 16 service terms, and it held.<span class="src">BrightLocal, Apr 2026</span></p></div>
+  <div><p class="k">Real estate · same rankings, more clicks</p><b>+32% CTR</b><p>+36% organic clicks in 30 days on the same rankings, before a single new page.<span class="src">Google Search Console, 2026</span></p></div>
+ </div>
+ <p class="anon">Client results anonymized by industry. Each is documented and can be walked through on the call.</p>
+</div></section>
+
+<!-- 7 ENGAGEMENT -->
+<section class="light" id="engagement"><div class="in">
+ <p class="eb">How an engagement works</p>
+ <h2>How we work with HVAC companies</h2>
+ <p class="lead">Founder-led and diagnostic first. You work with Andrew directly, and nothing gets built until we know which gap costs your HVAC business the most.</p>
+ <p class="bjm">The Booked-Job Model™, in four steps</p>
+ <p class="bjmc">Measure both sides of the business: how you win work and how you deliver it. Find the one constraint limiting profitable growth. Fix that first.</p>
+ <div class="steps s4">
+  <div><b>STEP 1</b><h3>Measure both sides</h3><p>How you win work: calls, booked visits, estimates sold, average ticket and margin by job type. How you deliver it: tech and install capacity, equipment lead times, callbacks.</p></div>
+  <div><b>STEP 2</b><h3>Find the constraint</h3><p>That shows whether demand, call handling, the close or install capacity is the limit, and what each one is costing you in gross profit.</p></div>
+  <div><b>STEP 3</b><h3>Fix what pays first</h3><p>We fix the constraint with the biggest financial impact first, so every dollar that follows has a better chance of a measurable return.</p></div>
+  <div><b>STEP 4</b><h3>Scale when it's justified</h3><p>More spend, a new market or another crew, only when sold jobs, margin and capacity say it will pay.</p></div>
+ </div>
+ <div class="need"><b>What we need from you</b><p>Admin access to your Google Business Profile, ad accounts, website and call tracking. Read access to your field service software, such as ServiceTitan, Housecall Pro or FieldEdge. One person who owns callbacks and visit confirmations. And 30 minutes with you each month.</p></div>
+ <div class="terms">
+  <div><b>You own everything from day one</b>Website, ad accounts, data. You pay the ad platforms directly through your own accounts. We never mark up ad spend. No setup fees.</div>
+  <div><b>One HVAC company per market</b>Defined in writing at signing, so you never compete with our other clients for the same homeowners.</div>
+  <div><b>Terms that match the engagement</b>Smaller engagements start with a 3- to 6-month commitment, then run month to month with 30 days' notice. 12-month engagements carry a 90-day exit.</div>
+  <div><b>You work with Andrew directly</b>No account managers between you and the person doing the work.</div>
+ </div>
+ <table class="cmp">
+  <caption>Three ways HVAC companies buy marketing. Only one leaves you owning the engine.</caption>
+  <thead><tr><th scope="col">What you're comparing</th><th scope="col">Lead marketplaces</th><th scope="col">A generalist agency</th><th scope="col">Andrew Ryan Marketing</th></tr></thead>
+  <tbody>
+   <tr><th scope="row">Who gets the call</th><td data-l="Lead marketplaces">Often several companies at once.</td><td data-l="A generalist agency">Varies. Ask who else they serve locally.</td><td data-l="Andrew Ryan Marketing">Only you, in your market.</td></tr>
+   <tr><th scope="row">What gets measured</th><td data-l="Lead marketplaces">Leads delivered.</td><td data-l="A generalist agency">Often traffic, rankings and calls.</td><td data-l="Andrew Ryan Marketing">Cost per sold job and gross profit, by job type.</td></tr>
+   <tr><th scope="row">Who works the sale</th><td data-l="Lead marketplaces">You're on your own after the lead.</td><td data-l="A generalist agency">Usually stops at the call.</td><td data-l="Andrew Ryan Marketing">We help your team book, follow up and close.</td></tr>
+   <tr><th scope="row">Who owns the assets</th><td data-l="Lead marketplaces">The marketplace. Stop paying and leads stop.</td><td data-l="A generalist agency">Varies. Check the contract.</td><td data-l="Andrew Ryan Marketing">You do, from day one.</td></tr>
+  </tbody>
+ </table>
+ <div class="price">
+  <p><b>What to spend:</b> there's no universal percentage. Anyone quoting a share of revenue before asking about your job mix and close rate is guessing with your money. Focused work like SEO, ad management and AI visibility runs $1,500–2,500 a month, full growth engagements start at $3,500, and <a href="/pricing/">every tier is on the pricing page</a>, so you can rule us in or out before a call.</p>
+  <div class="diag"><b>The Booked-Job Model™ diagnostic</b> is a one-time <span class="pr">$1,500</span>: three weeks, run on your HVAC company's own numbers, with a written 90-day plan that's yours to keep whether or not we work together.</div>
+ </div>
+</div></section>
+
+<!-- 8 FAQ -->
+<section class="soft" id="faq"><div class="in">
+ <p class="eb">Questions HVAC companies ask</p>
+ <h2>HVAC marketing: the questions owners ask</h2>
+ <div class="faq">
+  <details><summary>How much does marketing cost for an HVAC company?</summary><div class="a">There's no universal percentage. Agencies often quote 5–10% of revenue, but what matters is what it costs to win one sold job of the type you want. A company selling $7,500 system replacements can spend more per job than one living on $350 repair calls and still come out ahead. Start with your job mix, close rate and margin, then set the budget.</div></details>
+  <details><summary>What is the best marketing strategy for HVAC companies?</summary><div class="a">A connected system, not one channel. Google Ads and Local Services Ads bring calls quickly. SEO and your Google Business Profile take longer, then lower what every job costs to win. Reviews turn searchers into callers, and maintenance plans bring repeat work. Fast call handling and estimate follow-up decide how many calls become sold jobs. Judge it all by cost per sold job and gross profit.</div></details>
+  <details><summary>What is the second funnel in HVAC marketing?</summary><div class="a">The first funnel gets the phone to ring: SEO, Google Maps, ads and your website. The second funnel is everything after: how fast the call is answered, whether it books, whether the comfort visit happens, and whether the estimate is followed up and sold. Most HVAC marketing only works on the first. We measure and improve both, because a lost estimate costs as much as a call you never got.</div></details>
+  <details><summary>How do I get HVAC leads during the off-season?</summary><div class="a">Start with the customers you already have: maintenance-plan tune-ups, systems your techs flagged as aging, and open estimates from the busy season. Then market jobs that don't depend on the weather, like indoor air quality, ductless and planned replacements with financing. Keep reviews coming all year so you're on top when the weather turns.</div></details>
+  <details><summary>How important are Google reviews for HVAC companies?</summary><div class="a">Very. Emergency calls usually go to a company in the Google map results, and homeowners compare ratings and recent reviews before they call. Steady new reviews, with your replies, help you rank in Maps and win the call. Ask automatically after every service call and install.</div></details>
+  <details><summary>Should an HVAC company focus on repair leads or installation leads?</summary><div class="a">Both. Repair calls keep techs busy, build trust and start many replacements. Replacements and new installs carry most of the revenue and gross profit. The right mix depends on your close rate, margin and install capacity, so we track each job type separately.</div></details>
+  <details><summary>How long does HVAC SEO take to produce results?</summary><div class="a">Google Business Profile and review work often moves map rankings within weeks. Service and town pages usually take three to six months, longer in big metros. Ads bring calls while SEO builds, and fixing call handling and follow-up pays from the first month.</div></details>
+ </div>
+ <p class="guides"><b>More guides for HVAC owners:</b> <a href="/cost-per-booked-job/">Cost per booked job</a><span>·</span><a href="/contractor-marketing-budget/">Contractor marketing budget</a><span>·</span><a href="/lead-generation-for-service-businesses/">Lead generation for service businesses</a><span>·</span><a href="/answer-gap-index/">The Answer Gap Index</a><span>·</span><a href="/6-gap-revenue-map/">The 6-Gap Revenue Map</a></p>
+</div></section>
+
+<!-- 9 CLOSE -->
+<section class="dark closer" id="start"><div class="in">
+ <p class="eb">Find your HVAC marketing gap</p>
+ <h2>You built the reputation. Now aim it at the HVAC jobs that pay best, in every season.</h2>
+ <p class="lead">Your agency can tell you how many calls came in. You should know which ones became sold jobs, and what they earned. Two free ways to find out, no pitch.</p>
+ <div class="two">
+  <div class="opt"><p class="tag">20 minutes</p><h3>Book the Gap Review</h3><p>A call with Andrew. You leave with the gap named and the next move.</p><a class="btn" href="https://calendly.com/andrew-andrewryanmarketing/gap-review?utm_source=arm-site&amp;utm_medium=cta&amp;utm_campaign=site&amp;utm_content=hvac-close">Let's talk about your&nbsp;marketing&nbsp;<span class="ar">→</span></a></div>
+  <div class="opt"><p class="tag">No call</p><h3>Get my gaps on video</h3><p>A recorded walkthrough of your market and where HVAC jobs are being lost. Watch it on your own time.</p><a class="btn ghost" href="/#argmRoot">Get my gaps on&nbsp;video&nbsp;<span class="ar">→</span></a></div>
+ </div>
+ <p class="fine2">We work with heating and cooling companies nationwide.</p>
+</div></section>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Service", "@id": "https://andrewryanmarketing.com/services/hvac-marketing/#service", "name": "HVAC Marketing", "serviceType": "HVAC marketing agency", "url": "https://andrewryanmarketing.com/services/hvac-marketing/", "description": "HVAC marketing measured to the sold job: SEO, Google Maps, Google Ads, Local Services Ads, Meta ads, retargeting, direct mail, websites and reviews, plus speed to call, visit booking, appointment confirmation and estimate follow-up for established heating and cooling companies, tracked from the call to the installed system and its gross profit.", "provider": {"@type": "Organization", "@id": "https://andrewryanmarketing.com/#organization", "name": "Andrew Ryan Marketing", "url": "https://andrewryanmarketing.com/", "telephone": "(423) 299-1718"}, "areaServed": {"@type": "Country", "name": "US"}, "audience": {"@type": "BusinessAudience", "audienceType": "HVAC companies and heating and cooling contractors"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much does marketing cost for an HVAC company?", "acceptedAnswer": {"@type": "Answer", "text": "There's no universal percentage. Agencies often quote 5–10% of revenue, but what matters is what it costs to win one sold job of the type you want. A company selling $7,500 system replacements can spend more per job than one living on $350 repair calls and still come out ahead. Start with your job mix, close rate and margin, then set the budget."}}, {"@type": "Question", "name": "What is the best marketing strategy for HVAC companies?", "acceptedAnswer": {"@type": "Answer", "text": "A connected system, not one channel. Google Ads and Local Services Ads bring calls quickly. SEO and your Google Business Profile take longer, then lower what every job costs to win. Reviews turn searchers into callers, and maintenance plans bring repeat work. Fast call handling and estimate follow-up decide how many calls become sold jobs. Judge it all by cost per sold job and gross profit."}}, {"@type": "Question", "name": "What is the second funnel in HVAC marketing?", "acceptedAnswer": {"@type": "Answer", "text": "The first funnel gets the phone to ring: SEO, Google Maps, ads and your website. The second funnel is everything after: how fast the call is answered, whether it books, whether the comfort visit happens, and whether the estimate is followed up and sold. Most HVAC marketing only works on the first. We measure and improve both, because a lost estimate costs as much as a call you never got."}}, {"@type": "Question", "name": "How do I get HVAC leads during the off-season?", "acceptedAnswer": {"@type": "Answer", "text": "Start with the customers you already have: maintenance-plan tune-ups, systems your techs flagged as aging, and open estimates from the busy season. Then market jobs that don't depend on the weather, like indoor air quality, ductless and planned replacements with financing. Keep reviews coming all year so you're on top when the weather turns."}}, {"@type": "Question", "name": "How important are Google reviews for HVAC companies?", "acceptedAnswer": {"@type": "Answer", "text": "Very. Emergency calls usually go to a company in the Google map results, and homeowners compare ratings and recent reviews before they call. Steady new reviews, with your replies, help you rank in Maps and win the call. Ask automatically after every service call and install."}}, {"@type": "Question", "name": "Should an HVAC company focus on repair leads or installation leads?", "acceptedAnswer": {"@type": "Answer", "text": "Both. Repair calls keep techs busy, build trust and start many replacements. Replacements and new installs carry most of the revenue and gross profit. The right mix depends on your close rate, margin and install capacity, so we track each job type separately."}}, {"@type": "Question", "name": "How long does HVAC SEO take to produce results?", "acceptedAnswer": {"@type": "Answer", "text": "Google Business Profile and review work often moves map rankings within weeks. Service and town pages usually take three to six months, longer in big metros. Ads bring calls while SEO builds, and fixing call handling and follow-up pays from the first month."}}]}]}</script>
+<script>
+(function(){
+ var $=function(i){return document.getElementById(i)};
+ var est=$('hvEst'),cr=$('hvCr'),job=$('hvJob'),gm=$('hvGm'),cap=$('hvCapIn');if(!est)return;
+ function m(n){return '$'+Math.round(n).toLocaleString('en-US')}
+ function r1(n){return Math.round(n*10)/10}
+ function go(){
+  var e=+est.value,c=+cr.value,j=+job.value,g=+gm.value,k=+cap.value;
+  $('hvEstOut').textContent=e;$('hvCrOut').textContent=r1(c)+'%';$('hvJobOut').textContent=m(j);$('hvGmOut').textContent=g+'%';$('hvCapInOut').textContent=k;
+  var sold=e*c/100,add=e*0.10,tot=sold+add;
+  $('hvGp').textContent='+'+m(add*j*12*g/100);
+  $('hvAdd').textContent='From +'+m(add*j*12)+' a year in sold revenue at '+g+'% margin';
+  $('hvSold').textContent=r1(sold);$('hvNow').textContent=m(sold*j*g/100);
+  var t=Math.round(tot*10)/10,el=$('hvCap');
+  if(tot<=k){el.textContent="That's "+t+" installs a month, inside your "+k+". Your crews have room.";el.classList.remove('over')}
+  else{el.textContent="That's "+t+" installs a month, more than your crews' "+k+". Fix capacity before buying more marketing.";el.classList.add('over')}
+  [].forEach.call(document.querySelectorAll('.hv .chips button'),function(b){b.setAttribute('aria-pressed',String(+b.dataset.v===j))});
+ }
+ [est,cr,job,gm,cap].forEach(function(x){x.addEventListener('input',go)});
+ [].forEach.call(document.querySelectorAll('.hv .chips button'),function(b){b.addEventListener('click',function(){job.value=b.dataset.v;go()})});
+ go();
+})();
+</script>
+<script>(function(){var r=document.querySelector('.hv .tline');if(!r)return;r.addEventListener('click',function(e){var b=e.target.closest('.tb button');if(!b)return;var open=b.getAttribute('aria-expanded')==='true';var mobile=window.matchMedia('(max-width:1100px)').matches;if(open){if(!mobile)return;}r.querySelectorAll('.tb button').forEach(function(x){x.setAttribute('aria-expanded','false');document.getElementById(x.getAttribute('aria-controls')).setAttribute('data-closed','')});if(!open){b.setAttribute('aria-expanded','true');document.getElementById(b.getAttribute('aria-controls')).removeAttribute('data-closed')}});})();</script></div>
