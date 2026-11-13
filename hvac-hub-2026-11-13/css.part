@@ -282,4 +282,5 @@
 .hv .res .rev{font-size:15px;color:var(--mut);margin:8px 0 0}
 .hv .res .gp.over{color:var(--oh)}
 .hv .ins .wide{grid-column:1/-1}
+.hv .leaklinks{display:flex;flex-wrap:wrap;gap:12px 32px;margin:36px 0 0;font-size:17px}
 </style>

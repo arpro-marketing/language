@@ -101,13 +101,13 @@
    <div class="res" aria-live="polite">
     <p class="k">One more sale in every ten estimates</p>
     <p class="big"><span id="hvGp">+$72,000</span> <small>a year in added gross profit</small></p>
-    <p class="gp" id="hvNet">+$42,000 a year after $2,500 a month in marketing cost</p>
+    <p class="gp" id="hvNet">+$42,000 a year in gross profit after marketing cost ($2,500 a month)</p>
     <p class="rev" id="hvAdd">From +$180,000 a year in sold revenue at a 40% margin</p>
     <p class="now">Today: <b id="hvSold">8</b> installs and <b id="hvNow">$24,000</b> in gross profit a month.</p>
     <p class="cap" id="hvCap">With 2 installs already committed, that's 12 of your 14 a month. Your crews have room.</p>
    </div>
   </div>
-  <p class="fine">Illustrative, not a forecast. Gross profit is sold revenue times your gross margin. The after-cost line subtracts only the monthly cost you enter, not overhead. Assumes the added sales install at this job value and margin.</p>
+  <p class="fine">Illustrative, not a forecast. Gross profit is sold revenue times your gross margin. Gross profit after marketing cost subtracts only the monthly cost you enter, not overhead. Assumes the added sales install at this job value and margin.</p>
   <details class="how"><summary>Where the starting numbers come from</summary><p>20 estimates a month, a 40% close rate, a 40% gross margin, $2,500 a month in added cost, 14 installs a month of crew capacity and 2 already committed are example starting points, not benchmarks. Change them to yours. Job values are Angi's national averages: HVAC system replacement $7,500 and furnace installation $4,814 (2026 data).</p></details>
  </div>
  <p class="midcta"><a class="btn" href="https://calendly.com/andrew-andrewryanmarketing/gap-review?utm_source=arm-site&amp;utm_medium=cta&amp;utm_campaign=site&amp;utm_content=hvac-mid">Let's talk about your marketing&nbsp;<span class="ar">→</span></a><span>Bring your real numbers. We'll run them with you.</span></p>
@@ -128,18 +128,7 @@
   <h3>Install crews booked out two weeks in July? More HVAC marketing isn't the fix.</h3>
   <p>When your crews are full, better use of that capacity beats more demand: aim marketing at higher-margin work, raise prices where demand supports it, tighten the schedule, or add a crew. In the quiet shoulder months, your own customer base usually beats new ad spend. And when capacity is the constraint, our answer to spending more on marketing is simple: Not yet.</p>
  </div>
-</div></section>
-
-<!-- 5 OUTCOMES -->
-<section class="light" id="next"><div class="in">
- <p class="eb">Your next growth move</p>
- <h2>Where will your HVAC company's next growth come from?</h2>
- <p class="lead">Three problems look alike from the outside. Each needs a different fix.</p>
- <div class="steps">
-  <div><b>01</b><h3>Sell more of the right HVAC jobs</h3><p>When the board is full of small repairs but few replacements, we shift your marketing toward system replacements, heat pumps, maintenance plans and commercial work with the margin you want.</p><a class="tl" href="#math">See the math <span class="ar">→</span></a></div>
-  <div><b>02</b><h3>Close more of the estimates you give</h3><p>Comfort visits get run, but too few turn into sold systems. Fix the response, follow-up and close before you buy more calls.</p><a class="tl" href="/services/lead-to-booked-job/">Fix the second funnel <span class="ar">→</span></a></div>
-  <div><b>03</b><h3>Open the next market or add commercial</h3><p>Ready for a new service area, a second location or more commercial accounts? We'll show you what it costs to win jobs there before you hire techs or buy trucks.</p><a class="tl" href="/how-to-expand-a-contractor-business-into-a-new-market/">Model the next market <span class="ar">→</span></a></div>
- </div>
+ <p class="leaklinks"><a class="tl" href="/services/lead-to-booked-job/">Fix the second funnel <span class="ar">→</span></a><a class="tl" href="/how-to-expand-a-contractor-business-into-a-new-market/">Model the next market <span class="ar">→</span></a></p>
 </div></section>
 
 <!-- 6 EVIDENCE -->

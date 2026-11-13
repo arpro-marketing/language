@@ -9,7 +9,7 @@
   $('hvEstOut').textContent=e;$('hvCrOut').textContent=r1(c)+'%';$('hvJobOut').textContent=m(j);$('hvGmOut').textContent=g+'%';$('hvCostOut').textContent=m(mc);$('hvCapInOut').textContent=k;$('hvBookOut').textContent=bk;
   var sold=e*c/100,add=e*0.10,gp=add*j*12*g/100,net=gp-mc*12;
   $('hvGp').textContent='+'+m(gp);
-  $('hvNet').textContent=mc>0?((net>=0?'+':'')+m(net)+' a year after '+m(mc)+' a month in marketing cost'):'Add a monthly cost to see profit after marketing.';
+  $('hvNet').textContent=mc>0?((net>=0?'+':'')+m(net)+' a year in gross profit after marketing cost ('+m(mc)+' a month)'):'Add a monthly cost to see gross profit after marketing cost.';
   $('hvNet').classList.toggle('over',net<0);
   $('hvAdd').textContent='From +'+m(add*j*12)+' a year in sold revenue at a '+g+'% margin';
   $('hvSold').textContent=r1(sold);$('hvNow').textContent=m(sold*j*g/100);
