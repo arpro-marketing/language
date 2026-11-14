@@ -30,9 +30,13 @@
 .wd .season figcaption{font-size:14px;line-height:1.55;color:var(--mut);margin-top:10px}
 .wd .closer .fine2 a{white-space:nowrap}
 .wd .hero .sol span{display:block}
+.wd .sv-col{display:flex;flex-direction:column}
+.wd .sv-col .sv-dcard{flex:1}
+.wd .sv-fn{font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#333;text-align:center;margin:0 0 12px}
 @media(max-width:700px){.wd .hero .sol span+span{margin-top:8px}}
 .wd .paths3 .tag,.wd .opt .tag{flex:none}
 @media(min-width:701px){.wd .guides a{white-space:nowrap}}
 @media(max-width:1024px){.wd .stats.s4x{grid-template-columns:1fr 1fr}.wd .stats.s4x div:nth-child(n+3){border-top:1px solid var(--dline)}.wd .paths3{grid-template-columns:1fr}.wd .notyet{grid-template-columns:1fr;gap:28px}}
 @media(max-width:700px){.wd .stats.s4x div:last-child{grid-column:auto}.wd .quote{padding:22px 20px}.wd .quote p{font-size:17px}.wd .rpt tbody th{width:100%}.wd .rpt td:last-child{border-left:0;margin:0 0 10px}.wd .rpt td:last-child::before{color:var(--mut)}.wd .h3x{margin-top:56px}}
 </style>
+<style>@media(max-width:700px){.wd .sv-col+.sv-col{margin-top:24px}}</style>
