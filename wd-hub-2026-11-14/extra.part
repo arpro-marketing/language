@@ -29,6 +29,8 @@
 .wd .season svg{width:100%;height:auto;display:block;font-family:'Plus Jakarta Sans',sans-serif}
 .wd .season figcaption{font-size:14px;line-height:1.55;color:var(--mut);margin-top:10px}
 .wd .closer .fine2 a{white-space:nowrap}
+.wd .hero .sol span{display:block}
+@media(max-width:700px){.wd .hero .sol span+span{margin-top:8px}}
 .wd .paths3 .tag,.wd .opt .tag{flex:none}
 @media(min-width:701px){.wd .guides a{white-space:nowrap}}
 @media(max-width:1024px){.wd .stats.s4x{grid-template-columns:1fr 1fr}.wd .stats.s4x div:nth-child(n+3){border-top:1px solid var(--dline)}.wd .paths3{grid-template-columns:1fr}.wd .notyet{grid-template-columns:1fr;gap:28px}}
