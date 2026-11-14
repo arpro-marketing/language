@@ -301,10 +301,9 @@
 .wd .tp .when{font-size:15px;color:#666;margin:12px 0 0}
 .wd .tp .when b{color:#333}
 .wd .rpt{margin:0 0 0}
-.wd .rpt thead th:last-child{color:var(--mut);background:var(--soft)}
-.wd .rpt td:last-child{background:#fff;color:var(--body);font-weight:400;border-left:0}
-.wd .rpt tbody th{width:30%;font-style:normal}
-.wd .rpt td:nth-child(2){color:var(--ink);font-weight:600}
+.wd .rpt tbody th{width:24%}
+.wd .rpt td{width:24%}
+.wd .rpt td:nth-child(3){color:var(--ink)}
 .wd .h3x{font-size:clamp(22px,2.2vw,28px);margin:72px 0 24px}
 .wd .paths3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .wd .paths3>div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px 26px;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s,border-color .18s}
@@ -333,7 +332,7 @@
 .wd .paths3 .tag,.wd .opt .tag{flex:none}
 @media(min-width:701px){.wd .guides a{white-space:nowrap}}
 @media(max-width:1024px){.wd .stats.s4x{grid-template-columns:1fr 1fr}.wd .stats.s4x div:nth-child(n+3){border-top:1px solid var(--dline)}.wd .paths3{grid-template-columns:1fr}.wd .notyet{grid-template-columns:1fr;gap:28px}}
-@media(max-width:700px){.wd .stats.s4x div:last-child{grid-column:auto}.wd .quote{padding:22px 20px}.wd .quote p{font-size:17px}.wd .rpt tbody th{width:100%}.wd .rpt td:last-child{border-left:0;margin:0 0 10px}.wd .rpt td:last-child::before{color:var(--mut)}.wd .h3x{margin-top:56px}}
+@media(max-width:700px){.wd .stats.s4x div:last-child{grid-column:auto}.wd .quote{padding:22px 20px}.wd .quote p{font-size:17px}.wd .rpt tbody th,.wd .rpt td{width:100%}.wd .h3x{margin-top:56px}}
 </style>
 <style>@media(max-width:700px){.wd .sv-col+.sv-col{margin-top:24px}}</style>
 <!-- 1 HERO (homepage hero pattern) -->
@@ -414,12 +413,11 @@
  <h2>In window and door marketing, the cheapest lead is often your <span class="o">most expensive job.</span></h2>
  <p class="lead">Your marketing report ends at the inquiry. Your business runs on the signed job, and the two can point in opposite directions.</p>
  <table class="cmp rpt">
-  <thead><tr><th scope="col">The report says</th><th scope="col">What's really happening</th><th scope="col">So you</th></tr></thead>
+  <thead><tr><th scope="col">The report says</th><th scope="col">The decision it drives</th><th scope="col">What's really happening</th><th scope="col">What we'd do</th></tr></thead>
   <tbody>
-   <tr><th scope="row">"Marketplace leads are your cheapest marketing."</th><td data-l="What's really happening">Each one went to three or four companies at once. About 4% sell.</td><td data-l="So you">Keep paying for the marketing that costs the most per signed job.</td></tr>
-   <tr><th scope="row">"We need more volume before spring."</th><td data-l="What's really happening">New inquiries wait an hour for a callback. Someone else is already measuring the windows.</td><td data-l="So you">Raise marketing spend, when speed was the problem.</td></tr>
-   <tr><th scope="row">"Inquiries are up again."</th><td data-l="What's really happening">Estimates get run and go quiet. Signed jobs are flat.</td><td data-l="So you">Buy more marketing, when the kitchen-table close is the leak.</td></tr>
-   <tr><th scope="row">"Let's push harder for fall."</th><td data-l="What's really happening">Your install crews are already booked out for weeks.</td><td data-l="So you">Pay for demand you can't install.</td></tr>
+   <tr><th scope="row">"We need more volume before spring."</th><td data-l="The decision it drives">Increase the advertising budget.</td><td data-l="What's really happening">Calls take an hour to get returned. Homeowners are already booking elsewhere.</td><td data-l="What we'd do">Fix call response and estimate booking first, then decide whether more spend is needed.</td></tr>
+   <tr><th scope="row">"Inquiries are up again."</th><td data-l="The decision it drives">Buy more marketing.</td><td data-l="What's really happening">Estimates are being delivered, but too few turn into contracts.</td><td data-l="What we'd do">Review close rates, estimate follow-up, financing and unsold quotes, and work the open estimates you already paid for.</td></tr>
+   <tr><th scope="row">"Let's push harder for fall."</th><td data-l="The decision it drives">Spend more to generate demand.</td><td data-l="What's really happening">Installation crews are already booked for weeks.</td><td data-l="What we'd do">Weigh crew capacity and margins. Aim demand at the most profitable work or add install capacity before scaling.</td></tr>
   </tbody>
  </table>
  <div class="calc" id="calc">

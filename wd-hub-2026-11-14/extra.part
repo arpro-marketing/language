@@ -5,10 +5,9 @@
 .wd .tp .when{font-size:15px;color:#666;margin:12px 0 0}
 .wd .tp .when b{color:#333}
 .wd .rpt{margin:0 0 0}
-.wd .rpt thead th:last-child{color:var(--mut);background:var(--soft)}
-.wd .rpt td:last-child{background:#fff;color:var(--body);font-weight:400;border-left:0}
-.wd .rpt tbody th{width:30%;font-style:normal}
-.wd .rpt td:nth-child(2){color:var(--ink);font-weight:600}
+.wd .rpt tbody th{width:24%}
+.wd .rpt td{width:24%}
+.wd .rpt td:nth-child(3){color:var(--ink)}
 .wd .h3x{font-size:clamp(22px,2.2vw,28px);margin:72px 0 24px}
 .wd .paths3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .wd .paths3>div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px 26px;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s,border-color .18s}
@@ -37,6 +36,6 @@
 .wd .paths3 .tag,.wd .opt .tag{flex:none}
 @media(min-width:701px){.wd .guides a{white-space:nowrap}}
 @media(max-width:1024px){.wd .stats.s4x{grid-template-columns:1fr 1fr}.wd .stats.s4x div:nth-child(n+3){border-top:1px solid var(--dline)}.wd .paths3{grid-template-columns:1fr}.wd .notyet{grid-template-columns:1fr;gap:28px}}
-@media(max-width:700px){.wd .stats.s4x div:last-child{grid-column:auto}.wd .quote{padding:22px 20px}.wd .quote p{font-size:17px}.wd .rpt tbody th{width:100%}.wd .rpt td:last-child{border-left:0;margin:0 0 10px}.wd .rpt td:last-child::before{color:var(--mut)}.wd .h3x{margin-top:56px}}
+@media(max-width:700px){.wd .stats.s4x div:last-child{grid-column:auto}.wd .quote{padding:22px 20px}.wd .quote p{font-size:17px}.wd .rpt tbody th,.wd .rpt td{width:100%}.wd .h3x{margin-top:56px}}
 </style>
 <style>@media(max-width:700px){.wd .sv-col+.sv-col{margin-top:24px}}</style>
