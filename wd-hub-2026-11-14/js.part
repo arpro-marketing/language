@@ -1,0 +1,23 @@
+<script>
+(function(){
+ var $=function(i){return document.getElementById(i)};
+ var cpl=$('wdCpl'),cr=$('wdCr'),job=$('wdJob');if(!cpl)return;
+ function m(n){return '$'+Math.round(n).toLocaleString('en-US')}
+ function r1(n){return Math.round(n*10)/10}
+ function go(){
+  var l=+cpl.value,c=+cr.value,j=+job.value;
+  $('wdCplOut').textContent=m(l);$('wdCrOut').textContent=r1(c)+'%';$('wdJobOut').textContent=m(j);
+  var cpj=l/(c/100),pct=Math.round(cpj/j*100),one=Math.round(100/c);
+  $('wdCpj').textContent=m(cpj);
+  $('wdOne').textContent='About 1 in '+one+' inquiries becomes a job.';
+  $('wdPct').textContent=pct+'% of a '+m(j)+' average job.';
+  $('wdPct').classList.toggle('over',pct>=50);
+  var s=l/0.04,d=l/0.117;
+  $('wdCmp').textContent=c<8?('The same '+m(l)+' lead as a direct inquiry at 11.7% costs '+m(d)+' per job, '+Math.round(d/j*100)+'% of the ticket.'):('The same '+m(l)+' lead as a shared marketplace lead at 4% costs '+m(s)+' per job, '+Math.round(s/j*100)+'% of the ticket.');
+  [].forEach.call(document.querySelectorAll('.wd .chips button'),function(b){b.setAttribute('aria-pressed',String(+b.dataset.v===r1(c)))});
+ }
+ [cpl,cr,job].forEach(function(x){x.addEventListener('input',go)});
+ [].forEach.call(document.querySelectorAll('.wd .chips button'),function(b){b.addEventListener('click',function(){cr.value=b.dataset.v;go()})});
+ go();
+})();
+</script>
