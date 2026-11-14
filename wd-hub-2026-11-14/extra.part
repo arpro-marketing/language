@@ -1,0 +1,41 @@
+<style>
+.wd .sv-measure .outs{list-style:none;margin:6px auto 0;padding:0;max-width:420px;text-align:left;display:grid;gap:8px}
+.wd .sv-measure .outs li{color:#d1d5db;font-size:17px;line-height:1.45;padding-left:26px;position:relative}
+.wd .sv-measure .outs li::before{content:'';position:absolute;left:4px;top:.5em;width:10px;height:10px;border-radius:50%;background:var(--o)}
+.wd .tp .when{font-size:15px;color:#666;margin:12px 0 0}
+.wd .tp .when b{color:#333}
+.wd .rpt{margin:0 0 0}
+.wd .rpt tbody th{width:24%}
+.wd .rpt td{width:24%}
+.wd .rpt td:nth-child(3){color:var(--ink)}
+.wd .h3x{font-size:clamp(22px,2.2vw,28px);margin:72px 0 24px}
+.wd .paths3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.wd .paths3>div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px 26px;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s,border-color .18s}
+.wd .paths3>div:hover{transform:translateY(-4px);border-color:var(--o);box-shadow:0 22px 40px -22px rgba(20,25,38,.32)}
+.wd .paths3 .tag{font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--o);margin:0 0 10px}
+.wd .paths3 h4{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:19px;line-height:1.3;color:var(--ink);margin:0 0 10px;text-wrap:balance}
+.wd .paths3 p{font-size:16px;line-height:1.55;flex:1;margin:0 0 16px}
+.wd .quote{margin:8px 0 40px;padding:30px 34px;background:#1d2028;border:1px solid var(--dline);border-left:3px solid var(--o);border-radius:0 14px 14px 0;max-width:900px}
+.wd .quote p{color:#e5e7eb;font-size:19px;line-height:1.6;margin:0 0 14px}
+.wd .quote cite{font-style:normal;color:#b8bcc6;font-size:15px}
+.wd .stats.s4x{grid-template-columns:repeat(4,1fr)}
+.wd .travel a{white-space:nowrap}
+.wd .notyet{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center;margin:72px 0 0}
+.wd .notyet h3{font-size:clamp(22px,2.2vw,28px);margin:0 0 14px}
+.wd .notyet p{font-size:17px;line-height:1.65;margin:0 0 14px}
+.wd .notyet p b{color:var(--ink)}
+.wd .season{margin:0;background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:22px 22px 18px}
+.wd .season svg{width:100%;height:auto;display:block;font-family:'Plus Jakarta Sans',sans-serif}
+.wd .season figcaption{font-size:14px;line-height:1.55;color:var(--mut);margin-top:10px}
+.wd .closer .fine2 a{white-space:nowrap}
+.wd .hero .sol span{display:block}
+.wd .sv-col{display:flex;flex-direction:column}
+.wd .sv-col .sv-dcard{flex:1}
+.wd .sv-fn{font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#333;text-align:center;margin:0 0 12px}
+@media(max-width:700px){.wd .hero .sol span+span{margin-top:8px}}
+.wd .paths3 .tag,.wd .opt .tag{flex:none}
+@media(min-width:701px){.wd .guides a{white-space:nowrap}}
+@media(max-width:1024px){.wd .stats.s4x{grid-template-columns:1fr 1fr}.wd .stats.s4x div:nth-child(n+3){border-top:1px solid var(--dline)}.wd .paths3{grid-template-columns:1fr}.wd .notyet{grid-template-columns:1fr;gap:28px}}
+@media(max-width:700px){.wd .stats.s4x div:last-child{grid-column:auto}.wd .quote{padding:22px 20px}.wd .quote p{font-size:17px}.wd .rpt tbody th,.wd .rpt td{width:100%}.wd .h3x{margin-top:56px}}
+</style>
+<style>@media(max-width:700px){.wd .sv-col+.sv-col{margin-top:24px}}</style>

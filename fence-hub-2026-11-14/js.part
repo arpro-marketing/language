@@ -1,0 +1,23 @@
+<script>
+(function(){
+ var $=function(i){return document.getElementById(i)};
+ var cpl=$('fhCpl'),cr=$('fhCr'),job=$('fhJob'),n=$('fhN');if(!cpl)return;
+ function m(x){return '$'+Math.round(x).toLocaleString('en-US')}
+ function r1(x){return Math.round(x*10)/10}
+ function go(){
+  var l=+cpl.value,c=+cr.value,j=+job.value,q=+n.value;
+  $('fhCplOut').textContent=m(l);$('fhCrOut').textContent=r1(c)+'%';$('fhJobOut').textContent=m(j);$('fhNOut').textContent=q;
+  var cpj=l/(c/100),pct=Math.round(cpj/j*100),in10=Math.round(c/10);
+  $('fhCpj').textContent=m(cpj);
+  $('fhOne').textContent=in10>=1?('About '+in10+' in 10 inquiries become a job.'):('About 1 in '+Math.round(100/c)+' inquiries becomes a job.');
+  $('fhPct').textContent=pct+'% of a '+m(j)+' average fence.';
+  $('fhPct').classList.toggle('over',pct>=50);
+  var nc=Math.min(100,c+10),add=q*((nc-c)/100)*j*12;
+  $('fhAdd').textContent='Ten more points of close rate on the same '+q+' inquiries a month adds '+m(add)+' a year, with no added ad spend.';
+  [].forEach.call(document.querySelectorAll('.fh .chips button'),function(b){b.setAttribute('aria-pressed',String(+b.dataset.v===l))});
+ }
+ [cpl,cr,job,n].forEach(function(x){x.addEventListener('input',go)});
+ [].forEach.call(document.querySelectorAll('.fh .chips button'),function(b){b.addEventListener('click',function(){cpl.value=b.dataset.v;go()})});
+ go();
+})();
+</script>
