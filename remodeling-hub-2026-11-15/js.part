@@ -1,0 +1,22 @@
+<script>
+(function(){
+ var $=function(i){return document.getElementById(i)};
+ var cpl=$('rmCpl'),cr=$('rmCr'),job=$('rmJob');if(!cpl)return;
+ function m(n){return '$'+Math.round(n).toLocaleString('en-US')}
+ function go(){
+  var l=+cpl.value,c=+cr.value,j=+job.value;
+  $('rmCplOut').textContent=m(l);$('rmCrOut').textContent=c+'%';$('rmJobOut').textContent=m(j);
+  var cpj=l/(c/100),pct=Math.max(1,Math.round(cpj/j*100)),one=Math.max(1,Math.round(100/c));
+  $('rmCpj').textContent=m(cpj);
+  $('rmOne').textContent=one===1?'About every inquiry becomes a project.':'About 1 in '+one+' inquiries becomes a project.';
+  $('rmPct').textContent=pct+'% of a '+m(j)+' average project.';
+  $('rmPct').classList.toggle('over',pct>=20);
+  var s=l/0.10,o=l/0.33;
+  $('rmCmp').textContent=c<20?('The same '+m(l)+' inquiry, owned and reached in five minutes at 33%, costs '+m(o)+' per booked project.'):('The same '+m(l)+' inquiry as a typical shared lead at 10% costs '+m(s)+' per booked project.');
+  [].forEach.call(document.querySelectorAll('.rm .chips button'),function(b){b.setAttribute('aria-pressed',String(+b.dataset.v===c))});
+ }
+ [cpl,cr,job].forEach(function(x){x.addEventListener('input',go)});
+ [].forEach.call(document.querySelectorAll('.rm .chips button'),function(b){b.addEventListener('click',function(){cr.value=b.dataset.v;go()})});
+ go();
+})();
+</script>

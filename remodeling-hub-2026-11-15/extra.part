@@ -1,0 +1,54 @@
+<style>
+.rm .sv-measure .outs{list-style:none;margin:6px auto 0;padding:0;max-width:420px;text-align:left;display:grid;gap:8px}
+.rm .sv-measure .outs li{color:#d1d5db;font-size:17px;line-height:1.45;padding-left:26px;position:relative}
+.rm .sv-measure .outs li::before{content:'';position:absolute;left:4px;top:.5em;width:10px;height:10px;border-radius:50%;background:var(--o)}
+.rm .tp .when{font-size:15px;color:#666;margin:12px 0 0}
+.rm .tp .when b{color:#333}
+.rm .rpt{margin:0 0 0}
+.rm .rpt tbody th{width:24%}
+.rm .rpt td{width:24%}
+.rm .rpt td:nth-child(3){color:var(--ink)}
+.rm .h3x{font-size:clamp(22px,2.2vw,28px);margin:72px 0 24px}
+.rm .paths3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.rm .paths3>div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px 26px;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s,border-color .18s}
+.rm .paths3>div:hover{transform:translateY(-4px);border-color:var(--o);box-shadow:0 22px 40px -22px rgba(20,25,38,.32)}
+.rm .paths3 .tag{font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--o);margin:0 0 10px}
+.rm .paths3 h4{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:19px;line-height:1.3;color:var(--ink);margin:0 0 10px;text-wrap:balance}
+.rm .paths3 p{font-size:16px;line-height:1.55;flex:1;margin:0 0 16px}
+.rm .quote{margin:8px 0 40px;padding:30px 34px;background:#1d2028;border:1px solid var(--dline);border-left:3px solid var(--o);border-radius:0 14px 14px 0;max-width:900px}
+.rm .quote p{color:#e5e7eb;font-size:19px;line-height:1.6;margin:0 0 14px}
+.rm .quote cite{font-style:normal;color:#b8bcc6;font-size:15px}
+.rm .stats.s4x{grid-template-columns:repeat(4,1fr)}
+.rm .travel a{white-space:nowrap}
+.rm .notyet{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center;margin:72px 0 0}
+.rm .notyet h3{font-size:clamp(22px,2.2vw,28px);margin:0 0 14px}
+.rm .notyet p{font-size:17px;line-height:1.65;margin:0 0 14px}
+.rm .notyet p b{color:var(--ink)}
+.rm .season{margin:0;background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:22px 22px 18px}
+.rm .season svg{width:100%;height:auto;display:block;font-family:'Plus Jakarta Sans',sans-serif}
+.rm .season figcaption{font-size:14px;line-height:1.55;color:var(--mut);margin-top:10px}
+.rm .closer .fine2 a{white-space:nowrap}
+.rm .hero .sol span{display:block}
+.rm .sv-col{display:flex;flex-direction:column}
+.rm .sv-col .sv-dcard{flex:1}
+.rm .sv-fn{font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#333;text-align:center;margin:0 0 12px}
+@media(max-width:700px){.rm .hero .sol span+span{margin-top:8px}}
+.rm .paths3 .tag,.rm .opt .tag{flex:none}
+@media(min-width:701px){.rm .guides a{white-space:nowrap}}
+@media(max-width:1024px){.rm .stats.s4x{grid-template-columns:1fr 1fr}.rm .stats.s4x div:nth-child(n+3){border-top:1px solid var(--dline)}.rm .paths3{grid-template-columns:1fr}.rm .notyet{grid-template-columns:1fr;gap:28px}}
+@media(max-width:700px){.rm .stats.s4x div:last-child{grid-column:auto}.rm .quote{padding:22px 20px}.rm .quote p{font-size:17px}.rm .rpt tbody th,.rm .rpt td{width:100%}.rm .h3x{margin-top:56px}}
+</style>
+<style>@media(max-width:700px){.rm .sv-col+.sv-col{margin-top:24px}}</style>
+<style>.rm .hero .sol span{text-wrap:balance}</style>
+<style>
+.rm .stages{padding:24px}
+.rm .stages .sth{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--o);margin:0 0 14px}
+.rm .stages dl{margin:0;display:grid;gap:0}
+.rm .stages dl>div{display:grid;grid-template-columns:112px 1fr;gap:16px;padding:14px 0;border-top:1px solid var(--line)}
+.rm .stages dl>div:first-child{border-top:0;padding-top:0}
+.rm .stages dt{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:17px;color:var(--ink);line-height:1.35}
+.rm .stages dd{margin:0;font-size:16px;line-height:1.55;color:var(--body,#666)}
+.rm .calcnote{max-width:65ch;margin:24px 0 0;font-size:17px;line-height:1.6;color:var(--ink);border-left:3px solid var(--o);padding:2px 0 2px 16px;text-wrap:pretty}
+@media (max-width:560px){.rm .stages dl>div{grid-template-columns:1fr;gap:4px}.rm .stages{padding:20px 18px}}
+</style>
+<style>.rm details summary{text-wrap:balance}.rm .guides a{white-space:nowrap}</style>
