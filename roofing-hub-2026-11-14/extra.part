@@ -39,3 +39,4 @@
 @media(max-width:700px){.rf .stats.s4x div:last-child{grid-column:auto}.rf .quote{padding:22px 20px}.rf .quote p{font-size:17px}.rf .rpt tbody th,.rf .rpt td{width:100%}.rf .h3x{margin-top:56px}}
 </style>
 <style>@media(max-width:700px){.rf .sv-col+.sv-col{margin-top:24px}}</style>
+<style>.rf .hero .sol span{text-wrap:balance}</style>
