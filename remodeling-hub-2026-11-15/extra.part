@@ -52,3 +52,4 @@
 @media (max-width:560px){.rm .stages dl>div{grid-template-columns:1fr;gap:4px}.rm .stages{padding:20px 18px}}
 </style>
 <style>.rm details summary{text-wrap:balance}.rm .guides a{white-space:nowrap}</style>
+<style>.rm .dab2{margin-top:1.6em}</style>
