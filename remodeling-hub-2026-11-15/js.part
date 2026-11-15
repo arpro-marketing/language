@@ -12,7 +12,7 @@
   $('rmPct').textContent=pct+'% of the '+m(gp)+' gross profit on a '+m(j)+' project.';
   $('rmPct').classList.toggle('over',pct>=25);
   var s=l/0.10,o=l/0.33;
-  $('rmCmp').textContent=c<20?('The same '+m(l)+' inquiry, owned and reached in five minutes at 33%, costs '+m(o)+' per booked project.'):('The same '+m(l)+' inquiry as a typical shared lead at 10% costs '+m(s)+' per booked project.');
+  $('rmCmp').textContent=c<20?('The same '+m(l)+' inquiry, owned and reached in five minutes at 33%, costs '+m(o)+' per booked project, '+Math.round(o/gp*100)+'% of that gross profit.'):('The same '+m(l)+' inquiry as a typical shared lead at 10% costs '+m(s)+' per booked project, '+Math.round(s/gp*100)+'% of that gross profit.');
   [].forEach.call(document.querySelectorAll('.rm .chips button'),function(b){b.setAttribute('aria-pressed',String(+b.dataset.v===c))});
  }
  [cpl,cr,job,gm].forEach(function(x){x.addEventListener('input',go)});
