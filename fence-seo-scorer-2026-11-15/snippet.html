@@ -1,0 +1,47 @@
+<!-- ARM: collapsible SEO gap scorer (fence SEO page) -->
+<style>
+.arm-gapcard{max-width:760px;margin:32px auto;background:#fff;border:1px solid #E0E0E0;border-left:3px solid #EF662F;border-radius:0 14px 14px 0;padding:28px 30px;font-family:'DM Sans',Arial,sans-serif;color:#333;box-sizing:border-box}
+.arm-gapcard .eb{font:700 13px/1.2 'Plus Jakarta Sans',Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#EF662F;margin:0 0 10px}
+.arm-gapcard h3{font:800 clamp(22px,2.2vw,26px)/1.25 'Plus Jakarta Sans',Arial,sans-serif;color:#333;margin:0 0 10px;text-wrap:balance}
+.arm-gapcard p.d{font-size:17px;line-height:1.6;color:#666;margin:0 0 20px;max-width:60ch}
+.arm-gapcard .acts{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center}
+.arm-gapcard button{font:700 17px/1 'Plus Jakarta Sans',Arial,sans-serif;min-height:48px;padding:0 24px;border-radius:8px;cursor:pointer;transition:transform .18s ease-out,box-shadow .18s ease-out,background .18s ease-out,color .18s ease-out}
+.arm-gapcard .go{background:#EF662F;color:#fff;border:0}
+.arm-gapcard .go:hover{background:#d4551f;transform:translateY(-2px);box-shadow:0 10px 22px -10px rgba(239,102,47,.6)}
+.arm-gapcard .skip{background:none;border:0;color:#333;padding:0 4px;text-decoration:underline;text-decoration-color:#E0E0E0;text-underline-offset:4px}
+.arm-gapcard .skip:hover{color:#EF662F;text-decoration-color:#EF662F}
+.arm-gapcard button:focus-visible{outline:2px solid #EF662F;outline-offset:3px}
+.arm-gapcard .ar{display:inline-block;transition:transform .18s ease-out}
+.arm-gapcard button:hover .ar{transform:translateX(4px)}
+.arm-gapcard .meta{font-size:14px;color:#666;margin:14px 0 0}
+#armSeoGap.arm-gap-closed{display:none}
+.arm-gapclose{display:block;margin:12px auto 0;background:none;border:0;font:600 15px 'Plus Jakarta Sans',Arial,sans-serif;color:#666;cursor:pointer;text-decoration:underline;text-underline-offset:4px;min-height:44px}
+.arm-gapclose[hidden]{display:none}
+.arm-gapclose:hover{color:#EF662F}
+.arm-gapclose:focus-visible{outline:2px solid #EF662F;outline-offset:3px}
+@media(max-width:700px){.arm-gapcard{padding:22px 20px;margin:24px 20px}.arm-gapcard .go{width:100%;justify-content:center}}
+@media(prefers-reduced-motion:reduce){.arm-gapcard *{transition:none!important;transform:none!important}}
+</style>
+<div class="arm-gapcard" id="armGapCard">
+ <p class="eb">SEO competitive gap scorer</p>
+ <h3>Want to see how your fence company's SEO stacks up?</h3>
+ <p class="d">Rate your business from 1 to 5 on the ten areas that decide local rankings, and the scorer shows where you're strong and where you're losing ground to competitors. It takes about two minutes. You can also skip it and keep reading.</p>
+ <div class="acts"><button type="button" class="go" aria-expanded="false" aria-controls="armSeoGap">Score my operation&nbsp;<span class="ar">→</span></button><button type="button" class="skip">Keep reading</button></div>
+ <p class="meta">10 questions · about 2 minutes · nothing you enter is saved</p>
+</div>
+<script>
+(function(){
+ var card=document.getElementById('armGapCard'),gap=document.getElementById('armSeoGap');
+ if(!card||!gap)return;
+ if(card.nextElementSibling!==gap&&gap.parentNode)gap.parentNode.insertBefore(card,gap);
+ gap.classList.add('arm-gap-closed');
+ var go=card.querySelector('.go'),skip=card.querySelector('.skip');
+ var close=document.createElement('button');close.type='button';close.className='arm-gapclose';close.textContent='Close the scorer and keep reading';close.hidden=true;
+ gap.parentNode.insertBefore(close,gap.nextSibling);
+ function after(){var n=close.nextElementSibling;while(n&&(n.tagName==='STYLE'||n.tagName==='SCRIPT'||n.offsetHeight===0))n=n.nextElementSibling;return n}
+ function to(el){if(!el)return;var y=el.getBoundingClientRect().top+window.pageYOffset-110;window.scrollTo({top:y,behavior:window.matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'})}
+ go.addEventListener('click',function(){var open=gap.classList.contains('arm-gap-closed');gap.classList.toggle('arm-gap-closed',!open);close.hidden=!open;go.setAttribute('aria-expanded',String(open));go.firstChild.nodeValue=open?'Hide the scorer ':'Score my operation ';if(open)to(gap)});
+ skip.addEventListener('click',function(){to(after())});
+ close.addEventListener('click',function(){gap.classList.add('arm-gap-closed');close.hidden=true;go.setAttribute('aria-expanded','false');go.firstChild.nodeValue='Score my operation ';to(after())});
+})();
+</script>
