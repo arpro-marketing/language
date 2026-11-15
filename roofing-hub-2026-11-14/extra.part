@@ -1,0 +1,51 @@
+<style>
+.rf .sv-measure .outs{list-style:none;margin:6px auto 0;padding:0;max-width:420px;text-align:left;display:grid;gap:8px}
+.rf .sv-measure .outs li{color:#d1d5db;font-size:17px;line-height:1.45;padding-left:26px;position:relative}
+.rf .sv-measure .outs li::before{content:'';position:absolute;left:4px;top:.5em;width:10px;height:10px;border-radius:50%;background:var(--o)}
+.rf .tp .when{font-size:15px;color:#666;margin:12px 0 0}
+.rf .tp .when b{color:#333}
+.rf .rpt{margin:0 0 0}
+.rf .rpt tbody th{width:24%}
+.rf .rpt td{width:24%}
+.rf .rpt td:nth-child(3){color:var(--ink)}
+.rf .h3x{font-size:clamp(22px,2.2vw,28px);margin:72px 0 24px}
+.rf .paths3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.rf .paths3>div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px 26px;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s,border-color .18s}
+.rf .paths3>div:hover{transform:translateY(-4px);border-color:var(--o);box-shadow:0 22px 40px -22px rgba(20,25,38,.32)}
+.rf .paths3 .tag{font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--o);margin:0 0 10px}
+.rf .paths3 h4{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:19px;line-height:1.3;color:var(--ink);margin:0 0 10px;text-wrap:balance}
+.rf .paths3 p{font-size:16px;line-height:1.55;flex:1;margin:0 0 16px}
+.rf .quote{margin:8px 0 40px;padding:30px 34px;background:#1d2028;border:1px solid var(--dline);border-left:3px solid var(--o);border-radius:0 14px 14px 0;max-width:900px}
+.rf .quote p{color:#e5e7eb;font-size:19px;line-height:1.6;margin:0 0 14px}
+.rf .quote cite{font-style:normal;color:#b8bcc6;font-size:15px}
+.rf .stats.s4x{grid-template-columns:repeat(4,1fr)}
+.rf .travel a{white-space:nowrap}
+.rf .notyet{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center;margin:72px 0 0}
+.rf .notyet h3{font-size:clamp(22px,2.2vw,28px);margin:0 0 14px}
+.rf .notyet p{font-size:17px;line-height:1.65;margin:0 0 14px}
+.rf .notyet p b{color:var(--ink)}
+.rf .season{margin:0;background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:22px 22px 18px}
+.rf .season svg{width:100%;height:auto;display:block;font-family:'Plus Jakarta Sans',sans-serif}
+.rf .season figcaption{font-size:14px;line-height:1.55;color:var(--mut);margin-top:10px}
+.rf .closer .fine2 a{white-space:nowrap}
+.rf .hero .sol span{display:block}
+.rf .sv-col{display:flex;flex-direction:column}
+.rf .sv-col .sv-dcard{flex:1}
+.rf .sv-fn{font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#333;text-align:center;margin:0 0 12px}
+@media(max-width:700px){.rf .hero .sol span+span{margin-top:8px}}
+.rf .paths3 .tag,.rf .opt .tag{flex:none}
+@media(min-width:701px){.rf .guides a{white-space:nowrap}}
+@media(max-width:1024px){.rf .stats.s4x{grid-template-columns:1fr 1fr}.rf .stats.s4x div:nth-child(n+3){border-top:1px solid var(--dline)}.rf .paths3{grid-template-columns:1fr}.rf .notyet{grid-template-columns:1fr;gap:28px}}
+@media(max-width:700px){.rf .stats.s4x div:last-child{grid-column:auto}.rf .quote{padding:22px 20px}.rf .quote p{font-size:17px}.rf .rpt tbody th,.rf .rpt td{width:100%}.rf .h3x{margin-top:56px}}
+</style>
+<style>@media(max-width:700px){.rf .sv-col+.sv-col{margin-top:24px}}</style>
+<style>.rf .hero .sol span{text-wrap:balance}</style>
+<style>.rf .dab2{margin-top:1.6em}</style>
+<style>
+/* round 1 (2026-11-15): grouped funnel lists + stat source caption */
+.rf .sv-dgroups{grid-template-columns:1fr;gap:12px}
+.rf .sv-dgroups li{line-height:1.45}
+.rf .sv-dgroups .it{white-space:nowrap}
+.rf .sv-dgroups .sep{color:#666;font-weight:400}
+.rf .stat-src{margin:0 0 4px;font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#c4c7cf}
+</style>

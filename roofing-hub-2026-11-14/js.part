@@ -1,0 +1,20 @@
+<script>
+(function(){
+ var $=function(i){return document.getElementById(i)};
+ var est=$('rfEst'),job=$('rfJob'),cr=$('rfCr');if(!est)return;var lift=10;
+ function m(n){return '$'+Math.round(n).toLocaleString('en-US')}
+ function go(){
+  var e=+est.value,j=+job.value,c=+cr.value,nc=Math.min(c+lift,100);
+  $('rfEstOut').textContent=e;$('rfJobOut').textContent=m(j);$('rfCrOut').textContent=c+'%';
+  var add=e*12*j*(nc-c)/100,more=e*(nc-c)/100,mr=Math.round(more*10)/10,ms=(mr%1===0?mr.toFixed(0):mr.toFixed(1));
+  $('rfAdd').textContent='+'+m(add);
+  $('rfMore').textContent=ms+' more signed '+(mr===1?'job':'jobs')+' a month.';
+  $('rfRate').textContent=c+'% → '+nc+'% close rate.';
+  $('rfCap').textContent='Can your crews install '+ms+' more '+(mr===1?'roof':'roofs')+' a month? If not, that’s the first limit to fix, before any new marketing.';
+  [].forEach.call(document.querySelectorAll('.rf .chips button'),function(b){b.setAttribute('aria-pressed',String(+b.dataset.v===lift))});
+ }
+ [est,job,cr].forEach(function(x){x.addEventListener('input',go)});
+ [].forEach.call(document.querySelectorAll('.rf .chips button'),function(b){b.addEventListener('click',function(){lift=+b.dataset.v;go()})});
+ go();
+})();
+</script>
