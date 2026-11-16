@@ -1,0 +1,186 @@
+<!-- wp:html -->
+<style>.a4,.a4 *{box-sizing:border-box}
+.a4{color:#333;font-family:'DM Sans',Arial,sans-serif;-webkit-font-smoothing:antialiased;width:100%}
+.a4 p{margin-top:0 !important}
+.a4 h1,.a4 h2,.a4 h3{font-family:'Plus Jakarta Sans','DM Sans',sans-serif;color:#333;margin:0;letter-spacing:-.02em}
+.a4 .s{padding:96px 24px}
+.a4 .w{max-width:1100px;margin:0 auto}
+.a4 .narrow{max-width:760px}
+.a4 .white{background:#fff}.a4 .gray{background:#F8F8F8}
+.a4 .dark{background:#333;color:#fff}
+.a4 .dark h1,.a4 .dark h2{color:#fff}
+.a4 .eb{font:700 13px/1.2 'DM Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#EF662F;margin:0 0 16px}
+.a4 h1{font-size:clamp(36px,5.2vw,62px);line-height:1.08;font-weight:800;max-width:900px}
+.a4 h1 span{display:block;color:#EF662F}
+.a4 h2{font-size:clamp(28px,3.4vw,40px);line-height:1.15;font-weight:800;margin-bottom:22px;max-width:820px}
+.a4 h3{font-size:22px;line-height:1.3;font-weight:800;margin:56px 0 18px}
+.a4 p{font-size:18px;line-height:1.65;margin:0 0 18px;color:#666}
+.a4 .dark p{color:#ddd}
+.a4 .lead{font-size:20px;max-width:720px;margin:26px 0 34px;color:#e6e6e6 !important}
+.a4 .ctas{display:flex;flex-wrap:wrap;align-items:center;gap:18px 28px}
+.a4 a{color:#EF662F;text-decoration:none}
+.a4 a:focus-visible{outline:3px solid #EF662F;outline-offset:3px;border-radius:6px}
+.a4 .btn{display:inline-flex;align-items:center;gap:10px;background:#EF662F;color:#fff;font:700 17px 'DM Sans',sans-serif;padding:17px 28px;border-radius:10px;border:2px solid #EF662F;transition:transform .2s,box-shadow .2s,background .2s}
+.a4 .btn:hover{background:#d4551f;border-color:#d4551f;transform:translateY(-2px);box-shadow:0 10px 24px rgba(239,102,47,.35)}
+.a4 .txt{font-weight:700;font-size:16px}
+.a4 .txt:hover{color:#ff7a3d}
+.a4 i{font-style:normal;display:inline-block;transition:transform .2s}
+.a4 a:hover i{transform:translateX(4px)}
+.a4 .rate{margin-top:30px;font-size:15px;color:#ccc}.a4 .rate b{color:#EF662F;letter-spacing:2px;margin-right:6px}
+.a4 .note{margin-top:28px;background:#FDF0EB;border-left:4px solid #EF662F;border-radius:8px;padding:20px 24px;font-size:18px;line-height:1.6;color:#333}
+.a4 .founder{display:grid;grid-template-columns:300px 1fr;gap:48px;align-items:center}
+.a4 .photo{aspect-ratio:4/5;border-radius:16px;overflow:hidden;box-shadow:0 10px 30px rgba(16,20,27,.12)}
+.a4 .photo img{width:100%;height:100%;object-fit:cover;display:block}
+.a4 .rec{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:#E0E0E0;border:1px solid #E0E0E0;border-radius:16px;overflow:hidden;margin-top:56px}
+.a4 .rec div{background:#fff;padding:22px 18px}
+.a4 .rec b{display:block;font:800 30px/1 'Plus Jakarta Sans',sans-serif;color:#333;letter-spacing:-.02em}
+.a4 .rec span{display:block;font-size:13px;color:#666;margin-top:8px}
+.a4 .cap{font-size:15px;margin-top:14px}
+.a4 .words{margin-top:56px;max-width:760px;border-left:4px solid #EF662F;padding:2px 0 2px 28px}
+.a4 .words p{font-size:20px;line-height:1.65;color:#333}
+.a4 .sig{font:600 15px 'DM Sans',sans-serif;color:#666}
+.a4 .exp{margin-top:44px;font-size:17px;max-width:760px}
+.a4 .cards{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:12px}
+.a4 .card{background:#fff;border:1px solid #E0E0E0;border-radius:16px;padding:32px;transition:transform .2s,box-shadow .2s,border-color .2s}
+.a4 .card:hover{transform:translateY(-3px);border-color:#EF662F;box-shadow:0 12px 28px rgba(239,102,47,.14)}
+.a4 .k{font:700 13px 'DM Sans',sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#666}
+.a4 .big{font:800 46px/1.05 'Plus Jakarta Sans',sans-serif;color:#333;margin:14px 0 6px;letter-spacing:-.02em}.a4 .big i{color:#EF662F}
+.a4 .u{font-size:15px;color:#666;margin-bottom:20px}
+.a4 .q{color:#333;font-size:17px}
+.a4 .by{font:600 15px 'DM Sans',sans-serif;color:#666}
+.a4 .quote{margin:28px 0 0;background:#F8F8F8;border-radius:16px;padding:30px 32px}
+.a4 .quote p{font:600 21px/1.5 'DM Sans',sans-serif;color:#333;margin-bottom:10px}
+.a4 .check{margin-top:30px;font-size:16px;display:flex;flex-wrap:wrap;gap:8px 24px;align-items:baseline}
+.a4 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.a4 .steps div{background:#fff;border:1px solid #E0E0E0;border-radius:14px;padding:26px}
+.a4 .steps span{font:800 14px 'DM Sans',sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#EF662F}
+.a4 .steps p{margin:10px 0 0;font-size:17px}
+.a4 .no{list-style:none;padding:0;margin:0;max-width:820px}
+.a4 .no li{position:relative;padding:0 0 18px 38px;font-size:17px;line-height:1.6;color:#666}
+.a4 .no li:before{content:"✕";position:absolute;left:0;top:0;color:#EF662F;font-weight:800}
+.a4 .no b{color:#333}
+.a4 .terms{margin-top:22px;font-size:16px;max-width:820px}
+.a4 .contact{margin-top:34px;font-size:15px;color:#ccc !important}.a4 .contact a{color:#fff;border-bottom:1px solid #EF662F}
+.a4 .contact a:hover{color:#ff7a3d}
+@media (max-width:860px){
+ .a4 .s{padding:64px 20px}
+ .a4 .founder{grid-template-columns:1fr;gap:28px}.a4 .photo{max-width:260px}
+ .a4 .rec{grid-template-columns:1fr 1fr}.a4 .rec div:last-child{grid-column:1/-1}
+ .a4 .cards,.a4 .steps{grid-template-columns:1fr}
+ .a4 .words{padding-left:20px}.a4 .words p{font-size:18px}
+ .a4 .btn{width:100%;justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){.a4 *{transition:none !important}}
+</style>
+<div class="a4">
+
+<section class="s dark hero">
+  <div class="w">
+    <div class="eb">About Andrew Ryan Marketing</div>
+    <h1>Before we sold growth systems, we ran&nbsp;one. <span>Then it ran without&nbsp;us.</span></h1>
+    <p class="lead">Andrew Ryan Marketing helps established contractors build stronger, more profitable businesses by connecting the marketing that creates demand with the sales and follow-up systems that turn it into booked jobs. Founded on firsthand experience building and running those systems, we measure what it takes to win each job and what it takes to deliver it—so every decision is guided by what the business actually needs to grow. The most revenue, for the least&nbsp;risk.</p>
+    <div class="ctas">
+      <a class="btn" href="https://calendly.com/andrew-andrewryanmarketing/gap-review?utm_source=arm-site&amp;utm_medium=cta&amp;utm_campaign=about&amp;utm_content=hero">Let's talk about your marketing <i>→</i></a>
+      <a class="txt" href="https://andrewryanmarketing.com/#start">Not ready to talk? Get a free video review <i>→</i></a>
+    </div>
+    <div class="rate"><b>★★★★★</b> 5.0 on Google · 6 reviews</div>
+  </div>
+</section>
+
+<section class="s white">
+  <div class="w narrow">
+    <h2>We count booked jobs, not leads. Then we name the one thing capping&nbsp;them.</h2>
+    <p>A booked job has two sides: what it takes to win the job, and what it takes to deliver it. Whichever side binds first is your ceiling, so that's what we fix first, and we scale only what your own numbers&nbsp;prove.</p>
+    <div class="note"><b>Sometimes the answer is “Not yet.”</b> When your crews, not your demand, are the limit, more marketing makes it worse. We'll tell you to stop spending before we take the&nbsp;work.</div>
+  </div>
+</section>
+
+<section class="s gray">
+  <div class="w">
+    <div class="founder">
+      <div class="photo"><img src="https://andrewryanmarketing.com/wp-content/uploads/2026/09/andrew-ryan-headshot-1024.jpg" width="1024" height="1280" loading="lazy" decoding="async" alt="Andrew-Ryan Profaci, Founder of Andrew Ryan Marketing"></div>
+      <div>
+        <div class="eb">The experience behind the work</div>
+        <h2>First he ran the system. Then he built the&nbsp;agency.</h2>
+        <p>Andrew Ryan managed more than $10M in ad spend for appliance brands like GE, Whirlpool and Bosch. Then he built a dealership's internet sales department from scratch and ran it for 27 months with a two-person team, handling the phones, the follow-up and the close on a lead pool that was roughly 70% shared. He built it to keep producing without him, and it&nbsp;did.</p>
+      </div>
+    </div>
+    <div class="rec">
+      <div><b>11,564</b><span>Leads worked</span></div>
+      <div><b>2,135</b><span>Appointments shown</span></div>
+      <div><b>761</b><span>Sales closed</span></div>
+      <div><b>35.6%</b><span>Show-to-sold</span></div>
+      <div><b>$34M+</b><span>Closed revenue</span></div>
+    </div>
+    <p class="cap">Andrew's own record running a dealership's sales department, before the agency. Not a client result. The dealership's ownership still takes reference calls, and we share the number before you sign&nbsp;anything.</p>
+    <div class="words">
+      <div class="eb">In Andrew's words</div>
+      <p>Facing death before I turned 40 profoundly changed how I thought about my life and the legacy I wanted to leave behind. I realized that the most meaningful thing I could accomplish wasn't accumulating wealth or recognition, but making a positive difference in the lives of others.</p>
+      <p>That realization is part of what drives me to build Andrew Ryan Marketing. I see the potential to help business owners achieve their dreams, build stronger companies, and create better lives for their families. If I can help people accomplish those things, I'll have built something that matters far beyond my own success.</p>
+      <div class="sig">Andrew Ryan, founder</div>
+    </div>
+    <p class="exp">The same work at a bigger scale is why we now lead multi-market expansion for established contractors. <a class="txt" href="https://andrewryanmarketing.com/contractor-growth-marketing/">See how market expansion works <i>→</i></a></p>
+  </div>
+</section>
+
+<section class="s white">
+  <div class="w">
+    <div class="eb">Results you can check</div>
+    <h2>Two clients, and what changed for&nbsp;them.</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="k">Tennessee Plumbing · Johnson City</div>
+        <div class="big">5.4 <i>→</i> 2.5</div>
+        <div class="u">average Google Maps rank, April 3 to April 6</div>
+        <p class="q">“Within 3 weeks of working together, we went from barely showing up on Google to ranking #1 for multiple keywords. The phone started ringing more — that's what&nbsp;matters.”</p>
+        <div class="by">Tim S., Owner</div>
+      </div>
+      <div class="card">
+        <div class="k">SRV Trainer</div>
+        <div class="big">$0 <i>→</i> $50K</div>
+        <div class="u">monthly revenue in 90 days</div>
+        <p>SRV hired us first, then brought Andrew inside as marketing director. Within about six months he was an equity-partner&nbsp;CMO.</p>
+      </div>
+    </div>
+    <div class="quote">
+      <p>“He even took into account the crew's installation capacity. Things we never would have thought of on our&nbsp;own.”</p>
+      <div class="by">Gregg Murray, Founder, Relaunch Digital</div>
+    </div>
+    <p class="check">Google's AI names us for “contractor marketing company.” <a class="txt" href="https://www.google.com/search?q=contractor+marketing+company" target="_blank" rel="noopener">Check it yourself, incognito <i>↗</i></a> <a class="txt" href="https://andrewryanmarketing.com/case-studies/">See all case studies <i>→</i></a></p>
+  </div>
+</section>
+
+<section class="s gray">
+  <div class="w">
+    <div class="eb">How we work</div>
+    <h2>What working with us looks&nbsp;like.</h2>
+    <div class="steps">
+      <div><span>Week 1</span><p>We find where revenue breaks on both sides of the booked job and set the baseline we'll measure&nbsp;against.</p></div>
+      <div><span>Weeks 2–6</span><p>You see the plan before we build it, and nothing ships without your sign&#8209;off.</p></div>
+      <div><span>Month 2 on</span><p>What actually sells decides where the next dollar goes, and Andrew runs every account&nbsp;personally.</p></div>
+    </div>
+    <h3>Three things we won't&nbsp;do.</h3>
+    <ul class="no">
+      <li><b>We don't build your pipeline on shared leads.</b> Lead sources you own come first. Where a marketplace still produces profitable jobs, we keep it and measure it against everything&nbsp;else.</li>
+      <li><b>We don't call vanity metrics results.</b> We report rankings and traffic, but success is booked revenue tied to the dollar that produced&nbsp;it.</li>
+      <li><b>We don't sell marketing you can't fulfill.</b> If your crews can't absorb more work yet, we'll tell you what has to change&nbsp;first.</li>
+    </ul>
+    <p class="terms">Engagements start at $1,500 a month. Our longest engagements carry a 90-day exit, and your site, data and accounts stay yours either way. <a class="txt" href="https://andrewryanmarketing.com/pricing/">See pricing <i>→</i></a></p>
+  </div>
+</section>
+
+<section class="s dark close">
+  <div class="w narrow">
+    <h2>Let's talk about your&nbsp;marketing.</h2>
+    <p>Twenty minutes with Andrew, on your numbers. You leave knowing what to fix first, whether or not we work&nbsp;together.</p>
+    <div class="ctas">
+      <a class="btn" href="https://calendly.com/andrew-andrewryanmarketing/gap-review?utm_source=arm-site&amp;utm_medium=cta&amp;utm_campaign=about&amp;utm_content=close">Book a 20-minute call <i>→</i></a>
+      <a class="txt" href="https://andrewryanmarketing.com/#start">Not ready to talk? Get a free video review <i>→</i></a>
+    </div>
+    <p class="contact"><a href="tel:+14232991718">(423) 299-1718</a> · <a href="mailto:Andrew@AndrewRyanMarketing.com">Andrew@AndrewRyanMarketing.com</a> · 1410 Piedmont St., Johnson City, TN</p>
+  </div>
+</section>
+
+</div>
+
+<!-- /wp:html -->
