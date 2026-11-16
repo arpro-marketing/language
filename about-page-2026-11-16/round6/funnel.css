@@ -1,0 +1,37 @@
+.a4 .bjs{margin-top:44px}
+.a4 .bjs-box{position:relative;border:3px solid #EF662F;border-radius:22px;padding:34px 34px 64px;background:#fff}
+.a4 .bjs-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin:0 0 14px}
+.a4 .bjs-t{font:800 17px/1.2 'Plus Jakarta Sans','DM Sans',sans-serif !important;letter-spacing:.06em;text-transform:uppercase;color:#333 !important;margin:0 !important}
+.a4 .bjs-s{font-size:15px !important;color:#666 !important;margin:0 !important}
+.a4 .bjs-g{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.a4 .bjs-g div{border:1px solid #E0E0E0;border-radius:12px;background:#fff;padding:15px 10px;text-align:center;font:700 16px/1.3 'DM Sans',sans-serif;color:#333;transition:border-color .2s,box-shadow .2s,transform .2s}
+.a4 .bjs-g div:hover{border-color:#EF662F;box-shadow:0 8px 20px rgba(239,102,47,.14);transform:translateY(-2px)}
+.a4 .bjs-hand{display:flex;flex-direction:column;align-items:center;gap:6px;margin:14px 0 6px;color:#666}
+.a4 .bjs-hand span{font-size:18px;line-height:1}
+.a4 .bjs-hand b{font:700 13px 'DM Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#666}
+.a4 .bjs-cap{margin-top:16px;border:1px solid #E0E0E0;border-radius:14px;background:#F8F8F8;padding:22px 16px;text-align:center}
+.a4 .bjs-ct{display:flex;align-items:center;justify-content:center;gap:12px;font:800 24px/1.2 'Plus Jakarta Sans','DM Sans',sans-serif !important;color:#333 !important;margin:0 0 6px !important}
+.a4 .bjs-cs{font-size:17px !important;color:#666 !important;margin:0 !important}
+.a4 .bjs-tab{position:absolute;left:50%;bottom:0;transform:translate(-50%,50%);display:flex;align-items:center;gap:12px;white-space:nowrap;background:#EF662F;color:#fff;font:700 18px 'DM Sans',sans-serif;padding:15px 30px;border-radius:14px;box-shadow:0 8px 20px rgba(239,102,47,.28)}
+.a4 .bjs + .note,.a4 .bjs .sm{margin-top:48px !important}
+@media (max-width:860px){
+ .a4 .bjs-box{padding:26px 18px 70px;border-radius:18px}
+ .a4 .bjs-row{flex-direction:column;gap:2px}
+ .a4 .bjs-g{grid-template-columns:1fr;gap:8px}
+ .a4 .bjs-g div{padding:13px 10px}
+ .a4 .bjs-ct{font-size:20px !important}
+ .a4 .bjs-tab{white-space:normal;text-align:left;width:calc(100% - 32px);max-width:340px;font-size:16px;padding:13px 18px}
+}
+/* moving light on the attribution border */
+@property --bjs-a{syntax:'<angle>';inherits:false;initial-value:0deg}
+.a4 .bjs-box::before{content:"";position:absolute;inset:-3px;border-radius:22px;padding:3px;pointer-events:none;
+ background:conic-gradient(from var(--bjs-a),transparent 0deg 300deg,rgba(255,255,255,.0) 300deg,#ffd9c7 340deg,#fff 352deg,transparent 360deg);
+ -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);
+ animation:bjs-spin 6s linear infinite}
+@keyframes bjs-spin{to{--bjs-a:360deg}}
+.a4 .bjs-tab{z-index:2}
+/* flow arrows between steps */
+.a4 .bjs-g div{position:relative}
+.a4 .bjs-g div:not(:last-child)::after{content:"›";position:absolute;right:-6px;top:50%;transform:translate(50%,-50%);font:800 18px/1 'DM Sans',sans-serif;color:#EF662F;z-index:1}
+@media (max-width:860px){.a4 .bjs-box::before{border-radius:18px}.a4 .bjs-g div:not(:last-child)::after{content:"⌄";right:50%;top:auto;bottom:-6px;transform:translate(50%,50%);font-size:16px}}
+@media (prefers-reduced-motion:reduce){.a4 .bjs-box::before{animation:none;display:none}}
