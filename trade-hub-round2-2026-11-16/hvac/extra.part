@@ -1,0 +1,16 @@
+<style>
+/* live 11-14/15: funnel titles + two-paragraph intro */
+.hv .sv-col{display:flex;flex-direction:column}
+.hv .sv-col .sv-dcard{flex:1}
+.hv .sv-fn{font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#333;text-align:center;margin:0 0 12px}
+@media(max-width:700px){.hv .sv-col+.sv-col{margin-top:24px}}
+.hv .dab+.dab{margin-top:32px}
+/* round 1 */
+.hv .sv-dgroups{grid-template-columns:1fr;gap:12px}
+.hv .sv-dgroups li{line-height:1.45;text-wrap:balance}
+.hv .sv-dgroups .it{white-space:nowrap}
+.hv .sv-dgroups .sep{color:#666;font-weight:400}
+.hv .stat-src{margin:0 0 4px;font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#c4c7cf}
+/* round 2 */
+.hv .cmp+.terms{margin:40px 0 0}
+</style>
