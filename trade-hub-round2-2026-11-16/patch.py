@@ -38,7 +38,7 @@ M=lambda x:'<span class="r2m" aria-hidden="true">R2</span>'
 r=rep('<h2>Most agencies report the first step. The job is decided in the last three.</h2>\n <p class="lead">A homeowner replaces windows once every 15 to 40 years, compares several companies, and decides at the kitchen table. A marketing report that ends at the form fill sees none of that. We follow it to the signed install.</p>',
  '<h2 class="r2">From the first search to the finished install. We work across the entire process.</h2>\n <p class="lead r2">A homeowner replaces windows once every 15 to 40 years, compares several companies, and decides at the kitchen table. We follow the job from the first search through the signed contract and installation.</p>',r)
 r=rep('<p class="lead">A marketing system with seven parts performs at the level of its weakest one. The <a href="/6-gap-revenue-map/">6-Gap Revenue Map™</a> shows which part is leaking most, and we start there, often on the inquiries you already have.</p>',
- '<p class="lead r2">A marketing system with seven parts performs at the level of its weakest one. We find the part that\'s leaking most and start there, often with the inquiries you already have.</p>',r)
+ '<p class="lead r2">More marketing won\'t fix a bottleneck elsewhere in the business. We identify what\'s limiting growth and fix that first, often starting with the inquiries and estimates you already have.</p>',r)
 t=re.search(r'\n <div class="terms">.*?\n </div>',r,re.S).group(0)
 assert t.count('<div')==t.count('</div>'),'terms block unbalanced'
 r=r.replace(t,'',1)
