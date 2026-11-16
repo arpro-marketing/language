@@ -73,7 +73,7 @@
   <div class="cgrid">
    <div class="ins">
     <div><label for="wdCpl">Your cost per lead</label><output id="wdCplOut">$200</output><input type="range" id="wdCpl" min="20" max="600" step="1" value="200"></div>
-    <div><label for="wdCr">Your close rate on those leads</label><output id="wdCrOut">11.7%</output><input type="range" id="wdCr" min="1" max="40" step="0.1" value="11.7"></div>
+    <div><label for="wdCr">Inquiries that become signed jobs</label><output id="wdCrOut">11.7%</output><input type="range" id="wdCr" min="1" max="40" step="0.1" value="11.7"></div>
     <div><label for="wdJob">Average job</label><output id="wdJobOut">$7,348</output><input type="range" id="wdJob" min="1000" max="40000" step="1" value="7348"></div>
     <p class="preset-src">Starting rates come from Andrew's own dealership record, not a client result. Replace them with your numbers.</p>
    </div>
