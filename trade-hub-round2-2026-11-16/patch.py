@@ -36,7 +36,7 @@ open('body-live.part','w').write(b)
 r=b
 M=lambda x:'<span class="r2m" aria-hidden="true">R2</span>'
 r=rep('<h2>Most agencies report the first step. The job is decided in the last three.</h2>\n <p class="lead">A homeowner replaces windows once every 15 to 40 years, compares several companies, and decides at the kitchen table. A marketing report that ends at the form fill sees none of that. We follow it to the signed install.</p>',
- '<h2 class="r2">Four steps decide every window and door job. We work on all four.</h2>\n <p class="lead r2">A homeowner replaces windows once every 15 to 40 years, compares several companies, and decides at the kitchen table. We follow each job through all four steps, from the first search to the signed install.</p>',r)
+ '<h2 class="r2">From the first search to the finished install. We work across the entire process.</h2>\n <p class="lead r2">A homeowner replaces windows once every 15 to 40 years, compares several companies, and decides at the kitchen table. We follow each job through all four steps, from the first search to the signed install.</p>',r)
 r=rep('<p class="lead">A marketing system with seven parts performs at the level of its weakest one. The <a href="/6-gap-revenue-map/">6-Gap Revenue Map™</a> shows which part is leaking most, and we start there, often on the inquiries you already have.</p>',
  '<p class="lead r2">A marketing system with seven parts performs at the level of its weakest one. We find the part that\'s leaking most and start there, often with the inquiries you already have.</p>',r)
 t=re.search(r'\n <div class="terms">.*?\n </div>',r,re.S).group(0)
