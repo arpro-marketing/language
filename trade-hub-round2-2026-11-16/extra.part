@@ -58,6 +58,5 @@
 .wd .preset-src{margin:4px 0 0;font-size:14px;color:#666}
 .wd .dab+.dab{margin-top:32px}
 /* round 2 (mock 2026-11-16) */
-.wd .dab-l{text-align:left;max-width:680px}
 .wd .terms.r2t{margin:40px 0 0}
 </style>

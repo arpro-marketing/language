@@ -43,6 +43,5 @@ t=re.search(r'\n <div class="terms">.*?\n </div>',r,re.S).group(0)
 assert t.count('<div')==t.count('</div>'),'terms block unbalanced'
 r=r.replace(t,'',1)
 r=rep('</table>\n <div class="notyet">','</table>'+t.replace('<div class="terms">','<div class="terms r2t">',1)+'\n <div class="notyet">',r)
-r=r.replace('<p class="dab">','<p class="dab dab-l">')
 open('body-r2.part','w').write(r)
 print('ok')
