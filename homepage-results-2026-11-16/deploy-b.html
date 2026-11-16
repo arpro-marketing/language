@@ -1,0 +1,48 @@
+<!-- HOMEPAGE "Results you can check." Mock B. REPLACES ONLY the existing <div class="hp-sup">…</div> block inside section.hp-s4 (maps, Tim quote, and hp-more-wrap stay exactly as they are). Add the <style> once, in the same HTML block. -->
+<style>
+.hp-s4 .hp-rsub{display:flex;align-items:center;gap:16px;margin:52px 0 18px}
+.hp-s4 .hp-rsub span{font-size:12px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#EF662F;white-space:nowrap}
+.hp-s4 .hp-rsub:after{content:"";flex:1;height:1px;background:#E0E0E0}
+.hp-s4 .hp-bento{display:grid;grid-template-columns:1fr 1.12fr 1.12fr 1fr;grid-template-rows:auto auto;gap:14px}
+.hp-s4 .hp-rc{background:#fff;border:1px solid #E0E0E0;border-radius:14px;padding:20px 18px;transition:transform .2s,box-shadow .2s,border-color .2s}
+.hp-s4 .hp-rc:hover{transform:translateY(-3px);border-color:#EF662F;box-shadow:0 12px 28px rgba(239,102,47,.14)}
+.hp-s4 .hp-rc1{grid-column:2;grid-row:1}.hp-s4 .hp-rc2{grid-column:3;grid-row:1}.hp-s4 .hp-rc3{grid-column:2;grid-row:2}.hp-s4 .hp-rc4{grid-column:3;grid-row:2}
+.hp-s4 .hp-ck{font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#666;line-height:1.35;min-height:2.7em;margin:0}
+.hp-s4 .hp-big{font:800 30px/1.1 'Plus Jakarta Sans',sans-serif;letter-spacing:-.5px;margin:10px 0 8px;white-space:nowrap;color:#333}
+.hp-s4 .hp-big i,.hp-s4 .hp-big em{font-style:normal;color:#EF662F}
+.hp-s4 .hp-u{font-size:14px;line-height:1.45;color:#666;margin:0;text-wrap:pretty}
+.hp-s4 .hp-gt{grid-column:1;grid-row:1/3;background:#14161C;color:#fff;border-radius:14px;padding:26px 24px;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.hp-s4 .hp-gt:hover,.hp-s4 .hp-at:hover{transform:translateY(-3px);box-shadow:0 0 0 2px #EF662F,0 14px 30px rgba(239,102,47,.18)}
+.hp-s4 .hp-gt .hp-ck,.hp-s4 .hp-at .hp-ck{color:#EF662F;min-height:0}
+.hp-s4 .hp-gt .hp-sh{font:700 17px/1.3 'Plus Jakarta Sans',sans-serif;margin:8px 0 0;color:#fff}
+.hp-s4 .hp-gt .hp-mk{font:800 56px/.6 'Plus Jakarta Sans',sans-serif;color:#EF662F;margin:26px 0 6px}
+.hp-s4 .hp-gt blockquote{margin:0 0 auto;font:700 20px/1.35 'Plus Jakarta Sans',sans-serif;letter-spacing:-.3px;color:#fff;text-wrap:balance}
+.hp-s4 .hp-gt .hp-gby{font-size:14px;color:rgba(255,255,255,.7);margin-top:20px}.hp-s4 .hp-gt .hp-gby b{color:#fff}
+.hp-s4 .hp-at{grid-column:4;grid-row:1/3;border:1px solid #E0E0E0;border-radius:14px;padding:20px 18px;background:#F8F8F8;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.hp-s4 .hp-at .hp-ck{margin-bottom:12px}
+.hp-s4 .hp-at .hp-zoom{display:block;padding:0;border:0;background:none;cursor:zoom-in;position:relative;width:100%}
+.hp-s4 .hp-at .hp-zoom img{display:block;width:100%;height:auto;border-radius:8px;box-shadow:0 1px 0 #E0E0E0,0 8px 18px -12px rgba(51,51,51,.45)}
+.hp-s4 .hp-at .hp-t{font:700 18px/1.3 'Plus Jakarta Sans',sans-serif;margin:16px 0 6px;color:#333}
+.hp-s4 .hp-at .hp-d{font-size:14px;line-height:1.45;color:#666}
+.hp-s4 .hp-at a{display:inline-block;margin-top:auto;padding-top:10px;color:#EF662F;font-weight:700;text-decoration:none;font-size:14px}
+.hp-s4 .hp-at a:hover{color:#d4551f}
+@media (max-width:980px){
+ .hp-s4 .hp-bento{grid-template-columns:1fr 1fr}
+ .hp-s4 .hp-bento .hp-rc{grid-column:auto;grid-row:auto}
+ .hp-s4 .hp-gt,.hp-s4 .hp-at{grid-column:1/-1;grid-row:auto}
+ .hp-s4 .hp-gt{order:5}.hp-s4 .hp-at{order:6}
+}
+@media (max-width:520px){
+ .hp-s4 .hp-bento{gap:10px}.hp-s4 .hp-rc{padding:16px 14px}.hp-s4 .hp-big{font-size:25px}.hp-s4 .hp-ck{font-size:10.5px}
+}
+@media (prefers-reduced-motion:reduce){.hp-s4 .hp-rc,.hp-s4 .hp-gt,.hp-s4 .hp-at{transition:none}.hp-s4 .hp-rc:hover,.hp-s4 .hp-gt:hover,.hp-s4 .hp-at:hover{transform:none}}
+</style>
+<div class="hp-rsub"><span>More client results</span></div>
+<div class="hp-bento">
+ <div class="hp-gt"><div class="hp-ck">Client testimonial</div><div class="hp-sh">More than just marketing.</div><div class="hp-mk">“</div><blockquote>He even took into account the crew’s installation capacity. Things we never would have thought of on our&nbsp;own.</blockquote><div class="hp-gby"><b>Gregg Murray</b>, Founder, Relaunch Digital</div></div>
+ <div class="hp-rc hp-rc1"><div class="hp-ck">Curl Up And Dye · Johnson City</div><div class="hp-big">67 <i>→</i> <em>167</em></div><p class="hp-u">Monthly Google profile actions in the first month after launch. The owner says new clients come in every&nbsp;day.</p></div>
+ <div class="hp-rc hp-rc2"><div class="hp-ck">SRV Trainer</div><div class="hp-big">$0 <i>→</i> <em>$50K</em></div><p class="hp-u">Monthly revenue within 90 days of building a startup’s digital marketing from&nbsp;scratch</p></div>
+ <div class="hp-rc hp-rc3"><div class="hp-ck">Michael Carr Realty</div><div class="hp-big"><em>+36%</em></div><p class="hp-u">Organic clicks in 30 days, on the same&nbsp;rankings</p></div>
+ <div class="hp-rc hp-rc4"><div class="hp-ck">BrandFace</div><div class="hp-big"><em>#1</em></div><p class="hp-u">Cited in Google’s AI Overview for “CEO branding&nbsp;services”</p></div>
+ <div class="hp-at"><div class="hp-ck">Our own marketing</div><button class="hp-zoom" type="button" data-full="/wp-content/uploads/2026/11/hp-google-ai-named-full.jpg" aria-label="Expand screenshot"><img decoding="async" src="/wp-content/uploads/2026/11/hp-google-ai-named-crop.jpg" alt="Google search for contractor marketing company, Aug 10 2026: the AI Overview names Andrew Ryan Marketing"><span class="hp-zi" aria-hidden="true"></span></button><div class="hp-t">Recommended by Google’s&nbsp;AI.</div><div class="hp-d">Named in Google’s AI answer for “contractor marketing company.” Captured Aug&nbsp;10,&nbsp;2026.</div><a href="/ai-overview-proof/">See the proof <span class="hp-arr" aria-hidden="true">→</span></a></div>
+</div>
