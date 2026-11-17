@@ -27,11 +27,13 @@
 .hp-s4 .hp-at a{display:inline-block;margin-top:auto;padding-top:10px;color:#EF662F;font-weight:700;text-decoration:none;font-size:14px}
 .hp-s4 .hp-at a:hover{color:#d4551f}
 @media (max-width:980px){
- .hp-s4 .hp-bento{grid-template-columns:1fr 1fr}
+ .hp-s4 .hp-bento{grid-template-columns:repeat(2,minmax(0,1fr))}
  .hp-s4 .hp-bento .hp-rc{grid-column:auto;grid-row:auto}
  .hp-s4 .hp-gt,.hp-s4 .hp-at{grid-column:1/-1;grid-row:auto}
  .hp-s4 .hp-gt{order:5}.hp-s4 .hp-at{order:6}
 }
+.hp-s4 .hp-bento>*{min-width:0}
+@media (max-width:400px){.hp-s4 .hp-big{font-size:22px}}
 @media (max-width:520px){
  .hp-s4 .hp-bento{gap:10px}.hp-s4 .hp-rc{padding:16px 14px}.hp-s4 .hp-big{font-size:25px}.hp-s4 .hp-ck{font-size:10.5px}
 }
