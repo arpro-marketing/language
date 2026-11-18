@@ -5,13 +5,19 @@ This file is the single agreed wording for the pass. It replaces any earlier dra
 
 ## Scope
 
-Source: the review and fix list of 2026-11-18 (Parts 1 to 9), the outside (GPT) read of it, and Andrew's answers of 2026-11-18 5:32 PM ET.
+Source: the review and fix list of 2026-11-18 (Parts 1 to 9), the outside (GPT) read of it, and Andrew's answers of 2026-11-18 (5:32, 5:59 and 6:04 PM ET).
+
+Updated 2026-11-18 6:30 PM ET, after Andrew read the three new pieces of wording:
+- AI step 02 lists wording (AI-19): he agreed.
+- Call Handling paragraph (CAL-2): stays exactly as written here. He asked what a comfort advisor is, then said to keep the term. Do not replace it and do not add an explanation of it.
+- Google Ads example (PPC-6): he asked for a graph beside it. The graph is N-5 below, and its mockup was sent to him at 6:19 PM ET. PPC-6 loses its last sentence because the graph's label carries it. If Andrew says to keep that sentence, put it back at the end of PPC-6 and shorten the graph's label to `Illustrative example`.
 
 IN this pass:
 - Part 1, items 1.1 to 1.16 (facts and wording). Item 1.11 is redone: the ad example now counts repairs and replacements for both accounts at one gross margin.
 - Part 2, items 2.1 to 2.6 and 2.8 (display bugs, llms.txt). No copy changes.
 - Part 4, items 4.1 to 4.9 (ideas picked up from the simulated reads; each also rests on the hub's own wording, a rule of Andrew's or a source).
 - Part 5, only what Andrew answered or approved: who makes the follow-up calls (5.3, Call Handling), how a company gets onto the lists AI cites (5.4, AI page), and the two extras in 5.6 (one company per market on all four closes, the founder-led line on Google Ads).
+- The graph under the Google Ads example (N-5), which Andrew asked for on 2026-11-18 at 5:59 PM ET.
 - Part 6, items 6.1 to 6.9 (links).
 
 NOT in this pass. Do not change these:
@@ -30,7 +36,7 @@ Each element below is given in full. Replace the element's whole text with NEW. 
 | Page | Words now | Change | After |
 |---|---|---|---|
 | AI Visibility | 1,530 | +32 | 1,562 |
-| Google Ads & LSAs | 1,372 | +21 | 1,393 |
+| Google Ads & LSAs | 1,372 | +47 | 1,419 |
 | Call Handling | 1,015 | +63 | 1,078 |
 | SEO | 1,022 | +86 | 1,108 |
 
@@ -86,14 +92,14 @@ NEW:
 Fewer searches, a higher cost per lead, and a longer path through a comfort visit and an estimate.
 ```
 
-### PPC-6. Element #brxe-1wf1r9 (items 1.11 (redone), 4.7)
+### PPC-6. Element #brxe-1wf1r9 (items 1.11 (redone), 4.7, graph N-5)
 NOW:
 ```html
 Here is why this matters. Say one account produces 100 leads a month at $50 each, mostly repairs, and sells two replacements. Another produces 60 leads at $80 each, aimed at replacement searches, and sells five. The first looks cheaper per lead. At $7,500 a system, the second brings in about $22,500 more in replacement revenue on almost the same spend, or about $9,000 more in gross profit at a 40% margin. That’s an illustration of the math, not a client result.
 ```
 NEW:
 ```html
-Say one account produces 100 leads a month at $50 each, mostly repair calls, and they turn into 60 repair visits and two replacements. Another produces 60 leads at $80 each, aimed at replacement searches, and they turn into 20 repair visits and five replacements. The first looks cheaper per lead. At $350 a repair, $7,500 a system and a 40% gross margin on both, the first leaves about $14,400 in gross profit and the second about $17,800, on almost the same spend. That’s an illustration of the math, not a client result.
+Say one account produces 100 leads a month at $50 each, mostly repair calls, and they turn into 60 repair visits and two replacements. Another produces 60 leads at $80 each, aimed at replacement searches, and they turn into 20 repair visits and five replacements. The first looks cheaper per lead. At $350 a repair, $7,500 a system and a 40% gross margin on both, the first leaves about $14,400 in gross profit and the second about $17,800, on almost the same spend.
 ```
 
 ### PPC-7. Element #brxe-adf3c4 (items 4.7)
@@ -179,6 +185,16 @@ In a free 20-minute Gap Review, we go through your ad account with you on a shar
 ### New text on this page
 - 4.1 note under the hero button: `Free · 20 minutes · a call with Andrew`
 - 4.1 note under the closing button: `Free · 20 minutes · a call with Andrew`
+- N-5 graph: label: `Illustrative example, not a client result`
+- N-5 graph: title: `Gross profit from about $5,000 in ad spend`
+- N-5 graph: first bar, name: `$50 per lead`
+- N-5 graph: first bar, detail: `100 leads: 2 replacements, 60 repairs`
+- N-5 graph: first bar, value: `$14,400`
+- N-5 graph: second bar, name: `$80 per lead`
+- N-5 graph: second bar, detail: `60 leads: 5 replacements, 20 repairs`
+- N-5 graph: second bar, value: `$17,800`
+- N-5 graph: key: `Replacements`
+- N-5 graph: key: `Repairs`
 
 ## AI Visibility page (13720) /services/hvac-marketing/ai-visibility/
 
@@ -604,10 +620,9 @@ In a free 20-minute Gap Review, we look at where you show up in Maps and search 
 - 4.1 note under the hero button: `Free · 20 minutes · a call with Andrew`
 - 4.1 note under the closing button: `Free · 20 minutes · a call with Andrew`
 
-
 ## New elements: where they go and how they look
 
-No new sections. Four small pieces of text are new elements. The CSS below is a suggestion that follows the styles already on these pages (WPCode CSS 13724, 13729, 13736, 13748). Adjust the mechanics as Bricks needs, and keep the look.
+No new sections. Four small pieces of text and one graph are new elements. The CSS below is a suggestion that follows the styles already on these pages (WPCode CSS 13724, 13729, 13736, 13748). Adjust the mechanics as Bricks needs, and keep the look.
 
 ### N-1. Note under the booking buttons (4.1)
 Text: `Free · 20 minutes · a call with Andrew`
@@ -650,6 +665,68 @@ Build it as one `.hv-stat` card (the class the AI page's four findings cards use
 .hv-result .hv-who{color:#666}
 ```
 Every figure, date, the search and the quote are on /case-studies/ today (fetched 2026-11-18 21:44Z). The dash inside the quote is the client's own wording as published, so it stays.
+
+### N-5. Google Ads: graph under the lead-cost example (Andrew's request, 2026-11-18 5:59 PM ET)
+Where: directly after the `.prose` div that holds paragraph #brxe-1wf1r9 (div #brxe-reop9u), inside the same container, in the section "Not every HVAC call is worth the same". It is the last thing in that section. Mockups: `graph-google-ads-desktop.png` and `graph-google-ads-phone.png` in the project files folder for this pass.
+
+What it shows: the two accounts from the paragraph as two bars of gross profit, each split into replacements (orange, first) and repairs (gray). Both bars share one scale, with $17,800 as the full width, and each total sits at the end of its bar. The second total is orange because it is the larger one, the way the hub's example table marks its best row.
+
+Every number is the paragraph's own:
+- $50 per lead: 100 leads × $50 = $5,000 spent. 2 replacements × $7,500 × 40% = $6,000. 60 repairs × $350 × 40% = $8,400. Total $14,400.
+- $80 per lead: 60 leads × $80 = $4,800 spent. 5 replacements × $7,500 × 40% = $15,000. 20 repairs × $350 × 40% = $2,800. Total $17,800.
+- Bar lengths: the first bar is 14,400 ÷ 17,800 = 0.809 of the second.
+
+HTML (one Bricks code element, or the same structure built from Bricks elements; keep the classes, the two `role="img"` labels and the four `title` tooltips):
+```html
+<figure class="hv-fig">
+<figcaption><span class="hv-k">Illustrative example, not a client result</span><strong class="hv-fig-t">Gross profit from about $5,000 in ad spend</strong></figcaption>
+<div class="hv-fig-row hv-fig-row--1">
+<p class="hv-fig-l"><strong>$50 per lead</strong><span>100 leads: 2 replacements, 60 repairs</span></p>
+<div class="hv-fig-b" role="img" aria-label="At $50 per lead, 100 leads became 2 replacements and 60 repairs. Gross profit $14,400: $6,000 from replacements and $8,400 from repairs."><span class="hv-bar"><span class="hv-seg hv-seg--repl" title="2 replacements × $7,500 × 40% = $6,000"></span><span class="hv-seg hv-seg--rep" title="60 repairs × $350 × 40% = $8,400"></span></span><span class="hv-fig-v"><span class="u">$</span>14,400</span></div>
+</div>
+<div class="hv-fig-row hv-fig-row--2">
+<p class="hv-fig-l"><strong>$80 per lead</strong><span>60 leads: 5 replacements, 20 repairs</span></p>
+<div class="hv-fig-b" role="img" aria-label="At $80 per lead, 60 leads became 5 replacements and 20 repairs. Gross profit $17,800: $15,000 from replacements and $2,800 from repairs."><span class="hv-bar"><span class="hv-seg hv-seg--repl" title="5 replacements × $7,500 × 40% = $15,000"></span><span class="hv-seg hv-seg--rep" title="20 repairs × $350 × 40% = $2,800"></span></span><span class="hv-fig-v"><span class="u">$</span>17,800</span></div>
+</div>
+<p class="hv-fig-leg"><span><i class="hv-sw hv-seg--repl"></i>Replacements</span><span><i class="hv-sw hv-seg--rep"></i>Repairs</span></p>
+</figure>
+```
+CSS, added to WPCode 13729:
+```css
+#brx-content .hv-fig{max-width:680px;margin:24px 0 0;padding:24px 26px 22px;background:#fff;border:1px solid #E0E0E0;border-radius:10px;font-family:"DM Sans",ui-sans-serif,system-ui,sans-serif;color:#333}
+.hv-fig figcaption{display:block;margin:0 0 20px;text-align:left}
+.hv-fig .hv-k{display:block;font-size:13px;font-weight:700;color:#666;margin:0 0 6px}
+.hv-fig-t{display:block;font-family:"Plus Jakarta Sans",ui-sans-serif,system-ui,sans-serif;font-size:20px;font-weight:800;line-height:1.25;letter-spacing:-.01em;color:#333;text-wrap:balance}
+.hv-fig-row+.hv-fig-row{margin-top:20px}
+.hv-fig-l{margin:0 0 8px;font-size:15px;line-height:1.4;color:#666;display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 10px}
+.hv-fig-l strong{font-size:17px;font-weight:700;color:#333}
+.hv-fig-b{display:flex;align-items:center;gap:12px;--val:104px}
+.hv-fig-b .hv-bar{display:flex;gap:2px;height:16px;flex:0 0 auto;width:calc((100% - var(--val) - 12px)*var(--r))}
+.hv-fig-row--1 .hv-bar{--r:.809}
+.hv-fig-row--2 .hv-bar{--r:1}
+.hv-seg{display:block;flex:1 1 0;min-width:2px;height:100%;transition:filter .15s ease-out}
+.hv-seg:hover{filter:brightness(1.12)}
+.hv-seg--repl{background:#EF662F}
+.hv-seg--rep{background:#666}
+.hv-fig-row--1 .hv-seg--repl{flex-grow:6000}
+.hv-fig-row--1 .hv-seg--rep{flex-grow:8400}
+.hv-fig-row--2 .hv-seg--repl{flex-grow:15000}
+.hv-fig-row--2 .hv-seg--rep{flex-grow:2800}
+.hv-bar .hv-seg:last-child{border-radius:0 4px 4px 0}
+.hv-fig-v{flex:0 0 auto;font-family:"Plus Jakarta Sans",ui-sans-serif,system-ui,sans-serif;font-size:24px;font-weight:800;line-height:1;letter-spacing:-.02em;color:#333;white-space:nowrap}
+.hv-fig-row--2 .hv-fig-v{color:#EF662F}
+.hv-fig-v .u{font-family:Arial,Helvetica,sans-serif;font-size:.55em;font-weight:700;opacity:.7;vertical-align:.55em;margin-right:1px;letter-spacing:0}
+.hv-fig-leg{margin:18px 0 0;display:flex;flex-wrap:wrap;gap:6px 20px;font-size:14px;line-height:1.4;color:#666}
+.hv-fig-leg span{display:inline-flex;align-items:center;gap:7px}
+.hv-sw{display:inline-block;width:12px;height:12px;border-radius:2px}
+@media (max-width:640px){#brx-content .hv-fig{padding:20px 18px 18px}.hv-fig-t{font-size:19px}.hv-fig-v{font-size:22px}.hv-fig-b{--val:96px}}
+@media (prefers-reduced-motion:reduce){.hv-seg{transition:none}}
+```
+Notes:
+- No script and no animation. The bars are plain boxes sized by the CSS, so the graph looks the same with JavaScript off and in a full-page screenshot.
+- The two colors are brand colors: #EF662F and #666666. Checked with a palette validator on white: the pair stays apart for color-blind readers (13.2, against a floor of 8) and both clear 3 to 1 against the card.
+- The label reuses the wording of the hub's own example label ("Illustrative example, not client results.").
+- Checked in a browser on a copy of the live page at 1440, 390 and 360 wide: no sideways scroll, nothing outside the card, bar lengths 413 and 510 px on desktop and 165 and 204 px at 390.
 
 ## Part 2: display bugs (no copy changes)
 
@@ -729,11 +806,12 @@ Andrew's rule (2026-11-18): the simulated buyer reads are a source of ideas and 
 | 4.7 | Cuts that pay for the additions, under Andrew's rule that pages don't grow |
 | 4.9 | Wording fixes |
 | 5.3, 5.4, 5.6 | Andrew's answers and approval of 2026-11-18 |
+| N-5 graph | Andrew's request of 2026-11-18 ("add a graph along with it as a visual reference to make it easier to understand") |
 | 6.1 to 6.9 | Links |
 
 ## Lines to protect (unchanged in this pass)
 
-- "That’s an illustration of the math, not a client result." (it stays at the end of the new ad example and on the AI page)
+- "That’s an illustration of the math, not a client result." It stays on the AI page. On the Google Ads page it moves into the graph's label ("Illustrative example, not a client result"), directly under the example, unless Andrew asks to keep the sentence as well.
 - "read the percentages as a direction, not a precise rate", and the counts under every number on the AI page
 - "Schema markup, homepage length and directory listings made no difference in the study."
 - "it only holds if the call gets answered, the visit gets booked and the estimate gets followed up"
@@ -748,7 +826,7 @@ Andrew's rule (2026-11-18): the simulated buyer reads are a source of ideas and 
 
 ## After the save: checks on the live pages (logged out, 1440 and 390 wide)
 
-1. Every NEW string above is on its page, and each of these is gone: "hundreds of times a month", "Usually Google’s", "Local names", "costlier clicks", "built-in Google Ads revenue import", "Very few contractors have this in place", "Here is why this matters", "Most homeowners who are going to buy decide", "We don’t replace your team or your call center." (the FAQ "Do you replace our CSRs or our call center?" and its answer stay as they are), "it keeps working when you stop paying", "calls scaled content abuse", "The same approach is working outside HVAC".
+1. Every NEW string above is on its page, and each of these is gone: "hundreds of times a month", "Usually Google’s", "Local names", "costlier clicks", "built-in Google Ads revenue import", "Very few contractors have this in place", "Here is why this matters", "Most homeowners who are going to buy decide", "We don’t replace your team or your call center" in the Call Handling definition (it stays in the FAQ answer "No. We work with the people you have."), "it keeps working when you stop paying", "calls scaled content abuse", "The same approach is working outside HVAC".
 2. The FAQ JSON-LD on Google Ads, AI Visibility and Call Handling matches the visible answers word for word. Rich Results still shows Service and FAQ with 0 errors.
 3. The note sits under each button it belongs to, on one line at 390, and the "Message Andrew" box doesn't cover it.
 4. On a phone, the sub-nav of Google Ads, Call Handling and SEO opens with the current page in view, and the page itself hasn't scrolled.
@@ -756,4 +834,5 @@ Andrew's rule (2026-11-18): the simulated buyer reads are a source of ideas and 
 6. Step-card and FAQ links are underlined in the darker orange. The pricing link in each closing box is readable on the dark background.
 7. No heading leaves a single word on its last line at either width. No sideways scroll at 390.
 8. The nine links in Part 6 resolve (200) and point where the table says.
+9. Google Ads graph (N-5): it sits right under the example paragraph, the paragraph no longer ends with "That’s an illustration of the math, not a client result.", and the graph's label reads "Illustrative example, not a client result". The first bar is about 0.81 the length of the second, each total sits at the end of its bar, nothing leaves the card, and there is no sideways scroll at 390 or 360.
 Report each check with how it was verified. Keep the previous revision id of every page touched as the rollback.
