@@ -1,0 +1,95 @@
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://andrewryanmarketing.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Services",
+     "item": "https://andrewryanmarketing.com/services/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "HVAC Marketing",
+     "item": "https://andrewryanmarketing.com/services/hvac-marketing/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 4,
+     "name": "Google Ads & LSAs",
+     "item": "https://andrewryanmarketing.com/services/hvac-marketing/ppc/"
+    }
+   ]
+  },
+  {
+   "@type": "Service",
+   "name": "Google Ads and Local Services Ads for HVAC Companies",
+   "serviceType": "Pay-per-click advertising",
+   "url": "https://andrewryanmarketing.com/services/hvac-marketing/ppc/",
+   "provider": {
+    "@type": "Organization",
+    "name": "Andrew Ryan Marketing",
+    "url": "https://andrewryanmarketing.com/"
+   },
+   "areaServed": {
+    "@type": "Country",
+    "name": "United States"
+   },
+   "audience": {
+    "@type": "BusinessAudience",
+    "name": "HVAC companies"
+   },
+   "isRelatedTo": {
+    "@type": "Service",
+    "name": "HVAC Marketing",
+    "url": "https://andrewryanmarketing.com/services/hvac-marketing/"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "How much do Google Ads cost for an HVAC company?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It depends on your market, your season and which calls you go after. Clicks for replacement searches cost more than repair clicks, and big metros cost more in July than smaller towns do in April. The number that matters is your cost per sold job by call type, because a cheap lead that never sells is the most expensive one you buy."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Are Local Services Ads worth it for HVAC companies?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "For most established HVAC companies, yes, as long as someone answers every call fast and the reviews are strong. You pay per lead rather than per click, and the ads sit above everything else. Their weakness is control: you can’t choose keywords or landing pages, so they work best alongside search ads, not instead of them."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Should HVAC ads target repair calls or replacements?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Usually both, in separate campaigns with separate budgets. Repair calls keep technicians busy and often lead to a replacement conversation. Replacement campaigns cost more per lead but carry the margin. How much goes to each should follow your install capacity and what each campaign actually sells."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can Google Ads use the revenue in ServiceTitan or Housecall Pro?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. ServiceTitan has a built-in Google Ads revenue import that ties completed-job revenue to the original ad click, and other field software can send the same information through offline conversion uploads. Once that data is flowing, Google can bid toward sold jobs and their value instead of raw lead counts."
+     }
+    }
+   ]
+  }
+ ]
+}
