@@ -1,6 +1,6 @@
 # HVAC spokes: edits from the outside (GPT) review, 2026-11-18
 
-STATUS: PROPOSED. Waiting for Andrew's yes. Nothing here is live. Save only when his own message names it.
+STATUS: LIVE since 2026-11-18, about 21:30Z, on Andrew's word ("yes that looks good ship it"). Revisions: AI 13755, PPC 13759, Call Handling 13757, SEO 13760. The next round is in ../final-pass/EDITS.md.
 This file is the single agreed wording. It replaces any earlier draft of these edits.
 
 Copy changes only. No layout, class or style change. One new Bricks text element pair on the PPC page (edit 1c).
