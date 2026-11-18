@@ -3,13 +3,19 @@
  "@graph": [
   {
    "@type": "Service",
+   "@id": "https://andrewryanmarketing.com/services/hvac-marketing/call-handling/#service",
    "name": "Call Handling and Estimate Follow-Up for HVAC Companies",
    "serviceType": "Sales process consulting",
+   "description": "Working with HVAC CSRs and comfort advisors on call answering, booking, replacement estimates and estimate follow-up, so more paid calls become sold jobs.",
    "url": "https://andrewryanmarketing.com/services/hvac-marketing/call-handling/",
+   "mainEntityOfPage": {
+    "@id": "https://andrewryanmarketing.com/services/hvac-marketing/call-handling/"
+   },
    "provider": {
-    "@type": "Organization",
-    "name": "Andrew Ryan Marketing",
-    "url": "https://andrewryanmarketing.com/"
+    "@id": "https://andrewryanmarketing.com/#organization"
+   },
+   "brand": {
+    "@id": "https://andrewryanmarketing.com/#organization"
    },
    "areaServed": {
     "@type": "Country",
@@ -17,7 +23,7 @@
    },
    "audience": {
     "@type": "BusinessAudience",
-    "name": "HVAC companies"
+    "audienceType": "HVAC companies"
    },
    "isRelatedTo": {
     "@type": "Service",
@@ -27,6 +33,10 @@
   },
   {
    "@type": "FAQPage",
+   "@id": "https://andrewryanmarketing.com/services/hvac-marketing/call-handling/#faq",
+   "isPartOf": {
+    "@id": "https://andrewryanmarketing.com/services/hvac-marketing/call-handling/"
+   },
    "mainEntity": [
     {
      "@type": "Question",

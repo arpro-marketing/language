@@ -1,0 +1,76 @@
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Service",
+   "@id": "https://andrewryanmarketing.com/services/hvac-marketing/seo/#service",
+   "name": "SEO for HVAC Companies",
+   "serviceType": "Search engine optimization",
+   "description": "Local SEO for HVAC companies: Google Business Profile, reviews, service pages, local pages and links, measured by the calls and sold jobs they produce.",
+   "url": "https://andrewryanmarketing.com/services/hvac-marketing/seo/",
+   "mainEntityOfPage": {
+    "@id": "https://andrewryanmarketing.com/services/hvac-marketing/seo/"
+   },
+   "provider": {
+    "@id": "https://andrewryanmarketing.com/#organization"
+   },
+   "brand": {
+    "@id": "https://andrewryanmarketing.com/#organization"
+   },
+   "areaServed": {
+    "@type": "Country",
+    "name": "United States"
+   },
+   "audience": {
+    "@type": "BusinessAudience",
+    "audienceType": "HVAC companies"
+   },
+   "isRelatedTo": {
+    "@type": "Service",
+    "name": "HVAC Marketing",
+    "url": "https://andrewryanmarketing.com/services/hvac-marketing/"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://andrewryanmarketing.com/services/hvac-marketing/seo/#faq",
+   "isPartOf": {
+    "@id": "https://andrewryanmarketing.com/services/hvac-marketing/seo/"
+   },
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "How long does SEO take for an HVAC company?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It depends on your starting point, your market and your competitors, so we don’t promise a timeline. Fixes to your Google Business Profile and reviews tend to show first in the map. New service pages and links take longer to build trust in the organic results."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How many reviews does an HVAC company need to rank in Google Maps?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "There’s no fixed number. What matters is how you compare with the companies already in your local 3-pack, and how recent your reviews are. Look at the three companies Google shows for your main search: their review count and how many came in the last few months is the bar to clear."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Should we build a page for every town we serve?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. Build pages for the towns that matter most to your business, and make each one genuinely local. Dozens of near-identical town pages can be treated as spam under Google’s policies and can drag down the rest of your site."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is SEO or Google Ads better for an HVAC company?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Most established HVAC companies need both. Google Ads and LSAs bring calls now and can be turned up when crews have open days. SEO builds the calls you don’t pay for each time, which lowers your overall cost per sold job as it grows."
+     }
+    }
+   ]
+  }
+ ]
+}
