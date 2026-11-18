@@ -29,3 +29,4 @@
 .hv-table thead th:empty{background:#333}
 .hv-plain td:last-child{background:#fff}
 .band--grey .hv-steps li{background:#fff}
+.hv-steps+.prose{margin-top:24px}
