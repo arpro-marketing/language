@@ -1,0 +1,66 @@
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Service",
+   "name": "Call Handling and Estimate Follow-Up for HVAC Companies",
+   "serviceType": "Sales process consulting",
+   "url": "https://andrewryanmarketing.com/services/hvac-marketing/call-handling/",
+   "provider": {
+    "@type": "Organization",
+    "name": "Andrew Ryan Marketing",
+    "url": "https://andrewryanmarketing.com/"
+   },
+   "areaServed": {
+    "@type": "Country",
+    "name": "United States"
+   },
+   "audience": {
+    "@type": "BusinessAudience",
+    "name": "HVAC companies"
+   },
+   "isRelatedTo": {
+    "@type": "Service",
+    "name": "HVAC Marketing",
+    "url": "https://andrewryanmarketing.com/services/hvac-marketing/"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What is a good booking rate for HVAC CSRs?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Published benchmarks vary too widely to be much use, so we start with your own numbers. Measure the booking rate for each CSR on calls that could have been booked, then compare your average to your best person. That gap, multiplied by your call volume, is what better call handling is worth to you."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How long should an HVAC company follow up on a replacement estimate?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Hard for about ten days, then lightly. Most homeowners who are going to buy decide within a short window after the visit. A focused push of calls and texts in that window wins more jobs than months of reminders, and it costs your team far less time."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do you replace our CSRs or our call center?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. We work with the people you have. We measure, coach and set up the systems around them, like overflow coverage, missed-call text-backs and estimate follow-up, so your team books and sells more of the calls you’re already paying for."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Why would a marketing company work on call handling?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Because that’s where the result of the marketing is decided. If half the calls never become a visit, doubling your ad spend mostly doubles the waste. Fixing the second funnel first means every dollar of marketing after that works harder."
+     }
+    }
+   ]
+  }
+ ]
+}
