@@ -4,7 +4,7 @@ STATUS: APPROVED, NOT YET LIVE. Andrew asked for this on 2026-11-19 at 12:01 PM 
 
 > "now i see it looks like the images on our pages lack alt tags. we need to fix that. make them descriptive and keyword rich, but lean on being descriptive of what the image shows"
 
-The wording below was posted to him at 12:21 PM ET.
+The wording below was posted to him in the thread at 12:18 PM ET.
 
 ## What the audit found
 
@@ -88,8 +88,9 @@ This string contains `$9` and `$4`. Use a literal string replace. A regex replac
 
 These `<img>` tags have no `src` and sit inside a container that is `display:none` until a screenshot is opened. The scripts already copy the opened screenshot's alt into the slot (`im.alt=b.querySelector('img').alt` on the homepage, `lbImg.alt=im.alt` on the other two), so this only gives the slot a resting value.
 
-- Homepage (2762): the `<img alt=""/>` inside `div.hp-lb`.
-- /ai-overview-proof/ (11947) and /services/generative-engine-optimization/ (12084): the `<img alt=""/>` inside `div#apr-lb`.
+- Homepage (2762): the one `<img>` inside `div.hp-lb`. The page prints it as `<img alt="">`.
+- /ai-overview-proof/ (11947): the one `<img>` inside `div#apr-lb`. The page prints it as `<img alt="" />`.
+- /services/generative-engine-optimization/ (12084): the one `<img>` inside `div#apr-lb`. The page prints it as `<img decoding="async" src="" alt="">`. Leave the empty `src` as it is.
 - NEW on all three: `alt="Expanded screenshot"`
 
 ## How to save

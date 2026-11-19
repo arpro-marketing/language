@@ -1,6 +1,6 @@
 # HVAC SEO page: example sold-jobs report in step 06
 
-STATUS: PROPOSED. Nothing here is live. Save only when Andrew's own message names it.
+STATUS: LIVE since 2026-11-19 12:05 PM ET. Saved on Andrew's message of 12:02 PM ET: "put the example report and the new sentence in SEO step 06". As-built notes are at the end.
 
 ## Scope
 
@@ -119,3 +119,15 @@ Checked on a copy of the live page in a browser before this file was written: 14
 ## Rollback
 
 The page's version before the save. One element and one CSS block, so putting back the NOW text and removing the `.hv-rep` and `.hv-report` rules also undoes it.
+
+## As built (2026-11-19)
+
+- Saved at 12:05 PM ET from commit 75095db, the version with Booked jobs at 36, 35 and 34.
+- Page 13745: the text setting of the step's own element (#brxe-hzefla, a Basic Text `li`) now holds the NEW sentence followed by `div.hv-rep`. No element was added, so the page still has 117 elements. Revision 13765 before, 13776 after.
+- WPCode 13748: the CSS above was added at the end under the comment `/* sample report 2026-11-19 */`. The snippet went from 4,589 to 7,117 characters. The schema snippet (13747) was not touched.
+- Checked from the cloud, logged out with a cache-buster:
+  - `verify/check.py` against the copy fetched at 11:38 AM ET: 29 of 29. Only #brxe-hzefla changed, the markup equals this spec, every role and scope attribute survived the save, the other CSS is unchanged, and the page went from 1,115 to 1,153 words.
+  - `verify/live.js` in a browser at 1440, 390 and 360 wide: 54 of 54. No sideways scroll, nothing above the step moved, everything below it moved by the same amount (219px on desktop, about 355 to 360px on phones), the table sits 24px from the card's right edge on desktop and 18px from both edges on phones, and there is no new console error.
+- Re-read from a copy fetched at 12:19 PM ET: the label, the three rows and the sentence match this spec.
+- Rollback on the PC: `hvac-spokes-2026-11-18\sample-report\ROLLBACK.txt` (page revision 13765 and the prior code of snippet 13748).
+
