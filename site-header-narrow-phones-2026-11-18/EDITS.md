@@ -10,9 +10,9 @@ Mockup: `header-before-after.png` in this folder (the homepage and the HVAC Goog
 
 ## Why
 
-The header row needs 362 pixels: 20 of margin, 224 for the logo and name, a 20 gap, 78 for the Menu button, and 20 of margin. On a narrower screen the Menu button drops to a second row. The header grows from 69 to 105 pixels, the logo loses its space at the top, and the whole page starts 36 pixels lower.
+The header row needs 362 pixels (361.9 measured): 20 of margin, 224 for the logo and name, a 20 gap, 78 for the Menu button, and 20 of margin. On a narrower screen the Menu button drops to a second row. The header grows from 69 to 105 pixels, the logo loses its space at the top, and the whole page starts 36 pixels lower.
 
-Measured on the live site on 2026-11-18, logged out, on the homepage, the HVAC hub, the HVAC Google Ads page, About, Pricing, Contact, Case Studies and Insights. All eight wrap at 360 wide. The homepage's logo block is 2 pixels narrower than the others, so it wraps from 360 down and the other seven from 361 down.
+Measured on the live site on 2026-11-18, logged out, on the homepage, the HVAC hub, the HVAC Google Ads page, About, Pricing, Contact, Case Studies and Insights. All eight wrap at 360 wide. On the homepage the name in the header is about 2 pixels narrower than on the other seven pages, so its row needs 360.6 pixels and wraps from 360 down, and the other seven wrap from 361 down. The widths are the same at a phone's pixel density (measured at 3x).
 
 360 wide is a common phone size. StatCounter's "Mobile Screen Resolution Stats in United States Of America - October 2026" lists 360x780 fourth, at 4.58%, and that is only one of the 360-wide sizes (read 2026-11-18 at https://gs.statcounter.com/screen-resolution-stats/mobile/united-states-of-america). The site's own analytics will show the real share for its visitors.
 
@@ -75,6 +75,7 @@ Delete the rule and clear the page cache. Nothing else is touched.
 ## Not in this change
 
 - At 901 wide, the narrowest width that shows the desktop menu, the name takes two lines today. Left as it is.
+- The font of the header on the homepage. There the name and the Menu button render in DM Sans, and on every other page in Plus Jakarta Sans. The cause is a homepage rule in the site's global custom CSS (`.home p, .home li, .home span, .home label, .home input, .home textarea, .home button { font-family: "DM Sans", sans-serif !important }`), which also catches the header's `span` elements. Left as it is. It is why the homepage's name is narrower.
 - The "Message Andrew" bar proposal in `hvac-spokes-2026-11-18/bar-wait/`. Its numbers for 360 by 640 and 320 by 454 were measured with today's header. Once this change is live, pages on those screens start 36 pixels higher, so those two rows have to be measured again before that proposal's check.
 
 ## Limits of the test
