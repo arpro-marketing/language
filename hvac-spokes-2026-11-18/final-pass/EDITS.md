@@ -1,7 +1,35 @@
 # HVAC spokes: final edit pass, 2026-11-18
 
-STATUS: PROPOSED. Nothing here is live. Save only when Andrew's own message names it.
+STATUS: LIVE on the four spokes and the hub since 2026-11-18, about 6:40 PM ET (Andrew, 6:27 PM ET: "yes ship it"). Part 6 items 6.5 to 6.9 and item 2.8 are NOT saved yet. See "As built" below.
 This file is the single agreed wording for the pass. It replaces any earlier draft of these edits, and where it differs from the review document, this file wins.
+
+## As built (2026-11-18)
+
+Saved from this file as it stood at commit 9e2282c. Checked afterwards on the live pages, logged out, at 1440, 390 and 360 wide: all 54 element edits match NEW word for word, the new elements N-1 to N-5 are in place, and no element outside this file changed.
+
+Versions, before (the rollback) and after:
+
+| Page | Before | After |
+|---|---|---|
+| Google Ads & LSAs (13726) | 13759 | 13761 |
+| AI Visibility (13720) | 13755 | 13763 |
+| Call Handling (13733) | 13757 | 13764 |
+| SEO (13745) | 13760 | 13765 |
+| HVAC hub (6515) | 13754 | 13766 |
+
+Where the build differs from the suggestions in this file. None of these change wording:
+- N-1 closing note: `.cta-box.brxe-div p` was overriding `.cta-note` (the note rendered white at 17px), so the rule in use is `.cta-box .cta-note.cta-note` at 14px in the muted color, with a 13px size under 380px wide.
+- N-3 Call Handling record label: wraps evenly on phones.
+- 2.3 phone sub-nav: the scroll script is its own WPCode snippet (13762).
+- 2.6 breadcrumb tap height: the padding rule made the breadcrumb row 12px taller and pushed the whole page down by that much. A correction sits directly after it in the four CSS snippets (13724, 13729, 13736, 13748): `.crumbs.brxe-div{margin-top:-6px;margin-bottom:16px}`. With it the H1 and the hero button sit where they did before the pass (H1 top 156 at 390 wide and 200 at 1440 wide on all four pages) and the links are 25px tall.
+
+Not saved yet:
+- Part 6, items 6.5 to 6.9: the five links on pages outside the HVAC section (/services/ppc-for-contractors/, /local-services-ads-for-contractors/, /local-contractor-seo-blueprint/, /answer-gap-index/, /services/). They wait for Andrew's own words naming them.
+- Item 2.8, llms.txt. It is a static file on the server with no WordPress source, and it also waits for Andrew's own words.
+
+Known after the save, to be proposed on its own: on a 390 by 664 phone screen the "Message Andrew" bar covers the note under the hero button at first view on Google Ads, Call Handling and SEO. Screens of 390 by 745 and taller, and desktop, are clear.
+
+Rich Results Test after the save (smartphone): 3 valid items, 0 errors and 0 warnings on each of the four spokes.
 
 ## Scope
 
