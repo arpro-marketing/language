@@ -1,6 +1,15 @@
 # HVAC Google Ads page: "PPC" in the title
 
-STATUS: PROPOSED 2026-11-19. Not live. It waits for Andrew's yes (asked in the thread on 2026-11-19 at 11:17 AM ET). Do not save anything from this file until his own message approves it.
+STATUS: LIVE since 2026-11-19, 11:30 AM ET (Andrew, 11:29 AM ET: "change the PPC title and the hub link"). See "As built" below.
+
+## As built (2026-11-19)
+
+- Edit 1: the Yoast SEO title of page 13726 was changed in the Yoast field. Yoast meta has no page version, so the page stays at 13761 before and after. The social title field is empty, so the share title follows the SEO title.
+- Edit 2: hub 6515 went from version 13766 to 13775, card 01 link words only.
+- The first choice was used. The second choice at the end of this file was not.
+- Rollback is on the PC in `hvac-spokes-2026-11-18\ppc-title\ROLLBACK.txt`. To undo: put the SEO title back to the NOW line of edit 1, and restore hub version 13766.
+- Checked from the cloud at 11:30 AM ET, logged out with a fresh copy forced, against copies taken before the save: 30 of 30 checks pass. On the Google Ads page only the title tag, `og:title`, the page name in the structured data and the modified date differ. On the hub only the two link words and the modified date differ. Word counts are unchanged on both.
+- In a browser at 1440, 390 and 360 wide: the link reads `HVAC PPC →` in the same style as `HVAC SEO →`, a click on it opens the Google Ads page, and there are no errors and no sideways scroll. At 360 wide the link breaks between its two words, as the old link did, and the paragraph height is unchanged at every width from 1440 down to 320.
 
 ## Why
 
