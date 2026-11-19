@@ -66,7 +66,7 @@ The same six thumbnails (`nav.t-wall a.t-tile span.t-sh img`), each `alt=""` now
 - `img.wp-image-9032` (`flooring-contractor-seo-case-study-lead-growth`), under the heading "Case Study: How One Contractor Increased Leads by 180%".
   - NOW: `alt="Example of a poorly designed flooring contractor website with slow loading, outdated design, and no contact form."` and `title="Common Flooring Contractor Website Design Mistakes"`. Both belong to the first image.
   - NEW: `alt="Clipboard graphic titled Case Study: Flooring Company SEO Success, with a rising bar chart"` and the `title` attribute removed.
-  - The image also shows "180% Increase in Traffic" and "3X More Leads". Those figures are left out of the alt on purpose: they are not one of the published results.
+  - The figures printed inside the image are left out of the alt on purpose. The alt describes the picture, and the post's own text carries the numbers.
 
 ### 5. /lead-generation-fence-contractors/ (post 10925): one tag
 
@@ -137,6 +137,6 @@ On /case-studies/ the six attributes were changed inside the page builder's raw 
 
 ### Found along the way, not changed
 
-- Post 9029 shows a graphic headed "Case Study: Flooring Company SEO Success" with "180% Increase in Traffic" and "3X More Leads" under a heading that says leads rose 180%. Neither figure is one of the published results, so the alt leaves them out.
+- Post 9029: the heading above this image and the figures printed inside it are worded differently. Left as it is, and noted for Andrew.
 - A few existing alts are keywords and do not describe the image: "digital marketing strategies for johnson city tn businesses" (a card image on 12 pages), "how to get more customers in johnson city tn", "search engine optimization", and "Full size proof image" on the /case-studies/ pop-up slot.
 

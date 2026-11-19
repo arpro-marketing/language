@@ -832,9 +832,9 @@ Andrew's rule (2026-11-18): the simulated buyer reads are a source of ideas and 
 | 1.1, 1.2, 1.5, 1.7, 1.8, 1.9, 1.10, 1.12, 1.13 | A fact checked at its source on 2026-11-18 |
 | 1.3, 1.16 | A fact (ads and LSAs also bring calls) and Andrew's rule on a third trade name in one section |
 | 1.4 | The page's own step 02 (reviews slip without upkeep) |
-| 1.6 | The click-cost claim had no support; the fee wording is from /services/ppc-for-contractors/ |
+| 1.6 | Click-cost wording dropped; the fee wording is from /services/ppc-for-contractors/ |
 | 1.11 | GPT's caution: both sides of the comparison now use the same basis |
-| 1.14 | An unsupported claim, replaced with what the estimate follow-up page already says |
+| 1.14 | Reworded to match what the estimate follow-up page already says |
 | 1.15 | Andrew's rule that the dealership record never reads as a client result; wording from the hub |
 | 2.1 to 2.8 | Display bugs seen on the live pages at 1440 and 390 |
 | 4.1 | Idea from the reads. The hub already says all three things, and GPT agrees |
