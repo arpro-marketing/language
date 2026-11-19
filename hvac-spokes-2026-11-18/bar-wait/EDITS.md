@@ -1,6 +1,6 @@
 # HVAC spoke pages: the "Message Andrew" bar waits for the hero button on phones
 
-STATUS: PROPOSED. Nothing here is live. Save only when Andrew's own message names it.
+STATUS: LIVE since 2026-11-19 12:45 PM ET. Saved on Andrew's message of 12:43 PM ET: "make the Message Andrew bar wait on the HVAC pages". As-built notes are at the end.
 
 ## What changes
 
@@ -30,7 +30,7 @@ AI Visibility (13720), Google Ads (13726), Call Handling (13733) and SEO (13745)
 
 ## The code
 
-One new WPCode snippet (HTML, footer), limited to the same four pages as the sub-nav script (13762). It is its own snippet so that switching it off is the whole rollback. If it can't be limited to those four pages, stop and report instead of loading it more widely.
+One new WPCode snippet (HTML, footer), limited to these four pages by its own page rules. It is its own snippet so that switching it off is the whole rollback. If it can't be limited to those four pages, stop and report instead of loading it more widely.
 
 ```html
 <script>
@@ -130,3 +130,28 @@ Switch the snippet off and clear the page cache. Nothing else is touched.
 ## Limits of the test
 
 A phone-size Chromium window is not an iPhone. Safari's own toolbars, which grow and shrink the screen as the reader scrolls and which changed again in recent iOS versions, are not reproduced here, and no Safari engine was available for this test. The marker is there so that the rule doesn't depend on any of that, but the last check after saving is still a look on a real iPhone.
+
+## As built (2026-11-19)
+
+Saved at 12:44:55 PM ET on Andrew's message of 12:43 PM ET: "make the Message Andrew bar wait on the HVAC pages".
+
+- WPCode snippet 13785 (HTML, footer), with the code copied from this file at d947f8b.
+- It is limited to the four pages by four page-address rules, one for each spoke. The sub-nav script (13762) covers only three of the four pages, because AI Visibility has no sub-nav scroll, so this snippet could not borrow its rules. The sentence under "The code" that called them the same four pages has been corrected.
+- Only this snippet was created. The four pages' own content is unchanged, as the comparison below shows.
+- Rollback on the PC: `hvac-spokes-2026-11-18\bar-wait\ROLLBACK.txt`. Switch 13785 off and clear the page cache.
+
+### Checked from the cloud, logged out with a cache-buster
+
+- **Page code, all 77 sitemap URLs, fetched 12:48 to 12:49 PM ET.** `arm-dl-wait` is in the code of the four spokes and of no other page. The pages without it include the hub, the window and door SEO and PPC spokes, and the ten other pages with "seo" or "ppc" in their address. On each of the four spokes the script block is this file's block character for character (2,180 characters), printed once, after the footer.
+- **Every page against its copy from 12:27 PM ET** (`altcheck.py`, the checker from the alt text pass). 72 of the 77 pages are unchanged. Each of the four spokes gained this one script block, and nothing else on it changed. The fifth is /services/handyman-marketing/, where the form plugin's hidden decoy field for form 2339, which had appeared between 12:19 and 12:27 PM, is gone again. It comes and goes with each fresh render of that page, so it is the plugin's own variation and not an edit.
+- **Browser, the four pages at the fourteen tested screen sizes, 12:49 to 1:04 PM ET** (`verify/test3.js` in `live` mode, compared by `verify/cmp-live.py`). 56 of 56 rows are the same as `verify/expected-with-the-change.json`, which holds the rows measured before the save on copies with the snippet added. On every load there is no page error and no sideways scroll, the bar is never over the hero row at first view or at any scroll position on the way down, it changes state at most once on the way down, it is showing 2,400 pixels down, and the first-view state is back after scrolling to the top.
+  - At 390 by 664 the bar shows after 80 pixels of scrolling on AI Visibility, 24 on Google Ads, 32 on Call Handling and 24 on SEO.
+  - At 412 by 780, 768 by 1024 and 1440 by 900 the bar is in the first view at 708 to 765, 942 to 999 and 818 to 875 pixels from the top, as before.
+- **The header fix was not live** (no `max-width:361px` rule in the header stylesheet or in the page code), so the 360- and 320-wide rows were compared as measured.
+- **Chat, on the saved pages with nothing added** (`verify/chat-live.js` at 390 by 664). Nothing was typed at any point.
+  - Google Ads, real widget: the bar was tapped 200 pixels down and the chat opened. Back at the top, the chat stayed on screen. After it was closed, the bar no longer waited.
+  - Google Ads, stand-in widget with the chat script blocked: with no chat activity the bar keeps waiting, a conversation already under way never waits, a chat that opens by itself stops the wait right away, and a conversation flag that turns on with no event is picked up by the check that runs 4 seconds after the script starts.
+  - All four pages, real widget, never opened: the bar waits at the top, shows 200 and 1,500 pixels down, is hidden while the footer is on screen (the 30 Oct rule), and waits again back at the top. No page error and no console error on any of them.
+- **Not tested:** Safari on a real iPhone. Andrew was told at 12:54 PM ET that a look on his own phone is the last check.
+
+The measurements are in the project files under `hvac-spokes-2026-11-18/bar-wait/verify/live-2026-11-19/`.
