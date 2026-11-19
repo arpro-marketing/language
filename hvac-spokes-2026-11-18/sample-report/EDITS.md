@@ -8,6 +8,8 @@ One element on one page: the SEO page (13745), /services/hvac-marketing/seo/, st
 
 Andrew, 2026-11-18 5:32 PM ET: "I favor your suggestion to show a small, explicitly labeled sample report with source, spend, calls, booked jobs, sold jobs, revenue, and cost per sold job. This makes your differentiator tangible."
 
+Revised 2026-11-19 after Andrew read the first version (11:55 AM ET) and asked for the fall-off from booked jobs to sold jobs to be closer to usual: the Booked jobs column changed from 40, 38 and 37 to 36, 35 and 34. No other figure changed.
+
 Nothing else on the page changes. Step 06 is not part of the FAQ, so the schema snippet (13747) is not touched. No other page changes.
 
 Mockups: `example-report-desktop.png` and `example-report-phone.png` in this folder.
@@ -37,9 +39,9 @@ Then the table, inside the same step card, directly under the sentence:
 <table class="hv-report" role="table" aria-label="Illustrative example of a one-month sold-jobs report by source">
 <thead role="rowgroup"><tr role="row"><th role="columnheader" scope="col">Source</th><th role="columnheader" scope="col">Spend</th><th role="columnheader" scope="col">Calls</th><th role="columnheader" scope="col">Booked jobs</th><th role="columnheader" scope="col">Sold jobs</th><th role="columnheader" scope="col">Revenue</th><th role="columnheader" scope="col">Cost per sold job</th></tr></thead>
 <tbody role="rowgroup">
-<tr role="row"><th role="rowheader" scope="row">SEO <small>Maps and organic</small></th><td role="cell">$2,500</td><td role="cell">58</td><td role="cell">40</td><td role="cell">28</td><td role="cell">$31,250</td><td role="cell">$89</td></tr>
-<tr role="row"><th role="rowheader" scope="row">Search ads</th><td role="cell">$4,800</td><td role="cell">60</td><td role="cell">38</td><td role="cell">25</td><td role="cell">$44,500</td><td role="cell">$192</td></tr>
-<tr role="row"><th role="rowheader" scope="row">Local Services Ads</th><td role="cell">$2,800</td><td role="cell">56</td><td role="cell">37</td><td role="cell">27</td><td role="cell">$23,750</td><td role="cell">$104</td></tr>
+<tr role="row"><th role="rowheader" scope="row">SEO <small>Maps and organic</small></th><td role="cell">$2,500</td><td role="cell">58</td><td role="cell">36</td><td role="cell">28</td><td role="cell">$31,250</td><td role="cell">$89</td></tr>
+<tr role="row"><th role="rowheader" scope="row">Search ads</th><td role="cell">$4,800</td><td role="cell">60</td><td role="cell">35</td><td role="cell">25</td><td role="cell">$44,500</td><td role="cell">$192</td></tr>
+<tr role="row"><th role="rowheader" scope="row">Local Services Ads</th><td role="cell">$2,800</td><td role="cell">56</td><td role="cell">34</td><td role="cell">27</td><td role="cell">$23,750</td><td role="cell">$104</td></tr>
 </tbody>
 </table>
 </div>
@@ -94,7 +96,12 @@ Every figure is an example, and the label says so. They are built to agree with 
 - Search ads is that page's second account: 60 leads at $80 = $4,800, and 5 replacements + 20 repairs = 25 sold jobs and $44,500.
 - Local Services Ads uses that page's other price per lead: 56 leads at $50 = $2,800, and 2 replacements + 25 repairs = 27 sold jobs and $23,750.
 - SEO: $2,500 is the top of the range the hub gives for focused SEO work ("$1,500–2,500 a month"), and 3 replacements + 25 repairs = 28 sold jobs and $31,250.
-- Booked jobs (40, 38 and 37) are example figures that sit between calls and sold jobs.
+- Booked jobs (36, 35 and 34) are worked out from each row's own job mix, using two published rates: repair calls close at 85% or better, and replacement estimates close at a little over 40%.
+  - SEO: 29 repair calls sell 25 repairs, and 7 estimates sell 3 systems. 36 booked, 28 sold (78%).
+  - Search ads: 23 repair calls sell 20 repairs, and 12 estimates sell 5 systems. 35 booked, 25 sold (71%).
+  - Local Services Ads: 29 repair calls sell 25 repairs, and 5 estimates sell 2 systems. 34 booked, 27 sold (79%).
+  - Sources, read 2026-11-19: ServiceTitan's contractor playbook lists "Closed calls ≥ 85%" as the benchmark for an HVAC service technician (a target, not a measured average). ACHR News, Feb 10 2026, on a survey of more than 1,000 contractors by ACCA and Farmington Consulting Group: "Contractors are closing 43% of their install jobs", 45% in residential. The hub's own example uses 40%.
+  - Calls to booked comes out at 62%, 58% and 61%. ServiceTitan's data from more than 3,000 shops (June 2022) put HVAC at 38% of calls booked and shops with 25 or more techs at 59%.
 - Cost per sold job is spend ÷ sold jobs, rounded to the dollar: 2,500 ÷ 28 = 89, 4,800 ÷ 25 = 192, 2,800 ÷ 27 = 104.
 - The SEO row has the lowest cost per sold job because the page already says so in words: "For an established company, it’s usually the channel that brings cost per sold job down over time."
 
