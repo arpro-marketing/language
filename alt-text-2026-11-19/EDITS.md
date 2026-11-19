@@ -1,6 +1,6 @@
 # Alt text for the images that have none
 
-STATUS: APPROVED, NOT YET LIVE. Andrew asked for this on 2026-11-19 at 12:01 PM ET:
+STATUS: LIVE since 2026-11-19 12:25 PM ET. As-built notes are at the end. Andrew asked for this on 2026-11-19 at 12:01 PM ET:
 
 > "now i see it looks like the images on our pages lack alt tags. we need to fix that. make them descriptive and keyword rich, but lean on being descriptive of what the image shows"
 
@@ -109,3 +109,34 @@ Left alone on purpose: on /services/painter-marketing/ the page builder's galler
 ## Rollback
 
 Set the field on attachment 13184 back to empty and restore the prior revision of pages 12875, 5101, 2762, 11947, 12084 and posts 9029, 10925, 6218.
+
+## As built (2026-11-19)
+
+All nine targets were saved between 12:21 and 12:25 PM ET from commit ea807eb, in the order above, each string copied from `alts.json`. Every tag matched its NOW value once.
+
+| Target | Before | After |
+|---|---|---|
+| Attachment 13184, alt field | empty | `Andrew Ryan Marketing logo` |
+| /portfolio/ (12875) | version 12921 | 13777 |
+| /case-studies/ (5101) | 13459 | 13778 |
+| Post 9029, flooring | 13431 | 13779 |
+| Post 10925, fence lead generation | 13695 | 13780 |
+| Post 6218, local business marketing | 13698 | 13781 |
+| Homepage (2762) | 13655 | 13782 |
+| /ai-overview-proof/ (11947) | 13419 | 13783 |
+| /services/generative-engine-optimization/ (12084) | 13155 | 13784 |
+
+On /case-studies/ the six attributes were changed inside the page builder's raw HTML block in its own encoding, and the decoded block differs from the old one only in those six attributes. On post 9029 the wrong `title` on `wp-image-9032` was removed with its alt. On post 10925 the string was put in with a literal replace, so `$9.8B` and `$4K` are intact. The rollback versions are also on the PC in `alt-text-2026-11-19\ROLLBACK.txt`.
+
+### Checked from the cloud, logged out with a cache-buster
+
+- **Page code, all 77 sitemap URLs, fetched 12:26 to 12:27 PM ET** (`verify/altcheck.py`, against copies fetched at 12:19 PM ET): 487 `<img>` tags, 0 with an empty alt (176 before), 0 without the attribute. The logo alt is on 152 of 152 logo tags. 25 of 25 listed tags carry exactly their new alt. On 76 URLs nothing else in the page code differs. The checker was tested both ways first: two untouched fetches compare as identical, a simulated after-copy passes, and a simulated copy with one extra changed word fails.
+- **The one other difference** is on /services/handyman-marketing/, which was not edited: the form plugin now prints its hidden decoy field (`#wpforms-2339-field_3-container`, 1 by 1 pixel) inside the contact form, and lists form 2339 beside form 8002 in its spam-trap settings. /services/painter-marketing/ already had both before the saves. Six fetches in a row show the same, and the form is 555px tall on both pages at 1440 and 390 wide. It is not connected to any tag changed here. Most likely it appeared when the caches were cleared for the saves.
+- **Browser, the eight edited pages at 1440 and 390 wide** (`verify/popups.js`): 126 of 126. Each listed image has its alt and loads, no rendered image has an empty alt, the logo alt is in the header and footer and its link keeps the label "Andrew Ryan Marketing home", there is no sideways scroll and no console error. Each of the three pop-ups is hidden at rest with `Expanded screenshot`, opens with the clicked screenshot's own alt, and closes with Escape.
+- **Browser, all 77 pages at 1440 wide** (`verify/rendered.js`): 490 images, the logo alt in 77 headers and 77 footers, and the same images at the same widths as in the pass before the saves. One empty alt is left: the hidden gallery slot the page builder's script adds on /services/painter-marketing/, which is not in the page code.
+
+### Found along the way, not changed
+
+- Post 9029 shows a graphic headed "Case Study: Flooring Company SEO Success" with "180% Increase in Traffic" and "3X More Leads" under a heading that says leads rose 180%. Neither figure is one of the published results, so the alt leaves them out.
+- A few existing alts are keywords and do not describe the image: "digital marketing strategies for johnson city tn businesses" (a card image on 12 pages), "how to get more customers in johnson city tn", "search engine optimization", and "Full size proof image" on the /case-studies/ pop-up slot.
+
