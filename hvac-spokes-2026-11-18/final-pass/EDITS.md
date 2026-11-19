@@ -1,6 +1,6 @@
 # HVAC spokes: final edit pass, 2026-11-18
 
-STATUS: LIVE on the four spokes and the hub since 2026-11-18, about 6:40 PM ET (Andrew, 6:27 PM ET: "yes ship it"). Part 6 items 6.5 to 6.9 and item 2.8 are NOT saved yet. See "As built" below.
+STATUS: COMPLETE. Live on the four spokes and the hub since 2026-11-18, about 6:40 PM ET (Andrew, 6:27 PM ET: "yes ship it"). Part 6 items 6.5 to 6.9 and item 2.8 went live under the same approval on 2026-11-19, about 10:40 AM ET. See "As built" below.
 This file is the single agreed wording for the pass. It replaces any earlier draft of these edits, and where it differs from the review document, this file wins.
 
 ## As built (2026-11-18)
@@ -23,9 +23,20 @@ Where the build differs from the suggestions in this file. None of these change 
 - 2.3 phone sub-nav: the scroll script is its own WPCode snippet (13762).
 - 2.6 breadcrumb tap height: the padding rule made the breadcrumb row 12px taller and pushed the whole page down by that much. A correction sits directly after it in the four CSS snippets (13724, 13729, 13736, 13748): `.crumbs.brxe-div{margin-top:-6px;margin-bottom:16px}`. With it the H1 and the hero button sit where they did before the pass (H1 top 156 at 390 wide and 200 at 1440 wide on all four pages) and the links are 25px tall.
 
-Not saved yet:
-- Part 6, items 6.5 to 6.9: the five links on pages outside the HVAC section (/services/ppc-for-contractors/, /local-services-ads-for-contractors/, /local-contractor-seo-blueprint/, /answer-gap-index/, /services/). They wait for Andrew's own words naming them.
-- Item 2.8, llms.txt. It is a static file on the server with no WordPress source, and it also waits for Andrew's own words.
+Saved on 2026-11-19, about 10:40 AM ET, under the same approval as the rest of the pass:
+
+| Item | Page | Before | After |
+|---|---|---|---|
+| 6.5 | /services/ppc-for-contractors/ (5642) | 13705 | 13767, then 13773 for the link style |
+| 6.6 | /local-services-ads-for-contractors/ | 13530 | 13768 |
+| 6.7 | /local-contractor-seo-blueprint/ | 13696 | 13769 |
+| 6.8 | /answer-gap-index/ (12925) | 13302 | 13771, then 13774 for the link style |
+| 6.9 | /services/ | 13502 | 13770 |
+
+- Item 2.8, llms.txt: a new `## HVAC Marketing` section after the fencing section holds the five lines below (hub and four spokes), and the old single HVAC line is gone from "Other Contractor Industries". No other line changed.
+- Link style, about 11:03 AM ET: the new "HVAC" links on /services/ppc-for-contractors/ and /answer-gap-index/ rendered like the plain text around them. The first now carries `class="tx"` like that page's other in-text links (orange, bold). The second carries `style="border-bottom:1px solid #EF662F"` like that page's "see Method" link, set inline because the page's Bricks CSS file is not rebuilt by an API save. The blueprint's new link was left as it is, because it matches the unstyled in-text links around it.
+- Checked from the cloud, logged out with a fresh copy forced: 18 of 18 text and link checks; each of the five pages in a browser at 1440, 390 and 360 wide with no errors, no sideways scroll and every new link clickable; nothing else on the five pages changed against the copies of the night before (only the page-modified date in the structured data); the two restyled links re-read in a browser at 1440 and 390.
+- Rollback for these six saves is in `final-pass\ROLLBACK.txt` on the PC.
 
 Known after the save, to be proposed on its own: on a 390 by 664 phone screen the "Message Andrew" bar covers the note under the hero button at first view on Google Ads, Call Handling and SEO. Screens of 390 by 745 and taller, and desktop, are clear.
 
