@@ -1,0 +1,49 @@
+{
+  "note": "Every string here is literal. Copy from this file, never retype. Change only the alt attribute of the tags named (plus the one title attribute listed for wp-image-9032).",
+  "library": [
+    {"attachment": 13184, "file": "2026/10/andrew-ryan-marketing-ar-mark-orange-160.webp", "field": "_wp_attachment_image_alt", "now": "", "alt": "Andrew Ryan Marketing logo", "shows_on": "the header (Bricks element iyrj5g, template 13191) and the footer (element chha8k, template 13193) of every page"}
+  ],
+  "pages": [
+    {"id": 12875, "path": "/portfolio/", "edits": [
+      {"key": "T1", "file": "lumitra-advisors-website-homepage-thumb.webp", "now": "", "alt": "Lumitra Advisors manufacturing consultancy website homepage with the headline From Crisis to Confidence in 90 Days"},
+      {"key": "T2", "file": "curl-up-and-dye-salon-website-homepage-thumb.webp", "now": "", "alt": "Curl Up And Dye hair salon website homepage with five photos of client hair color above the headline The color you asked for. Finally."},
+      {"key": "T3", "file": "brandface-ceo-branding-services-page-thumb.webp", "now": "", "alt": "BrandFace CEO Branding Services page with the headline Build the Identity Behind the Title and a strategy form"},
+      {"key": "T4", "file": "executive-leadership-experts-website-homepage-thumb.webp", "now": "", "alt": "Berke Gormley Leadership Advisors website homepage with the headline Executive Leadership Coaching and Consulting for High-Impact Leaders"},
+      {"key": "T5", "file": "michael-carr-pendergrass-community-guide-thumb.webp", "now": "", "alt": "Michael Carr and Associates real estate community guide for Pendergrass, Georgia, with a map of the town"},
+      {"key": "T6", "file": "andrew-ryan-marketing-homepage-hero-thumb.webp", "now": "", "alt": "Andrew Ryan Marketing homepage showing the 6-Gap Revenue Map beside the headline Contractor Marketing Agency. Get Chosen. Not just found."},
+      {"key": "G1", "file": "lumitra-advisors-website-homepage.webp", "class": "ghost", "now": "", "alt": "Lumitra Advisors homepage, dimmed, with numbered notes on what Google and AI read"},
+      {"key": "G2", "file": "curl-up-and-dye-salon-website-homepage.webp", "class": "ghost", "now": "", "alt": "Curl Up And Dye homepage, dimmed, with numbered notes on what Google and AI read"},
+      {"key": "G3", "file": "brandface-ceo-branding-services-page.webp", "class": "ghost", "now": "", "alt": "BrandFace CEO Branding Services page, dimmed, with numbered notes on what Google and AI read"},
+      {"key": "G4", "file": "executive-leadership-experts-website-homepage.webp", "class": "ghost", "now": "", "alt": "Berke Gormley Leadership Advisors homepage, dimmed, with numbered notes on what Google and AI read"},
+      {"key": "G5", "file": "michael-carr-pendergrass-community-guide.webp", "class": "ghost", "now": "", "alt": "Michael Carr and Associates Pendergrass community guide, dimmed, with numbered notes on what Google and AI read"},
+      {"key": "G6", "file": "andrew-ryan-marketing-homepage-hero-2026-09-23.webp", "class": "ghost", "now": "", "alt": "Andrew Ryan Marketing homepage, dimmed, with numbered notes on what Google and AI read"}
+    ]},
+    {"id": 5101, "path": "/case-studies/", "edits": [
+      {"key": "T1", "file": "lumitra-advisors-website-homepage-thumb.webp", "now": "", "alt": "Lumitra Advisors manufacturing consultancy website homepage with the headline From Crisis to Confidence in 90 Days"},
+      {"key": "T2", "file": "curl-up-and-dye-salon-website-homepage-thumb.webp", "now": "", "alt": "Curl Up And Dye hair salon website homepage with five photos of client hair color above the headline The color you asked for. Finally."},
+      {"key": "T3", "file": "brandface-ceo-branding-services-page-thumb.webp", "now": "", "alt": "BrandFace CEO Branding Services page with the headline Build the Identity Behind the Title and a strategy form"},
+      {"key": "T4", "file": "executive-leadership-experts-website-homepage-thumb.webp", "now": "", "alt": "Berke Gormley Leadership Advisors website homepage with the headline Executive Leadership Coaching and Consulting for High-Impact Leaders"},
+      {"key": "T5", "file": "michael-carr-pendergrass-community-guide-thumb.webp", "now": "", "alt": "Michael Carr and Associates real estate community guide for Pendergrass, Georgia, with a map of the town"},
+      {"key": "T6", "file": "andrew-ryan-marketing-homepage-hero-thumb.webp", "now": "", "alt": "Andrew Ryan Marketing homepage showing the 6-Gap Revenue Map beside the headline Contractor Marketing Agency. Get Chosen. Not just found."}
+    ]},
+    {"id": 9029, "path": "/why-flooring-companies-struggle-online/", "edits": [
+      {"key": "B1", "file": "flooring-contractor-website-design-mistakes", "class": "wp-image-9031", "now": "", "alt": "Example of a poorly designed flooring contractor website with slow loading, outdated design, and no contact form."},
+      {"key": "B2", "file": "flooring-contractor-seo-case-study-lead-growth", "class": "wp-image-9032", "now": "Example of a poorly designed flooring contractor website with slow loading, outdated design, and no contact form.", "alt": "Clipboard graphic titled Case Study: Flooring Company SEO Success, with a rising bar chart", "remove_title": "Common Flooring Contractor Website Design Mistakes"}
+    ]},
+    {"id": 10925, "path": "/lead-generation-fence-contractors/", "edits": [
+      {"key": "B3", "file": "fencing-industry-market-data-2026", "class": "wp-image-10939", "now": "", "alt": "Infographic of fencing industry statistics: $9.8B U.S. fencing market size in 2024, 346,357 fence construction businesses, $4K to $12K average project value, and 76% of local searches leading to a call within 24 hours"}
+    ]},
+    {"id": 6218, "path": "/local-business-marketing/", "edits": [
+      {"key": "B4", "file": "local-seo-company-results-in-2025-ranking-1-and-2-2", "class": "wp-image-6221", "now": "", "alt": "Google search results for get more calls johnson city tn, with Andrew Ryan Marketing pages ranked first and second"}
+    ]},
+    {"id": 2762, "path": "/", "edits": [
+      {"key": "S1", "slot": "hp-lb", "now": "", "alt": "Expanded screenshot"}
+    ]},
+    {"id": 11947, "path": "/ai-overview-proof/", "edits": [
+      {"key": "S2", "slot": "apr-lb", "now": "", "alt": "Expanded screenshot"}
+    ]},
+    {"id": 12084, "path": "/services/generative-engine-optimization/", "edits": [
+      {"key": "S3", "slot": "apr-lb", "now": "", "alt": "Expanded screenshot"}
+    ]}
+  ]
+}
