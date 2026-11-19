@@ -1,0 +1,11 @@
+h2:where(.kw-q){margin: 0px; text-rendering: optimizelegibility;}
+h2:where(.kw-q){font-size: 2.4em;}
+h2:where(.kw-q){line-height: 1.4;}
+h2:where(.kw-q){text-wrap: balance;}
+h2:where(.kw-q){margin: 0px;}
+h2:where(.kw-q){font-family: "Plus Jakarta Sans"; line-height: 1.12; letter-spacing: -0.02em;}
+html body h2:where(.kw-q){font-family: var(--arm-display);}
+#aa-hero h2:where(.kw-q){font-size: clamp(1.8rem, 3.2vw, 2.4rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.01em; color: var(--charcoal); text-wrap: balance;}
+#aa-hero h2:where(.kw-q) span.hl{color: var(--orange);}
+html body h1.kw-eh:is(#kw-none,*){display:inline!important;margin:0!important;padding:0!important;border:0!important;background:none!important;font:inherit!important;letter-spacing:inherit!important;line-height:inherit!important;text-transform:inherit!important;color:inherit!important;-webkit-text-fill-color:inherit!important;text-shadow:inherit!important;text-wrap:inherit!important;max-width:none!important;opacity:1!important;transform:none!important;animation:none!important;transition:none!important}
+html body h2.kw-q:is(#kw-none,*) + *{margin-top:22px!important}

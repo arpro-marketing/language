@@ -1,6 +1,6 @@
 # Keyword H1s: homepage
 
-STATUS: approved, not yet live. Andrew asked for this in the thread on 2026-11-19 at 1:00 PM ET:
+STATUS: LIVE since 2026-11-19 ~1:20 PM ET (revision 13782 -> 13786). Andrew asked for this in the thread on 2026-11-19 at 1:00 PM ET:
 
 > "no i think keeping the smaller eyebrow as; 'contractor marketing agency | seo, google ads & growth' would work fine while making 'contractor marketing agency' the h1"
 
