@@ -112,13 +112,16 @@ Logged out, with a cache-buster, at the rendering layer:
 
 The same test files are in the project files under `hvac-spokes-2026-11-18/bar-wait/verify/`. Run against the live pages after the save, the results must match the second table above.
 
+The 360 by 640 and 320 by 454 rows were measured with today's site header, which breaks onto two rows on screens 360 wide and narrower and pushes each page down 36 pixels. If the header fix in `site-header-narrow-phones-2026-11-18/` is live first, measure those two rows again on copies before this check.
+
 ## Rollback
 
 Switch the snippet off and clear the page cache. Nothing else is touched.
 
 ## Not in this change
 
-- The other pages with the same overlap (the hub, the homepage, the other trade pages). Their hero button rows have different class names, so each needs its name added to the selector and its own test.
+- Other pages with the same overlap. Measured the same way on 2026-11-18 at 390 by 664, 375 by 635 and 360 by 640: at first view the bar covers 50 of the hero button's 53 pixels on the homepage at 360 by 640, and 49 of its 50 pixels on the roofing and electrician hubs at 390 by 664. On the HVAC, flooring and fencing hubs the bottom of a 390 by 664 screen already cuts the button off, and the bar covers half or more of what is left. On the remodeling and window and door hubs the button sits at or below the bottom edge of all three screens, so the bar isn't on it at first view. These pages' hero button rows have different class names (`.hp-hero` on the homepage, `.hero.dark` on the hubs), so each needs its name added to the selector and its own test.
+- The window and door SEO page. It uses the same class names as these four pages, and its hero button starts below the bottom of all three screens.
 - Screens between 641 and 767 wide, where the widget is a box in the bottom right corner instead of a bar.
 - The closing button row at the bottom of each page.
 - The 30 Oct rule itself. Seen during this test: on a phone-size screen it also hides an open chat while the footer is on screen, and brings it back when the footer leaves the screen. Left as it is.
