@@ -1,0 +1,216 @@
+<style>
+  .arml-nav{font-family:Helvetica,Arial,sans-serif;background:#242424;border-top:1px solid #3a3a3a;border-bottom:2px solid #EF662F;position:relative;overflow:hidden}
+  .arml-nav::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,.04) 1px,transparent 1px);background-size:22px 22px}
+  .arml-in{max-width:960px;margin:0 auto;padding:14px 22px;display:flex;align-items:center;gap:10px 18px;flex-wrap:wrap;position:relative;z-index:1;box-sizing:border-box}
+  .arml-lab{display:flex;flex-direction:column;gap:1px;min-width:0}
+  .arml-k{font-size:10px;font-weight:bold;letter-spacing:1.6px;text-transform:uppercase;color:#9a9a9a;line-height:1.4;white-space:nowrap}
+  .arml-t{font-size:13.5px;font-weight:bold;color:#fff;line-height:1.4;white-space:nowrap}
+  .arml-t .arml-r{color:#EF662F}
+  .arml-sep{width:1px;align-self:stretch;background:#454545;flex:0 0 auto}
+  .arml-pills{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .arml-pill{display:inline-flex;align-items:center;gap:7px;padding:8px 15px;border-radius:17px;border:1px solid #555;background:rgba(255,255,255,.05);color:#e6e6e6;font-size:13px;font-weight:bold;line-height:1.4;text-decoration:none;white-space:nowrap;transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease,background .22s ease}
+  .arml-pill:hover{transform:translateY(-2px);border-color:#EF662F;color:#fff;box-shadow:0 8px 18px rgba(239,102,47,.28);background:rgba(239,102,47,.12)}
+  .arml-pill:focus-visible{outline:2px solid #fff;outline-offset:2px}
+  .arml-dot{width:7px;height:7px;border-radius:50%;background:#7a7a7a;flex:0 0 auto;transition:background .22s ease,box-shadow .22s ease}
+  .arml-pill:hover .arml-dot{background:#FF8A5C}
+  .arml-pill.arml-on{background:#C24417;border-color:#EF662F;color:#fff;box-shadow:0 4px 14px rgba(194,68,23,.4)}
+  .arml-pill.arml-on .arml-dot{background:#fff;box-shadow:0 0 8px rgba(255,255,255,.8);animation:armlPulse 2.2s ease-in-out infinite}
+  @keyframes armlPulse{0%,100%{opacity:1}50%{opacity:.45}}
+  @media(prefers-reduced-motion:reduce){.arml-pill,.arml-dot{transition:none}.arml-pill.arml-on .arml-dot{animation:none}}
+</style><style>
+  /* Junction Board (CSS-only) */
+  .bsx-junc{margin-top:24px;border-radius:10px;overflow:hidden;border:1px solid #4a4a4a;background:#2a2a2a;position:relative;z-index:1}
+  .bsx-junc-head{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:#242424;border-bottom:1px solid #4a4a4a}
+  .bsx-junc-head .bsx-jh{font-size:11px;font-weight:bold;letter-spacing:1.5px;text-transform:uppercase;color:#cfcfcf;line-height:1.4}
+  .bsx-junc-head .bsx-live{width:8px;height:8px;border-radius:50%;background:var(--bx-orange);box-shadow:0 0 8px rgba(239,102,47,.85);animation:bsxPulse 1.8s ease-in-out infinite}
+  @keyframes bsxPulse{0%,100%{opacity:1}50%{opacity:.35}}
+  .bsx-jpanel{padding:16px 14px 4px}
+  .bsx-jlab{font-size:11px;font-weight:bold;letter-spacing:1.2px;text-transform:uppercase;line-height:1.4;margin:0 0 10px}
+  .bsx-jpanel.bsx-then .bsx-jlab{color:#9fc2e8}
+  .bsx-jpanel.bsx-now2 .bsx-jlab{color:var(--bx-orange-lt)}
+  .bsx-chip{display:inline-block;margin:0 6px 8px 0;padding:7px 12px;border-radius:15px;font-size:12.5px;font-weight:bold;line-height:1.4;background:rgba(255,255,255,.06);border:1px solid #555;color:#e6e6e6;transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+  .bsx-chip:hover{transform:translateY(-2px);border-color:var(--bx-orange);box-shadow:0 6px 16px rgba(239,102,47,.25)}
+  .bsx-chip i{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:7px;vertical-align:1px}
+  .bsx-jpanel.bsx-then .bsx-chip i{background:#7fa9d8}
+  .bsx-jpanel.bsx-now2 .bsx-chip i{background:var(--bx-orange)}
+  .bsx-chip .bsx-yr2{font-weight:normal;color:#a9a9a9}
+  /* the converge strip: dashes flow from both edges into the center pill */
+  .bsx-conv{position:relative;height:38px;background:#1f1f1f;display:flex;align-items:center;justify-content:center;overflow:hidden;border-top:1px solid #3a3a3a;border-bottom:1px solid #3a3a3a}
+  .bsx-conv::before{content:"";position:absolute;left:-30px;right:50%;top:50%;height:0;border-top:3px dashed rgba(239,102,47,.85);animation:bsxDash 1.6s linear infinite}
+  .bsx-conv::after{content:"";position:absolute;left:50%;right:-30px;top:50%;height:0;border-top:3px dashed rgba(239,102,47,.85);animation:bsxDashR 1.6s linear infinite}
+  @keyframes bsxDash{to{transform:translateX(22px)}}
+  @keyframes bsxDashR{to{transform:translateX(-22px)}}
+  @media(prefers-reduced-motion:reduce){.bsx-conv::before,.bsx-conv::after{animation:none}}
+  .bsx-conv .bsx-jll{position:relative;z-index:1;background:#1f1f1f;padding:3px 12px;font-size:10.5px;font-weight:bold;letter-spacing:1.6px;text-transform:uppercase;color:var(--bx-orange-lt);line-height:1.4;border:1px solid rgba(239,102,47,.5);border-radius:12px;white-space:nowrap;max-width:92%;overflow:hidden;text-overflow:ellipsis}
+  .bsx-junc-foot{padding:10px 14px 12px;background:#242424;border-top:1px solid #4a4a4a;font-size:12px;color:#b7b7b7;line-height:1.5}
+</style><style>
+  .bsx-inst{margin-top:20px;border-radius:12px;overflow:hidden;border:1px solid #000;position:relative;z-index:1}
+  .bsx-inst-head{background:#242424;color:#fff;padding:13px 18px;display:flex;align-items:center;gap:12px;border-bottom:2px solid var(--bx-orange)}
+  .bsx-inst-head .bsx-live2{width:9px;height:9px;border-radius:50%;background:var(--bx-orange);box-shadow:0 0 8px 1px rgba(239,102,47,.85);animation:bsxPulse2 1.8s ease-in-out infinite;flex:0 0 auto}
+  @keyframes bsxPulse2{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+  .bsx-inst-head .bsx-nm{font-size:12px;font-weight:bold;letter-spacing:2px;text-transform:uppercase;line-height:1.4}
+  .bsx-inst-head .bsx-ticks{margin-left:auto;display:flex;gap:4px;align-items:flex-end;height:16px}
+  .bsx-inst-head .bsx-ticks i{width:2px;background:#5a5a5a;display:block}
+  .bsx-tool{background:#fff;padding:24px;color:var(--bx-char)}
+  .bsx-tgrid{display:flex;flex-wrap:wrap;gap:15px}
+  .bsx-fld{flex:1 1 150px;min-width:140px;display:flex;flex-direction:column;justify-content:flex-end}
+  .bsx-fld.bsx-fld-rank{flex:1.7 1 240px}
+  .bsx-fld label{display:block;font-size:13px;font-weight:bold;margin:0 0 6px;line-height:1.45;color:var(--bx-char)}
+  .bsx-fld .bsx-lh{font-weight:normal;color:var(--bx-gray);font-size:12px;line-height:1.4}
+  .bsx-fld input,.bsx-fld select{width:100%;height:46px;padding:11px 12px;border:1px solid var(--bx-border);border-radius:6px;font-size:15px;line-height:1.4;font-family:inherit;color:var(--bx-char);background:#fff}
+  .bsx-nstep{display:flex;align-items:stretch;width:100%}
+  .bsx-nstep input{flex:1 1 auto;min-width:0;border-radius:0;border-left:none;border-right:none;text-align:center;padding-left:8px;padding-right:8px}
+  .bsx-sbtn{flex:0 0 36px;height:46px;border:1px solid var(--bx-border);background:var(--bx-light);color:var(--bx-char);font-size:19px;font-weight:bold;font-family:inherit;cursor:pointer;line-height:1;padding:0;user-select:none;transition:background .15s ease,color .15s ease}
+  .bsx-sbtn:first-child{border-radius:6px 0 0 6px}
+  .bsx-sbtn:last-child{border-radius:0 6px 6px 0}
+  .bsx-sbtn:hover{background:var(--bx-accent);color:var(--bx-orange-d)}
+  .bsx-sbtn:active{background:var(--bx-orange-d);color:#fff}
+  .bsx-sbtn:focus-visible{outline:3px solid var(--bx-orange-d);outline-offset:1px}
+  .bsx-gridhint{font-size:12px;color:var(--bx-gray);margin-top:9px;line-height:1.5}
+  .bsx-gridhint b{color:var(--bx-char)}
+  .bsx-fld input:focus-visible,.bsx-fld select:focus-visible{outline:3px solid var(--bx-orange-d);outline-offset:1px;border-color:var(--bx-orange-d)}
+  /* armor: if the theme's number-spinner script ever wraps text inputs too,
+     neutralize it instead of letting it crush the layout */
+  .bsx-tool .fs-number{width:100% !important;display:block !important;border:none !important;padding:0 !important;background:transparent !important}
+  .bsx-tool .fs-number input{width:100% !important}
+  .bsx-tool .fs-number .fs-number-arrow{display:none !important}
+  .bsx-tnote{font-size:12px;color:var(--bx-gray);margin-top:10px;line-height:1.5}
+  /* results */
+  #bsxResults{display:none;margin-top:4px}
+  .bsx-bignum{background:#242424;color:#fff;border-radius:8px;padding:20px;text-align:center}
+  .bsx-bignum .bsx-k{font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#e0e0e0;line-height:1.5}
+  .bsx-bignum .bsx-big{font-size:clamp(30px,6vw,38px);font-weight:bold;color:var(--bx-orange);margin:5px 0;line-height:1.1;text-shadow:0 0 22px rgba(239,102,47,.38)}
+  .bsx-bignum .bsx-yr{font-size:14px;color:#e0e0e0;line-height:1.5}
+  .bsx-cmp{display:flex;flex-wrap:wrap;gap:14px;margin-top:14px}
+  .bsx-cmp .bsx-c2{flex:1 1 200px;border:1px solid var(--bx-border);border-radius:8px;padding:15px;text-align:center;min-width:0}
+  .bsx-cmp .bsx-c2.bsx-cur{background:var(--bx-light)}
+  .bsx-cmp .bsx-c2.bsx-pot{background:var(--bx-accent);border-color:var(--bx-orange)}
+  .bsx-cmp .bsx-cl2{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--bx-gray);font-weight:bold;line-height:1.4}
+  .bsx-cmp .bsx-cv2{font-size:26px;font-weight:bold;margin-top:3px;line-height:1.2}
+  .bsx-cmp .bsx-c2.bsx-pot .bsx-cv2{color:var(--bx-orange-d)}
+  .bsx-why{background:var(--bx-accent);border-left:4px solid var(--bx-orange);border-radius:6px;padding:14px 16px;margin-top:14px;font-size:14.5px;line-height:1.55;max-width:none}
+  .bsx-src{font-size:12px;color:var(--bx-gray);margin-top:10px;line-height:1.5}
+  .bsx-resultcta{background:#242424;color:#fff;border-radius:10px;padding:22px;text-align:center;margin-top:16px}
+  .bsx-resultcta .bsx-rh{color:#fff;font-size:18px;font-weight:bold;line-height:1.3;margin:0 0 6px}
+  .bsx-resultcta p{color:#dcdcdc;font-size:14px;line-height:1.55;max-width:56ch;margin:0 auto 16px}
+</style><style>
+  .bsx-pbgrid{display:flex;flex-wrap:wrap;gap:16px;margin-top:24px}
+  .bsx-pbtile{flex:1 1 215px;min-width:0;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.13);border-left:3px solid var(--bx-orange);border-radius:10px;padding:18px 18px 16px;display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+  .bsx-pbtile:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(0,0,0,.35),0 0 24px rgba(239,102,47,.14);border-color:rgba(239,102,47,.45);border-left-color:var(--bx-orange)}
+  .bsx-pbtop{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:6px 8px;margin-bottom:12px}
+  .bsx-pblayer{font-size:10px;font-weight:bold;letter-spacing:1.2px;text-transform:uppercase;color:var(--bx-orange-lt);line-height:1.4;white-space:nowrap}
+  .bsx-pbtime{font-size:10.5px;font-weight:bold;letter-spacing:.8px;text-transform:uppercase;color:#b9b9b9;border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:3px 10px;line-height:1.4;white-space:nowrap;flex:0 0 auto}
+  .bsx-pbnum{font-size:clamp(26px,4.5vw,32px);font-weight:bold;color:var(--bx-orange);line-height:1.15;letter-spacing:-.5px;text-shadow:0 0 20px rgba(239,102,47,.32)}
+  .bsx-pbnum .bsx-pbghost{color:#9a9a9a;text-shadow:none;font-size:.72em}
+  .bsx-pbnum .bsx-pbarrow{color:#777;text-shadow:none;font-size:.72em}
+  .bsx-pbwhat{font-size:12.5px;font-weight:bold;color:#e4e4e4;line-height:1.45;margin-top:4px}
+  .bsx-pbcap{font-size:13px;color:#c9c9c9;line-height:1.55;margin-top:10px;flex:1 1 auto}
+  .bsx-pbsrc{font-size:11px;color:#9a9a9a;line-height:1.5;margin-top:12px;letter-spacing:.3px;border-top:1px solid rgba(255,255,255,.09);padding-top:9px}
+  .bsx-pbfoot{margin-top:20px;font-size:13.5px;color:#cfcfcf;line-height:1.6;max-width:72ch}
+  .bsx-pbfoot b{color:#fff}
+</style><style>
+  .bsx-grid2{display:flex;flex-wrap:wrap;gap:22px;margin-top:18px}
+  .bsx-grid2>div{flex:1 1 300px;min-width:0}
+  /* the dare card */
+  .bsx-dare{margin-top:16px;border:2px dashed var(--bx-orange);border-radius:10px;background:var(--bx-accent);padding:18px 20px;position:relative}
+  .bsx-dare .bsx-dk{display:inline-block;background:var(--bx-orange-d);color:#fff;font-size:10.5px;font-weight:bold;letter-spacing:1.6px;text-transform:uppercase;border-radius:12px;padding:4px 12px;line-height:1.4;margin:0 0 10px}
+  .bsx-dare p{font-size:15.5px;line-height:1.6;margin:0;max-width:70ch}
+  /* six-part system chain (weak link pulses) */
+  .bsx-chain{display:flex;flex-wrap:wrap;align-items:center;gap:0;margin-top:14px}
+  .bsx-link{display:flex;align-items:center}
+  .bsx-link .bsx-lk{border:2px solid var(--bx-char);border-radius:16px;padding:7px 13px;font-size:12.5px;font-weight:bold;line-height:1.4;background:#fff;white-space:nowrap;transition:transform .25s ease,box-shadow .25s ease}
+  .bsx-link .bsx-lk:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(51,51,51,.14)}
+  .bsx-link .bsx-con{width:16px;height:2px;background:var(--bx-char);flex:0 0 auto}
+  .bsx-link:last-child .bsx-con{display:none}
+  .bsx-link.bsx-weak .bsx-lk{border-color:var(--bx-orange);color:var(--bx-orange-d);border-style:dashed;animation:bsxWeak 2.4s ease-in-out infinite}
+  @keyframes bsxWeak{0%,100%{opacity:1}50%{opacity:.45}}
+  .bsx-chain-cap{font-size:12px;color:var(--bx-gray);line-height:1.5;margin-top:8px}
+  /* manifesto + founder */
+  .bsx-manif{border-top:3px solid var(--bx-orange);border-bottom:3px solid var(--bx-orange);background:#fff;padding:22px 4px;margin-top:26px;max-width:74ch}
+  .bsx-manif p{font-size:18px;font-weight:bold;line-height:1.4;margin:0}
+  .bsx-founder{display:flex;align-items:center;gap:14px;margin-top:14px}
+  .bsx-founder .bsx-fb{min-width:0}
+  .bsx-founder .bsx-fn{font-size:14.5px;font-weight:bold;line-height:1.4}
+  .bsx-founder .bsx-fc{font-size:12.5px;color:var(--bx-gray);line-height:1.5}
+</style><style>
+  .bsx-steps{margin-top:18px}
+  .bsx-step{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--bx-border);border-radius:8px;padding:16px 18px;margin:0 0 12px;transition:transform .25s ease,box-shadow .25s ease}
+  .bsx-step:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(51,51,51,.12)}
+  .bsx-step .bsx-n{flex:0 0 auto;width:38px;height:38px;border-radius:50%;background:var(--bx-orange-d);color:#fff;font-weight:bold;font-size:17px;line-height:38px;text-align:center}
+  .bsx-step .bsx-sb{min-width:0}
+  .bsx-step .bsx-sb b{font-size:15.5px;line-height:1.4;display:block;margin-bottom:3px}
+  .bsx-step .bsx-sb p{font-size:14px;line-height:1.55;margin:0;color:var(--bx-gray);max-width:70ch}
+  .bsx-links{margin-top:20px;font-size:13.5px;line-height:1.7;color:var(--bx-gray)}
+  .bsx-links a{color:var(--bx-orange-d);font-weight:bold;text-decoration:none}
+  .bsx-links a:hover{text-decoration:underline}
+</style><style>
+  .bsx-faq details{border-bottom:1px solid var(--bx-border);padding:6px 0}
+  .bsx-faq summary{cursor:pointer;font-weight:bold;font-size:16px;line-height:1.45;padding:12px 30px 12px 0;list-style:none;position:relative;color:var(--bx-char)}
+  .bsx-faq summary::-webkit-details-marker{display:none}
+  .bsx-faq summary::after{content:"+";position:absolute;right:6px;top:10px;color:var(--bx-orange-d);font-size:22px;line-height:1.3;font-weight:bold}
+  .bsx-faq details[open] summary::after{content:"–"}
+  .bsx-faq .bsx-a{padding:0 0 14px;color:var(--bx-char);max-width:72ch;font-size:15px;line-height:1.6}
+</style><style id="arm-cityseo-hero">.rf div:where(.kw-hw-6525){font-family: "Plus Jakarta Sans", sans-serif; color: var(--ink); margin: 0px; text-wrap: balance;}.rf div:where(.kw-hw-6525) .o{color: var(--o);}.rf .dark div:where(.kw-hw-6525){color: rgb(255, 255, 255);}.rf div:where(.kw-hw-6525){font-weight: 800; color: rgb(255, 255, 255); font-size: clamp(34px, 4.4vw, 58px); line-height: 1.06; letter-spacing: -1.2px; margin: 0px 0px 32px; max-width: 940px;}@media (max-width: 400px){.rf div:where(.kw-hw-6525){font-size: 33px;}}.rf{--o:#ef662f;--oh:#d4551f;--ol:#ff7a3d;--ink:#333333;--body:#333333;--mut:#666666;--soft:#f8f8f8;--tint:#fdf0eb;--line:#e0e0e0;--dark:#14161c;--dline:#2e313a;font-family:'DM Sans',sans-serif;color:var(--body)}.rf *{box-sizing:border-box}.rf section{padding:112px 40px}.rf .in{max-width:1180px;margin:0 auto}.rf p{margin:0;text-wrap:pretty}.rf a{color:var(--o);font-weight:700;text-decoration:none;transition:color .18s}.rf a:hover{color:var(--oh)}.rf .dark a:not(.btn):hover{color:var(--ol)}.rf a:focus-visible{outline:3px solid var(--o);outline-offset:3px;border-radius:4px}.rf a:active{transform:translateY(1px)}.rf .eb{font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--o);margin:0 0 14px}.rf h1,.rf h2,.rf h3{font-family:'Plus Jakarta Sans',sans-serif;color:var(--ink);margin:0;text-wrap:balance}.rf h2{font-weight:800;font-size:clamp(30px,3.4vw,44px);line-height:1.1;letter-spacing:-.8px;margin:0 0 18px;max-width:900px}.rf h2 .o,.rf h1 .o{color:var(--o)}.rf h3{font-weight:800;font-size:21px;line-height:1.3}.rf .dark{background:var(--dark);color:#dfe2e7}.rf .dark h1,.rf .dark h2,.rf .dark h3{color:#fff}.rf .btn{display:inline-block;background:var(--o);color:#fff!important;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:17px;padding:15px 24px;border-radius:8px;border:2px solid var(--o);transition:transform .18s,box-shadow .18s,background .18s;white-space:nowrap}.rf .btn .ar{display:inline-block;transition:transform .18s;margin-left:4px}.rf .btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(239,102,47,.32);background:var(--oh);border-color:var(--oh)}.rf .btn:hover .ar{transform:translateX(4px)}.rf #system h2{text-align:center;margin-left:auto;margin-right:auto}.rf .hero{padding:96px 40px 88px}.rf .hero .eb{color:#9ca3af;letter-spacing:2.2px}.rf .hero .sub{font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;color:#fff;font-size:clamp(20px,1.9vw,26px);line-height:1.35;margin:22px 0 0;max-width:900px;text-wrap:balance}.rf .split{display:grid;grid-template-columns:repeat(2,minmax(0,300px));gap:12px;margin:44px 0 0}.rf .split .col{border-radius:10px;padding:22px 22px 20px;display:flex;flex-direction:column;gap:4px}.rf .split .them{border:1px solid var(--dline);background:#1b1d24}.rf .split .you{background:var(--o)}.rf .split .lbl{font-size:14px;color:#c4c7cf}.rf .split .you .lbl{color:#fff}.rf .split .bg{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(24px,2vw,28px);letter-spacing:-.8px;color:#fff;line-height:1.15}.rf .split .them .bg{color:#e5e7eb}.rf .hero .sol{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;color:#fff;font-size:clamp(20px,1.8vw,24px);line-height:1.4;margin:40px 0 0}.rf .hero>.in>.btn{margin:40px 0 0}.rf .hero .alt{color:#c4c7cf;font-size:15px;margin:18px 0 0}.rf .hero .alt a{color:var(--o);font-weight:700}.rf .hero .alt a:hover{color:var(--ol)}.rf .hero .rating{display:inline-block;margin:18px 0 0;color:#c4c7cf;font-size:14px}.rf .hero .rating:hover{color:#fff}.rf .hero .stars{color:var(--o);letter-spacing:2px;margin-right:4px}.rf h1{font-weight:800;color:#fff;font-size:clamp(34px,4.4vw,58px);line-height:1.06;letter-spacing:-1.2px;margin:0 0 32px;max-width:940px}.rf .hero .sub .ln{display:block;text-wrap:balance}@media(max-width:820px){.rf section{padding:72px 40px}.rf .hero{padding:64px 40px 56px}}@media(max-width:700px){.rf .split{grid-template-columns:1fr;gap:10px;margin-top:32px}.rf .split .col{padding:16px 18px}.rf .hero .sol{margin-top:30px}.rf section{padding:64px 20px}.rf .hero{padding:52px 20px 48px}.rf .hero .btn{width:100%;text-align:center}}@media(max-width:400px){.rf .btn{font-size:16px;padding:15px 16px}.rf h1{font-size:33px}.rf .hero .btn{white-space:normal;width:100%;text-align:center;align-self:stretch}}@media(prefers-reduced-motion:reduce){.rf *{transition:none!important;transform:none!important;animation:none!important}}@media print{.rf section{-webkit-print-color-adjust:exact;print-color-adjust:exact}}.rf .hero .sol span{display:block}@media(max-width:700px){.rf .hero .sol span+span{margin-top:8px}}.rf .kw-hw .o{display:block}.rf section.hero.dark .split .them,.rf section.hero.dark .split .you{background:rgba(255,255,255,.05)!important;border:0!important;border-radius:10px!important}.rf section.hero.dark .split .you{border-left:4px solid #EF662F!important}.rf section.hero.dark .split .them .bg{color:rgba(255,255,255,.6)!important}.rf section.hero.dark .split .you .bg{color:#EF662F!important}.rf section.hero.dark .split .you .lbl{color:rgba(255,255,255,.75)!important}@media (max-width:700px){.rf section.hero.dark .split{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}.rf section.hero.dark .split .col{padding:14px 14px!important;min-width:0}.rf section.hero.dark .split .lbl{font-size:12px!important}.rf section.hero.dark .split .bg{font-size:21px!important}}</style><style id="arm-kwh">:where(div.kw-hw-99999){display:block;font-size:2em;font-weight:bold;margin-block:0.67em}
+div:where(.kw-hw-99999){margin: 0px; text-rendering: optimizelegibility;}
+div:where(.kw-hw-99999){font-size: 2.4em;}
+div:where(.kw-hw-99999){line-height: 1.4;}
+div:where(.kw-hw-99999){text-wrap: balance;}
+div:where(.kw-hw-99999){margin: 0px;}
+div:where(.kw-hw-99999){font-family: "Plus Jakarta Sans"; line-height: 1.12; letter-spacing: -0.02em;}
+html body div:where(.kw-hw-99999){font-family: var(--arm-display);}
+.rf div:where(.kw-hw-99999){font-family: "Plus Jakarta Sans", sans-serif; color: var(--ink); margin: 0px; text-wrap: balance;}
+.rf div:where(.kw-hw-99999) .o{color: var(--o);}
+.rf .dark div:where(.kw-hw-99999){color: rgb(255, 255, 255);}
+.rf div:where(.kw-hw-99999){font-weight: 800; color: rgb(255, 255, 255); font-size: clamp(34px, 4.4vw, 58px); line-height: 1.06; letter-spacing: -1.2px; margin: 0px 0px 32px; max-width: 940px;}
+@media (max-width: 400px){.rf div:where(.kw-hw-99999){font-size: 33px;}}
+html body h1.kw-eh:is(#kw-none,*){display:inline!important;margin:0!important;padding:0!important;border:0!important;background:none!important;font:inherit!important;letter-spacing:inherit!important;line-height:inherit!important;text-transform:inherit!important;color:inherit!important;-webkit-text-fill-color:inherit!important;text-shadow:inherit!important;text-wrap:inherit!important;max-width:none!important;min-width:0!important;width:auto!important;opacity:1!important;transform:none!important;animation:none!important;transition:none!important;vertical-align:baseline!important;float:none!important;position:static!important}</style><div class="rf"><section class="hero dark" id="top"><div class="in">
+ <p class="eb">SEO, Google Maps &amp; AI search for contractors</p>
+ <div class="kw-hw kw-hw-99999"><h1 class="kw-eh">SEO for Contractors</h1> <span class="o">That Books More&nbsp;Jobs</span></div>
+ <p class="sub"><span class="ln">A smarter way to grow your business.</span></p>
+ <div class="split">
+  <div class="col them"><span class="lbl">Most agencies count</span><span class="bg">rankings.</span></div>
+  <div class="col you"><span class="lbl">You count</span><span class="bg">booked jobs.</span></div>
+ </div>
+ <p class="sol" style="text-wrap:balance"><span>We find what&#39;s working and fix what&nbsp;isn&#39;t.</span></p>
+ <a class="btn" href="https://calendly.com/andrew-andrewryanmarketing/gap-review?utm_source=arm-site&amp;utm_medium=cta&amp;utm_campaign=site&amp;utm_content=seo-contractors-hero">Let&#39;s talk about your marketing&nbsp;<span class="ar">&rarr;</span></a>
+ <p class="alt">Not ready to talk? <a href="/#argmRoot">Get my gaps on video&nbsp;<span class="ar">&rarr;</span></a></p>
+ <a class="rating" href="https://www.google.com/maps?cid=5316129390931803308" target="_blank" rel="noopener"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 5.0 on Google &middot; 7 reviews</a>
+</div></section></div>
+<section class="bsx-sec bsx-tint"><div class="bsx-wrap bsx-stag bsx-in"><div class="bsx-eyebrow" style="line-height:1.5">The short answer</div><h2 class="bsx-h2" style="line-height:1.18">What is SEO for contractors?</h2><p class="bsx-p bsx-lead" style="line-height:1.6">SEO for contractors is the work that gets a contracting business found when homeowners search for the service it sells: in the Google map pack, in the regular results and in AI answers. It covers your Google Business Profile, your website, your reviews and the listings that confirm who you are and where you work. <b>Rankings are how it starts. We measure it by the calls, booked estimates and sold jobs it&nbsp;produces.</b></p></div></section><section class="bsx-sec "><div class="bsx-wrap bsx-stag bsx-in"><div class="bsx-eyebrow" style="line-height:1.5">Where the jobs are decided</div><h2 class="bsx-h2" style="line-height:1.18">Three things decide whether SEO books&nbsp;jobs.</h2><div class="bsx-grid2" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:22px"><div><h3 class="bsx-h3" style="line-height:1.3">The searches that book work.</h3><p class="bsx-p bsx-muted" style="line-height:1.6">Some searches bring price shoppers and some bring signed contracts. We map which searches in your market lead to jobs at your price and aim the work&nbsp;there.</p></div><div><h3 class="bsx-h3" style="line-height:1.3">The map pack.</h3><p class="bsx-p bsx-muted" style="line-height:1.6">For most trades, the three businesses in Google&rsquo;s map pack take most of the calls. Your Google Business Profile, your reviews and your listings help decide whether you are one of them, along with how close you are to the person&nbsp;searching.</p></div><div><h3 class="bsx-h3" style="line-height:1.3">What happens after the call.</h3><p class="bsx-p bsx-muted" style="line-height:1.6">A ranking only pays if the call gets answered and the estimate gets followed up. We trace each lead to the booked job, so you can see where opportunities are lost and fix them with your&nbsp;team.</p></div></div></div></section><section class="bsx-sec bsx-tint"><div class="bsx-wrap bsx-stag bsx-in"><div class="bsx-eyebrow" style="line-height:1.5">What you actually get</div><h2 class="bsx-h2" style="line-height:1.18">Four moves, in order. Each one unlocks the&nbsp;next.</h2><div class="bsx-steps"><div class="bsx-step"><div class="bsx-n" aria-hidden="true">1</div><div class="bsx-sb"><b style="line-height:1.4">Map the market</b><p style="line-height:1.55">Every search your customers use for your trade in the area you serve, who wins each one today, and where the openings are. You see the map before we touch&nbsp;anything.</p></div></div><div class="bsx-step"><div class="bsx-n" aria-hidden="true">2</div><div class="bsx-sb"><b style="line-height:1.4">Build the foundation that converts</b><p style="line-height:1.55">Pages built for the searches that book work, and a Google Business Profile with every category, service and photo filled&nbsp;in.</p></div></div><div class="bsx-step"><div class="bsx-n" aria-hidden="true">3</div><div class="bsx-sb"><b style="line-height:1.4">Build authority Google can verify</b><p style="line-height:1.55">A steady flow of fresh reviews, consistent business listings across the web, and content that answers what your customers ask before they&nbsp;call.</p></div></div><div class="bsx-step"><div class="bsx-n" aria-hidden="true">4</div><div class="bsx-sb"><b style="line-height:1.4">Count what matters, monthly</b><p style="line-height:1.55">Every call and form traced to its source and tied to booked work. The report answers one question: what did marketing cost per job this&nbsp;month?</p></div></div></div></div></section><section class="bsx-sec bsx-dark" id="bsx-proofbar" aria-label="SEO results you can check">
+  <div class="bsx-wrap bsx-stag bsx-in">
+    <div class="bsx-eyebrow" style="line-height:1.5">Results you can check</div>
+    <h2 class="bsx-h2" style="line-height:1.18">Four results, four parts of search&nbsp;visibility.</h2>
+    <p class="bsx-p bsx-lead" style="line-height:1.55;color:#e6e6e6">Four clients in four different businesses, each labeled with what it measures and where the number comes&nbsp;from.</p>
+    <div class="bsx-pbgrid bsx-stag">
+      <div class="bsx-pbtile" role="group" aria-label="Search visibility grew from near zero to 12.7 percent in 90 days, tracked in SEMrush">
+        <div class="bsx-pbtop"><span class="bsx-pblayer" style="line-height:1.4">Layer 1 · Visibility</span><span class="bsx-pbtime" style="line-height:1.4">90 days</span></div>
+        <div class="bsx-pbnum" style="line-height:1.15"><span data-pbto="12.7" data-pbfrom="0" data-pbdec="1" data-pbsuf="%">12.7%</span></div>
+        <div class="bsx-pbwhat" style="line-height:1.45">search visibility — from near-zero</div>
+        <div class="bsx-pbcap" style="line-height:1.55">A sports-training brand’s climb out of invisibility — then steady growth for six straight months after.</div>
+        <div class="bsx-pbsrc" style="line-height:1.5">Tracked in SEMrush</div>
+      </div>
+      <div class="bsx-pbtile" role="group" aria-label="Average map pack position improved from 5.4 to 2.5 in 72 hours, tracked in BrightLocal, April 2026">
+        <div class="bsx-pbtop"><span class="bsx-pblayer" style="line-height:1.4">Layer 2 · Map pack</span><span class="bsx-pbtime" style="line-height:1.4">72 hours</span></div>
+        <div class="bsx-pbnum" style="line-height:1.15"><span class="bsx-pbghost">5.4</span> <span class="bsx-pbarrow" aria-hidden="true">→</span> <span data-pbto="2.5" data-pbfrom="5.4" data-pbdec="1">2.5</span></div>
+        <div class="bsx-pbwhat" style="line-height:1.45">average map-pack position — lower is better</div>
+        <div class="bsx-pbcap" style="line-height:1.55">A Tennessee plumbing company, across its tracked keywords. 2.5 means the pack most of the time — and it took 72 hours, not months.</div>
+        <div class="bsx-pbsrc" style="line-height:1.5">Tracked in BrightLocal · April 2026</div>
+      </div>
+      <div class="bsx-pbtile" role="group" aria-label="Top 3 on Google nationwide for the search CEO branding services">
+        <div class="bsx-pbtop"><span class="bsx-pblayer" style="line-height:1.4">Layer 3 · Rankings</span><span class="bsx-pbtime" style="line-height:1.4">National</span></div>
+        <div class="bsx-pbnum" style="line-height:1.15">Top 3</div>
+        <div class="bsx-pbwhat" style="line-height:1.45">on Google, nationwide — “CEO branding services”</div>
+        <div class="bsx-pbcap" style="line-height:1.55">A personal-branding firm on a national term — and the name AI engines reach for on the same query. Check either one yourself.</div>
+        <div class="bsx-pbsrc" style="line-height:1.5">Google · U.S. search</div>
+      </div>
+      <div class="bsx-pbtile" role="group" aria-label="Click-through rate up 36 percent on head terms since May 2026, measured in Google Search Console">
+        <div class="bsx-pbtop"><span class="bsx-pblayer" style="line-height:1.4">Layer 4 · Clicks</span><span class="bsx-pbtime" style="line-height:1.4">3 months</span></div>
+        <div class="bsx-pbnum" style="line-height:1.15"><span data-pbto="36" data-pbfrom="0" data-pbdec="0" data-pbpre="+" data-pbsuf="%">+36%</span></div>
+        <div class="bsx-pbwhat" style="line-height:1.45">click-through on head terms</div>
+        <div class="bsx-pbcap" style="line-height:1.55">A Georgia real-estate brokerage — same rankings, same impressions, more clicks. Pure CTR engineering.</div>
+        <div class="bsx-pbsrc" style="line-height:1.5">Measured in Google Search Console · since May 2026</div>
+      </div>
+    </div>
+    <p class="bsx-pbfoot" style="line-height:1.6">These show visibility, map position, rankings and clicks. Booked jobs are measured in your own numbers, step four above. Ask on the call and we&rsquo;ll walk you through any of them, screen-shared.</p>
+  </div>
+</section><section class="bsx-sec "><div class="bsx-wrap bsx-stag bsx-in"><div class="bsx-eyebrow" style="line-height:1.5">Every trade searches differently</div><h2 class="bsx-h2" style="line-height:1.18">SEO built for your trade, wherever you&nbsp;work.</h2><p class="bsx-p bsx-muted" style="line-height:1.6">A window buyer compares for weeks. A homeowner with no heat calls the first company they find. The work changes with the trade, so each one has its own&nbsp;page:</p><div class="bsx-grid2" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:12px"><a href="/services/window-and-door-marketing/seo/" style="display:block;border:1px solid #E0E0E0;border-radius:10px;padding:16px 18px;font-weight:700;color:#333;text-decoration:none;line-height:1.4">SEO for window &amp; door companies <span style="color:#EF662F">&rarr;</span></a><a href="/services/hvac-marketing/seo/" style="display:block;border:1px solid #E0E0E0;border-radius:10px;padding:16px 18px;font-weight:700;color:#333;text-decoration:none;line-height:1.4">HVAC SEO <span style="color:#EF662F">&rarr;</span></a><a href="/seo-for-flooring-contractors/" style="display:block;border:1px solid #E0E0E0;border-radius:10px;padding:16px 18px;font-weight:700;color:#333;text-decoration:none;line-height:1.4">SEO for flooring contractors <span style="color:#EF662F">&rarr;</span></a><a href="/seo-for-remodeling-contractors/" style="display:block;border:1px solid #E0E0E0;border-radius:10px;padding:16px 18px;font-weight:700;color:#333;text-decoration:none;line-height:1.4">SEO for remodeling companies <span style="color:#EF662F">&rarr;</span></a><a href="/seo-for-fence-companies/" style="display:block;border:1px solid #E0E0E0;border-radius:10px;padding:16px 18px;font-weight:700;color:#333;text-decoration:none;line-height:1.4">SEO for fence companies <span style="color:#EF662F">&rarr;</span></a></div><p class="bsx-p bsx-muted" style="line-height:1.6;margin-top:20px">We work with contractors nationwide, one company per trade in each market. Here at home in Tennessee: <a href="/services/seo-johnson-city-tn/" style="color:#d4551f;font-weight:700">Johnson City SEO</a>, <a href="/services/seo-bristol-tn/" style="color:#d4551f;font-weight:700">Bristol SEO</a> and <a href="/services/seo-kingsport-tn/" style="color:#d4551f;font-weight:700">Kingsport&nbsp;SEO</a>.</p></div></section><section class="bsx-sec "><div class="bsx-wrap bsx-stag bsx-in"><div class="bsx-eyebrow" style="line-height:1.5">Straight answers</div><h2 class="bsx-h2" style="line-height:1.18">Contractor SEO questions,&nbsp;answered</h2><div class="bsx-faq" style="margin-top:12px"><details><summary style="line-height:1.45">How much does SEO for contractors cost?</summary><div class="bsx-a" style="line-height:1.6">Growth engagements start at $1,500 a month, which covers your website and local search. The full growth engine, with complete SEO and conversion work, starts at $3,500. What fits depends on your trade, your market and how far you are from the top 3. We scope it on a 20-minute call using your own numbers: your job value, your close rate and what a booked job is worth to you. Our tiers are public on the <a href="/pricing/">pricing page</a>.</div></details><details><summary style="line-height:1.45">How long does contractor SEO take to work?</summary><div class="bsx-a" style="line-height:1.6">Map pack movement often shows within 60 to 90 days. Meaningful organic movement usually takes three to six months, depending on your trade and how contested your market is. For the full method, see the <a href="/local-contractor-seo-blueprint/">local contractor SEO blueprint</a>.</div></details><details><summary style="line-height:1.45">Should I start with SEO or Google Ads?</summary><div class="bsx-a" style="line-height:1.6">Ads can bring leads this week. SEO lowers what each lead costs over time because it compounds. Most growing contractors run both, with ads covering the searches they don&rsquo;t rank for yet. We&rsquo;ll tell you which one your numbers say to fund first. See <a href="/services/ppc-for-contractors/">PPC for contractors</a>.</div></details><details><summary style="line-height:1.45">Do you work with contractors outside Tennessee?</summary><div class="bsx-a" style="line-height:1.6">Yes. We&rsquo;re based in Johnson City, Tennessee, and work with contractors nationwide. We take one company per trade in each market.</div></details><details><summary style="line-height:1.45">Do you already work with my competitor?</summary><div class="bsx-a" style="line-height:1.6">If we already work with your trade in your market, we tell you on the first call and don&rsquo;t take the work.</div></details><details><summary style="line-height:1.45">Will my business show up in AI answers too?</summary><div class="bsx-a" style="line-height:1.6">AI search uses some of the same signals as Google, but the businesses AI recommends aren&rsquo;t always the ones Google ranks. We measure where your company appears in ChatGPT, Google&rsquo;s AI and Perplexity, find why competitors are recommended instead, and work to close those gaps. See <a href="/services/generative-engine-optimization/">AI visibility</a>.</div></details><details><summary style="line-height:1.45">Do you build websites too, or just do SEO?</summary><div class="bsx-a" style="line-height:1.6">Both, because the site is half the outcome. When your site is the weak link, we build one around the searches that book work. When it&rsquo;s solid, we improve what&rsquo;s there instead.</div></details><details><summary style="line-height:1.45">What&rsquo;s the commitment?</summary><div class="bsx-a" style="line-height:1.6">Terms depend on the size and length of the engagement. Smaller engagements start with a 3- to 6-month commitment, then run month to month with 30 days&rsquo; notice. 12-month build-heavy engagements carry a 90-day exit. Whatever the term, your website, your Google Business Profile and your data stay yours.</div></details></div></div></section><section class="bsx-sec bsx-dark" id="bsx-close"><div class="bsx-wrap bsx-stag bsx-in" style="text-align:center"><h2 class="bsx-h2" style="line-height:1.18;max-width:28ch;margin:0 auto 10px">Somebody holds the top three spots in your market. It might as well be&nbsp;you.</h2><p class="bsx-p bsx-muted" style="line-height:1.6;max-width:56ch;margin:0 auto 20px;color:#cfcfcf">Find out where you stand in a 20-minute call with&nbsp;Andrew.</p><a class="bsx-cta" href="https://calendly.com/andrew-andrewryanmarketing/gap-review?utm_source=arm-site&amp;utm_medium=cta&amp;utm_campaign=seo-for-contractors&amp;utm_content=close" target="_blank" rel="noopener" style="background:var(--bx-orange);line-height:1.3">Book a 20-minute call →</a><p style="margin:14px auto 0;font-size:13.5px;line-height:1.5"><a href="/contact/" style="color:#FF8A5C;font-weight:bold;text-decoration:underline">Prefer email, phone, or text? Contact Andrew →</a></p></div></section><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much does SEO for contractors cost?", "acceptedAnswer": {"@type": "Answer", "text": "Growth engagements start at $1,500 a month, which covers your website and local search. The full growth engine, with complete SEO and conversion work, starts at $3,500. What fits depends on your trade, your market and how far you are from the top 3. We scope it on a 20-minute call using your own numbers: your job value, your close rate and what a booked job is worth to you. Our tiers are public on the pricing page."}}, {"@type": "Question", "name": "How long does contractor SEO take to work?", "acceptedAnswer": {"@type": "Answer", "text": "Map pack movement often shows within 60 to 90 days. Meaningful organic movement usually takes three to six months, depending on your trade and how contested your market is. For the full method, see the local contractor SEO blueprint."}}, {"@type": "Question", "name": "Should I start with SEO or Google Ads?", "acceptedAnswer": {"@type": "Answer", "text": "Ads can bring leads this week. SEO lowers what each lead costs over time because it compounds. Most growing contractors run both, with ads covering the searches they don’t rank for yet. We’ll tell you which one your numbers say to fund first. See PPC for contractors."}}, {"@type": "Question", "name": "Do you work with contractors outside Tennessee?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We’re based in Johnson City, Tennessee, and work with contractors nationwide. We take one company per trade in each market."}}, {"@type": "Question", "name": "Do you already work with my competitor?", "acceptedAnswer": {"@type": "Answer", "text": "If we already work with your trade in your market, we tell you on the first call and don’t take the work."}}, {"@type": "Question", "name": "Will my business show up in AI answers too?", "acceptedAnswer": {"@type": "Answer", "text": "AI search uses some of the same signals as Google, but the businesses AI recommends aren’t always the ones Google ranks. We measure where your company appears in ChatGPT, Google’s AI and Perplexity, find why competitors are recommended instead, and work to close those gaps. See AI visibility."}}, {"@type": "Question", "name": "Do you build websites too, or just do SEO?", "acceptedAnswer": {"@type": "Answer", "text": "Both, because the site is half the outcome. When your site is the weak link, we build one around the searches that book work. When it’s solid, we improve what’s there instead."}}, {"@type": "Question", "name": "What’s the commitment?", "acceptedAnswer": {"@type": "Answer", "text": "Terms depend on the size and length of the engagement. Smaller engagements start with a 3- to 6-month commitment, then run month to month with 30 days’ notice. 12-month build-heavy engagements carry a 90-day exit. Whatever the term, your website, your Google Business Profile and your data stay yours."}}]}</script>
