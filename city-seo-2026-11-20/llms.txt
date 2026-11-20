@@ -1,0 +1,101 @@
+# Andrew Ryan Marketing
+
+> Andrew Ryan Marketing is a contractor marketing agency in Johnson City, Tennessee, serving contractors and home-service companies nationwide. We measure marketing to the booked job -- not the lead -- and publish original research on how AI answer engines recommend local businesses.
+
+This site contains service pages, industry-specific marketing hubs, and deep-dive guides organized by contractor vertical. The deepest content is in four topical authority silos -- window and door, remodeling, flooring, and fencing -- each with a hub page and supporting guides covering SEO, lead generation, PPC, and marketing systems for that industry.
+
+The site also publishes The Answer Gap Index, first-party research comparing who AI engines (ChatGPT, Perplexity, Google AI Overview, Google AI Mode) recommend for local businesses against who Google ranks, and the 6-Gap Revenue Map, a free diagnostic that shows which of six gaps between a search and a booked job costs a business the most.
+
+## Core Pages
+
+- [Andrew Ryan Marketing -- Homepage](https://andrewryanmarketing.com/): Agency overview, services offered, and client results for local service businesses seeking lead generation and SEO in the Tri-Cities Tennessee region and nationally
+- [About Andrew Ryan Marketing](https://andrewryanmarketing.com/about/): Agency background, founder Andrew Ryan, and the data-driven marketing philosophy built on Google Search Console performance data and competitive intelligence
+- [Marketing Services](https://andrewryanmarketing.com/services/): Full service listing -- SEO, lead generation, paid advertising, reputation management, email marketing, and industry-specific marketing systems for contractors
+- [Industries We Serve](https://andrewryanmarketing.com/industries/): All contractor and service verticals served including remodeling, fencing, flooring, window and door, plumbing, HVAC, roofing, electrical, painting, landscaping, pest control, cleaning, handyman, and medical
+- [Local SEO Results and Case Studies](https://andrewryanmarketing.com/case-studies/): Documented client results including ranking improvements, visibility gains, and lead generation ROI across multiple contractor verticals
+- [Contact](https://andrewryanmarketing.com/contact/): Free consultation scheduling and competitive marketing audit requests
+- [Free ROI Calculator](https://andrewryanmarketing.com/free-roi-calculator/): Interactive revenue impact calculator using industry-specific conversion rates, average project values, and local search volume data
+
+## Research and AI Visibility
+
+- [The Answer Gap Index -- Edition 1 (2026)](https://andrewryanmarketing.com/answer-gap-index/): Original study of 720 AI answers across ChatGPT, Perplexity, Google AI Overview and Google AI Mode for 12 local business types in Denver, Boise and Chattanooga. 60.5% of AI-recommended businesses were in neither Google's map pack nor its organic top 10 ("Ghost Winners"). Defines six measures: Ghost Winner Rate, Ghost Top-Pick Rate, AI Overview Trigger Rate, Top-Answer Lock Rate, Cross-Engine Agreement and Evidence Ownership Rate. Includes a follow-up study of what AI-named businesses have in common (more and fresher reviews, more referring domains; star rating made no difference). Downloadable PDF summary and city-level CSV.
+- [Generative Engine Optimization Services](https://andrewryanmarketing.com/services/generative-engine-optimization/): How Andrew Ryan Marketing gets businesses named in AI answers (Answer Architecture), with the measures the Answer Gap Index tracks
+- [AI Overview Proof](https://andrewryanmarketing.com/ai-overview-proof/): Dated, incognito captures of Google's AI Overview naming Andrew Ryan Marketing and a client on competitive national terms, with the method and its limits stated
+
+## Diagnostics
+
+- [The 6-Gap Revenue Map](https://andrewryanmarketing.com/6-gap-revenue-map/): Free diagnostic that scores six gaps between a search and a booked job -- visibility, authority, trust, speed, conversion and attribution -- and shows which one costs a business the most booked jobs
+- [Lead to Booked Job](https://andrewryanmarketing.com/services/lead-to-booked-job/): The second funnel -- speed to lead, follow-up and estimate follow-up systems that turn leads a contractor already paid for into booked jobs
+
+## Services
+
+- [SEO for Contractors](https://andrewryanmarketing.com/services/seo-for-contractors/): SEO for contractors and home-service companies nationwide -- Google Maps, the website, reviews and AI answers, measured by the booked jobs they produce
+- [SEO Services in Johnson City, TN](https://andrewryanmarketing.com/services/seo-johnson-city-tn/): Local SEO, technical SEO, keyword strategy, on-page optimization, schema markup, and Google Business Profile management for service businesses
+- [Digital Advertising Services](https://andrewryanmarketing.com/services/ppc-for-contractors/): Google Ads and Meta Ads management with cost-per-lead optimization, conversion tracking, and budget allocation strategy for service businesses
+- [Lead Generation for Local Businesses](https://andrewryanmarketing.com/services/lead-generation/): Exclusive lead generation through owned channels -- no shared leads, no aggregator platforms -- built on SEO, paid media, and conversion-optimized landing pages
+- [Reputation Management](https://andrewryanmarketing.com/services/reputation-management-for-contractors/): Review generation, sentiment monitoring, and response management that builds trust signals across Google, AI answer engines, and third-party platforms
+- [Email Marketing Services](https://andrewryanmarketing.com/services/crm-email-and-automation/): Automated email sequences for lead nurturing, client onboarding, retention, and re-engagement workflows
+
+## Window and Door Marketing
+
+- [Window and Door Contractor Marketing -- Hub](https://andrewryanmarketing.com/services/window-and-door-marketing/): Central resource for window and door replacement company marketing -- covers digital advertising, SEO strategy, lead generation systems, and competitive positioning for the high-ticket replacement window and door market
+- [SEO for Window and Door Companies](https://andrewryanmarketing.com/services/window-and-door-marketing/seo/): 5,000+ word SEO guide for replacement window and door contractors covering keyword research, content optimization frameworks, local ranking factors, and search visibility strategies for the high-ticket replacement market
+- [Window and Door Lead Generation](https://andrewryanmarketing.com/services/window-and-door-marketing/lead-generation/): Lead generation architecture for window and door contractors -- pipeline design, multi-channel conversion systems, cost-per-lead benchmarks for high-ticket replacement projects averaging $8,000-$15,000 per job
+- [PPC for Window and Door Companies](https://andrewryanmarketing.com/services/window-and-door-marketing/ppc/): Google Ads and paid media strategy for window and door businesses with campaign structure, bidding approaches, landing page optimization, and ROI tracking for high-ticket home improvement services
+
+## Remodeling Marketing
+
+- [Remodeling Contractor Marketing -- Hub](https://andrewryanmarketing.com/services/remodeling-contractor-marketing/): Central resource for remodeling company marketing -- covers SEO, lead generation, PPC, content marketing, and competitive positioning for the $509 billion U.S. remodeling market
+- [PPC for Remodeling Contractors](https://andrewryanmarketing.com/ppc-for-remodeling-contractors/): Google Ads strategy for remodeling companies covering campaign structure, bidding strategy, landing page conversion optimization, and budget allocation for projects averaging $15,000-$100,000
+- [SEO for Remodeling Contractors](https://andrewryanmarketing.com/seo-for-remodeling-contractors/): In-depth SEO guide for remodelers with keyword targeting strategy, content architecture, technical optimization, and local ranking factors for the remodeling vertical
+- [Remodeling Contractor Lead Generation](https://andrewryanmarketing.com/remodeling-contractor-lead-generation/): Lead generation systems for remodeling companies -- owned-channel pipeline architecture, conversion optimization, cost-per-lead benchmarks, and sales cycle management for 3-6 month decision timelines
+
+## Flooring Marketing
+
+- [Flooring Company Marketing -- Hub](https://andrewryanmarketing.com/services/flooring-company-marketing/): Central resource for flooring contractor marketing -- covers SEO, lead generation, and digital advertising strategy for both residential and commercial flooring installation markets
+- [Flooring Contractor Lead Generation](https://andrewryanmarketing.com/flooring-contractor-lead-generation/): Lead generation systems for flooring companies -- pipeline architecture, conversion optimization, and cost-per-lead analysis for residential and commercial flooring projects
+- [SEO for Flooring Contractors](https://andrewryanmarketing.com/seo-for-flooring-contractors/): SEO strategy for flooring companies covering residential and commercial keyword targeting, content frameworks, local visibility optimization, and competitive positioning in search
+- [Why Flooring Companies Struggle Online](https://andrewryanmarketing.com/why-flooring-companies-struggle-online/): Analysis of the most common digital marketing failures in the flooring industry -- why companies invest in marketing without results -- with data-driven diagnostic framework and solutions
+
+## Fencing Marketing
+
+- [Fencing Company Marketing -- Hub](https://andrewryanmarketing.com/services/fencing-company-marketing/): Central resource for fence company marketing -- covers seasonal demand planning, local SEO, digital advertising, and lead generation for residential and commercial fence installation
+- [Lead Generation for Fence Contractors](https://andrewryanmarketing.com/lead-generation-fence-contractors/): Lead generation systems for the fencing industry -- pipeline design, conversion optimization, and exclusive lead ownership for seasonal businesses with $3,000-$15,000 average project values
+- [Marketing for Fence Installers](https://andrewryanmarketing.com/marketing-for-fence-installers/): Year-round marketing framework for fence installation companies covering off-season pipeline building, spring and summer demand capture, and brand positioning in competitive local markets
+- [SEO for Fence Companies](https://andrewryanmarketing.com/seo-for-fence-companies/): SEO strategy for fence installation businesses including seasonal keyword targeting, local map pack optimization, content frameworks, and year-round visibility planning
+- [Fence Contractor Advertising](https://andrewryanmarketing.com/fence-contractor-advertising/): Paid advertising strategy for fence companies -- Google Ads and Meta campaign structure, seasonal budget allocation, and conversion tracking for installation bookings
+
+## HVAC Marketing
+
+- [HVAC Marketing, Hub](https://andrewryanmarketing.com/services/hvac-marketing/): Marketing for heating and cooling companies, measured by sold jobs rather than leads, from search and ads through call handling and estimate follow-up.
+- [AI Visibility for HVAC Companies](https://andrewryanmarketing.com/services/hvac-marketing/ai-visibility/): Which HVAC companies ChatGPT, Perplexity and Google's AI answers name, from the Answer Gap Index HVAC data for September and October 2026.
+- [HVAC Google Ads and Local Services Ads](https://andrewryanmarketing.com/services/hvac-marketing/ppc/): Separate campaigns for repair, replacement and maintenance calls, sold-job revenue sent back to Google, and the move of Local Services Ads into Google Ads.
+- [HVAC Call Handling and Estimate Follow-Up](https://andrewryanmarketing.com/services/hvac-marketing/call-handling/): Where jobs are lost between the phone ringing and the replacement decision, and how we work with CSRs and comfort advisors.
+- [HVAC SEO Services](https://andrewryanmarketing.com/services/hvac-marketing/seo/): Google Maps and organic search for HVAC companies, covering the Google Business Profile, reviews, service pages, local pages and links.
+
+## Other Contractor Industries
+
+- [Marketing for Painters](https://andrewryanmarketing.com/services/painter-marketing/): Digital marketing strategy for painting contractors covering targeted advertising, local SEO, and lead generation for residential and commercial painting services
+- [Marketing for Electricians](https://andrewryanmarketing.com/services/marketing-for-electricians/): Digital marketing for electrical contractors covering service-area SEO, emergency service visibility, and residential and commercial lead generation
+- [Handyman Marketing](https://andrewryanmarketing.com/services/handyman-marketing/): Marketing strategy for handyman businesses covering multi-service visibility, local SEO for broad service categories, and customer acquisition for small-ticket recurring services
+- [Marketing for Pest Control Companies](https://andrewryanmarketing.com/services/marketing-for-pest-control-companies/): Digital marketing for pest control businesses covering seasonal campaign planning, recurring service promotion, and local visibility for residential and commercial extermination services
+- [Roofing Marketing](https://andrewryanmarketing.com/services/roofing-marketing/): Marketing system for roofing contractors covering storm damage visibility, insurance restoration lead generation, local SEO, and seasonal paid advertising
+- [Cleaning Services Marketing](https://andrewryanmarketing.com/services/cleaning-services-marketing/): Digital marketing for residential and commercial cleaning companies covering recurring service promotion, local SEO, and customer acquisition strategy
+- [Marketing for Plumbers](https://andrewryanmarketing.com/services/marketing-for-plumbers/): Digital marketing for plumbing companies covering emergency service search visibility, Google Business Profile optimization, and lead generation for residential and commercial plumbing
+- [Medical Marketing](https://andrewryanmarketing.com/services/medical-marketing/): Marketing strategy for medical practices and healthcare providers covering patient acquisition, local search visibility, and reputation management for HIPAA-sensitive industries
+
+## Educational Resources
+
+- [Local Contractor SEO Blueprint](https://andrewryanmarketing.com/local-contractor-seo-blueprint/): Step-by-step SEO implementation plan built for contractors and home service businesses -- covers keyword research methodology, content architecture, technical setup, and local ranking strategy
+- [Lead Generation for Service Businesses](https://andrewryanmarketing.com/lead-generation-for-service-businesses/): Framework for building lead generation systems for service-based businesses covering channel selection, conversion architecture, pipeline measurement, and cost-per-lead optimization
+- [Local Business Marketing Guide](https://andrewryanmarketing.com/local-business-marketing/): Overview of digital marketing strategy for local businesses -- how SEO, paid advertising, social media, email, and reputation management work together as an integrated system
+- [What is SEO -- A Comprehensive Guide](https://andrewryanmarketing.com/what-is-seo/): Detailed explanation of search engine optimization for business owners covering technical SEO, on-page optimization, off-page strategies, and how organic search drives measurable revenue for local companies
+
+## Optional
+
+- [Marketing Insights Blog](https://andrewryanmarketing.com/insights/): Blog index with articles on digital marketing strategy, SEO, lead generation, and contractor marketing
+- [Get More Website Traffic in Johnson City, TN](https://andrewryanmarketing.com/get-more-website-traffic-johnson-city-tn/): Traffic generation strategies for Johnson City area businesses covering SEO, paid media, and content marketing
+- [Marketing for Landscaping and Lawn Care](https://andrewryanmarketing.com/services/marketing-for-landscaping-and-lawn-care/): Digital marketing for landscaping companies covering seasonal service promotion, local SEO, and residential and commercial customer acquisition
+- [How to Get More Leads in Johnson City, TN](https://andrewryanmarketing.com/get-more-leads-johnson-city-tn/): Lead generation strategies specific to the Johnson City and Tri-Cities Tennessee market including local competitive landscape analysis
+- [Get More Customers in Johnson City, TN](https://andrewryanmarketing.com/get-more-customers-johnson-city-tn/): Customer acquisition strategies for businesses in the Johnson City metropolitan area
+- [Sitemap](https://andrewryanmarketing.com/sitemap_index.xml): XML sitemap index listing all pages on the site
