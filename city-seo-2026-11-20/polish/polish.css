@@ -1,0 +1,37 @@
+/* SEO for contractors page polish 2026-11-20 */
+.bsx-grid2>a{position:relative;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease,background-color .22s ease}
+.bsx-grid2>a>span{display:inline-block;transition:transform .2s ease}
+.bsx-grid2>a:focus-visible{outline:3px solid #EF662F;outline-offset:2px}
+.bsx-faq summary{transition:color .18s ease}
+.bsx-faq summary::after{transition:transform .25s ease}
+.bsx-faq summary:focus-visible{outline:3px solid #EF662F;outline-offset:3px;border-radius:4px}
+.bsx-faq details[open] summary{color:#C24417}
+.bsx-faq details[open] .bsx-a{animation:armNatFade .35s ease both}
+@keyframes armNatFade{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+.arm-nat3>div{position:relative;padding-top:14px}
+.arm-nat3>div::before{content:"";position:absolute;left:0;top:0;width:32px;height:3px;border-radius:2px;background:#EF662F;transition:width .35s ease}
+.bsx-step .bsx-n{transition:box-shadow .25s ease,transform .25s ease}
+.bsx-cta .ar{display:inline-block;transition:transform .2s ease}
+.bsx-cta:hover .ar{transform:translateX(4px)}
+.bsx-sec .bsx-p a{text-underline-offset:3px;text-decoration-thickness:1px;transition:color .18s ease,text-decoration-color .18s ease}
+.bsx-a a{color:#C24417;text-underline-offset:3px}
+@media (hover:hover){
+.bsx-grid2>a:hover{transform:translateY(-3px);border-color:#EF662F !important;background-color:#FDF0EB;box-shadow:0 10px 24px rgba(51,51,51,.10),0 0 0 3px rgba(239,102,47,.10)}
+.bsx-grid2>a:hover>span{transform:translateX(4px)}
+.bsx-faq summary:hover{color:#C24417}
+.arm-nat3>div:hover::before{width:56px}
+.bsx-step:hover .bsx-n{box-shadow:0 0 0 6px rgba(239,102,47,.16);transform:scale(1.05)}
+.bsx-sec .bsx-p a:hover{color:#EF662F !important}
+}
+@media (prefers-reduced-motion:reduce){
+.bsx-grid2>a,.bsx-grid2>a>span,.bsx-faq summary::after,.arm-nat3>div::before,.bsx-step .bsx-n,.bsx-cta .ar{transition:none !important}
+.bsx-grid2>a:hover,.bsx-grid2>a:hover>span,.bsx-step:hover .bsx-n,.bsx-cta:hover .ar{transform:none !important}
+.bsx-faq details[open] .bsx-a{animation:none}
+}
+.bsx-sec .bsx-h2,.bsx-sec .bsx-h3,.bsx-faq summary,.bsx-step .bsx-sb b,#top .eb{text-wrap:balance}
+.bsx-sec .bsx-p,.bsx-a,.bsx-pbcap,.bsx-step .bsx-sb p,.bsx-pbfoot{text-wrap:pretty}
+.bsx-grid2.arm-natlinks{display:flex !important;flex-wrap:wrap}
+.bsx-grid2.arm-natlinks>a{flex:1 1 calc(33.333% - 12px);min-width:min(100%,260px)}
+.bsx-pbwhat{font-size:13px}
+.bsx-pbcap{font-size:14px;color:#d2d2d2}
+.bsx-pbsrc{font-size:12px;color:#b8b8b8}
